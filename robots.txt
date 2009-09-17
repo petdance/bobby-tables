@@ -1,0 +1,1 @@
+User-agent: *           # directed to all spiders, not just Scooter

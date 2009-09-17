@@ -1,0 +1,26 @@
+pre {
+    /* font & text */
+    font-family: monospace;
+    font-size: 12.7px;
+    line-height: 14px;
+    white-space: pre;
+
+    /* color & background */
+    background-color: #F9F9F9;
+    background-position: 0% 0%;
+    color: #000000;
+
+    /* box */
+    xheight: 14px;
+    width: 90%;
+    border: 1px dashed #2F6FAB;
+    margin: 13px 0 13px 0;
+    padding: 13px 13px 13px 13px;
+
+    /* positioning */
+    display: block;
+}
+
+.code {
+    font-family: monospace;
+}
