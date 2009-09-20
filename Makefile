@@ -12,7 +12,7 @@ default: crank
 crank:
 	rm -fr $(BUILD)/*.html
 	mkdir -p $(BUILD)/ || true > /dev/null 2>&1
-	perl crank --podpath=$(SOURCE) --buildpath=$(BUILD)
+	perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
 	$(BUILDSYNC) static/ $(BUILD)/static/
 	cp $(SOURCE)/*.ico $(BUILD)/
 
