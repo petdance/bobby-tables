@@ -6,8 +6,7 @@ use warnings;
 use Carp::Always;
 use Getopt::Long;
 
-use Template ();
-use Template::Constants qw( :debug :chomp );
+use Text::Textile;
 
 my $podpath   = 's';
 my $buildpath = 'build';
@@ -19,15 +18,7 @@ GetOptions(
 
 -d $buildpath && -w $buildpath or die;
 
-my %defaults = (
-    INCLUDE_PATH => [ qw( tt ) ],
-    OUTPUT_PATH  => $buildpath,
-    DEBUG        => DEBUG_UNDEF,
-    TRIM         => CHOMP_ALL,
-    PRE_CHOMP    => 1,
-    POST_CHOMP   => 1,
-);
-
+my $textile = new Text::Textile;
 my $tt = Template->new( \%defaults );
 my $vars = {};
 
