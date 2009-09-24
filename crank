@@ -19,25 +19,28 @@ GetOptions(
 -d $buildpath && -w $buildpath or die;
 
 my $textile = new Text::Textile;
-my $tt = Template->new( \%defaults );
-my $vars = {};
-
-my @podfiles;
 my @sidelinks;
 
-for ( get_sections( $podpath ) ) {
-    my ($sectionfile, $sectiontext) = @{$_};
+my $pages = [
+    index      => 'Home',
+    java       => 'Java',
+    csharp     => 'C#',
+    dotnet     => '.NET',
+    asp        => 'ASP',
+    python     => 'Python',
+    coldfusion => 'ColdFusion',
+    delphi     => 'Delphi',
+    rails      => 'Ruby on Rails',
+];
 
-    my $podfile  = "$podpath/$sectionfile.pod";
-    my $htmlfile = "$sectionfile.html";
+for ( @{$pages} ) {
+    my ($basename,$desc) = @{$_};
+
+    my $tfile = "s/$basename.textile";
+    my $htmlfile = "$basename.html";
     push( @sidelinks, {
         filename => $htmlfile,
-        text     => $sectiontext,
-    } );
-    push( @podfiles, {
-        section  => $sectiontext,
-        podfile  => $podfile,
-        htmlfile => $htmlfile,
+        text     => $desc,
     } );
 }
 
@@ -46,121 +49,3 @@ for my $vars ( @podfiles ) {
     $vars->{sidelinks} = \@sidelinks;
     $tt->process( 'section.tt', $vars, $vars->{htmlfile} ) || die $tt->error;
 }
-
-sub get_sections {
-    my $sourcedir = shift;
-
-    opendir my $dh, $sourcedir or die "Can't open $sourcedir";
-    my %pod = map { ($_,1) } grep { /\.pod$/ && -f "$sourcedir/$_" } readdir $dh;
-
-    my @ordered_sections;
-    for my $section ( <DATA> ) {
-        chomp $section;
-        my $filename = make_filename( $section );
-        delete $pod{"$filename.pod"} or die "$filename is in the section list but not in the source";
-        push( @ordered_sections, [ $filename, $section ] );
-    }
-    if ( keys %pod ) {
-        die "The following pod files still exist: ", join( ', ', sort keys %pod );
-    }
-
-    return @ordered_sections;
-}
-
-sub make_filename {
-    my $name = lc shift;
-
-    $name =~ s/[^-a-z]+/-/g;
-    $name =~ s/^-//;
-    $name =~ s/-$//;
-
-    return $name;
-}
-
-sub pod2html {
-    my $podfile = shift;
-
-    my $html;
-
-    my $parser = Pod::Simple::Perl101->new;
-    $parser->html_header_before_title( '' );
-    $parser->html_header_after_title( '' );
-    $parser->html_footer( '' );
-
-    $parser->complain_stderr( 1 );
-    $parser->output_string( \$html );
-    $parser->parse_file( $podfile );
-
-    # Manually adjust the stuff we passed thru earlier
-    $html =~ s{P<(.+?)>}{<a href="http://perldoc.perl.org/$1.html">$1</a>}g;
-    $html =~ s{M<(.+?)>}{<a href="http://search.cpan.org/perldoc?$1">$1</a>}g;
-
-    return $html;
-}
-
-# Subclassing Pod::Simple::HTML:
-# http://search.cpan.org/~arandal/Pod-Simple-3.05/lib/Pod/Simple/Subclassing.pod
-package Pod::Simple::Perl101;
-
-#use Pod::Simple::Debug(5);
-use base 'Pod::Simple::HTML';
-
-sub VERSION { '0.01' };
-
-sub new {
-    my $self = shift->SUPER::new(@_);
-
-    my @passthru = qw( P M ); # P = Perldoc, M = Module
-    $self->accept_codes( @passthru );
-
-    my $tagmap = $self->{Tagmap};
-
-    for my $code ( @passthru ) {
-        $tagmap->{$code} = "$code<";
-        $tagmap->{"/$code"} = ">";
-    }
-
-    return $self;
-}
-
-
-1;
-
-package main;
-
-__DATA__
-Index
-How to get Perl
-Terms
-Documentation
-Strings
-Numbers
-Arrays
-Hashes
-Regexes
-Flow Control
-Files
-Subroutines
-POD
-Debugging
-Modules
-Modules: Making your own
-External programs
-CPAN
-Constructs
-References
-Objects
-Special Variables
-Command-line Switches
-Advanced Functions
-Style
-Performance
-Traps
-Email
-How do I...?
-Developer Tools
-Websites
-Publications
-Community
-Random
-TODO

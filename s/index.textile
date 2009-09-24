@@ -1,11 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-    <head>
-        <title>bobby-tables.com: A guide to preventing SQL injection</title>
-        <link rel="stylesheet" href="bobby.css" type="text/css" media="screen">
-    </head>
-    <body>
-        <h1> Who is Bobby Tables? </h1>
+h1. Who is Bobby Tables?
+
         <p>
         <a href="http://xkcd.com/327/"><img src="images/xkcd.png" align="right" border="0"></a>
         <a href="http://xkcd.com/327/">From the comic strip xkcd</a><br />
@@ -18,37 +12,26 @@
         (Alt-text: "Her daughter is named Help I'm trapped in a driver's license factory.")<p>
         </p>
 
-        <h1> How to avoid Bobby Tables </h1>
-        <p>
-        There is only one way to avoid Bobby Tables attacks
-        </p>
+h1. How to avoid Bobby Tables
 
-        <ul>
-            <li>Do not create SQL statements that include outside data.</li>
-            <li>Use parameterized SQL calls.</li>
-        </ul>
+There is only one way to avoid Bobby Tables attacks
 
-        <p>
-        That's it. Don't try to escape invalid characters. Don't try to do
-        it yourself. Learn how to use parameterized statements. Always, every
-        single time.
-        </p>
+* Do not create SQL statements that include outside data.
+* Use parameterized SQL calls.
 
+That's it. Don't try to escape invalid characters. Don't try to do
+it yourself. Learn how to use parameterized statements. Always, every
+single time.
 
-        <p>
-        The strip gets one thing crucially wrong.  The answer is
-        not to "sanitize your database inputs" yourself.  It is
-        prone to error.
-        </p>
+The strip gets one thing crucially wrong.  The answer is
+not to "sanitize your database inputs" yourself.  It is
+prone to error.
 
+h1. Examples
 
-        <h1> Examples </h1>
+h2. C#
 
-
-        <h2> C# </h2>
-
-
-        http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection
+http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection
 
 <pre style="code">
 SqlCommand userInfoQuery = new SqlCommand(
@@ -63,19 +46,14 @@ userNameParam.Value = userName;
 </pre>
 
 
-        <h2> .NET </h2>
-        <ul>
-            <li><a href="http://msdn.microsoft.com/en-us/library/ms161953%28loband%29.aspx">
+h2. .NET
 
-                http://msdn.microsoft.com/en-us/library/ms161953(loband).aspx</a></li>
-            <li><a href="http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx">http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx</a></li>
-        </ul>
+* http://msdn.microsoft.com/en-us/library/ms161953(loband).aspx
+* http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx
 
+h2. ASP
 
-        <h2> ASP </h2>
-
-
-        <pre style="code">
+<pre style="code">
 objCmd.CommandType = adCmdText;
 objCmd.CommandText = "UPDATE members SET photo = @filename WHERE memberID = @memberID";
 objCmd.Parameters.Append(objCmd.CreateParameter("@memberID", adInteger, adParamInput, 4, memberid ));
@@ -85,7 +63,7 @@ gblDelobjParams(objCmd);
 </pre>
 
 
-        <h2> Python </h2>
+h2. Python
 
 
         Using the Python DB API, don't do this:
@@ -104,10 +82,11 @@ curs.execute('update people set name=:1 where id=:2', [name, id])
 
 
 
-        <h2> Cold Fusion </h2>
+h2. ColdFusion
 
 
-        In ColdFusion there is a tag (function) called cfqueryparam that should be used whenever writing inline queries...
+In ColdFusion there is a tag (function) called cfqueryparam that
+should be used whenever writing inline queries...
 
 <pre>
 &lt;cfquery datasource="#application.dsn#" name="qryTest" maxrows="#intRows#"&gt;
@@ -122,7 +101,7 @@ WHERE  Status =
 
         Naturally you can also call paramaterized stored procedures using the <span class="code">cfstoredproc</span> and <span class="code">cfprocparam</span> tags.
 
-        <h2> Delphi </h2>
+h2. Delphi
 
 
         To use a prepared statement do something like this:
@@ -143,18 +122,13 @@ WHERE  Status =
 <pre>Person.find_by_sql "SELECT * from persons WHERE name = #{ Person.quote_value name}"<br></pre>
 
 
-        <h1> Other random resources </h1>
-        <ul>
-            <li><a href="http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html">http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html</a></li>
-            <li><a href="http://st-curriculum.oracle.com/tutorial/SQLInjection/">http://st-curriculum.oracle.com/tutorial/SQLInjection/</a>
-            </li>
-        </ul>
-        <br>
+h1. Other random resources
 
-        <h1> Patches welcome </h1>
-        <p>
-        Please let me know if you have updates or additions.  Email me, Andy Lester, at andy at petdance.com.
-        </p>
+* http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html
+* http://st-curriculum.oracle.com/tutorial/SQLInjection/
 
-    </body>
-</html>
+
+h1. Patches welcome
+
+Please let me know if you have updates or additions.  Email me,
+Andy Lester, at andy at petdance.com.
