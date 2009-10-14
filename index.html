@@ -85,6 +85,16 @@ objCmd.Execute(adExecuteNoRecords);
 gblDelobjParams(objCmd);
 </pre>
 
+        <h2> PHP: Using PDO </h2>
+
+        <pre style="code">
+$stmt = $pdo->prepare("UPDATE members SET photo = :filename WHERE memberID = :memberID");
+$stmt->execute(array(
+    ":filename" => $some_filename,
+    ":memberID" => $some_memberID,
+));
+$rows = $stmt->fetchAll()
+</pre>
 
         <h2> Python </h2>
 
