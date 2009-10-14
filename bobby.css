@@ -1,3 +1,8 @@
+
+.content {
+    width:960px;
+    margin:0 auto;
+}
 pre {
     /* font & text */
     font-family: monospace;
