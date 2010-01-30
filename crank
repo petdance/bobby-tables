@@ -5,47 +5,57 @@ use warnings;
 
 use Carp::Always;
 use Getopt::Long;
+use File::Slurp;
 
 use Text::Textile;
 
-my $podpath   = 's';
+my $sourcepath   = 's';
 my $buildpath = 'build';
 
 GetOptions(
-    'podpath:s'   => \$podpath,
-    'buildpath:s' => \$buildpath,
+    'sourcepath:s' => \$sourcepath,
+    'buildpath:s'  => \$buildpath,
 ) or exit;
 
 -d $buildpath && -w $buildpath or die;
 
-my $textile = new Text::Textile;
+my $tt = new Text::Textile;
+$tt->flavor( 'xhtml1' );
+
 my @sidelinks;
 
 my $pages = [
     index      => 'Home',
-    java       => 'Java',
-    csharp     => 'C#',
-    dotnet     => '.NET',
+
     asp        => 'ASP',
-    python     => 'Python',
     coldfusion => 'ColdFusion',
+    csharp     => 'C#',
     delphi     => 'Delphi',
-    rails      => 'Ruby on Rails',
+    dotnet     => '.NET',
+    java       => 'Java',
+    python     => 'Python',
+    ruby       => 'Ruby, Ruby on Rails',
 ];
 
-for ( @{$pages} ) {
-    my ($basename,$desc) = @{$_};
+$pages = [
+    index => 'Home',
+    java => 'Java',
+];
 
-    my $tfile = "s/$basename.textile";
-    my $htmlfile = "$basename.html";
+my @pages = @{$pages};
+while ( @pages ) {
+    my ($section,$desc) = splice( @pages, 0, 2 );
+    my $htmlfile = "$section.html";
     push( @sidelinks, {
         filename => $htmlfile,
         text     => $desc,
     } );
 }
 
-for my $vars ( @podfiles ) {
-    $vars->{content} = pod2html( $vars->{podfile} );
-    $vars->{sidelinks} = \@sidelinks;
-    $tt->process( 'section.tt', $vars, $vars->{htmlfile} ) || die $tt->error;
+@pages = @{$pages};
+while ( @pages ) {
+    my ($section,$desc) = splice( @pages, 0, 2 );
+    my $textile = read_file( "$sourcepath/$section.textile" );
+    my $html    = $tt->process( $textile );
+    write_file( "$buildpath/$section.html", $html );
 }
