@@ -1,16 +1,16 @@
 h1. Who is Bobby Tables?
 
-        <p>
-        <a href="http://xkcd.com/327/"><img src="images/xkcd.png" align="right" border="0"></a>
-        <a href="http://xkcd.com/327/">From the comic strip xkcd</a><br />
-        <b>School</b>: "Hi, this is your son's school.  We're having some computer trouble."<br />
-        <b>Mom</b>: "Oh, dear -- Did he break something?"<br />
-        <b>School</b>: "In a way.  Did you really name your son Robert'); DROP TABLE Students;-- ?"<br />
-        <b>Mom</b>: "Oh.  Yes.  Little Bobby Tables we call him."<br />
-        <b>School</b>: "Well, we've lost this year's student records.  I hope you're happy."<br />
-        <b>Mom</b>: "And I hope you've learned to sanitize your database inputs."<br />
-        (Alt-text: "Her daughter is named Help I'm trapped in a driver's license factory.")<p>
-        </p>
+<p>
+<a href="http://xkcd.com/327/"><img src="images/xkcd.png" align="right" border="0"></a>
+<a href="http://xkcd.com/327/">From the comic strip xkcd</a><br />
+<b>School</b>: "Hi, this is your son's school.  We're having some computer trouble."<br />
+<b>Mom</b>: "Oh, dear -- Did he break something?"<br />
+<b>School</b>: "In a way.  Did you really name your son Robert'); DROP TABLE Students;-- ?"<br />
+<b>Mom</b>: "Oh.  Yes.  Little Bobby Tables we call him."<br />
+<b>School</b>: "Well, we've lost this year's student records.  I hope you're happy."<br />
+<b>Mom</b>: "And I hope you've learned to sanitize your database inputs."<br />
+(Alt-text: "Her daughter is named Help I'm trapped in a driver's license factory.")<p>
+</p>
 
 h1. How to avoid Bobby Tables
 
@@ -65,8 +65,7 @@ gblDelobjParams(objCmd);
 
 h2. Python
 
-
-        Using the Python DB API, don't do this:
+Using the Python DB API, don't do this:
 
 <pre style="code">
 cmd = 'update people set name='%s' where id='%s'%(name, id)
@@ -80,15 +79,12 @@ curs.execute('update people set name=:1 where id=:2', [name, id])
 </pre>
 
 
-
-
 h2. ColdFusion
-
 
 In ColdFusion there is a tag (function) called cfqueryparam that
 should be used whenever writing inline queries...
 
-<pre>
+<pre style="code">
 &lt;cfquery datasource="#application.dsn#" name="qryTest" maxrows="#intRows#"&gt;
 SELECT FirstName, LastName, Phone
 FROM   tblUser
@@ -99,27 +95,38 @@ WHERE  Status =
 </pre>
 
 
-        Naturally you can also call paramaterized stored procedures using the <span class="code">cfstoredproc</span> and <span class="code">cfprocparam</span> tags.
+Naturally you can also call paramaterized stored procedures using the
+@cfstoredproc@ and @cfprocparam@ tags.
 
 h2. Delphi
 
 
-        To use a prepared statement do something like this:
+To use a prepared statement do something like this:
 
-<pre>query.SQL.Text := 'update people set name=:Name where id=:ID';<br>query.Prepare;<br>query.ParamByName( 'Name' ).AsString := name;<br>query.ParamByName( 'ID' ).AsInteger := id;<br>query.ExecSQL;<br></pre>
-
-
-        <h2> Ruby on Rails </h2>
-
-
-        In Ruby on Rails (ActiveRecord):
-
-<pre>Person.find :all, :conditions =&gt; ['id = ? or name = ?', id, name]<br></pre>
+<pre>
+query.SQL.Text := 'update people set name=:Name where id=:ID';
+query.Prepare;
+query.ParamByName( 'Name' ).AsString := name;
+query.ParamByName( 'ID' ).AsInteger := id;
+query.ExecSQL;
+</pre>
 
 
-        Or, if you have to build your own SQL statement (which you should avoid if possible):
+h2. Ruby
 
-<pre>Person.find_by_sql "SELECT * from persons WHERE name = #{ Person.quote_value name}"<br></pre>
+
+In Ruby on Rails (ActiveRecord):
+
+<pre>
+Person.find :all, :conditions =&gt; ['id = ? or name = ?', id, name]
+</pre>
+
+
+Or, if you have to build your own SQL statement (which you should avoid if possible):
+
+<pre>
+Person.find_by_sql "SELECT * from persons WHERE name = #{ Person.quote_value name}"
+</pre>
 
 
 h1. Other random resources
