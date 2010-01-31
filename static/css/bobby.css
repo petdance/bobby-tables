@@ -1,8 +1,8 @@
 body {
-	margin: 0;
-	padding: 0;
-	font: 13px/18px 'trebuchet ms', Arial, sans-serif;
-	background: #dcdcdc url('../img/bobby_bg.png') repeat-x top;
+    margin: 0;
+    padding: 0;
+    font: 13px/18px 'trebuchet ms', Arial, sans-serif;
+    background: #dcdcdc url('../img/bobby_bg.png') repeat-x top;
 }
 
 /* basic site styling */
@@ -34,62 +34,61 @@ h1 {
 
 /* containers */
 #wrap {
-        -webkit-box-shadow: 0px 3px 15px #2b2b2b;
-	-moz-box-shadow: 0px 3px 15px #2b2b2b;
-	margin:0 5%;
-	min-width:960px;
+    -webkit-box-shadow: 0px 3px 15px #2b2b2b;
+    -moz-box-shadow: 0px 3px 15px #2b2b2b;
+    margin:0 5%;
+    min-width:960px;
 }
 
 #topcontainer {
-        height:10px;
-        border-top:#666 1px solid;
-	background: #000 url('../img/toptop_bg.png') repeat-x bottom;
+    height:10px;
+    border-top:#666 1px solid;
+    background: #000 url('../img/toptop_bg.png') repeat-x bottom;
 }
 
 #container, #container2 {
-	background: #FFF url('../img/container_bg.png') repeat-x top;
-}
-		
-#banner {
-	background:black url('../img/top_bg.png') repeat-x top;
-	border-bottom: 1px solid #333;
-}
-		
-			
-#banner h1 {
-	margin: 0;
-	padding: 30px 5px 30px 20px;
-	color:white;
+    background: #FFF url('../img/container_bg.png') repeat-x top;
 }
 
-/* top right nav */		
-#subnav {
-	margin:0;
-	background:#4c4c4c;
-	border-top:1px solid #666;
-	border-bottom:2px solid #fff;
-	padding: 4px 5px 4px 5px;
-	color:#a9a9a9;
-	height:20px;
+#banner {
+    background:black url('../img/top_bg.png') repeat-x top;
+    border-bottom: 1px solid #333;
 }
-		
+
+#banner h1 {
+    margin: 0;
+    padding: 30px 5px 30px 20px;
+    color:white;
+}
+
+/* top right nav */
+#subnav {
+    margin:0;
+    background:#4c4c4c;
+    border-top:1px solid #666;
+    border-bottom:2px solid #fff;
+    padding: 4px 5px 4px 5px;
+    color:#a9a9a9;
+    height:20px;
+}
+
 /* left column */
 #left {
-        float: left;
-        width: 160px;
-        padding-left:0px;
+    float: left;
+    width: 160px;
+    padding-left:0px;
 }
 
 /* main content area */
 #content {
-	padding-top: 1em;
-	margin: 0 2em 0 200px;
+    padding-top: 1em;
+    margin: 0 2em 0 200px;
 }
 
 #content img {
-	margin: 0 0 15px 15px;
-}		
-		
+    margin: 0 0 15px 15px;
+}
+
 pre {
     /* font & text */
     font-family: monospace;
@@ -123,78 +122,77 @@ pre {
 
 
 #nav ul {
-	width: 100%;
-	margin:0;
-	padding:0;
-	background: url('../img/navmenu_bg.png') no-repeat top right;
-	/* background-position: 150px 0px; */
-	margin-top:30px;
+    width: 100%;
+    margin:0;
+    padding:0;
+    background: url('../img/navmenu_bg.png') no-repeat top right;
+    /* background-position: 150px 0px; */
+    margin-top:30px;
 }
 
 #nav li {
-	list-style:none;
-	height:45px;
-	background: url('../img/nav_bgbottom.png') no-repeat -73px 44px; 
+    list-style:none;
+    height:45px;
+    background: url('../img/nav_bgbottom.png') no-repeat -73px 44px; 
 }
 
 #nav ul li a { 
-	color:black;
-	text-decoration:none;
-	padding-left:20px;
-	line-height:45px;
-	display:block;
-	height:45px;
+    color:black;
+    text-decoration:none;
+    padding-left:20px;
+    line-height:45px;
+    display:block;
+    height:45px;
 }
 
 #nav ul li a:hover {
-/* background:transparent url('leftnavselect_bg.png') right; */
-	color:#4e4e4e;
-	background-color: #dcdcdc;
-	text-decoration:underline;
+    /* background:transparent url('leftnavselect_bg.png') right; */
+    color:#4e4e4e;
+    background-color: #dcdcdc;
+    text-decoration:underline;
 }
 
 #nav a:active {
-	color:#fff;
-	background-color:#800;
-	text-decoration:underline;
+    color:#fff;
+    background-color:#800;
+    text-decoration:underline;
 }
 
 
 /* top right nav */
 #subnav ul {
-	margin:0;
-	padding: 0;
-	text-decoration:none;
+    margin:0;
+    padding: 0;
+    text-decoration:none;
 }
 
 #subnav li {
-	list-style:none;
-	text-decoration:none;
+    list-style:none;
+    text-decoration:none;
 }
 
 #subnav ul li a {
-	display:block;
-	color:#a9a9a9;
-	text-decoration:none;
-	float:right;
-	padding:0px 12px 0px 12px;
+    display:block;
+    color:#a9a9a9;
+    text-decoration:none;
+    float:right;
+    padding:0px 12px 0px 12px;
 
 }
 
 #subnav ul li a:hover {
-	color:white;
-	text-decoration:none;
+    color:white;
+    text-decoration:none;
 }
 
 
 /* footer */
 
 #footer {
-        clear: both;
-        background: #000 url('../img/footer_bg.png') repeat-x top;
-        padding: 1em;
-        height:55px;
-        margin:0px 0px 0px 0px;
-        color:#f9f9f9;
+    clear: both;
+    background: #000 url('../img/footer_bg.png') repeat-x top;
+    padding: 1em;
+    height:55px;
+    margin:0px 0px 0px 0px;
+    color:#f9f9f9;
 }
-
