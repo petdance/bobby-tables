@@ -191,7 +191,7 @@ pre {
 
 #footer {
         clear: both;
-        background: #000 url('..img/footer_bg.png') repeat-x top;
+        background: #000 url('../img/footer_bg.png') repeat-x top;
         padding: 1em;
         height:55px;
         margin:0px 0px 0px 0px;

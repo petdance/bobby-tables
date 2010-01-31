@@ -1,7 +1,7 @@
 h1. Who is Bobby Tables?
 
 <p>
-<a href="http://xkcd.com/327/"><img src="images/xkcd.png" align="right" border="0"></a>
+<a href="http://xkcd.com/327/"><img src="img/xkcd.png" align="right" border="0"></a>
 <a href="http://xkcd.com/327/">From the comic strip xkcd</a><br />
 <b>School</b>: "Hi, this is your son's school.  We're having some computer trouble."<br />
 <b>Mom</b>: "Oh, dear -- Did he break something?"<br />
