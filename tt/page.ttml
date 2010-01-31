@@ -6,19 +6,15 @@
         <link rel="stylesheet" type="text/css" href="css/bobby.css" />
     </head>
     <body>
-        [% PROCESS header.tt %]
-        [% PROCESS sidebar.tt %]
-        <div class="content">
-
-            [% body %]
-
+        <div id="wrap">
+            [% PROCESS header.tt %]
+            <div id="container2">
+                [% PROCESS sidebar.tt %]
+                <div class="content">
+                    [% body %]
+                </div>
+                [% PROCESS footer.tt %]
+            </div>
         </div>
-
-        <!--
-        <a href="http://github.com/petdance/bobby-tables">
-            <img style="position: absolute; top: 0; right: 0; border: 0;"
-            src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"
-            alt="Fork me on GitHub" /></a> 
-            -->
     </body>
 </html>
