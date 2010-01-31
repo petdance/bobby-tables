@@ -1,0 +1,21 @@
+<div id="wrap">
+    <div id="topcontainer">&nbsp;</div>
+    <div id="container">
+        <div id="banner">
+            <h1>Bobby Tables: A guide to preventing SQL injection</h1>
+        </div>
+        <div id="subnav">
+            <ul>
+                <li>
+                <a href="#">About Bobby Tables</a>
+                </li>
+                <li>
+                <a href="#">About SQL Injection</a>
+                </li>
+                <li>
+                <a href="#">The Right Way To Do It</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

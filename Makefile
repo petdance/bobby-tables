@@ -4,7 +4,7 @@
 BUILD=build
 SOURCE=s
 
-default: crank rsync
+default: crank
 
 crank:
 	rm -fr $(BUILD)
