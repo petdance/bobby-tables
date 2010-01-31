@@ -10,7 +10,7 @@
             [% PROCESS header.tt %]
             <div id="container2">
                 [% PROCESS sidebar.tt %]
-                <div class="content">
+                <div id="content">
                     [% body %]
                 </div>
                 [% PROCESS footer.tt %]
