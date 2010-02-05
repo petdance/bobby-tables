@@ -1,6 +1,6 @@
 h1. C#
 
-http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection
+From the "C# Online":http://en.csharp-online.net/ wiki page "ASP.NET Security Hacks--Avoiding SQL Injection":http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection
 
 <pre style="code">
 SqlCommand userInfoQuery = new SqlCommand(

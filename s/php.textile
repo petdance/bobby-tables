@@ -1,17 +1,14 @@
 h1. PHP
 
-PHP is a little more disorganized. The standard MySQL extension
-doesn't support parameterization, although the PostgreSQL one does:
+PHP is a little more disorganized than how "Perl handles parameters":./perl.html. The standard MySQL extension doesn't support parameterization, although the PostgreSQL one does:
 
 <pre style="code">
 $result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', array($email) );
 </pre>
 
-(Unfortunately, the query really needs to be in single-quotes or
-have the @$@ escaped to avoid PHP trying to parse it as a variable.)
+Note that the query must be in single-quotes or have the @$@ escaped to avoid PHP trying to parse it as a variable.
 
-That said, PHP's ODBC and PDO extensions both support parameterization
-and multiple databases:
+That said, PHP's "ODBC":http://php.net/manual/en/book.uodbc.php and "PDO":http://www.php.net/manual/en/book.pdo.php extensions both support parameterization and multiple databases:
 
 <pre style="code">
 $stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );

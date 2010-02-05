@@ -1,6 +1,6 @@
 h1. Delphi
 
-To use a prepared statement do something like this:
+To use a prepared statement, do something like this:
 
 <pre>
 query.SQL.Text := 'update people set name=:Name where id=:ID';

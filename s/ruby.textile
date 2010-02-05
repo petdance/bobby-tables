@@ -1,9 +1,9 @@
 h1. Ruby
 
-In Ruby on Rails (ActiveRecord):
+In Ruby on Rails using "ActiveRecord":http://guides.rubyonrails.org/active_record_querying.html:
 
 <pre>
-Person.find :all, :conditions =&gt; ['id = ? or name = ?', id, name]
+Person.find :all, :conditions => ['id = ? or name = ?', id, name]
 </pre>
 
 Or, if you have to build your own SQL statement (which you should avoid if possible):

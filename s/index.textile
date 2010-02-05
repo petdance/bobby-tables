@@ -19,13 +19,9 @@ There is only one way to avoid Bobby Tables attacks
 * Do not create SQL statements that include outside data.
 * Use parameterized SQL calls.
 
-That's it. Don't try to escape invalid characters. Don't try to do
-it yourself. Learn how to use parameterized statements. Always, every
-single time.
+That's it. Don't try to escape invalid characters. Don't try to do it yourself. Learn how to use parameterized statements. Always, every single time.
 
-The strip gets one thing crucially wrong.  The answer is
-not to "sanitize your database inputs" yourself.  It is
-prone to error.
+The strip gets one thing crucially wrong.  The answer is not to "sanitize your database inputs" yourself.  It is prone to error.
 
 h1. Examples
 
@@ -36,8 +32,6 @@ h1. Other random resources
 * http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html
 * http://st-curriculum.oracle.com/tutorial/SQLInjection/
 
-
 h1. Patches welcome
 
-Please let me know if you have updates or additions.  Email me,
-Andy Lester, at andy at petdance.com.
+Please let me know if you have updates or additions.  Email me, Andy Lester, at andy at petdance.com.
