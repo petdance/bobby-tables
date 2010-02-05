@@ -24,10 +24,17 @@ h1, h2 {
 }
 
 h1 {
-        font-family:georgia, serif;
-        color: #666877;
+        font-family: tahoma, "sans serif";
+        color: #000000;
 }
 
+h1 a:link {
+    color:#FFFFFF;
+}
+
+h1 a:visited {
+    color:#FFFFFF;
+}
 
 
 
