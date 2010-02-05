@@ -5,6 +5,7 @@
     <div id="banner">
         <h1>Bobby Tables: A guide to preventing SQL injection</h1>
     </div>
+    <!--
     <div id="subnav">
         <ul>
             <li>
@@ -18,4 +19,5 @@
             </li>
         </ul>
     </div>
+    -->
 </div>

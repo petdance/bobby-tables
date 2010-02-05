@@ -1,21 +1,9 @@
 <div id="left">
     <div id="nav">
         <ul>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
-            <li><a href="#">code</a></li>
+            [% FOR link IN sidelinks %]
+                <li><a href="[% link.path %]">[% link.text %]</a></li>
+            [% END %]
         </ul>
     </div>
 </div>
