@@ -1,3 +1,5 @@
+h1. PHP
+
 PHP is a little more disorganized. The standard MySQL extension
 doesn't support parameterization, although the PostgreSQL one does:
 

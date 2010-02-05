@@ -1,4 +1,4 @@
-h2. Python
+h1. Python
 
 Using the Python DB API, don't do this:
 

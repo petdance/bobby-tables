@@ -1,4 +1,4 @@
-h2. Ruby
+h1. Ruby
 
 In Ruby on Rails (ActiveRecord):
 

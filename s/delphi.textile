@@ -1,4 +1,4 @@
-h2. Delphi
+h1. Delphi
 
 To use a prepared statement do something like this:
 

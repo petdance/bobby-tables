@@ -1,3 +1,5 @@
+h1. Perl
+
 Perl's DBI is actually reasonable in this regard: Both the @do@
 method and @prepare@ method support parameters ("placeholders", as
 they call them) for most DBD drivers. For example:
