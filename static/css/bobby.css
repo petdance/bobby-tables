@@ -36,6 +36,15 @@ h1 a:visited {
     color:#FFFFFF;
 }
 
+.topic {
+    font-size: 20px;
+}
+
+#current {
+    color:red;
+    font-weight:bold;
+}
+
 
 
 
