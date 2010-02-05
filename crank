@@ -36,12 +36,14 @@ my $pages = [
     dotnet     => '.NET',
     java       => 'Java',
     python     => 'Python',
-    ruby       => 'Ruby, Ruby on Rails',
+    ruby       => 'Ruby and Ruby on Rails',
 ];
 
 $pages = [
     index => 'Home',
-    java => 'Java',
+    php   => 'PHP',
+    perl  => 'Perl',
+    java  => 'Java',
 ];
 
 my %tt_defaults = (
