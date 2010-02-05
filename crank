@@ -32,7 +32,7 @@ my $pages = [
     perl       => 'Perl',
     php        => 'PHP',
     python     => 'Python',
-    ruby       => 'Ruby and Ruby On Rails',
+    ruby       => 'Ruby',
 ];
 
 MAIN: {
