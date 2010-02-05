@@ -23,22 +23,16 @@ GetOptions(
 
 my $pages = [
     index      => 'Home',
-
     asp        => 'ASP',
     coldfusion => 'ColdFusion',
     csharp     => 'C#',
     delphi     => 'Delphi',
     dotnet     => '.NET',
     java       => 'Java',
+    perl       => 'Perl',
+    php        => 'PHP',
     python     => 'Python',
-    ruby       => 'Ruby and Ruby on Rails',
-];
-
-$pages = [
-    index => 'Home',
-    php   => 'PHP',
-    perl  => 'Perl',
-    java  => 'Java',
+    ruby       => 'Ruby and Ruby On Rails',
 ];
 
 MAIN: {

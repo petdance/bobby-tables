@@ -1,0 +1,13 @@
+h2. Ruby
+
+In Ruby on Rails (ActiveRecord):
+
+<pre>
+Person.find :all, :conditions =&gt; ['id = ? or name = ?', id, name]
+</pre>
+
+Or, if you have to build your own SQL statement (which you should avoid if possible):
+
+<pre>
+Person.find_by_sql "SELECT * from persons WHERE name = #{ Person.quote_value name}"
+</pre>

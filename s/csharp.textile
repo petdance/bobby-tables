@@ -1,0 +1,15 @@
+h2. C#
+
+http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection
+
+<pre style="code">
+SqlCommand userInfoQuery = new SqlCommand(
+    "SELECT id, name, email FROM users WHERE id = @UserName", 
+    someSqlConnection);
+
+SqlParameter userNameParam = userInfoQuery.Parameters.Add("@UserName",
+    SqlDbType.VarChar, 25 /* max length of field */ );
+
+// userName is some string valued user input variable
+userNameParam.Value = userName;
+</pre>

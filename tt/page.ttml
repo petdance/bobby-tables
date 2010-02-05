@@ -2,7 +2,6 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    
     <head>
         <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
         <title>bobby-tables.com: A guide to preventing SQL injection</title>
