@@ -1,0 +1,26 @@
+PHP is a little more disorganized. The standard MySQL extension
+doesn't support parameterization, although the PostgreSQL one does:
+
+<pre style="code">
+$result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', array($email) );
+</pre>
+
+(Unfortunately, the query really needs to be in single-quotes or
+have the @$@ escaped to avoid PHP trying to parse it as a variable.)
+
+That said, PHP's ODBC and PDO extensions both support parameterization
+and multiple databases:
+
+<pre style="code">
+$stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );
+$success = odbc_execute( $stmt, array($email) );
+</pre>
+
+Or:
+
+<pre style="code">
+$res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array($email));
+
+$sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');
+$sth->execute(array(':email' => $email));
+</pre>

@@ -1,0 +1,17 @@
+Perl's DBI is actually reasonable in this regard: Both the @do@
+method and @prepare@ method support parameters ("placeholders", as
+they call them) for most DBD drivers. For example:
+
+<pre style="code">
+$row = $dbh->do('SELECT * FROM users WHERE email = ?', undef, $email);
+</pre>
+
+Or:
+
+<pre style="code">
+$sth = $dbh->prepare("SELECT * FROM users WHERE email = ?");
+foreach my $email (@emails) {
+    $row = $sth->execute($email);
+    [...]
+}
+</pre>
