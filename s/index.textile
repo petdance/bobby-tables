@@ -35,3 +35,11 @@ h1. Other random resources
 h1. Patches welcome
 
 Please let me know if you have updates or additions.  Email me, Andy Lester, at andy at petdance.com.
+
+h1. Thanks
+
+Thanks to the following folks for their contributions:
+
+* Mike Markley
+* "Michael Schwern":http://schwern.dreamhosters.com/
+* "Jeana Clark":http://jeanaclark.org/
