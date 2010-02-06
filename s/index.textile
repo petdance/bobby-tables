@@ -29,8 +29,8 @@ See the sidebar to the left for your specific language.
 
 h1. Other random resources
 
-* http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html
-* http://st-curriculum.oracle.com/tutorial/SQLInjection/
+* "http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html":http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html
+* "http://st-curriculum.oracle.com/tutorial/SQLInjection/":http://st-curriculum.oracle.com/tutorial/SQLInjection/
 
 h1. Patches welcome
 
