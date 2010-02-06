@@ -1,19 +1,20 @@
 body {
     margin: 0;
     padding: 0;
-    font: 13px/18px 'trebuchet ms', Arial, sans-serif;
     background: #dcdcdc url('../img/bobby_bg.png') repeat-x top;
+	font-family: georgia, 'times new roman', serif;
 }
 
 /* basic site styling */
 
-a:link, a:visited {
+#content a:link, a:visited {
         color:#800;
-        text-decoration:none;
+        text-decoration:underline;
 }
 
-a:hover, a:active {
-        text-decoration:underline;
+#content a:hover, a:active {
+	color:#515151;
+	text-decoration:underline;
 }
 
 h1, h2 {
@@ -21,27 +22,31 @@ h1, h2 {
         margin-top:40px;
         margin-bottom:15px;
         font-weight:normal;
+	font-family:'trebuchet ms', verdana, tahoma, 'sans serif';
 }
 
 h1 {
-        font-family: tahoma, "sans serif";
+        font-family: 'trebuchet ms', verdana, tahoma, "sans serif";
         color: #000000;
 }
 
 h1 a:link {
     color:#FFFFFF;
+	text-decoration:none;
 }
 
 h1 a:visited {
     color:#FFFFFF;
+	text-decoration:none;
 }
+
 
 .topic {
     font-size: 20px;
 }
 
 #current {
-    color:red;
+    color:#800;
     font-weight:bold;
 }
 
@@ -91,18 +96,22 @@ h1 a:visited {
 /* left column */
 #left {
     float: left;
-    width: 160px;
+    width: 190px;
     padding-left:0px;
 }
 
 /* main content area */
 #content {
     padding-top: 1em;
-    margin: 0 2em 0 200px;
+    margin: 0 2em 0 220px;
 }
 
 #content img {
     margin: 0 0 15px 15px;
+}
+
+#content h1 {
+	font-weight:bold;
 }
 
 pre {
@@ -113,14 +122,14 @@ pre {
     white-space: pre;
 
     /* color & background */
-    background-color: #F9F9F9;
+    background-color: #fffae5;
     background-position: 0% 0%;
     color: #000000;
 
     /* box */
     xheight: 14px;
     width: 95%;
-    border: 1px dashed #2F6FAB;
+    border: 1px dashed #f0c931;
     margin: 3px 0 13px 0;
     padding: 13px 13px 13px 13px;
 
@@ -142,14 +151,15 @@ pre {
     margin:0;
     padding:0;
     background: url('../img/navmenu_bg.png') no-repeat top right;
-    /* background-position: 150px 0px; */
+   /* background-position: 200px 0px; */ 
     margin-top:30px;
+	font-family:'trebuchet ms', verdana, tahoma, 'sans serif';
 }
 
 #nav li {
     list-style:none;
     height:45px;
-    background: url('../img/nav_bgbottom.png') no-repeat -73px 44px; 
+    background: url('../img/nav_bgbottom.png') no-repeat -40px 44px; 
 }
 
 #nav ul li a { 
@@ -162,9 +172,8 @@ pre {
 }
 
 #nav ul li a:hover {
-    /* background:transparent url('leftnavselect_bg.png') right; */
-    color:#4e4e4e;
-    background-color: #dcdcdc;
+    color:#800;
+    background-color: #f2dd8c;
     text-decoration:underline;
 }
 
