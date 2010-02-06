@@ -3,7 +3,8 @@
 use strict;
 use warnings;
 
-use Carp::Always;
+eval 'use Carp::Always'; # Not everyone has it
+
 use Getopt::Long;
 use File::Slurp;
 
