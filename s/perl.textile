@@ -15,3 +15,7 @@ foreach my $email (@emails) {
     [...]
 }
 </pre>
+
+h2. To do
+
+Explain Perl's taint mode and how DBI supports taint mode, both inbound and outbound.
