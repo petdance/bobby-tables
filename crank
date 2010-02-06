@@ -33,7 +33,7 @@ my $pages = [
     perl       => 'Perl',
     php        => 'PHP',
     python     => 'Python',
-    ruby       => 'Ruby and Ruby On Rails',
+    ruby       => 'Ruby',
 ];
 
 MAIN: {
@@ -56,7 +56,7 @@ MAIN: {
     my @pages = @{$pages};
     while ( @pages ) {
         my ($section,$desc) = splice( @pages, 0, 2 );
-        my $path = ($section eq 'Home') ? './' : "./$section.html";
+        my $path = ($section eq 'index') ? './' : "./$section.html";
         push( @sidelinks, {
             path => $path,
             text => $desc,
@@ -72,6 +72,7 @@ MAIN: {
         my ($section,$desc) = splice( @pages, 0, 2 );
         my $source = read_file( "$sourcepath/$section.textile" );
         $vars->{body} = $textile->process( $source );
+        $vars->{currlang} = $desc;
         $tt->process( 'page.ttml', $vars, "$section.html" ) || die $tt->error;
     }
 }

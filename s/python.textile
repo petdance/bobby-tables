@@ -1,13 +1,13 @@
-h2. Python
+h1. Python
 
-Using the Python DB API, don't do this:
+Using the "Python DB API":http://wiki.python.org/moin/DatabaseProgramming/, don't do this:
 
 <pre style="code">
 cmd = 'update people set name='%s' where id='%s'%(name, id)
 curs.execute(cmd)
 </pre>
 
-instead, do this:
+Instead, do this:
 
 <pre style="code">
 curs.execute('update people set name=:1 where id=:2', [name, id])

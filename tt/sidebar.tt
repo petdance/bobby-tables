@@ -2,7 +2,11 @@
     <div id="nav">
         <ul>
             [% FOR link IN sidelinks %]
-                <li><a href="[% link.path %]">[% link.text %]</a></li>
+                <li><a href="[% link.path %]"><span class="topic"
+                    [% IF link.text == currlang %]
+                        id="current"
+                    [% END %]
+                >[% link.text %]</span></a></li>
             [% END %]
         </ul>
     </div>
