@@ -6,8 +6,8 @@ In Ruby on Rails using "ActiveRecord":http://guides.rubyonrails.org/active_recor
 Person.find :all, :conditions => ['id = ? or name = ?', id, name]
 </pre>
 
-Or, if you have to build your own SQL statement (which you should avoid if possible):
+or
 
 <pre>
-Person.find_by_sql "SELECT * from persons WHERE name = #{ Person.quote_value name}"
+Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]
 </pre>
