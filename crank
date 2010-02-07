@@ -34,6 +34,7 @@ my $pages = [
     php        => 'PHP',
     python     => 'Python',
     ruby       => 'Ruby',
+    scheme     => 'Scheme',
 ];
 
 MAIN: {

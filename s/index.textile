@@ -40,6 +40,7 @@ h1. Thanks
 
 Thanks to the following folks for their contributions:
 
+* Kai Baesler
 * Mike Markley
 * "Michael Schwern":http://schwern.dreamhosters.com/
 * "Jeana Clark":http://jeanaclark.org/
