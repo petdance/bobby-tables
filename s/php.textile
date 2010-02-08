@@ -10,6 +10,17 @@ Note that the query must be in single-quotes or have the @$@ escaped to avoid PH
 
 *However*, you should probably be using an abstraction layer.  The "ODBC":http://php.net/manual/en/book.uodbc.php and "PDO":http://www.php.net/manual/en/book.pdo.php extensions both support parameterization and multiple databases:
 
+
+h2. Using mysqli
+
+The MySQL Improved extension handles bound parameters.
+
+<pre style="code">
+$stmt = $db->prepare('update people set name = ? where id = ?');
+$stmt->bind_param('si',$name,$id);
+$stmt->execute();
+</pre>
+
 h2. Using the ODBC layer
 
 <pre style="code">
@@ -27,6 +38,22 @@ $sth->execute(array(':email' => $email));
 </pre>
 
 h2. Using the PDO layer
+
+Here's the long way to do bind parameters.
+
+<pre style="code">
+$dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);
+$stmt = $dbh->prepare('INSERT INTO REGISTRY (name, value) VALUES (:name, :value)');
+$stmt->bindParam(':name', $name);
+$stmt->bindParam(':value', $value);
+
+// insert one row
+$name = 'one';
+$value = 1;
+$stmt->execute();
+</pre>
+
+And a shorter way to pass things in.
 
 <pre style="code">
 $dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);
