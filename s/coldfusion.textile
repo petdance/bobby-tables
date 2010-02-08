@@ -8,7 +8,6 @@ SELECT FirstName, LastName, Phone
 FROM   tblUser
 WHERE  Status =
     <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#form.status#">
-    </cfqueryparam>
 </cfquery>
 </pre>
 
