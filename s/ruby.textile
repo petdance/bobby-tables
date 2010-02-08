@@ -11,3 +11,7 @@ or
 <pre>
 Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]
 </pre>
+
+h2. To do
+
+* Add some narrative.

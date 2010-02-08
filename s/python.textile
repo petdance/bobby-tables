@@ -3,6 +3,7 @@ h1. Python
 Using the "Python DB API":http://wiki.python.org/moin/DatabaseProgramming/, don't do this:
 
 <pre style="code">
+# Do NOT do it this way.
 cmd = 'update people set name='%s' where id='%s'%(name, id)
 curs.execute(cmd)
 </pre>
@@ -13,4 +14,6 @@ Instead, do this:
 curs.execute('update people set name=:1 where id=:2', [name, id])
 </pre>
 
+h2. To do
 
+* Add some narrative.
