@@ -141,6 +141,10 @@ pre {
     font-family: monospace;
 }
 
+div#content > p > a > img { /* comic */
+    float: right;
+    border: 0;
+}
 
 
 /* left nav */
@@ -151,7 +155,7 @@ pre {
     margin:0;
     padding:0;
     background: url('../img/navmenu_bg.png') no-repeat top right;
-   /* background-position: 200px 0px; */ 
+   /* background-position: 200px 0px; */
     margin-top:30px;
 	font-family:'trebuchet ms', verdana, tahoma, 'sans serif';
 }
@@ -159,10 +163,10 @@ pre {
 #nav li {
     list-style:none;
     height:45px;
-    background: url('../img/nav_bgbottom.png') no-repeat -40px 44px; 
+    background: url('../img/nav_bgbottom.png') no-repeat -40px 44px;
 }
 
-#nav ul li a { 
+#nav ul li a {
     color:black;
     text-decoration:none;
     padding-left:20px;
