@@ -1,5 +1,5 @@
 #!/usr/bin/perl -w
-
+use 5.010;
 use strict;
 use warnings;
 
@@ -73,7 +73,11 @@ MAIN: {
         my ($section,$desc) = splice( @pages, 0, 2 );
         my $source = read_file( "$sourcepath/$section.textile" );
         $vars->{body} = $textile->process( $source );
-        $vars->{currlang} = $desc;
+        if ($desc ~~ [qw(Home)]) {
+            $vars->{currlang} = '';
+        } else {
+            $vars->{currlang} = $desc;
+        }
         $tt->process( 'page.ttml', $vars, "$section.html" ) || die $tt->error;
     }
 }
