@@ -9,7 +9,7 @@ h1. Who is Bobby Tables?
 <b>Mom</b>: "Oh.  Yes.  Little Bobby Tables we call him."<br />
 <b>School</b>: "Well, we've lost this year's student records.  I hope you're happy."<br />
 <b>Mom</b>: "And I hope you've learned to sanitize your database inputs."<br />
-(Alt-text: "Her daughter is named Help I'm trapped in a driver's license factory.")
+(title text: "Her daughter is named Help I'm trapped in a driver's license factory.")
 </p>
 
 h1. How to avoid Bobby Tables
