@@ -49,6 +49,8 @@ h1. Thanks
 
 Thanks to the following folks for their contributions:
 
+* Erik Osheim
+* Russ Sivak
 * "Travis Swicegood":http://www.travisswicegood.com/
 * "Will Coleda":http://www.coleda.com/users/coke/
 * Kai Baesler
