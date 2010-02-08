@@ -49,6 +49,7 @@ h1. Thanks
 
 Thanks to the following folks for their contributions:
 
+* "Iain Collins":http://iaincollins.com
 * Kristoffer Sall Hansen
 * Jeff Emminger
 * "Travis Swicegood":http://www.travisswicegood.com/

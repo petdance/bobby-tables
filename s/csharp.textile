@@ -13,3 +13,11 @@ SqlParameter userNameParam = userInfoQuery.Parameters.Add("@UserName",
 // userName is some string valued user input variable
 userNameParam.Value = userName;
 </pre>
+
+Or simpler:
+
+<pre style="code">
+String username = "joe.bloggs";
+SqlCommand sqlQuery = new SqlCommand("SELECT user_id, first_name,last_name FROM users WHERE username = ?username",  sqlConnection);
+sqlQuery.Parameters.AddWithValue("?username", username);
+</pre>

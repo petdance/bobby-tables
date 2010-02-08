@@ -21,6 +21,18 @@ $stmt->bind_param('si',$name,$id);
 $stmt->execute();
 </pre>
 
+h2. Using ADODB
+
+ADODB provides a way to prepare, bind and execute all in the same method call.
+
+<pre style="code">
+$dbConnection = NewADOConnection($connectionString);
+$sqlResult = $dbConnection->Execute(
+    'SELECT user_id,first_name,last_name FROM users WHERE username=? AND password=?',
+    array($_REQUEST['username'], sha1($_REQUEST['password'])
+);
+</pre>
+
 h2. Using the ODBC layer
 
 <pre style="code">
