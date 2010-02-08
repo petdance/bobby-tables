@@ -1,13 +1,16 @@
 .PHONY: \
 	crank \
+	clean
 
 BUILD=build
 SOURCE=s
 
 default: crank
 
-crank:
+clean:
 	rm -fr $(BUILD)
+
+crank: clean
 	mkdir -p $(BUILD)/ || true > /dev/null 2>&1
 	perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
 	cp -R static/* $(BUILD)/
