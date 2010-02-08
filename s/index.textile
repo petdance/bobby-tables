@@ -51,6 +51,9 @@ Thanks to the following folks for their contributions:
 
 * Erik Osheim
 * Russ Sivak
+* "Iain Collins":http://iaincollins.com
+* Kristoffer Sall Hansen
+* Jeff Emminger
 * "Travis Swicegood":http://www.travisswicegood.com/
 * "Will Coleda":http://www.coleda.com/users/coke/
 * Kai Baesler
