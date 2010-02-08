@@ -10,6 +10,8 @@ Note that the query must be in single-quotes or have the @$@ escaped to avoid PH
 
 *However*, you should probably be using an abstraction layer.  The "ODBC":http://php.net/manual/en/book.uodbc.php and "PDO":http://www.php.net/manual/en/book.pdo.php extensions both support parameterization and multiple databases:
 
+h2. Using the ODBC layer
+
 <pre style="code">
 $stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );
 $success = odbc_execute( $stmt, array($email) );
@@ -22,4 +24,12 @@ $res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array($email));
 
 $sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');
 $sth->execute(array(':email' => $email));
+</pre>
+
+h2. Using the PDO layer
+
+<pre style="code">
+$dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);
+$stmt = $dbh->prepare('UPDATE people SET name = :new_name WHERE id = :id');
+$stmt->execute( array('new_name' => $name, 'id' => $id) );
 </pre>
