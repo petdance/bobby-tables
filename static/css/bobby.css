@@ -118,7 +118,7 @@ div#container2 > a > img { /* github banderole */
 	font-weight:bold;
 }
 
-pre {
+code {
     /* font & text */
     font-family: monospace;
     font-size: 12.7px;

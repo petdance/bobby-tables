@@ -2,14 +2,14 @@ h1. Perl
 
 Perl's "DBI":http://search.cpan.org/dist/DBI, available on the "CPAN":http://search.cpan.org, supports parameterized SQL calls.  Both the @do@ method and @prepare@ method support parameters ("placeholders", as they call them) for most database drivers. For example:
 
-<pre style="code">
+<code>
 $sth = $dbh->prepare("SELECT * FROM users WHERE email = ?");
 foreach my $email (@emails) {
     $sth->execute($email);
     $row = $sth->fetchrow_hashref;
     [...]
 }
-</pre>
+</code>
 
 h2. To do
 

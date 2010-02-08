@@ -2,9 +2,9 @@ h1. PHP
 
 PHP is a little more disorganized than how "Perl handles parameters":./perl.html. The standard "MySQL extension":http://php.net/manual/en/book.mysql.php doesn't support parameterization, although the "PostgreSQL extension":http://www.php.net/manual/en/book.pgsql.php does:
 
-<pre style="code">
+<code>
 $result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', array($email) );
-</pre>
+</code>
 
 Note that the query must be in single-quotes or have the @$@ escaped to avoid PHP trying to parse it as a variable.
 
@@ -35,25 +35,25 @@ $sqlResult = $dbConnection->Execute(
 
 h2. Using the ODBC layer
 
-<pre style="code">
+<code>
 $stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );
 $success = odbc_execute( $stmt, array($email) );
-</pre>
+</code>
 
 Or:
 
-<pre style="code">
+<code>
 $res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array($email));
 
 $sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');
 $sth->execute(array(':email' => $email));
-</pre>
+</code>
 
 h2. Using the PDO layer
 
 Here's the long way to do bind parameters.
 
-<pre style="code">
+<code>
 $dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);
 $stmt = $dbh->prepare('INSERT INTO REGISTRY (name, value) VALUES (:name, :value)');
 $stmt->bindParam(':name', $name);
@@ -63,12 +63,12 @@ $stmt->bindParam(':value', $value);
 $name = 'one';
 $value = 1;
 $stmt->execute();
-</pre>
+</code>
 
 And a shorter way to pass things in.
 
-<pre style="code">
+<code>
 $dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);
 $stmt = $dbh->prepare('UPDATE people SET name = :new_name WHERE id = :id');
 $stmt->execute( array('new_name' => $name, 'id' => $id) );
-</pre>
+</code>

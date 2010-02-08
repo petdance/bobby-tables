@@ -1,12 +1,12 @@
 h1. Java
 
-<pre>
+<code>
 PreparedStatement statement = connection.prepareStatement(
     "update people set name = ? where id = ?");
 statement.setString(0, name);
 statement.setString(1, id);
 statement.execute();
-</pre>
+</code>
 
 h2. To do
 
