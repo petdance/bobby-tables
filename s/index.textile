@@ -34,12 +34,22 @@ h1. Other random resources
 
 h1. Patches welcome
 
-Please let me know if you have updates or additions.  Email me, Andy Lester, at andy at petdance.com.
+Don't see a language that you'd like to see represented?  Please let me know if you have updates or additions through one of these methods, in decreasing order of preference.
+
+* Fork the "bobby-tables repository at github":http://github.com/petdance/bobby-tables, make your changes, and send me a pull request.
+* Add an issue in the "issue tracker":http://github.com/petdance/bobby-tables/issues.
+* Email me, Andy Lester, at andy at petdance.com.
+
+h1. To do
+
+* Explain why creating code from outside data is bad.
+* Potential speed win when reusing prepared statements.
 
 h1. Thanks
 
 Thanks to the following folks for their contributions:
 
+* Will Coleda
 * Kai Baesler
 * Mike Markley
 * "Michael Schwern":http://schwern.dreamhosters.com/
