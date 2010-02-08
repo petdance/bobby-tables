@@ -71,6 +71,10 @@ h1 a:visited {
     background: #FFF url('../img/container_bg.png') repeat-x top;
 }
 
+div#container2 > a > img { /* github banderole */
+    position: absolute; top: 0; right: 0; border: 0;
+}
+
 #banner {
     background:black url('../img/top_bg.png') repeat-x top;
     border-bottom: 1px solid #333;
