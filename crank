@@ -78,6 +78,7 @@ MAIN: {
         } else {
             $vars->{currlang} = $desc;
         }
-        $tt->process( 'page.ttml', $vars, "$section.html" ) || die $tt->error;
+        $tt->process( 'page.ttml', $vars, "$section.html" )
+            || die sprintf("file: %s\nerror: %s\n", "$section.html", $tt->error);
     }
 }
