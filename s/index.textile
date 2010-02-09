@@ -49,6 +49,7 @@ h1. Thanks
 
 Thanks to the following folks for their contributions:
 
+* Scott Rose
 * Erik Osheim
 * Russ Sivak
 * "Iain Collins":http://iaincollins.com
