@@ -15,6 +15,9 @@ crank: clean
 	perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
 	cp -R static/* $(BUILD)/
 
+test: crank
+	prove t/html.t
+
 # This is only useful for Andy
 rsync:
 	rsync -azu -e ssh --delete --verbose \
