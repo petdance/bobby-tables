@@ -118,7 +118,7 @@ div#container2 > a > img { /* github banderole */
     font-weight:bold;
 }
 
-codeblock {
+code {
     /* font & text */
     font-family: monospace;
     font-size: 12.7px;
@@ -135,14 +135,10 @@ codeblock {
     width: 95%;
     border: 1px dashed #f0c931;
     margin: 3px 0 13px 0;
-    padding: 13px 13px 13px 13px;
 
     /* positioning */
-    display: block;
-}
-
-.code {
-    font-family: monospace;
+/*    display: block; */
+    /* <code> does double duty, both inline and as a block. */
 }
 
 div#content > p > a > img { /* comic */

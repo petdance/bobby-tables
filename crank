@@ -73,7 +73,9 @@ MAIN: {
     while ( @pages ) {
         my ($section,$desc) = splice( @pages, 0, 2 );
         my $source = read_file( "$sourcepath/$section.textile" );
-        $vars->{body} = $textile->process( $source );
+        my $body = $textile->process( $source );
+        $body =~ s{<code>\n}{<code>}smxg;
+        $vars->{body} = $body;
         $vars->{currlang} = ( $desc eq 'Home' ) ? '' : $desc;
         $tt->process( 'page.ttml', $vars, "$section.html" )
             || die sprintf("file: %s\nerror: %s\n", "$section.html", $tt->error);

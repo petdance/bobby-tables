@@ -2,17 +2,17 @@ h1. Python
 
 Using the "Python DB API":http://wiki.python.org/moin/DatabaseProgramming/, don't do this:
 
-<codeblock>
+<code>
 # Do NOT do it this way.
 cmd = 'update people set name='%s' where id='%s'%(name, id)
 curs.execute(cmd)
-</codeblock>
+</code>
 
 Instead, do this:
 
-<codeblock>
+<code>
 curs.execute('update people set name=:1 where id=:2', [name, id])
-</codeblock>
+</code>
 
 h2. To do
 

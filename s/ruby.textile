@@ -2,15 +2,15 @@ h1. Ruby
 
 In Ruby on Rails using "ActiveRecord":http://guides.rubyonrails.org/active_record_querying.html:
 
-<codeblock>
+<code>
 Person.find :all, :conditions => ['id = ? or name = ?', id, name]
-</codeblock>
+</code>
 
 or
 
-<codeblock>
+<code>
 Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]
-</codeblock>
+</code>
 
 Using "Ruby/DBI":http://ruby-dbi.rubyforge.org/: analog to "Perl":./perl.html.
 
