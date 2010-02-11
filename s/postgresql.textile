@@ -22,7 +22,7 @@ bc. CREATE OR REPLACE FUNCTION user_access (
     SELECT accessed_at FROM users WHERE username = $1;
 $$;
 
-But sometimes you have to do more complicated things. Perhaps you dynamically add @WHERE@ clause expressions based on input. In such cases, you'll en up using PL/pgSQL's @EXECUTE@ syntax. Here's an example with an SQL injection vulnerability:
+But sometimes you have to do more complicated things. Perhaps you dynamically add @WHERE@ clause expressions based on input. In such cases, you'll end up using PL/pgSQL's @EXECUTE@ syntax. Here's an example with an SQL injection vulnerability:
 
 bc. CREATE OR REPLACE FUNCTION get_users(
     p_column TEXT,
