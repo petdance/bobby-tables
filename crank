@@ -32,10 +32,10 @@ my $pages = [
     java       => 'Java',
     perl       => 'Perl',
     php        => 'PHP',
+    postgresql => 'PostgreSQL',
     python     => 'Python',
     ruby       => 'Ruby',
     scheme     => 'Scheme',
-    postgresql => 'PostgreSQL',
 ];
 
 MAIN: {

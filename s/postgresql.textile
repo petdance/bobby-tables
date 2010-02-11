@@ -41,7 +41,7 @@ $$;
 
 Both the @p_column@ and the @p_value@ arguments are vulnerable. The way to avoid this problem is to use the @quote_ident()@ function to quote an SQL identifier (@p_column@ in this case) and @quote_lteral()@ to quote a literal value:
 
-CREATE OR REPLACE FUNCTION get_users(
+bc. CREATE OR REPLACE FUNCTION get_users(
     p_column TEXT,
     p_value  TEXT
 ) RETURNS SETOF users LANGUAGE plpgsql AS $$
