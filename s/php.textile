@@ -10,28 +10,27 @@ Note that the query must be in single-quotes or have the @$@ escaped to avoid PH
 
 *However*, you should probably be using an abstraction layer.  The "ODBC":http://php.net/manual/en/book.uodbc.php and "PDO":http://www.php.net/manual/en/book.pdo.php extensions both support parameterization and multiple databases:
 
-
 h2. Using mysqli
 
 The MySQL Improved extension handles bound parameters.
 
-<pre style="code">
+<code>
 $stmt = $db->prepare('update people set name = ? where id = ?');
 $stmt->bind_param('si',$name,$id);
 $stmt->execute();
-</pre>
+</code>
 
 h2. Using ADODB
 
 ADODB provides a way to prepare, bind and execute all in the same method call.
 
-<pre style="code">
+<code>
 $dbConnection = NewADOConnection($connectionString);
 $sqlResult = $dbConnection->Execute(
     'SELECT user_id,first_name,last_name FROM users WHERE username=? AND password=?',
     array($_REQUEST['username'], sha1($_REQUEST['password'])
 );
-</pre>
+</code>
 
 h2. Using the ODBC layer
 
