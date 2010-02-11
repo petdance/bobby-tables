@@ -2,14 +2,14 @@ h1. ColdFusion
 
 In ColdFusion there is a tag (function) called @cfqueryparam@ that should be used whenever writing inline queries.
 
-<code>
+<codeblock>
 <cfquery datasource="#application.dsn#" name="qryTest" maxrows="#intRows#">
 SELECT FirstName, LastName, Phone
 FROM   tblUser
 WHERE  Status =
     <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#form.status#">
 </cfquery>
-</code>
+</codeblock>
 
 If you have stored procedures in your database, you can call them using the @cfstoredproc@ and @cfprocparam@ tags.
 
