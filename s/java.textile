@@ -8,6 +8,8 @@ statement.setString(1, id);
 statement.execute();
 </code>
 
+"Hibernate":http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters also supports prepared statements.
+
 h2. To do
 
 * Add some narrative

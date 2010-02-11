@@ -12,6 +12,8 @@ or
 Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]
 </code>
 
+Using "Ruby/DBI":http://ruby-dbi.rubyforge.org/: analog to "Perl":./perl.html.
+
 h2. To do
 
 * Add some narrative.
