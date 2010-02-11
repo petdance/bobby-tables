@@ -39,7 +39,7 @@ my $pages = [
 ];
 
 MAIN: {
-    my $textile = new Text::Textile;
+    my $textile = Text::Textile::Bobby->new;
     $textile->flavor( 'xhtml1' );
 
     my @sidelinks;
@@ -80,4 +80,18 @@ MAIN: {
         $tt->process( 'page.ttml', $vars, "$section.html" )
             || die sprintf("file: %s\nerror: %s\n", "$section.html", $tt->error);
     }
+}
+
+package Text::Textile::Bobby;
+
+use base 'Text::Textile';
+
+# This is for inline code formatting
+sub format_code {
+    my $self = shift;
+
+    my $text = $self->SUPER::format_code( @_ );
+    $text =~ s/<code>/<code class="inline">/g;
+
+    return $text;
 }
