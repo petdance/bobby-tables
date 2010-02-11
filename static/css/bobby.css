@@ -2,42 +2,42 @@ body {
     margin: 0;
     padding: 0;
     background: #dcdcdc url('../img/bobby_bg.png') repeat-x top;
-	font-family: georgia, 'times new roman', serif;
+    font-family: georgia, 'times new roman', serif;
 }
 
 /* basic site styling */
 
 #content a:link, a:visited {
-        color:#800;
-        text-decoration:underline;
+    color:#800;
+    text-decoration:underline;
 }
 
 #content a:hover, a:active {
-	color:#515151;
-	text-decoration:underline;
+    color:#515151;
+    text-decoration:underline;
 }
 
 h1, h2 {
-        font-size:24px;
-        margin-top:40px;
-        margin-bottom:15px;
-        font-weight:normal;
-	font-family:'trebuchet ms', verdana, tahoma, 'sans serif';
+    font-size:24px;
+    margin-top:40px;
+    margin-bottom:15px;
+    font-weight:normal;
+    font-family:'trebuchet ms', verdana, tahoma, 'sans serif';
 }
 
 h1 {
-        font-family: 'trebuchet ms', verdana, tahoma, "sans serif";
-        color: #000000;
+    font-family: 'trebuchet ms', verdana, tahoma, "sans serif";
+    color: #000000;
 }
 
 h1 a:link {
     color:#FFFFFF;
-	text-decoration:none;
+    text-decoration:none;
 }
 
 h1 a:visited {
     color:#FFFFFF;
-	text-decoration:none;
+    text-decoration:none;
 }
 
 
@@ -115,7 +115,7 @@ div#container2 > a > img { /* github banderole */
 }
 
 #content h1 {
-	font-weight:bold;
+    font-weight:bold;
 }
 
 code {
@@ -159,9 +159,8 @@ div#content > p > a > img { /* comic */
     margin:0;
     padding:0;
     background: url('../img/navmenu_bg.png') no-repeat top right;
-   /* background-position: 200px 0px; */
     margin-top:30px;
-	font-family:'trebuchet ms', verdana, tahoma, 'sans serif';
+    font-family:'trebuchet ms', verdana, tahoma, 'sans serif';
 }
 
 #nav li {
