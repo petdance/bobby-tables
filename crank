@@ -48,7 +48,7 @@ my $pages = [
 
 MAIN: {
     my $handle = Local::L10n->get_handle; # set LANG to localise
-    my $textile = new Text::Textile;
+    my $textile = Text::Textile->new(disable_encode_entities => 1);
     $textile->flavor( 'xhtml1' );
 
     my @sidelinks;

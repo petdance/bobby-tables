@@ -8,6 +8,12 @@ use Test::HTML::Lint;
 use File::Slurp;
 use Encode qw(decode_utf8);
 
+{
+no warnings 'redefine';
+*HTML::Lint::Parser::_text = sub {return};
+# http://www.w3.org/International/tutorials/tutorial-char-enc/#Slide0420
+}
+
 my @files = glob( 'build/*.html' );
 plan( tests => scalar @files );
 
