@@ -1,7 +1,7 @@
 <div id="footer">
 </div>
 <a href="http://github.com/petdance/bobby-tables"><img
-    src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub" /></a>
+    src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="[% |loc %]Fork me on GitHub[% END %]" /></a>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

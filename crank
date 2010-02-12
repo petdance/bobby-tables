@@ -7,10 +7,18 @@ eval 'use Carp::Always'; # Not everyone has it
 
 use Getopt::Long;
 use File::Slurp;
-
+use Encode qw(decode_utf8);
 use Text::Textile ();
 use Template ();
 use Template::Constants qw( :debug :chomp );
+
+package Local::L10n; # Local::* is reserved
+use parent 'Locale::Maketext';
+use Locale::Maketext::Lexicon {
+    de => [Gettext => 'share/locale/de.po'],
+};
+
+package main;
 
 my $sourcepath = 's';
 my $buildpath  = 'build';
@@ -39,10 +47,20 @@ my $pages = [
 ];
 
 MAIN: {
+    my $handle = Local::L10n->get_handle; # set LANG to localise
     my $textile = new Text::Textile;
     $textile->flavor( 'xhtml1' );
 
     my @sidelinks;
+
+    my %tt_first_pass_defaults =(
+        FILTERS => {
+            'loc' => sub {
+                my ($lexicon_key) = @_;
+                return eval { $handle->maketext($lexicon_key) } || $lexicon_key;
+            },
+        },
+    );
 
     my %tt_defaults = (
         INCLUDE_PATH => [ qw( tt ) ],
@@ -51,9 +69,12 @@ MAIN: {
         TRIM         => CHOMP_ALL,
         PRE_CHOMP    => 1,
         POST_CHOMP   => 1,
+        ENCODING     => 'utf8',
+        %tt_first_pass_defaults,
     );
 
     my $tt = Template->new( \%tt_defaults );
+    my $tt_first_pass = Template->new( \%tt_first_pass_defaults );
 
     my @pages = @{$pages};
     while ( @pages ) {
@@ -72,10 +93,13 @@ MAIN: {
     @pages = @{$pages};
     while ( @pages ) {
         my ($section,$desc) = splice( @pages, 0, 2 );
-        my $source = read_file( "$sourcepath/$section.textile" );
-        $vars->{body} = $textile->process( $source );
+        my $source = read_file( "$sourcepath/$section.textile.tt2" );
+        my $first_pass;
+        $tt_first_pass->process( \$source, undef, \$first_pass )
+            || die sprintf("file: %s\nerror: %s\n", "$sourcepath/$section.textile.tt2", $tt->error);
+        $vars->{body} = $textile->process( decode_utf8($first_pass) );
         $vars->{currlang} = ( $desc eq 'Home' ) ? '' : $desc;
-        $tt->process( 'page.ttml', $vars, "$section.html" )
+        $tt->process( 'page.ttml', $vars, "$section.html", { binmode => ':encoding(UTF-8)' } )
             || die sprintf("file: %s\nerror: %s\n", "$section.html", $tt->error);
     }
 }

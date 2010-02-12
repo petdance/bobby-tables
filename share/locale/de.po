@@ -1,0 +1,967 @@
+# Header entry was created by KBabel!
+#
+# Lars Dɪᴇᴄᴋᴏᴡ 迪拉斯 <daxim@cpan.org>, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2010-02-12 20:30+0100\n"
+"Last-Translator: Lars Dɪᴇᴄᴋᴏᴡ 迪拉斯 <daxim@cpan.org>\n"
+"Language-Team: German <>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+
+#: s/scheme.textile.tt2:5
+msgid ""
+"\"CHICKEN\":http://www.call-with-current-continuation.org/ is a compiler for "
+"\"Scheme\":http://schemers.org/"
+msgstr ""
+"\"CHICKEN\":http://www.call-with-current-continuation.org/ ist ein Compiler "
+"für \"Scheme\":http://schemers.org/"
+
+#: s/java.textile.tt2:11
+msgid ""
+"\"Hibernate\":http://docs.jboss.org/hibernate/stable/core/reference/en/html/"
+"objectstate.html#objectstate-querying-executing-parameters also supports "
+"prepared statements."
+msgstr ""
+"\"Hibernate\":http://docs.jboss.org/hibernate/stable/core/reference/en/html/"
+"objectstate.html#objectstate-querying-executing-parameters unterstützt auch "
+"vorbereitete Anweisungen."
+
+#: s/php.textile.tt2:47
+msgid ""
+"$sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');\n"
+"$sth->execute(array(':email' => $email));\n"
+"</code>"
+msgstr ""
+"$sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');\n"
+"$sth->execute(array(':email' => $email));\n"
+"</code>"
+
+#: s/dotnet.textile.tt2:9
+msgid ""
+"* \"SQL injection\":http://msdn.microsoft.com/en-us/library/ms161953.aspx on "
+"MSDN\n"
+"* \"SQL Injection and how to avoid it\":http://blogs.msdn.com/tom/"
+"archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx on the ASP.NET "
+"Debugging blog"
+msgstr ""
+"* \"SQL injection\":http://msdn.microsoft.com/en-us/library/ms161953.aspx "
+"auf MSDN\n"
+"* \"SQL Injection and how to avoid it\":http://blogs.msdn.com/tom/"
+"archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx auf dem Blog \"ASP."
+"NET Debugging\""
+
+#: s/dotnet.textile.tt2:5
+msgid ""
+"* \"SqlCommand.Prepare\":http://msdn.microsoft.com/en-us/library/system.data."
+"sqlclient.sqlcommand.prepare.aspx in the .NET Framework Class Library"
+msgstr ""
+"* \"SqlCommand.Prepare\":http://msdn.microsoft.com/en-us/library/system.data."
+"sqlclient.sqlcommand.prepare.aspx in der Klassenbibliothek des .NET-Framework"
+
+#: s/index.textile.tt2:32
+msgid ""
+"* \"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\":"
+"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\n"
+"* \"http://st-curriculum.oracle.com/tutorial/SQLInjection/\":http://st-"
+"curriculum.oracle.com/tutorial/SQLInjection/"
+msgstr ""
+"* \"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\":"
+"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\n"
+"* \"http://st-curriculum.oracle.com/tutorial/SQLInjection/\":http://st-"
+"curriculum.oracle.com/tutorial/SQLInjection/"
+
+#: s/java.textile.tt2:15
+msgid "* Add some narrative\n"
+msgstr "* Mehr Erläuterung\n"
+
+#: s/dotnet.textile.tt2:14
+msgid ""
+"* Add some narrative\n"
+"* Show code examples"
+msgstr ""
+"* Mehr Erläuterung\n"
+"* Codebeispiele zeigen"
+
+#: s/python.textile.tt2:19 s/ruby.textile.tt2:19 s/scheme.textile.tt2:16
+msgid "* Add some narrative.\n"
+msgstr "* Mehr Erläuterung.\n"
+
+#: s/index.textile.tt2:19
+msgid ""
+"* Do not create SQL statements that include outside data.\n"
+"* Use parameterized SQL calls."
+msgstr ""
+"* indem man keine SQL-Anweisungen erstellt, die von außen kommende Daten "
+"enthalten.\n"
+"* indem man SQL-Aufrufe mit Parametern tätigt."
+
+#: s/index.textile.tt2:45
+msgid ""
+"* Explain why creating code from outside data is bad.\n"
+"* Potential speed win when reusing prepared statements."
+msgstr ""
+"* Erklärung, warum es schlecht ist, Anweisung auf Grundlage von außerhalb "
+"kommender Daten zu erzeugen.\n"
+"* Möglicher Geschwindigkeitszuwachs unter Wiederverwendung vorbereiteter "
+"Anweisungen."
+
+#: s/index.textile.tt2:39
+msgid ""
+"* Fork the \"bobby-tables repository at github\":http://github.com/petdance/"
+"bobby-tables, make your changes, and send me a pull request.\n"
+"* Add an issue in the \"issue tracker\":http://github.com/petdance/bobby-"
+"tables/issues.\n"
+"* Email me, Andy Lester, at andy at petdance.com."
+msgstr ""
+"* Erstelle einen Fork vom \"Repository bobby-tables auf github\":http://"
+"github.com/petdance/bobby-tables, füge die Änderungen hinzu und schicke mir "
+"einen Pull-Request.\n"
+"* Erstelle eine Anfrage im \"Fallbearbeitungssystem\":http://github.com/"
+"petdance/bobby-tables/issues.\n"
+"* Schicke mir eine Email: Andy Lester, andy at petdance.com."
+
+#: s/index.textile.tt2:52
+msgid ""
+"* Scott Rose\n"
+"* Erik Osheim\n"
+"* Russ Sivak\n"
+"* \"Iain Collins\":http://iaincollins.com\n"
+"* Kristoffer Sall Hansen\n"
+"* Jeff Emminger\n"
+"* \"Travis Swicegood\":http://www.travisswicegood.com/\n"
+"* \"Will Coleda\":http://www.coleda.com/users/coke/\n"
+"* Kai Baesler\n"
+"* Mike Markley\n"
+"* \"Michael Schwern\":http://schwern.dreamhosters.com/\n"
+"* \"Jeana Clark\":http://jeanaclark.org/\n"
+msgstr ""
+"* Scott Rose\n"
+"* Erik Osheim\n"
+"* Russ Sivak\n"
+"* \"Iain Collins\":http://iaincollins.com\n"
+"* Kristoffer Sall Hansen\n"
+"* Jeff Emminger\n"
+"* \"Travis Swicegood\":http://www.travisswicegood.com/\n"
+"* \"Will Coleda\":http://www.coleda.com/users/coke/\n"
+"* Kai Baesler\n"
+"* Mike Markley\n"
+"* \"Michael Schwern\":http://schwern.dreamhosters.com/\n"
+"* \"Jeana Clark\":http://jeanaclark.org/\n"
+
+#: s/php.textile.tt2:11
+msgid ""
+"*However*, you should probably be using an abstraction layer.  The \"ODBC\":"
+"http://php.net/manual/en/book.uodbc.php and \"PDO\":http://www.php.net/"
+"manual/en/book.pdo.php extensions both support parameterization and multiple "
+"databases:"
+msgstr ""
+"Es sollte jedoch wohl eine Abstraktionsschicht verwendet werden.  Die \"ODBC-"
+"\":http://php.net/manual/en/book.uodbc.php und \"PDO-Erweiterungen\":http://"
+"www.php.net/manual/en/book.pdo.php unterstützen sowohl Parameterisierung und "
+"mehrere Datenbanken:"
+
+#: s/php.textile.tt2:61
+msgid ""
+"// insert one row\n"
+"$name = 'one';\n"
+"$value = 1;\n"
+"$stmt->execute();\n"
+"</code>"
+msgstr ""
+"// eine Zeile einfügen\n"
+"$name = 'one';\n"
+"$value = 1;\n"
+"$stmt->execute();\n"
+"</code>"
+
+#: s/csharp.textile.tt2:13
+msgid ""
+"// userName is some string valued user input variable\n"
+"userNameParam.Value = userName;\n"
+"</code>"
+msgstr ""
+"// userName ist eine vom Benutzer eingegebene Stringvariable\n"
+"userNameParam.Value = userName;\n"
+"</code>"
+
+#: s/python.textile.tt2:5
+msgid ""
+"<code>\n"
+"# Do NOT do it this way.\n"
+"cmd = 'update people set name='%s' where id='%s'%(name, id)\n"
+"curs.execute(cmd)\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"# Dieses Beispiel ist FALSCH.\n"
+"cmd = 'update people set name='%s' where id='%s'%(name, id)\n"
+"curs.execute(cmd)\n"
+"</code>"
+
+#: s/php.textile.tt2:27
+msgid ""
+"<code>\n"
+"$dbConnection = NewADOConnection($connectionString);\n"
+"$sqlResult = $dbConnection->Execute(\n"
+"    'SELECT user_id,first_name,last_name FROM users WHERE username=? AND "
+"password=?',\n"
+"    array($_REQUEST['username'], sha1($_REQUEST['password'])\n"
+");\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"$dbConnection = NewADOConnection($connectionString);\n"
+"$sqlResult = $dbConnection->Execute(\n"
+"    'SELECT user_id,first_name,last_name FROM users WHERE username=? AND "
+"password=?',\n"
+"    array($_REQUEST['username'], sha1($_REQUEST['password'])\n"
+");\n"
+"</code>"
+
+#: s/php.textile.tt2:55
+msgid ""
+"<code>\n"
+"$dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);\n"
+"$stmt = $dbh->prepare('INSERT INTO REGISTRY (name, value) VALUES (:name, :"
+"value)');\n"
+"$stmt->bindParam(':name', $name);\n"
+"$stmt->bindParam(':value', $value);"
+msgstr ""
+"<code>\n"
+"$dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);\n"
+"$stmt = $dbh->prepare('INSERT INTO REGISTRY (name, value) VALUES (:name, :"
+"value)');\n"
+"$stmt->bindParam(':name', $name);\n"
+"$stmt->bindParam(':value', $value);"
+
+#: s/php.textile.tt2:69
+msgid ""
+"<code>\n"
+"$dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);\n"
+"$stmt = $dbh->prepare('UPDATE people SET name = :new_name WHERE id = :id');\n"
+"$stmt->execute( array('new_name' => $name, 'id' => $id) );\n"
+"</code>\n"
+msgstr ""
+"<code>\n"
+"$dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);\n"
+"$stmt = $dbh->prepare('UPDATE people SET name = :new_name WHERE id = :id');\n"
+"$stmt->execute( array('new_name' => $name, 'id' => $id) );\n"
+"</code>\n"
+
+#: s/php.textile.tt2:44
+msgid ""
+"<code>\n"
+"$res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array"
+"($email));"
+msgstr ""
+"<code>\n"
+"$res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array"
+"($email));"
+
+#: s/php.textile.tt2:5
+msgid ""
+"<code>\n"
+"$result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', "
+"array($email) );\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"$result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', "
+"array($email) );\n"
+"</code>"
+
+#: s/perl.textile.tt2:5
+msgid ""
+"<code>\n"
+"$sth = $dbh->prepare(\"SELECT * FROM users WHERE email = ?\");\n"
+"foreach my $email (@emails) {\n"
+"    $sth->execute($email);\n"
+"    $row = $sth->fetchrow_hashref;\n"
+"    [...]\n"
+"}\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"$sth = $dbh->prepare(\"SELECT * FROM users WHERE email = ?\");\n"
+"foreach my $email (@emails) {\n"
+"    $sth->execute($email);\n"
+"    $row = $sth->fetchrow_hashref;\n"
+"    [...]\n"
+"}\n"
+"</code>"
+
+#: s/php.textile.tt2:17
+msgid ""
+"<code>\n"
+"$stmt = $db->prepare('update people set name = ? where id = ?');\n"
+"$stmt->bind_param('si',$name,$id);\n"
+"$stmt->execute();\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"$stmt = $db->prepare('update people set name = ? where id = ?');\n"
+"$stmt->bind_param('si',$name,$id);\n"
+"$stmt->execute();\n"
+"</code>"
+
+#: s/php.textile.tt2:37
+msgid ""
+"<code>\n"
+"$stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );\n"
+"$success = odbc_execute( $stmt, array($email) );\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"$stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );\n"
+"$success = odbc_execute( $stmt, array($email) );\n"
+"</code>"
+
+#: s/scheme.textile.tt2:7
+msgid ""
+"<code>\n"
+"(define DB (sqlite3:open  \"myexample.db\"))\n"
+"(sqlite3:exec DB \"INSERT INTO Person(name) VALUES(?)\" \"Luke Skywalker\")\n"
+"(sqlite3:for-each-row print DB \"SELECT id,name FROM Person WHERE id=?\" 3)\n"
+"(define adults (sqlite3:map-row DB \"SELECT name FROM Person WHERE age >= ?"
+"\" 18)\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"(define DB (sqlite3:open  \"myexample.db\"))\n"
+"(sqlite3:exec DB \"INSERT INTO Person(name) VALUES(?)\" \"Luke Skywalker\")\n"
+"(sqlite3:for-each-row print DB \"SELECT id,name FROM Person WHERE id=?\" 3)\n"
+"(define adults (sqlite3:map-row DB \"SELECT name FROM Person WHERE age >= ?"
+"\" 18)\n"
+"</code>"
+
+#: s/coldfusion.textile.tt2:5
+msgid ""
+"<code>\n"
+"<cfquery datasource=\"#application.dsn#\" name=\"qryTest\" maxrows="
+"\"#intRows#\">\n"
+"SELECT FirstName, LastName, Phone\n"
+"FROM   tblUser\n"
+"WHERE  Status =\n"
+"    <cfqueryparam cfsqltype=\"CF_SQL_VARCHAR\" value=\"#form.status#\">\n"
+"</cfquery>\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"<cfquery datasource=\"#application.dsn#\" name=\"qryTest\" maxrows="
+"\"#intRows#\">\n"
+"SELECT FirstName, LastName, Phone\n"
+"FROM   tblUser\n"
+"WHERE  Status =\n"
+"    <cfqueryparam cfsqltype=\"CF_SQL_VARCHAR\" value=\"#form.status#\">\n"
+"</cfquery>\n"
+"</code>"
+
+#: s/ruby.textile.tt2:5
+msgid ""
+"<code>\n"
+"Person.find :all, :conditions => ['id = ? or name = ?', id, name]\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"Person.find :all, :conditions => ['id = ? or name = ?', id, name]\n"
+"</code>"
+
+#: s/ruby.textile.tt2:11
+msgid ""
+"<code>\n"
+"Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]\n"
+"</code>"
+
+#: s/java.textile.tt2:3
+msgid ""
+"<code>\n"
+"PreparedStatement statement = connection.prepareStatement(\n"
+"    \"update people set name = ? where id = ?\");\n"
+"statement.setString(0, name);\n"
+"statement.setString(1, id);\n"
+"statement.execute();\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"PreparedStatement statement = connection.prepareStatement(\n"
+"    \"update people set name = ? where id = ?\");\n"
+"statement.setString(0, name);\n"
+"statement.setString(1, id);\n"
+"statement.execute();\n"
+"</code>"
+
+#: s/csharp.textile.tt2:5
+msgid ""
+"<code>\n"
+"SqlCommand userInfoQuery = new SqlCommand(\n"
+"    \"SELECT id, name, email FROM users WHERE id = @UserName\",\n"
+"    someSqlConnection);"
+msgstr ""
+"<code>\n"
+"SqlCommand userInfoQuery = new SqlCommand(\n"
+"    \"SELECT id, name, email FROM users WHERE id = @UserName\",\n"
+"    someSqlConnection);"
+
+#: s/csharp.textile.tt2:19
+msgid ""
+"<code>\n"
+"String username = \"joe.bloggs\";\n"
+"SqlCommand sqlQuery = new SqlCommand(\"SELECT user_id, first_name,last_name "
+"FROM users WHERE username = ?username\",  sqlConnection);\n"
+"sqlQuery.Parameters.AddWithValue(\"?username\", username);\n"
+"</code>\n"
+msgstr ""
+"<code>\n"
+"String username = \"joe.bloggs\";\n"
+"SqlCommand sqlQuery = new SqlCommand(\"SELECT user_id, first_name,last_name "
+"FROM users WHERE username = ?username\",  sqlConnection);\n"
+"sqlQuery.Parameters.AddWithValue(\"?username\", username);\n"
+"</code>\n"
+
+#: s/python.textile.tt2:13
+msgid ""
+"<code>\n"
+"curs.execute('update people set name=:1 where id=:2', [name, id])\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"curs.execute('update people set name=:1 where id=:2', [name, id])\n"
+"</code>"
+
+#: s/asp.textile.tt2:3
+msgid ""
+"<code>\n"
+"objCmd.CommandType = adCmdText;\n"
+"objCmd.CommandText = \"UPDATE members SET photo = @filename WHERE memberID = "
+"@memberID\";\n"
+"objCmd.Parameters.Append(objCmd.CreateParameter(\"@memberID\", adInteger, "
+"adParamInput, 4, memberid ));\n"
+"objCmd.Parameters.Append(objCmd.CreateParameter(\"@filename\", adVarChar, "
+"adParamInput, 510, fileName));\n"
+"objCmd.Execute(adExecuteNoRecords);\n"
+"gblDelobjParams(objCmd);\n"
+"</code>"
+msgstr ""
+"<code>\n"
+"objCmd.CommandType = adCmdText;\n"
+"objCmd.CommandText = \"UPDATE members SET photo = @filename WHERE memberID = "
+"@memberID\";\n"
+"objCmd.Parameters.Append(objCmd.CreateParameter(\"@memberID\", adInteger, "
+"adParamInput, 4, memberid ));\n"
+"objCmd.Parameters.Append(objCmd.CreateParameter(\"@filename\", adVarChar, "
+"adParamInput, 510, fileName));\n"
+"objCmd.Execute(adExecuteNoRecords);\n"
+"gblDelobjParams(objCmd);\n"
+"</code>"
+
+#: s/delphi.textile.tt2:5
+msgid ""
+"<code>\n"
+"query.SQL.Text := 'update people set name=:Name where id=:ID';\n"
+"query.Prepare;\n"
+"query.ParamByName( 'Name' ).AsString := name;\n"
+"query.ParamByName( 'ID' ).AsInteger := id;\n"
+"query.ExecSQL;\n"
+"</code>\n"
+msgstr ""
+"<code>\n"
+"query.SQL.Text := 'update people set name=:Name where id=:ID';\n"
+"query.Prepare;\n"
+"query.ParamByName( 'Name' ).AsString := name;\n"
+"query.ParamByName( 'ID' ).AsInteger := id;\n"
+"query.ExecSQL;\n"
+"</code>\n"
+
+#: s/index.textile.tt2:3
+msgid ""
+"<p>\n"
+"<a href=\"http://xkcd.com/327/\"><img src=\"img/xkcd.png\" alt=\"xkcd Bobby "
+"Tables Cartoon\" /></a>\n"
+"<a href=\"http://xkcd.com/327/\">From the comic strip xkcd</a><br />\n"
+"<b>School</b>: \"Hi, this is your son's school.  We're having some computer "
+"trouble.\"<br />\n"
+"<b>Mom</b>: \"Oh, dear -- Did he break something?\"<br />\n"
+"<b>School</b>: \"In a way.  Did you really name your son Robert'); DROP "
+"TABLE Students;-- ?\"<br />\n"
+"<b>Mom</b>: \"Oh.  Yes.  Little Bobby Tables we call him.\"<br />\n"
+"<b>School</b>: \"Well, we've lost this year's student records.  I hope "
+"you're happy.\"<br />\n"
+"<b>Mom</b>: \"And I hope you've learned to sanitize your database inputs."
+"\"<br />\n"
+"(title text: \"Her daughter is named Help I'm trapped in a driver's license "
+"factory.\")\n"
+"</p>"
+msgstr ""
+"<p>\n"
+"<a href=\"http://xkcd.com/327/\"><img src=\"img/xkcd.png\" alt=\"xkcd-Comic "
+"BobbyTables\" /></a>\n"
+"<a href=\"http://xkcd.com/327/\">Vom Comic xkcd</a><br />\n"
+"<b>Schule</b>: \"Hallo, hier spricht die Schule Ihres Sohnes.  Wir haben "
+"Computerprobleme.\"<br />\n"
+"<b>Mutter</b>: \"Auweia – hat er etwas kaputtgemacht?\"<br />\n"
+"<b>Schule</b>: \"So ähnlich.  Haben sie wirklich Ihren Sohn Robert'); "
+"DROP TABLE Students;-- genannt?\"<br />\n"
+"<b>Mutter</b>: \"Oh.  Ja.  Wir rufen ihn Klein Bobby Tables.\"<br />\n"
+"<b>Schule</b>: \"Also, der Datenbestand der Schüler dieses Jahres ist "
+"futsch.  Ich hoffe, Sie sind jetzt glücklich.\"<br />\n"
+"<b>Mutter</b>: \"Und ich hoffe, Sie haben gelernt, Datenbankeingaben zu "
+"säubern.\"<br />\n"
+"(Titeltext: \"Ihre Tochter heißt Hilfe ich werde in einer Führerscheinfabrik "
+"gefangengehalten.\")\n"
+"</p>"
+
+#: s/php.textile.tt2:25
+msgid ""
+"ADODB provides a way to prepare, bind and execute all in the same method "
+"call."
+msgstr ""
+
+#: s/asp.textile.tt2:14
+msgid "Add some narrative\n"
+msgstr "Mehr Erläuterung\n"
+
+#: s/postgresql.textile.tt2:3
+msgid ""
+"All of PostgreSQL's \"procedural languages\":http://www.postgresql.org/docs/"
+"current/static/xplang.html, which allow you to write functions and "
+"procedures inside the database, allow you to execute arbitrary SQL "
+"statements."
+msgstr ""
+
+#: s/php.textile.tt2:67
+msgid "And a shorter way to pass things in."
+msgstr ""
+
+#: s/dotnet.textile.tt2:7
+msgid "Articles:"
+msgstr "Artikel:"
+
+#: tt/header.tt:6
+msgid "Bobby Tables: A guide to preventing SQL injection"
+msgstr "Bobby Tables: Ein Leitfaden gegen SQL-Einschleusung"
+
+#: s/postgresql.textile.tt2:42
+msgid ""
+"Both the @p_column@ and the @p_value@ arguments are vulnerable. The way to "
+"avoid this problem is to use the @quote_ident()@ function to quote an SQL "
+"identifier (@p_column@ in this case) and @quote_lteral()@ to quote a literal "
+"value:"
+msgstr ""
+
+#: s/postgresql.textile.tt2:25
+msgid ""
+"But sometimes you have to do more complicated things. Perhaps you "
+"dynamically add @WHERE@ clause expressions based on input. In such cases, "
+"you'll en up using PL/pgSQL's @EXECUTE@ syntax. Here's an example with an "
+"SQL injection vulnerability:"
+msgstr ""
+
+#: s/index.textile.tt2:37
+msgid ""
+"Don't see a language that you'd like to see represented?  Please let me know "
+"if you have updates or additions through one of these methods, in decreasing "
+"order of preference."
+msgstr ""
+"Wird eine Sprache vermisst? Bitte melde Verbesserungen oder Ergänzungen "
+"auf eine dieser drei Arten, in absteigender Reihenfolge der Bevorzugung."
+
+#: s/perl.textile.tt2:16
+msgid ""
+"Explain Perl's taint mode and how DBI supports taint mode, both inbound and "
+"outbound.\n"
+msgstr ""
+"Erklärung zum Taintmodus von Perl und wie DBI den Taintmodus sowohl einwärts "
+"als auch ausgehend unterstützt.\n"
+
+#: s/postgresql.textile.tt2:17
+msgid ""
+"For such a simple case, you're actually better off writing a pure SQL "
+"function:"
+msgstr ""
+
+#: tt/footer.tt:4
+msgid "Fork me on GitHub"
+msgstr "Mach auf GitHub mit"
+
+#: s/csharp.textile.tt2:3
+msgid ""
+"From the \"C# Online\":http://en.csharp-online.net/ wiki page \"ASP.NET "
+"Security Hacks--Avoiding SQL Injection\":http://en.csharp-online.net/ASP."
+"NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection"
+msgstr ""
+
+#: s/php.textile.tt2:53
+msgid "Here's the long way to do bind parameters."
+msgstr ""
+
+#: s/coldfusion.textile.tt2:14
+msgid ""
+"If you have stored procedures in your database, you can call them using the "
+"@cfstoredproc@ and @cfprocparam@ tags."
+msgstr ""
+
+#: s/coldfusion.textile.tt2:3
+msgid ""
+"In ColdFusion there is a tag (function) called @cfqueryparam@ that should be "
+"used whenever writing inline queries."
+msgstr ""
+
+#: s/ruby.textile.tt2:3
+msgid ""
+"In Ruby on Rails using \"ActiveRecord\":http://guides.rubyonrails.org/"
+"active_record_querying.html:"
+msgstr ""
+
+#: s/python.textile.tt2:11
+msgid "Instead, do this:"
+msgstr "Stattdessen korrekt:"
+
+#: s/postgresql.textile.tt2:59
+msgid "It's quite a bit easier to read, too!"
+msgstr "So ist es auch viel leichter zu lesen!"
+
+#: s/php.textile.tt2:9
+msgid ""
+"Note that the query must be in single-quotes or have the @$@ escaped to "
+"avoid PHP trying to parse it as a variable."
+msgstr ""
+
+#: s/csharp.textile.tt2:17
+msgid "Or simpler:"
+msgstr "Oder einfacher:"
+
+#: s/php.textile.tt2:42
+msgid "Or:"
+msgstr "Oder:"
+
+#: s/php.textile.tt2:3
+msgid ""
+"PHP is a little more disorganized than how \"Perl handles parameters\":./"
+"perl.html. The standard \"MySQL extension\":http://php.net/manual/en/book."
+"mysql.php doesn't support parameterization, although the \"PostgreSQL "
+"extension\":http://www.php.net/manual/en/book.pgsql.php does:"
+msgstr ""
+
+#: s/perl.textile.tt2:3
+msgid ""
+"Perl's \"DBI\":http://search.cpan.org/dist/DBI, available on the \"CPAN\":"
+"http://search.cpan.org, supports parameterized SQL calls.  Both the @do@ "
+"method and @prepare@ method support parameters (\"placeholders\", as they "
+"call them) for most database drivers. For example:"
+msgstr ""
+
+#: s/dotnet.textile.tt2:3
+msgid "Reference:"
+msgstr ""
+
+#: s/index.textile.tt2:28
+msgid "See the sidebar to the left for your specific language."
+msgstr "Siehe Kasten links für die jeweilige Sprache."
+
+#: s/csharp.textile.tt2:10
+msgid ""
+"SqlParameter userNameParam = userInfoQuery.Parameters.Add(\"@UserName\",\n"
+"    SqlDbType.VarChar, 25 /* max length of field */ );"
+msgstr ""
+"SqlParameter userNameParam = userInfoQuery.Parameters.Add(\"@UserName\",\n"
+"    SqlDbType.VarChar, 25 /* max length of field */ );"
+
+#: s/postgresql.textile.tt2:63 s/postgresql.textile.tt2:67
+msgid "TODO."
+msgstr "In Vorbereitung."
+
+#: s/postgresql.textile.tt2:71
+msgid "TODO.\n"
+msgstr "In Vorbereitung.\n"
+
+#: s/index.textile.tt2:50
+msgid "Thanks to the following folks for their contributions:"
+msgstr "Dank gilt den folgenden Leuten für ihre Mitwirkung:"
+
+#: s/index.textile.tt2:22
+msgid ""
+"That's it. Don't try to escape invalid characters. Don't try to do it "
+"yourself. Learn how to use parameterized statements. Always, every single "
+"time."
+msgstr ""
+"Das ist alles. Nicht versuchen, ungültige Zeichen zu maskieren. Nicht "
+"versuchen, es eigenhändig zu machen. Lerne, parameterisierte Anweisungen zu "
+"benutzen, und zwar immer und jedes Mal."
+
+#: s/php.textile.tt2:15
+msgid "The MySQL Improved extension handles bound parameters."
+msgstr "Die Erweiterung MySQL Improved beherrscht Parameterbindung."
+
+#: s/postgresql.textile.tt2:7
+msgid ""
+"The safest way to execute SQL inside a PL/pgSQL statement is just to do so:"
+msgstr ""
+
+#: s/index.textile.tt2:24
+msgid ""
+"The strip gets one thing crucially wrong.  The answer is not to \"sanitize "
+"your database inputs\" yourself.  It is prone to error."
+msgstr ""
+"Im Comic wird eine Sache falsch gemacht. Die Antwort lautet nicht, die "
+"Datenbankeingaben selber zu säubern. Dies ist fehleranfällig."
+
+#: s/index.textile.tt2:17
+msgid "There is only one way to avoid Bobby Tables attacks"
+msgstr "Man kann Bobby-Tables-Angriffe nur vermeiden,"
+
+#: s/delphi.textile.tt2:3
+msgid "To use a prepared statement, do something like this:"
+msgstr "Um eine vorbereitete Anweisung zu benutzen:"
+
+#: s/ruby.textile.tt2:15
+msgid ""
+"Using \"Ruby/DBI\":http://ruby-dbi.rubyforge.org/: analog to \"Perl\":./perl."
+"html."
+msgstr ""
+"\"Ruby/DBI\":http://ruby-dbi.rubyforge.org/ ist analog zu \"Perl\":./perl."
+"html."
+
+#: s/python.textile.tt2:3
+msgid ""
+"Using the \"Python DB API\":http://wiki.python.org/moin/"
+"DatabaseProgramming/, don't do this:"
+msgstr ""
+"Unter Verwendung der \"Python-DB-API\":http://wiki.python.org/moin/"
+"DatabaseProgramming/ ist das folgende falsch:"
+
+#: s/postgresql.textile.tt2:27
+msgid ""
+"bc. CREATE OR REPLACE FUNCTION get_users(\n"
+"    p_column TEXT,\n"
+"    p_value  TEXT\n"
+") RETURNS SETOF users LANGUAGE plpgsql AS $$\n"
+"DECLARE\n"
+"    query TEXT := 'SELECT * FROM users';\n"
+"BEGIN\n"
+"    IF p_column IS NOT NULL THEN\n"
+"        query := query || ' WHERE ' || p_column\n"
+"              || $_$ = '$_$ || p_value || $_$'$_$;\n"
+"    END IF;\n"
+"    RETURN QUERY EXECUTE query;\n"
+"END;\n"
+"$$;"
+msgstr ""
+"bc. CREATE OR REPLACE FUNCTION get_users(\n"
+"    p_column TEXT,\n"
+"    p_value  TEXT\n"
+") RETURNS SETOF users LANGUAGE plpgsql AS $$\n"
+"DECLARE\n"
+"    query TEXT := 'SELECT * FROM users';\n"
+"BEGIN\n"
+"    IF p_column IS NOT NULL THEN\n"
+"        query := query || ' WHERE ' || p_column\n"
+"              || $_$ = '$_$ || p_value || $_$'$_$;\n"
+"    END IF;\n"
+"    RETURN QUERY EXECUTE query;\n"
+"END;\n"
+"$$;"
+
+#: s/postgresql.textile.tt2:44
+msgid ""
+"bc. CREATE OR REPLACE FUNCTION get_users(\n"
+"    p_column TEXT,\n"
+"    p_value  TEXT\n"
+") RETURNS SETOF users LANGUAGE plpgsql AS $$\n"
+"DECLARE\n"
+"    query TEXT := 'SELECT * FROM users';\n"
+"BEGIN\n"
+"    IF p_column IS NOT NULL THEN\n"
+"        query := query || ' WHERE ' || quote_ident(p_column)\n"
+"              || ' = ' || quote_literal(p_value);\n"
+"    END IF;\n"
+"    RETURN QUERY EXECUTE query;\n"
+"END;\n"
+"$$;"
+msgstr ""
+"bc. CREATE OR REPLACE FUNCTION get_users(\n"
+"    p_column TEXT,\n"
+"    p_value  TEXT\n"
+") RETURNS SETOF users LANGUAGE plpgsql AS $$\n"
+"DECLARE\n"
+"    query TEXT := 'SELECT * FROM users';\n"
+"BEGIN\n"
+"    IF p_column IS NOT NULL THEN\n"
+"        query := query || ' WHERE ' || quote_ident(p_column)\n"
+"              || ' = ' || quote_literal(p_value);\n"
+"    END IF;\n"
+"    RETURN QUERY EXECUTE query;\n"
+"END;\n"
+"$$;"
+
+#: s/postgresql.textile.tt2:9
+msgid ""
+"bc. CREATE OR REPLACE FUNCTION user_access (\n"
+"    p_uname TEXT\n"
+") RETURNS timestamp language plpgsql AS $$\n"
+"BEGIN\n"
+"    RETURN accessed_at FROM users WHERE username = p_uname;\n"
+"END;\n"
+"$$;"
+msgstr ""
+"bc. CREATE OR REPLACE FUNCTION user_access (\n"
+"    p_uname TEXT\n"
+") RETURNS timestamp language plpgsql AS $$\n"
+"BEGIN\n"
+"    RETURN accessed_at FROM users WHERE username = p_uname;\n"
+"END;\n"
+"$$;"
+
+#: s/postgresql.textile.tt2:19
+msgid ""
+"bc. CREATE OR REPLACE FUNCTION user_access (\n"
+"    p_uname TEXT\n"
+") RETURNS timestamp language sql AS $$\n"
+"    SELECT accessed_at FROM users WHERE username = $1;\n"
+"$$;"
+msgstr ""
+"bc. CREATE OR REPLACE FUNCTION user_access (\n"
+"    p_uname TEXT\n"
+") RETURNS timestamp language sql AS $$\n"
+"    SELECT accessed_at FROM users WHERE username = $1;\n"
+"$$;"
+
+#: s/dotnet.textile.tt2:1
+msgid "h1. .NET"
+msgstr "h1. .NET"
+
+#: s/asp.textile.tt2:1
+msgid "h1. ASP"
+msgstr "h1. ASP"
+
+#: s/csharp.textile.tt2:1
+msgid "h1. C#"
+msgstr "h1. C#"
+
+#: s/coldfusion.textile.tt2:1
+msgid "h1. ColdFusion"
+msgstr "h1. ColdFusion"
+
+#: s/delphi.textile.tt2:1
+msgid "h1. Delphi"
+msgstr "h1. Delphi"
+
+#: s/index.textile.tt2:26
+msgid "h1. Examples"
+msgstr "h1. Beispiele"
+
+#: s/index.textile.tt2:15
+msgid "h1. How to avoid Bobby Tables"
+msgstr "h1. Wie man Bobby Tables vermeidet"
+
+#: s/java.textile.tt2:1
+msgid "h1. Java"
+msgstr "h1. Java"
+
+#: s/index.textile.tt2:30
+msgid "h1. Other random resources"
+msgstr "h1. Andere wahllose Ressourcen"
+
+#: s/php.textile.tt2:1
+msgid "h1. PHP"
+msgstr "h1. PHP"
+
+#: s/index.textile.tt2:35
+msgid "h1. Patches welcome"
+msgstr "h1. Verbesserungen sind willkommen"
+
+#: s/perl.textile.tt2:1
+msgid "h1. Perl"
+msgstr "h1. Perl"
+
+#: s/postgresql.textile.tt2:1
+msgid "h1. PostgreSQL"
+msgstr "h1. PostgreSQL"
+
+#: s/python.textile.tt2:1
+msgid "h1. Python"
+msgstr "h1. Python"
+
+#: s/ruby.textile.tt2:1
+msgid "h1. Ruby"
+msgstr "h1. Ruby"
+
+#: s/scheme.textile.tt2:1
+msgid "h1. Scheme"
+msgstr "h1. Scheme"
+
+#: s/index.textile.tt2:48
+msgid "h1. Thanks"
+msgstr "h1. Danksagung"
+
+#: s/index.textile.tt2:43
+msgid "h1. To do"
+msgstr "h1. In Vorbereitung"
+
+#: s/index.textile.tt2:1
+msgid "h1. Who is Bobby Tables?"
+msgstr "h1. Wer ist Bobby Tables?"
+
+#: s/scheme.textile.tt2:3
+msgid "h2. CHICKEN Scheme"
+msgstr "h2. CHICKEN Scheme"
+
+#: s/postgresql.textile.tt2:61
+msgid "h2. PL/Perl"
+msgstr "h2. PL/Perl"
+
+#: s/postgresql.textile.tt2:65
+msgid "h2. PL/Python"
+msgstr "h2. PL/Python"
+
+#: s/postgresql.textile.tt2:5
+msgid "h2. PL/pgSQL"
+msgstr "h2. PL/pgSQL"
+
+#: s/asp.textile.tt2:12 s/dotnet.textile.tt2:12 s/java.textile.tt2:13
+#: s/perl.textile.tt2:14 s/python.textile.tt2:17 s/ruby.textile.tt2:17
+#: s/scheme.textile.tt2:14
+msgid "h2. To do"
+msgstr "h2. In Vorbereitung"
+
+#: s/php.textile.tt2:23
+msgid "h2. Using ADODB"
+msgstr "h2. Mittels ADODB"
+
+#: s/php.textile.tt2:13
+msgid "h2. Using mysqli"
+msgstr "h2. Mittels mysqli"
+
+#: s/php.textile.tt2:35
+msgid "h2. Using the ODBC layer"
+msgstr "h2. Mittels ODBC"
+
+#: s/php.textile.tt2:51
+msgid "h2. Using the PDO layer"
+msgstr "h2. Mittels PDO "
+
+#: s/postgresql.textile.tt2:69
+msgid "h3. PL/Tcl"
+msgstr "h3. PL/Tcl"
+
+#: s/ruby.textile.tt2:9
+msgid "or"
+msgstr "oder"
+
+#~ msgid "About Bobby Tables"
+#~ msgstr "Über Bobby Tables"
+
+#~ msgid "About SQL Injection"
+#~ msgstr "Über SQL-Einschleusung"
+
+#~ msgid "The Right Way To Do It"
+#~ msgstr "So geht's richtig"
