@@ -61,3 +61,4 @@ Thanks to the following folks for their contributions:
 * Mike Markley
 * "Michael Schwern":http://schwern.dreamhosters.com/
 * "Jeana Clark":http://jeanaclark.org/
+* "Lars Dɪᴇᴄᴋᴏᴡ":http://search.cpan.org/~daxim/
