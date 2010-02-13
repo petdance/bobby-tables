@@ -49,6 +49,7 @@ h1. Thanks
 
 Thanks to the following folks for their contributions:
 
+* "Peter Ward":http://identi.ca/flowblok/
 * "David Wheeler":http://justatheory.com
 * Scott Rose
 * Erik Osheim

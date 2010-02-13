@@ -4,7 +4,7 @@ Using the "Python DB API":http://wiki.python.org/moin/DatabaseProgramming/, don'
 
 <code>
 # Do NOT do it this way.
-cmd = 'update people set name='%s' where id='%s'%(name, id)
+cmd = "update people set name='%s' where id='%s'" % (name, id)
 curs.execute(cmd)
 </code>
 
