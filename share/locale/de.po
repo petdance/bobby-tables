@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2010-02-16 13:26+0100\n"
+"PO-Revision-Date: 2010-02-16 19:12+0100\n"
 "Last-Translator: Lars Dɪᴇᴄᴋᴏᴡ 迪拉斯 <daxim@cpan.org>\n"
 "Language-Team: German <>\n"
 "MIME-Version: 1.0\n"
@@ -101,7 +101,7 @@ msgstr ""
 "enthalten.\n"
 "* indem man SQL-Aufrufe mit Parametern tätigt."
 
-#: s/index.textile.tt2:45
+#: s/index.textile.tt2:51
 msgid ""
 "* Explain why creating code from outside data is bad.\n"
 "* Potential speed win when reusing prepared statements."
@@ -126,7 +126,7 @@ msgstr ""
 "petdance/bobby-tables/issues.\n"
 "* Schicke mir eine Email: Andy Lester, andy at petdance.com."
 
-#: s/index.textile.tt2:52
+#: s/index.textile.tt2:58
 msgid ""
 "* Scott Rose\n"
 "* Erik Osheim\n"
@@ -541,10 +541,10 @@ msgid ""
 "procedures inside the database, allow you to execute arbitrary SQL "
 "statements."
 msgstr ""
-"Alle \"prozeduralen Sprachen von "
-"PostgreSQL\":http://www.postgresql.org/docs/current/static/xplang.html, "
-"mit denen man Funktionen und Prozeduren innerhalb der Datenbank schreiben "
-"kann, haben die Fähigkeit, beliebige SQL-Anweisungen auszuführen."
+"Alle \"prozeduralen Sprachen von PostgreSQL\":http://www.postgresql.org/docs/"
+"current/static/xplang.html, mit denen man Funktionen und Prozeduren "
+"innerhalb der Datenbank schreiben kann, haben die Fähigkeit, beliebige SQL-"
+"Anweisungen auszuführen."
 
 #: s/php.textile.tt2:67
 msgid "And a shorter way to pass things in."
@@ -565,10 +565,10 @@ msgid ""
 "identifier (@p_column@ in this case) and @quote_lteral()@ to quote a literal "
 "value:"
 msgstr ""
-"Die Argumente @p_column@ und @p_value@ sind beide angreifbar. "
-"Um das Problem zu vermeiden, wird die Funktion @quote_ident()@ "
-"verwendet, um einen SQL-Bezeichner (hier: @p_column@) zu maskieren "
-"und @quote_literal()@, um einen Literalwert zu maskieren:"
+"Die Argumente @p_column@ und @p_value@ sind beide angreifbar. Um das Problem "
+"zu vermeiden, wird die Funktion @quote_ident()@ verwendet, um einen SQL-"
+"Bezeichner (hier: @p_column@) zu maskieren und @quote_literal()@, um einen "
+"Literalwert zu maskieren:"
 
 #: s/postgresql.textile.tt2:25
 msgid ""
@@ -577,10 +577,10 @@ msgid ""
 "you'll en up using PL/pgSQL's @EXECUTE@ syntax. Here's an example with an "
 "SQL injection vulnerability:"
 msgstr ""
-"Aber manchmal möchte man kompliziertere Sachen machen wie z.B. "
-"@WHERE@-Teilausdrücke dynamisch je nach Eingabedaten hinzuzufügen. "
-"In diesem Fall benutzt man die @EXECUTE@-Syntax von PL/pgSQL. Ein "
-"Beispiel mit einer Gefährdung durch SQL-Einschleusung:"
+"Aber manchmal möchte man kompliziertere Sachen machen wie z.B. @WHERE@-"
+"Teilausdrücke dynamisch je nach Eingabedaten hinzuzufügen. In diesem Fall "
+"benutzt man die @EXECUTE@-Syntax von PL/pgSQL. Ein Beispiel mit einer "
+"Gefährdung durch SQL-Einschleusung:"
 
 #: s/index.textile.tt2:37
 msgid ""
@@ -617,8 +617,16 @@ msgid ""
 "NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection"
 msgstr ""
 "\"ASP.NET Security Hacks — Avoiding SQL Injection\":http://en.csharp-online."
-"net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection "
-"aus dem \"C#-Online-Wiki\":http://en.csharp-online.net/"
+"net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection aus dem \"C#-"
+"Online-Wiki\":http://en.csharp-online.net/"
+
+#: s/index.textile.tt2:45
+msgid ""
+"Help translate this site! There are only 100 phrases. No programming "
+"necessary."
+msgstr ""
+"Hilf mit, diesen Webauftritt zu übersetzen! Es sind nur 100 Ausdrücke. "
+"Keine Programmierung notwendig."
 
 #: s/php.textile.tt2:53
 msgid "Here's the long way to do bind parameters."
@@ -629,8 +637,8 @@ msgid ""
 "If you have stored procedures in your database, you can call them using the "
 "@cfstoredproc@ and @cfprocparam@ tags."
 msgstr ""
-"Wenn man gespeicherte Prozeduren in der Datenbank hat, kann man sie mit "
-"den Funktionen @cfstoredproc@ und @cfprocparam@ aufrufen."
+"Wenn man gespeicherte Prozeduren in der Datenbank hat, kann man sie mit den "
+"Funktionen @cfstoredproc@ und @cfprocparam@ aufrufen."
 
 #: s/coldfusion.textile.tt2:3
 msgid ""
@@ -661,8 +669,8 @@ msgid ""
 "Note that the query must be in single-quotes or have the @$@ escaped to "
 "avoid PHP trying to parse it as a variable."
 msgstr ""
-"Hinweis: die Abfrage muss in einfachen Anführungszeichen stehen oder das "
-"@$@ muss maskiert werden, damit PHP nicht versucht, es als Variable zu "
+"Hinweis: die Abfrage muss in einfachen Anführungszeichen stehen oder das @$@ "
+"muss maskiert werden, damit PHP nicht versucht, es als Variable zu "
 "analysieren."
 
 #: s/csharp.textile.tt2:17
@@ -680,12 +688,10 @@ msgid ""
 "mysql.php doesn't support parameterization, although the \"PostgreSQL "
 "extension\":http://www.php.net/manual/en/book.pgsql.php does:"
 msgstr ""
-"PHP ist ein bisschen unorganisierter im "
-"\"Vergleich zu Perl\":./perl.html. Die Standarderweiterung "
-"\"MySQL\":http://php.net/manual/de/book.mysql.php "
-"beherrscht keine Parameterisierung, aber die Erweiterung "
-"\"PostgreSQL\":http://www.php.net/manual/de/book.pgsql.php "
-"schon:"
+"PHP ist ein bisschen unorganisierter im \"Vergleich zu Perl\":./perl.html. "
+"Die Standarderweiterung \"MySQL\":http://php.net/manual/de/book.mysql.php "
+"beherrscht keine Parameterisierung, aber die Erweiterung \"PostgreSQL\":"
+"http://www.php.net/manual/de/book.pgsql.php schon:"
 
 #: s/perl.textile.tt2:3
 msgid ""
@@ -695,14 +701,21 @@ msgid ""
 "call them) for most database drivers. For example:"
 msgstr ""
 "Perl Datenbankschnittstelle \"DBI\":http://search.cpan.org/dist/DBI, "
-"erhältlich vom \"CPAN\":http://search.cpan.org, beherrscht "
-"parameterisierte SQL-Aufrufe. Die Methoden @do@ und "
-"@prepare@ unterstützen Parameter (dort: \"Platzhalter\") für die "
-"meisten Datenbanktreiber. Zum Beispiel:"
+"erhältlich vom \"CPAN\":http://search.cpan.org, beherrscht parameterisierte "
+"SQL-Aufrufe. Die Methoden @do@ und @prepare@ unterstützen Parameter (dort: "
+"\"Platzhalter\") für die meisten Datenbanktreiber. Zum Beispiel:"
 
 #: s/dotnet.textile.tt2:3
 msgid "Reference:"
 msgstr "Literaturhinweis:"
+
+#: s/index.textile.tt2:47
+msgid ""
+"See the instructions at the \"bobby-tables repository at github\":http://"
+"github.com/petdance/bobby-tables#readme."
+msgstr ""
+"Siehe Anleitung im \"Repository bobby-tables auf github\":http://"
+"github.com/petdance/bobby-tables#readme."
 
 #: s/index.textile.tt2:28
 msgid "See the sidebar to the left for your specific language."
@@ -724,7 +737,7 @@ msgstr "In Vorbereitung."
 msgid "TODO.\n"
 msgstr "In Vorbereitung.\n"
 
-#: s/index.textile.tt2:50
+#: s/index.textile.tt2:56
 msgid "Thanks to the following folks for their contributions:"
 msgstr "Dank gilt den folgenden Leuten für ihre Mitwirkung:"
 
@@ -940,13 +953,17 @@ msgstr "h1. Ruby"
 msgid "h1. Scheme"
 msgstr "h1. Scheme"
 
-#: s/index.textile.tt2:48
+#: s/index.textile.tt2:54
 msgid "h1. Thanks"
 msgstr "h1. Danksagung"
 
-#: s/index.textile.tt2:43
+#: s/index.textile.tt2:49
 msgid "h1. To do"
 msgstr "h1. In Vorbereitung"
+
+#: s/index.textile.tt2:43
+msgid "h1. Translations also welcome"
+msgstr "h1. Übersetzungen sind auch willkommen"
 
 #: s/index.textile.tt2:1
 msgid "h1. Who is Bobby Tables?"

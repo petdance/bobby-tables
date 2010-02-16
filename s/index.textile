@@ -40,6 +40,12 @@ Don't see a language that you'd like to see represented?  Please let me know if 
 * Add an issue in the "issue tracker":http://github.com/petdance/bobby-tables/issues.
 * Email me, Andy Lester, at andy at petdance.com.
 
+h1. Translations also welcome
+
+Help translate this site! There are only 100 phrases. No programming necessary.
+
+See the instructions at the "bobby-tables repository at github":http://github.com/petdance/bobby-tables#readme.
+
 h1. To do
 
 * Explain why creating code from outside data is bad.
