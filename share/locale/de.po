@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2010-02-12 20:58+0100\n"
+"PO-Revision-Date: 2010-02-16 13:26+0100\n"
 "Last-Translator: Lars Dɪᴇᴄᴋᴏᴡ 迪拉斯 <daxim@cpan.org>\n"
 "Language-Team: German <>\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgid ""
 "prepared statements."
 msgstr ""
 "\"Hibernate\":http://docs.jboss.org/hibernate/stable/core/reference/en/html/"
-"objectstate.html#objectstate-querying-executing-parameters unterstützt auch "
+"objectstate.html#objectstate-querying-executing-parameters beherrscht auch "
 "vorbereitete Anweisungen."
 
 #: s/php.textile.tt2:47
@@ -527,6 +527,8 @@ msgid ""
 "ADODB provides a way to prepare, bind and execute all in the same method "
 "call."
 msgstr ""
+"Mit ADODB kann man in einem Methodenaufruf eine Anweisung vorbereiten, daran "
+"binden und sie ausführen."
 
 #: s/asp.textile.tt2:14
 msgid "Add some narrative\n"
@@ -539,10 +541,14 @@ msgid ""
 "procedures inside the database, allow you to execute arbitrary SQL "
 "statements."
 msgstr ""
+"Alle \"prozeduralen Sprachen von "
+"PostgreSQL\":http://www.postgresql.org/docs/current/static/xplang.html, "
+"mit denen man Funktionen und Prozeduren innerhalb der Datenbank schreiben "
+"kann, haben die Fähigkeit, beliebige SQL-Anweisungen auszuführen."
 
 #: s/php.textile.tt2:67
 msgid "And a shorter way to pass things in."
-msgstr ""
+msgstr "Und auf eine kürzere Weise, sie zu übergeben."
 
 #: s/dotnet.textile.tt2:7
 msgid "Articles:"
@@ -559,6 +565,10 @@ msgid ""
 "identifier (@p_column@ in this case) and @quote_lteral()@ to quote a literal "
 "value:"
 msgstr ""
+"Die Argumente @p_column@ und @p_value@ sind beide angreifbar. "
+"Um das Problem zu vermeiden, wird die Funktion @quote_ident()@ "
+"verwendet, um einen SQL-Bezeichner (hier: @p_column@) zu maskieren "
+"und @quote_literal()@, um einen Literalwert zu maskieren:"
 
 #: s/postgresql.textile.tt2:25
 msgid ""
@@ -567,6 +577,10 @@ msgid ""
 "you'll en up using PL/pgSQL's @EXECUTE@ syntax. Here's an example with an "
 "SQL injection vulnerability:"
 msgstr ""
+"Aber manchmal möchte man kompliziertere Sachen machen wie z.B. "
+"@WHERE@-Teilausdrücke dynamisch je nach Eingabedaten hinzuzufügen. "
+"In diesem Fall benutzt man die @EXECUTE@-Syntax von PL/pgSQL. Ein "
+"Beispiel mit einer Gefährdung durch SQL-Einschleusung:"
 
 #: s/index.textile.tt2:37
 msgid ""
@@ -590,6 +604,7 @@ msgid ""
 "For such a simple case, you're actually better off writing a pure SQL "
 "function:"
 msgstr ""
+"In so einem einfachen Fall schreibt man besser eine reine SQL-Funktion:"
 
 #: tt/footer.tt:4
 msgid "Fork me on GitHub"
@@ -601,28 +616,37 @@ msgid ""
 "Security Hacks--Avoiding SQL Injection\":http://en.csharp-online.net/ASP."
 "NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection"
 msgstr ""
+"\"ASP.NET Security Hacks — Avoiding SQL Injection\":http://en.csharp-online."
+"net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection "
+"aus dem \"C#-Online-Wiki\":http://en.csharp-online.net/"
 
 #: s/php.textile.tt2:53
 msgid "Here's the long way to do bind parameters."
-msgstr ""
+msgstr "So bindet man Parameter auf die ausführliche Weise."
 
 #: s/coldfusion.textile.tt2:14
 msgid ""
 "If you have stored procedures in your database, you can call them using the "
 "@cfstoredproc@ and @cfprocparam@ tags."
 msgstr ""
+"Wenn man gespeicherte Prozeduren in der Datenbank hat, kann man sie mit "
+"den Funktionen @cfstoredproc@ und @cfprocparam@ aufrufen."
 
 #: s/coldfusion.textile.tt2:3
 msgid ""
 "In ColdFusion there is a tag (function) called @cfqueryparam@ that should be "
 "used whenever writing inline queries."
 msgstr ""
+"In ColdFusion gibt es eine Funktion @cfqueryparam@, die immer benutzt werden "
+"sollte, um eingebettete Abfragen zu schreiben."
 
 #: s/ruby.textile.tt2:3
 msgid ""
 "In Ruby on Rails using \"ActiveRecord\":http://guides.rubyonrails.org/"
 "active_record_querying.html:"
 msgstr ""
+"In Ruby on Rails mit \"ActiveRecord\":http://guides.rubyonrails.org/"
+"active_record_querying.html:"
 
 #: s/python.textile.tt2:11
 msgid "Instead, do this:"
@@ -637,6 +661,9 @@ msgid ""
 "Note that the query must be in single-quotes or have the @$@ escaped to "
 "avoid PHP trying to parse it as a variable."
 msgstr ""
+"Hinweis: die Abfrage muss in einfachen Anführungszeichen stehen oder das "
+"@$@ muss maskiert werden, damit PHP nicht versucht, es als Variable zu "
+"analysieren."
 
 #: s/csharp.textile.tt2:17
 msgid "Or simpler:"
@@ -653,6 +680,12 @@ msgid ""
 "mysql.php doesn't support parameterization, although the \"PostgreSQL "
 "extension\":http://www.php.net/manual/en/book.pgsql.php does:"
 msgstr ""
+"PHP ist ein bisschen unorganisierter im "
+"\"Vergleich zu Perl\":./perl.html. Die Standarderweiterung "
+"\"MySQL\":http://php.net/manual/de/book.mysql.php "
+"beherrscht keine Parameterisierung, aber die Erweiterung "
+"\"PostgreSQL\":http://www.php.net/manual/de/book.pgsql.php "
+"schon:"
 
 #: s/perl.textile.tt2:3
 msgid ""
@@ -661,10 +694,15 @@ msgid ""
 "method and @prepare@ method support parameters (\"placeholders\", as they "
 "call them) for most database drivers. For example:"
 msgstr ""
+"Perl Datenbankschnittstelle \"DBI\":http://search.cpan.org/dist/DBI, "
+"erhältlich vom \"CPAN\":http://search.cpan.org, beherrscht "
+"parameterisierte SQL-Aufrufe. Die Methoden @do@ und "
+"@prepare@ unterstützen Parameter (dort: \"Platzhalter\") für die "
+"meisten Datenbanktreiber. Zum Beispiel:"
 
 #: s/dotnet.textile.tt2:3
 msgid "Reference:"
-msgstr ""
+msgstr "Literaturhinweis:"
 
 #: s/index.textile.tt2:28
 msgid "See the sidebar to the left for your specific language."
@@ -708,6 +746,7 @@ msgstr "Die Erweiterung MySQL Improved beherrscht Parameterbindung."
 msgid ""
 "The safest way to execute SQL inside a PL/pgSQL statement is just to do so:"
 msgstr ""
+"Die sicherste Weise, SQL innerhalb einer PL/pgSQL-Anweisung auszuführen:"
 
 #: s/index.textile.tt2:24
 msgid ""
