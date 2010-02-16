@@ -15,7 +15,7 @@ use Template::Constants qw( :debug :chomp );
 package Local::L10n; # Local::* is reserved
 use parent 'Locale::Maketext';
 use Locale::Maketext::Lexicon {
-    de => [Gettext => 'share/locale/de.po'],
+    de_DE => [Gettext => 'share/locale/de_DE.po'],
 };
 
 package main;

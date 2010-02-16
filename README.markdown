@@ -41,8 +41,13 @@ Contributing translations
 language, copy `share/locale/messages.pot` to `share/locale/xx_YY.po`, but
 substitute `xx` for the appropriate
 [language code](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
-and if needed for disambiguation also `YY` for the
+and `YY` for the
 [territory code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
+Naming convention examples:
+
+        sv_SE.po    standard Swedish
+        pt_BR.po    Brazilian Portuguese
+
 3. Edit the PO file. [Lokalize (formerly KBabel)](http://l10n.kde.org/tools/)
 is excellent, [Poedit](http://www.poedit.net/) is good. Any text editor
 supporting UTF-8 can handle PO files, but it will not be convenient.
@@ -52,8 +57,3 @@ inspect the result in the `build` directory.
 
 Note to experienced translators: compiled gettext (MO) files are not used in
 this project.
-
-Naming convention examples:
-
-    sv.po       standard Swedish
-    pt_BR.po    Brazilian Portuguese
