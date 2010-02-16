@@ -99,6 +99,7 @@ MAIN: {
             || die sprintf("file: %s\nerror: %s\n", "$sourcepath/$section.textile.tt2", $tt->error);
         $vars->{body} = $textile->process( decode_utf8($first_pass) );
         $vars->{currlang} = ( $desc eq 'Home' ) ? '' : $desc;
+        $vars->{rel_static} = ( 'C' eq $ENV{LANG} ) ? q() : q(../); # path prefix to static assets
         $tt->process( 'page.ttml', $vars, "$section.html", { binmode => ':encoding(UTF-8)' } )
             || die sprintf("file: %s\nerror: %s\n", "$section.html", $tt->error);
     }

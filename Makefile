@@ -16,7 +16,14 @@ clean:
 
 crank: clean messages
 	mkdir -p $(BUILD)/ || true > /dev/null 2>&1
-	perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
+	# force English for top directory
+	LANG=C perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
+	# other languages in subdirectories
+	for pofile in $(LOCALE)/*.po ; do \
+	    language=`basename $$pofile .po` ; \
+	    mkdir -p $(BUILD)/$$language || true > /dev/null 2>&1 ; \
+	    LANG=$$language perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)/$$language ; \
+	    done
 	cp -R static/* $(BUILD)/
 
 test: crank
