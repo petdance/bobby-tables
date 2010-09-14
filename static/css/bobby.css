@@ -131,7 +131,6 @@ code {
     color: #000000;
 
     /* box */
-    xheight: 14px;
     width: 95%;
     border: 1px dashed #f0c931;
     margin: 3px 0 13px 0;
@@ -141,8 +140,10 @@ code {
     display: block;
 }
 
-.code {
-    font-family: monospace;
+code.inline {
+    display: inline;
+    padding: 3px;
+    font-size: 14px;
 }
 
 div#content > p > a > img { /* comic */
