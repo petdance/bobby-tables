@@ -29,6 +29,7 @@ See the sidebar to the left for your specific language.
 
 h1. Other random resources
 
+* "SQL Injection Myths and Fallacies":http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies
 * "http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html":http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html
 * "http://st-curriculum.oracle.com/tutorial/SQLInjection/":http://st-curriculum.oracle.com/tutorial/SQLInjection/
 
