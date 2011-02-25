@@ -25,8 +25,9 @@ have a slightly different syntax, but still provide parameterized queries.
     ");
     myQuery.addParam(
       name      = "status",
+      value     = form.status,
       cfsqltype = "cf_sql_varchar"
     );
-    var rawQuery = myQuery.execute().getResult();   
+    var rawQuery = myQuery.execute().getResult();
   &lt;/cfscript>
 </code>
