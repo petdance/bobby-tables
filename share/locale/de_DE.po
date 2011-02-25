@@ -42,6 +42,54 @@ msgstr ""
 "$sth->execute(array(':email' => $email));\n"
 "</code>"
 
+#: s/index.textile.tt2:59
+#, fuzzy
+msgid ""
+"* \"Peter Ward\":http://identi.ca/flowblok/\n"
+"* \"David Wheeler\":http://justatheory.com\n"
+"* Scott Rose\n"
+"* Erik Osheim\n"
+"* Russ Sivak\n"
+"* \"Iain Collins\":http://iaincollins.com\n"
+"* Kristoffer Sall Hansen\n"
+"* Jeff Emminger\n"
+"* \"Travis Swicegood\":http://www.travisswicegood.com/\n"
+"* \"Will Coleda\":http://www.coleda.com/users/coke/\n"
+"* Kai Baesler\n"
+"* Mike Markley\n"
+"* \"Michael Schwern\":http://schwern.dreamhosters.com/\n"
+"* \"Jeana Clark\":http://jeanaclark.org/\n"
+"* \"Lars Dɪᴇᴄᴋᴏᴡ\":http://search.cpan.org/~daxim/\n"
+msgstr ""
+"* Scott Rose\n"
+"* Erik Osheim\n"
+"* Russ Sivak\n"
+"* \"Iain Collins\":http://iaincollins.com\n"
+"* Kristoffer Sall Hansen\n"
+"* Jeff Emminger\n"
+"* \"Travis Swicegood\":http://www.travisswicegood.com/\n"
+"* \"Will Coleda\":http://www.coleda.com/users/coke/\n"
+"* Kai Baesler\n"
+"* Mike Markley\n"
+"* \"Michael Schwern\":http://schwern.dreamhosters.com/\n"
+"* \"Jeana Clark\":http://jeanaclark.org/\n"
+"* \"Lars Dɪᴇᴄᴋᴏᴡ\":http://search.cpan.org/~daxim/\n"
+
+#: s/index.textile.tt2:32
+#, fuzzy
+msgid ""
+"* \"SQL Injection Myths and Fallacies\":http://www.slideshare.net/billkarwin/"
+"sql-injection-myths-and-fallacies\n"
+"* \"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\":"
+"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\n"
+"* \"http://st-curriculum.oracle.com/tutorial/SQLInjection/\":http://st-"
+"curriculum.oracle.com/tutorial/SQLInjection/"
+msgstr ""
+"* \"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\":"
+"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\n"
+"* \"http://st-curriculum.oracle.com/tutorial/SQLInjection/\":http://st-"
+"curriculum.oracle.com/tutorial/SQLInjection/"
+
 #: s/dotnet.textile.tt2:9
 msgid ""
 "* \"SQL injection\":http://msdn.microsoft.com/en-us/library/ms161953.aspx on "
@@ -63,18 +111,6 @@ msgid ""
 msgstr ""
 "* \"SqlCommand.Prepare\":http://msdn.microsoft.com/en-us/library/system.data."
 "sqlclient.sqlcommand.prepare.aspx in der Klassenbibliothek des .NET-Framework"
-
-#: s/index.textile.tt2:32
-msgid ""
-"* \"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\":"
-"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\n"
-"* \"http://st-curriculum.oracle.com/tutorial/SQLInjection/\":http://st-"
-"curriculum.oracle.com/tutorial/SQLInjection/"
-msgstr ""
-"* \"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\":"
-"http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html\n"
-"* \"http://st-curriculum.oracle.com/tutorial/SQLInjection/\":http://st-"
-"curriculum.oracle.com/tutorial/SQLInjection/"
 
 #: s/java.textile.tt2:15
 msgid "* Add some narrative\n"
@@ -101,7 +137,7 @@ msgstr ""
 "enthalten.\n"
 "* indem man SQL-Aufrufe mit Parametern tätigt."
 
-#: s/index.textile.tt2:51
+#: s/index.textile.tt2:52
 msgid ""
 "* Explain why creating code from outside data is bad.\n"
 "* Potential speed win when reusing prepared statements."
@@ -111,7 +147,7 @@ msgstr ""
 "* Möglicher Geschwindigkeitszuwachs unter Wiederverwendung vorbereiteter "
 "Anweisungen."
 
-#: s/index.textile.tt2:39
+#: s/index.textile.tt2:40
 msgid ""
 "* Fork the \"bobby-tables repository at github\":http://github.com/petdance/"
 "bobby-tables, make your changes, and send me a pull request.\n"
@@ -125,36 +161,6 @@ msgstr ""
 "* Erstelle eine Anfrage im \"Fallbearbeitungssystem\":http://github.com/"
 "petdance/bobby-tables/issues.\n"
 "* Schicke mir eine Email: Andy Lester, andy at petdance.com."
-
-#: s/index.textile.tt2:58
-msgid ""
-"* Scott Rose\n"
-"* Erik Osheim\n"
-"* Russ Sivak\n"
-"* \"Iain Collins\":http://iaincollins.com\n"
-"* Kristoffer Sall Hansen\n"
-"* Jeff Emminger\n"
-"* \"Travis Swicegood\":http://www.travisswicegood.com/\n"
-"* \"Will Coleda\":http://www.coleda.com/users/coke/\n"
-"* Kai Baesler\n"
-"* Mike Markley\n"
-"* \"Michael Schwern\":http://schwern.dreamhosters.com/\n"
-"* \"Jeana Clark\":http://jeanaclark.org/\n"
-"* \"Lars Dɪᴇᴄᴋᴏᴡ\":http://search.cpan.org/~daxim/\n"
-msgstr ""
-"* Scott Rose\n"
-"* Erik Osheim\n"
-"* Russ Sivak\n"
-"* \"Iain Collins\":http://iaincollins.com\n"
-"* Kristoffer Sall Hansen\n"
-"* Jeff Emminger\n"
-"* \"Travis Swicegood\":http://www.travisswicegood.com/\n"
-"* \"Will Coleda\":http://www.coleda.com/users/coke/\n"
-"* Kai Baesler\n"
-"* Mike Markley\n"
-"* \"Michael Schwern\":http://schwern.dreamhosters.com/\n"
-"* \"Jeana Clark\":http://jeanaclark.org/\n"
-"* \"Lars Dɪᴇᴄᴋᴏᴡ\":http://search.cpan.org/~daxim/\n"
 
 #: s/php.textile.tt2:11
 msgid ""
@@ -192,11 +198,30 @@ msgstr ""
 "userNameParam.Value = userName;\n"
 "</code>"
 
+#: s/coldfusion.textile.tt2:19
+msgid ""
+"<code>\n"
+"  &lt;cfscript>\n"
+"    var myQuery = new Query(sql=\"\n"
+"      SELECT FirstName, LastName, Phone\n"
+"      FROM   tblUser\n"
+"      WHERE  Status = :status\n"
+"    \");\n"
+"    myQuery.addParam(\n"
+"      name      = \"status\",\n"
+"      cfsqltype = \"cf_sql_varchar\"\n"
+"    );\n"
+"    var rawQuery = myQuery.execute().getResult();   \n"
+"  &lt;/cfscript>\n"
+"</code>\n"
+msgstr ""
+
 #: s/python.textile.tt2:5
+#, fuzzy
 msgid ""
 "<code>\n"
 "# Do NOT do it this way.\n"
-"cmd = 'update people set name='%s' where id='%s'%(name, id)\n"
+"cmd = \"update people set name='%s' where id='%s'\" % (name, id)\n"
 "curs.execute(cmd)\n"
 "</code>"
 msgstr ""
@@ -325,10 +350,10 @@ msgstr ""
 "</code>"
 
 #: s/coldfusion.textile.tt2:5
+#, fuzzy
 msgid ""
 "<code>\n"
-"&lt;cfquery datasource=\"#application.dsn#\" name=\"qryTest\" maxrows="
-"\"#intRows#\">\n"
+"&lt;cfquery name=\"queryTest\">\n"
 "SELECT FirstName, LastName, Phone\n"
 "FROM   tblUser\n"
 "WHERE  Status =\n"
@@ -385,12 +410,13 @@ msgstr ""
 "</code>"
 
 #: s/java.textile.tt2:3
+#, fuzzy
 msgid ""
 "<code>\n"
 "PreparedStatement statement = connection.prepareStatement(\n"
 "    \"update people set name = ? where id = ?\");\n"
-"statement.setString(0, name);\n"
-"statement.setString(1, id);\n"
+"statement.setString(1, name);\n"
+"statement.setString(2, id);\n"
 "statement.execute();\n"
 "</code>"
 msgstr ""
@@ -505,9 +531,8 @@ msgid ""
 "</p>"
 msgstr ""
 "<p>\n"
-"<a href=\"http://xkcd.com/327/\"><img src=\"../img/xkcd.png\" "
-"alt=\"xkcd-Comic "
-"BobbyTables\" /></a>\n"
+"<a href=\"http://xkcd.com/327/\"><img src=\"../img/xkcd.png\" alt=\"xkcd-"
+"Comic BobbyTables\" /></a>\n"
 "<a href=\"http://xkcd.com/327/\">Vom Comic xkcd</a><br />\n"
 "<b>Schule</b>: \"Hallo, hier spricht die Schule Ihres Sohnes.  Wir haben "
 "Computerprobleme.\"<br />\n"
@@ -572,10 +597,11 @@ msgstr ""
 "Literalwert zu maskieren:"
 
 #: s/postgresql.textile.tt2:25
+#, fuzzy
 msgid ""
 "But sometimes you have to do more complicated things. Perhaps you "
 "dynamically add @WHERE@ clause expressions based on input. In such cases, "
-"you'll en up using PL/pgSQL's @EXECUTE@ syntax. Here's an example with an "
+"you'll end up using PL/pgSQL's @EXECUTE@ syntax. Here's an example with an "
 "SQL injection vulnerability:"
 msgstr ""
 "Aber manchmal möchte man kompliziertere Sachen machen wie z.B. @WHERE@-"
@@ -583,7 +609,7 @@ msgstr ""
 "benutzt man die @EXECUTE@-Syntax von PL/pgSQL. Ein Beispiel mit einer "
 "Gefährdung durch SQL-Einschleusung:"
 
-#: s/index.textile.tt2:37
+#: s/index.textile.tt2:38
 msgid ""
 "Don't see a language that you'd like to see represented?  Please let me know "
 "if you have updates or additions through one of these methods, in decreasing "
@@ -607,7 +633,7 @@ msgid ""
 msgstr ""
 "In so einem einfachen Fall schreibt man besser eine reine SQL-Funktion:"
 
-#: tt/footer.tt:4
+#: tt/footer.tt:6
 msgid "Fork me on GitHub"
 msgstr "Mach auf GitHub mit"
 
@@ -621,7 +647,7 @@ msgstr ""
 "net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection aus dem \"C#-"
 "Online-Wiki\":http://en.csharp-online.net/"
 
-#: s/index.textile.tt2:45
+#: s/index.textile.tt2:46
 msgid ""
 "Help translate this site! There are only 100 phrases. No programming "
 "necessary."
@@ -633,18 +659,11 @@ msgstr ""
 msgid "Here's the long way to do bind parameters."
 msgstr "So bindet man Parameter auf die ausführliche Weise."
 
-#: s/coldfusion.textile.tt2:14
-msgid ""
-"If you have stored procedures in your database, you can call them using the "
-"@cfstoredproc@ and @cfprocparam@ tags."
-msgstr ""
-"Wenn man gespeicherte Prozeduren in der Datenbank hat, kann man sie mit den "
-"Funktionen @cfstoredproc@ und @cfprocparam@ aufrufen."
-
 #: s/coldfusion.textile.tt2:3
+#, fuzzy
 msgid ""
-"In ColdFusion there is a tag (function) called @cfqueryparam@ that should be "
-"used whenever writing inline queries."
+"In ColdFusion there is a tag called @cfqueryparam@ that should be used "
+"whenever writing inline queries."
 msgstr ""
 "In ColdFusion gibt es eine Funktion @cfqueryparam@, die immer benutzt werden "
 "sollte, um eingebettete Abfragen zu schreiben."
@@ -706,11 +725,18 @@ msgstr ""
 "SQL-Aufrufe. Die Methoden @do@ und @prepare@ unterstützen Parameter (dort: "
 "\"Platzhalter\") für die meisten Datenbanktreiber. Zum Beispiel:"
 
+#: s/coldfusion.textile.tt2:16
+msgid ""
+"Recent versions of ColdFusion provide a set of functions to run queries "
+"that\n"
+"have a slightly different syntax, but still provide parameterized queries."
+msgstr ""
+
 #: s/dotnet.textile.tt2:3
 msgid "Reference:"
 msgstr "Literaturhinweis:"
 
-#: s/index.textile.tt2:47
+#: s/index.textile.tt2:48
 msgid ""
 "See the instructions at the \"bobby-tables repository at github\":http://"
 "github.com/petdance/bobby-tables#readme."
@@ -730,6 +756,15 @@ msgstr ""
 "SqlParameter userNameParam = userInfoQuery.Parameters.Add(\"@UserName\",\n"
 "    SqlDbType.VarChar, 25 /* max length of field */ );"
 
+#: s/coldfusion.textile.tt2:14
+#, fuzzy
+msgid ""
+"Stored procedures can be invoked with the @cfstoredproc@ and @cfprocparam@ "
+"tags."
+msgstr ""
+"Wenn man gespeicherte Prozeduren in der Datenbank hat, kann man sie mit den "
+"Funktionen @cfstoredproc@ und @cfprocparam@ aufrufen."
+
 #: s/postgresql.textile.tt2:63 s/postgresql.textile.tt2:67
 msgid "TODO."
 msgstr "In Vorbereitung."
@@ -738,7 +773,7 @@ msgstr "In Vorbereitung."
 msgid "TODO.\n"
 msgstr "In Vorbereitung.\n"
 
-#: s/index.textile.tt2:56
+#: s/index.textile.tt2:57
 msgid "Thanks to the following folks for their contributions:"
 msgstr "Dank gilt den folgenden Leuten für ihre Mitwirkung:"
 
@@ -930,7 +965,7 @@ msgstr "h1. Andere wahllose Ressourcen"
 msgid "h1. PHP"
 msgstr "h1. PHP"
 
-#: s/index.textile.tt2:35
+#: s/index.textile.tt2:36
 msgid "h1. Patches welcome"
 msgstr "h1. Verbesserungen sind willkommen"
 
@@ -954,15 +989,15 @@ msgstr "h1. Ruby"
 msgid "h1. Scheme"
 msgstr "h1. Scheme"
 
-#: s/index.textile.tt2:54
+#: s/index.textile.tt2:55
 msgid "h1. Thanks"
 msgstr "h1. Danksagung"
 
-#: s/index.textile.tt2:49
+#: s/index.textile.tt2:50
 msgid "h1. To do"
 msgstr "h1. In Vorbereitung"
 
-#: s/index.textile.tt2:43
+#: s/index.textile.tt2:44
 msgid "h1. Translations also welcome"
 msgstr "h1. Übersetzungen sind auch willkommen"
 
