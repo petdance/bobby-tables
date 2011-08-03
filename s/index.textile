@@ -71,3 +71,4 @@ Thanks to the following folks for their contributions:
 * "Michael Schwern":http://schwern.dreamhosters.com/
 * "Jeana Clark":http://jeanaclark.org/
 * "Lars Dɪᴇᴄᴋᴏᴡ":http://search.cpan.org/~daxim/
+* "Jani Hur":http://www.jani-hur.net

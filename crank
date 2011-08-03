@@ -40,6 +40,7 @@ my $pages = [
     java       => 'Java',
     perl       => 'Perl',
     php        => 'PHP',
+    plsql      => 'PL/SQL',
     postgresql => 'PostgreSQL',
     python     => 'Python',
     ruby       => 'Ruby',
