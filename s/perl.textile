@@ -23,10 +23,7 @@ my $cols = join ',', map { $dbh->quote_identifier($_) } @cols;
 my $sth = $dbh->prepare("SELECT $cols FROM $quoted_table_name ...");
 </code>
 
-You could also avoid writing SQL by hand by using <a
-href="http://p3rl.org/DBIx::Class">DBIx::Class</a>, <a
-href="http://p3rl.org/SQL::Abstract">SQL::Abstract</a> etc to generate your SQL
-for you programmatically.
+You could also avoid writing SQL by hand by using "DBIx::Class":http://p3rl.org/DBIx::Class, "SQL::Abstract":http://p3rl.org/SQL::Abstract etc to generate your SQL for you programmatically.
 
 h2. To do
 
