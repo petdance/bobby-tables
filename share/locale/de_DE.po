@@ -47,7 +47,7 @@ msgstr ""
 "objectstate.html#objectstate-querying-executing-parameters beherrscht auch "
 "vorbereitete Anweisungen."
 
-#: s/perl.textile.tt2:25
+#: s/perl.textile.tt2:20
 msgid ""
 "# Assume @cols contains a list of column names you need to fetch:\n"
 "my $cols = join ',', map { $dbh->quote_identifier($_) } @cols;"
@@ -258,7 +258,7 @@ msgstr ""
 "curs.execute(cmd)\n"
 "</code>"
 
-#: s/perl.textile.tt2:21
+#: s/perl.textile.tt2:16
 msgid ""
 "<code>\n"
 "# Make sure a table name we want to use is safe:\n"
@@ -337,7 +337,7 @@ msgstr ""
 "array($email) );\n"
 "</code>"
 
-#: s/perl.textile.tt2:8
+#: s/perl.textile.tt2:5
 msgid ""
 "<code>\n"
 "$sth = $dbh->prepare(\"SELECT * FROM users WHERE email = ?\");\n"
@@ -794,7 +794,7 @@ msgstr ""
 msgid "Examples assume the following table structure:"
 msgstr ""
 
-#: s/perl.textile.tt2:38
+#: s/perl.textile.tt2:30
 msgid ""
 "Explain Perl's taint mode and how DBI supports taint mode, both inbound and "
 "outbound.\n"
@@ -835,11 +835,10 @@ msgstr ""
 msgid "Here's the long way to do bind parameters."
 msgstr "So bindet man Parameter auf die ausführliche Weise."
 
-#: s/perl.textile.tt2:17
+#: s/perl.textile.tt2:14
 msgid ""
-"However, you can't use parameterization for identifiers (table names,\n"
-"column names) so you need to use DBI's <tt>quote_identifier()</tt>\n"
-"method for that:"
+"However, you can't use parameterization for identifiers (table names, column "
+"names) so you need to use DBI's <tt>quote_identifier()</tt> method for that:"
 msgstr ""
 
 #: s/plsql.textile.tt2:12
@@ -931,11 +930,10 @@ msgstr ""
 #: s/perl.textile.tt2:3
 #, fuzzy
 msgid ""
-"Perl's \"DBI\":http://search.cpan.org/dist/DBI, available on the\n"
-"\"CPAN\":http://search.cpan.org, supports parameterized SQL calls.  Both "
-"the\n"
-"@do@ method and @prepare@ method support parameters (\"placeholders\",\n"
-"as they call them) for most database drivers. For example:"
+"Perl's \"DBI\":http://search.cpan.org/dist/DBI, available on the \"CPAN\":"
+"http://search.cpan.org, supports parameterized SQL calls.  Both the @do@ "
+"method and @prepare@ method support parameters (\"placeholders\", as they "
+"call them) for most database drivers. For example:"
 msgstr ""
 "Perl Datenbankschnittstelle \"DBI\":http://search.cpan.org/dist/DBI, "
 "erhältlich vom \"CPAN\":http://search.cpan.org, beherrscht parameterisierte "
@@ -1107,12 +1105,11 @@ msgstr ""
 "Unter Verwendung der \"Python-DB-API\":http://wiki.python.org/moin/"
 "DatabaseProgramming/ ist das folgende falsch:"
 
-#: s/perl.textile.tt2:31
+#: s/perl.textile.tt2:26
 msgid ""
-"You could also avoid writing SQL by hand by\n"
-"using \"DBIx::Class\":http://p3rl.org/DBIx::Class,\n"
-"\"SQL::Abstract\":http://p3rl.org/SQL::Abstract etc to generate your SQL\n"
-"for you programmatically."
+"You could also avoid writing SQL by hand by using \"DBIx::Class\":http://"
+"p3rl.org/DBIx::Class, \"SQL::Abstract\":http://p3rl.org/SQL::Abstract etc to "
+"generate your SQL for you programmatically."
 msgstr ""
 
 #: s/postgresql.textile.tt2:27
@@ -1325,7 +1322,7 @@ msgid "h2. PL/pgSQL"
 msgstr "h2. PL/pgSQL"
 
 #: s/asp.textile.tt2:12 s/dotnet.textile.tt2:12 s/java.textile.tt2:13
-#: s/perl.textile.tt2:36 s/python.textile.tt2:17 s/ruby.textile.tt2:17
+#: s/perl.textile.tt2:28 s/python.textile.tt2:17 s/ruby.textile.tt2:17
 #: s/scheme.textile.tt2:14
 msgid "h2. To do"
 msgstr "h2. In Vorbereitung"
@@ -1350,7 +1347,7 @@ msgstr "h2. Mittels PDO "
 msgid "h3. PL/Tcl"
 msgstr "h3. PL/Tcl"
 
-#: s/perl.textile.tt2:28
+#: s/perl.textile.tt2:23
 msgid ""
 "my $sth = $dbh->prepare(\"SELECT $cols FROM $quoted_table_name ...\");\n"
 "</code>"
