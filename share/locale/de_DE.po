@@ -14,6 +14,21 @@ msgstr ""
 "X-Generator: Lokalize 1.0\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
+#: s/plsql.textile.tt2:138 s/plsql.textile.tt2:189
+msgid ""
+"    FOR i IN v_users.FIRST .. v_users.LAST LOOP\n"
+"      PIPE ROW(v_users(i));\n"
+"    END LOOP;"
+msgstr ""
+
+#: s/plsql.textile.tt2:142 s/plsql.textile.tt2:193
+msgid ""
+"    RETURN;\n"
+"END;\n"
+"/\n"
+"</code>"
+msgstr ""
+
 #: s/scheme.textile.tt2:5
 msgid ""
 "\"CHICKEN\":http://www.call-with-current-continuation.org/ is a compiler for "
@@ -60,6 +75,7 @@ msgid ""
 "* \"Michael Schwern\":http://schwern.dreamhosters.com/\n"
 "* \"Jeana Clark\":http://jeanaclark.org/\n"
 "* \"Lars Dɪᴇᴄᴋᴏᴡ\":http://search.cpan.org/~daxim/\n"
+"* \"Jani Hur\":http://www.jani-hur.net"
 msgstr ""
 "* Scott Rose\n"
 "* Erik Osheim\n"
@@ -197,6 +213,10 @@ msgstr ""
 "// userName ist eine vom Benutzer eingegebene Stringvariable\n"
 "userNameParam.Value = userName;\n"
 "</code>"
+
+#: s/plsql.textile.tt2:114 s/plsql.textile.tt2:48
+msgid "</code>"
+msgstr ""
 
 #: s/coldfusion.textile.tt2:19
 msgid ""
@@ -390,6 +410,88 @@ msgstr ""
 "\" 18)\n"
 "</code>"
 
+#: s/plsql.textile.tt2:122 s/plsql.textile.tt2:173
+msgid ""
+"<code>\n"
+"ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';"
+msgstr ""
+
+#: s/plsql.textile.tt2:147 s/plsql.textile.tt2:200
+msgid ""
+"<code>\n"
+"ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD\"SUPRISE!\"';\n"
+"SELECT COLUMN_VALUE AS \"REGULARS\" FROM TABLE(users_since(sysdate - 30));"
+msgstr ""
+
+#: s/plsql.textile.tt2:54
+msgid ""
+"<code>\n"
+"CREATE OR REPLACE FUNCTION user_access (\n"
+"    p_uname IN VARCHAR2\n"
+") RETURN date AS\n"
+"    v_accessed_at date;\n"
+"    v_query constant varchar2(32767) := \n"
+"      'SELECT accessed_at FROM users WHERE username = ''' || p_uname || "
+"'''';\n"
+"BEGIN\n"
+"    EXECUTE IMMEDIATE v_query INTO v_accessed_at;\n"
+"    RETURN v_accessed_at;\n"
+"END;\n"
+"/\n"
+"</code>"
+msgstr ""
+
+#: s/plsql.textile.tt2:86
+msgid ""
+"<code>\n"
+"CREATE OR REPLACE FUNCTION user_access (\n"
+"    p_uname IN VARCHAR2\n"
+") RETURN date AS\n"
+"    v_accessed_at date;\n"
+"    v_query constant varchar2(32767) := \n"
+"      'SELECT accessed_at FROM users WHERE username = :a';\n"
+"BEGIN\n"
+"    EXECUTE IMMEDIATE v_query INTO v_accessed_at USING p_uname;\n"
+"    RETURN v_accessed_at;\n"
+"END;\n"
+"/\n"
+"</code>"
+msgstr ""
+
+#: s/plsql.textile.tt2:22
+#, fuzzy
+msgid ""
+"<code>\n"
+"CREATE OR REPLACE FUNCTION user_access (\n"
+"    p_uname IN VARCHAR2\n"
+") RETURN date AS\n"
+"    v_accessed_at date;\n"
+"BEGIN\n"
+"    SELECT accessed_at INTO v_accessed_at FROM users WHERE username = "
+"p_uname;\n"
+"    RETURN v_accessed_at;\n"
+"END;\n"
+"/\n"
+"</code>"
+msgstr ""
+"bc. CREATE OR REPLACE FUNCTION user_access (\n"
+"    p_uname TEXT\n"
+") RETURNS timestamp language plpgsql AS $$\n"
+"BEGIN\n"
+"    RETURN accessed_at FROM users WHERE username = p_uname;\n"
+"END;\n"
+"$$;"
+
+#: s/plsql.textile.tt2:5
+msgid ""
+"<code>\n"
+"CREATE TABLE users (\n"
+"    username VARCHAR2(8) UNIQUE,\n"
+"    accessed_at DATE,\n"
+"    superuser NUMBER(1,0)\n"
+");"
+msgstr ""
+
 #: s/ruby.textile.tt2:5
 msgid ""
 "<code>\n"
@@ -428,6 +530,13 @@ msgstr ""
 "statement.setString(1, id);\n"
 "statement.execute();\n"
 "</code>"
+
+#: s/plsql.textile.tt2:100 s/plsql.textile.tt2:34 s/plsql.textile.tt2:68
+msgid ""
+"<code>\n"
+"SELECT user_access('janihur')\n"
+"  AS \"JANIHUR LAST SEEN\" FROM DUAL;"
+msgstr ""
 
 #: s/csharp.textile.tt2:5
 msgid ""
@@ -557,6 +666,14 @@ msgstr ""
 "Mit ADODB kann man in einem Methodenaufruf eine Anweisung vorbereiten, daran "
 "binden und sie ausführen."
 
+#: s/plsql.textile.tt2:160
+msgid ""
+"ALTER SESSION SET NLS_DATE_FORMAT = '\"'' or superuser = 1 or username = "
+"''whocares\"';\n"
+"SELECT COLUMN_VALUE AS \"SUPERUSER IS\" FROM TABLE(users_since(sysdate - "
+"30));"
+msgstr ""
+
 #: s/asp.textile.tt2:14
 msgid "Add some narrative\n"
 msgstr "Mehr Erläuterung\n"
@@ -572,6 +689,13 @@ msgstr ""
 "current/static/xplang.html, mit denen man Funktionen und Prozeduren "
 "innerhalb der Datenbank schreiben kann, haben die Fähigkeit, beliebige SQL-"
 "Anweisungen auszuführen."
+
+#: s/plsql.textile.tt2:118
+msgid ""
+"Also NLS session parameters (NLS_DATE_FORMAT, NLS_TIMESTAMP_FORMAT, "
+"NLS_TIMESTAMP_TZ_FORMAT, NLS_NUMERIC_CHARACTER) can be used to modify or "
+"inject SQL statements."
+msgstr ""
 
 #: s/php.textile.tt2:67
 msgid "And a shorter way to pass things in."
@@ -610,6 +734,40 @@ msgstr ""
 "benutzt man die @EXECUTE@-Syntax von PL/pgSQL. Ein Beispiel mit einer "
 "Gefährdung durch SQL-Einschleusung:"
 
+#: s/plsql.textile.tt2:128
+msgid ""
+"CREATE OR REPLACE FUNCTION users_since(\n"
+"    p_since IN DATE\n"
+") RETURN userlist_t PIPELINED AS\n"
+"    v_users userlist_t;\n"
+"    v_query constant varchar2(32767) := \n"
+"      'SELECT username FROM users WHERE superuser = 0 and accessed_at > ''' "
+"|| p_since || ''' order by accessed_at desc';\n"
+"BEGIN\n"
+"    DBMS_OUTPUT.PUT_LINE('v_query = ' || v_query);\n"
+"    EXECUTE IMMEDIATE v_query BULK COLLECT INTO v_users;"
+msgstr ""
+
+#: s/plsql.textile.tt2:179
+msgid ""
+"CREATE OR REPLACE FUNCTION users_since(\n"
+"    p_since IN DATE\n"
+") RETURN userlist_t PIPELINED AS\n"
+"    v_users userlist_t;\n"
+"    v_query constant varchar2(32767) := \n"
+"      'SELECT username FROM users WHERE superuser = 0 and accessed_at > ''' "
+"|| to_char(p_since, 'YYYY-MM-DD') || ''' order by accessed_at desc';\n"
+"BEGIN\n"
+"    DBMS_OUTPUT.PUT_LINE('v_query = ' || v_query);\n"
+"    EXECUTE IMMEDIATE v_query BULK COLLECT INTO v_users;"
+msgstr ""
+
+#: s/plsql.textile.tt2:125 s/plsql.textile.tt2:176
+msgid ""
+"CREATE OR REPLACE TYPE userlist_t AS TABLE OF VARCHAR2(8);\n"
+"/"
+msgstr ""
+
 #: s/index.textile.tt2:38
 msgid ""
 "Don't see a language that you'd like to see represented?  Please let me know "
@@ -618,6 +776,10 @@ msgid ""
 msgstr ""
 "Wird eine Sprache vermisst? Bitte melde Verbesserungen oder Ergänzungen auf "
 "eine dieser drei Arten, in absteigender Reihenfolge der Bevorzugung."
+
+#: s/plsql.textile.tt2:3
+msgid "Examples assume the following table structure:"
+msgstr ""
 
 #: s/perl.textile.tt2:16
 msgid ""
@@ -660,6 +822,15 @@ msgstr ""
 msgid "Here's the long way to do bind parameters."
 msgstr "So bindet man Parameter auf die ausführliche Weise."
 
+#: s/plsql.textile.tt2:12
+msgid ""
+"INSERT INTO users VALUES ('janihur',  sysdate,      0);\n"
+"INSERT INTO users VALUES ('petdance', sysdate - 12, 1);\n"
+"INSERT INTO users VALUES ('albundy',  sysdate - 3,  0);\n"
+"INSERT INTO users VALUES ('donduck',  sysdate - 18, 0);\n"
+"</code>"
+msgstr ""
+
 #: s/coldfusion.textile.tt2:3
 #, fuzzy
 msgid ""
@@ -677,6 +848,17 @@ msgstr ""
 "In Ruby on Rails mit \"ActiveRecord\":http://guides.rubyonrails.org/"
 "active_record_querying.html:"
 
+#: s/plsql.textile.tt2:120
+msgid ""
+"In next example data type conversion takes place when @p_since@ is "
+"implicitly converted to a string for concatenation. Note how the value of "
+"NLS_DATE_FORMAT affects to the query string in users_since()-function !"
+msgstr ""
+
+#: s/plsql.textile.tt2:84
+msgid "Instead use bind variables:"
+msgstr ""
+
 #: s/python.textile.tt2:11
 msgid "Instead, do this:"
 msgstr "Stattdessen korrekt:"
@@ -684,6 +866,13 @@ msgstr "Stattdessen korrekt:"
 #: s/postgresql.textile.tt2:59
 msgid "It's quite a bit easier to read, too!"
 msgstr "So ist es auch viel leichter zu lesen!"
+
+#: s/plsql.textile.tt2:104 s/plsql.textile.tt2:38 s/plsql.textile.tt2:72
+msgid ""
+"JANIHUR LAST SEEN\n"
+"-------------------\n"
+"2011-08-03 17:11:24"
+msgstr ""
 
 #: s/php.textile.tt2:9
 msgid ""
@@ -693,6 +882,11 @@ msgstr ""
 "Hinweis: die Abfrage muss in einfachen Anführungszeichen stehen oder das @$@ "
 "muss maskiert werden, damit PHP nicht versucht, es als Variable zu "
 "analysieren."
+
+#: s/plsql.textile.tt2:198
+msgid ""
+"Now the value of NLS parameter @NLS_DATE_FORMAT@ is ignored during the query."
+msgstr ""
 
 #: s/csharp.textile.tt2:17
 msgid "Or simpler:"
@@ -726,6 +920,25 @@ msgstr ""
 "SQL-Aufrufe. Die Methoden @do@ und @prepare@ unterstützen Parameter (dort: "
 "\"Platzhalter\") für die meisten Datenbanktreiber. Zum Beispiel:"
 
+#: s/plsql.textile.tt2:154
+msgid ""
+"REGULARS\n"
+"--------\n"
+"janihur\n"
+"albundy\n"
+"donduck"
+msgstr ""
+
+#: s/plsql.textile.tt2:207
+msgid ""
+"REGULARS\n"
+"--------\n"
+"janihur\n"
+"albundy\n"
+"donduck\n"
+"</code>\n"
+msgstr ""
+
 #: s/coldfusion.textile.tt2:16
 msgid ""
 "Recent versions of ColdFusion provide a set of functions to run queries "
@@ -736,6 +949,34 @@ msgstr ""
 #: s/dotnet.textile.tt2:3
 msgid "Reference:"
 msgstr "Literaturhinweis:"
+
+#: s/plsql.textile.tt2:108 s/plsql.textile.tt2:42 s/plsql.textile.tt2:76
+msgid ""
+"SELECT user_access('whocares'' or superuser = 1 or username = ''whocares') \n"
+"  AS \"SUPERUSER LAST SEEN\" FROM DUAL;"
+msgstr ""
+
+#: s/plsql.textile.tt2:166
+msgid ""
+"SUPERUSE\n"
+"--------\n"
+"petdance\n"
+"</code>"
+msgstr ""
+
+#: s/plsql.textile.tt2:111 s/plsql.textile.tt2:45
+msgid ""
+"SUPERUSER LAST SEEN\n"
+"-------------------"
+msgstr ""
+
+#: s/plsql.textile.tt2:79
+msgid ""
+"SUPERUSER LAST SEEN\n"
+"-------------------\n"
+"2011-07-22 17:11:24\n"
+"</code>"
+msgstr ""
 
 #: s/index.textile.tt2:48
 msgid ""
@@ -757,6 +998,10 @@ msgstr ""
 "SqlParameter userNameParam = userInfoQuery.Parameters.Add(\"@UserName\",\n"
 "    SqlDbType.VarChar, 25 /* max length of field */ );"
 
+#: s/plsql.textile.tt2:20
+msgid "Static SQL leaves no room for SQL injection."
+msgstr ""
+
 #: s/coldfusion.textile.tt2:14
 #, fuzzy
 msgid ""
@@ -765,6 +1010,10 @@ msgid ""
 msgstr ""
 "Wenn man gespeicherte Prozeduren in der Datenbank hat, kann man sie mit den "
 "Funktionen @cfstoredproc@ und @cfprocparam@ aufrufen."
+
+#: s/plsql.textile.tt2:52
+msgid "String concatenation opens doors to possible SQL injection exploits:"
+msgstr ""
 
 #: s/postgresql.textile.tt2:63 s/postgresql.textile.tt2:67
 msgid "TODO."
@@ -791,6 +1040,12 @@ msgstr ""
 #: s/php.textile.tt2:15
 msgid "The MySQL Improved extension handles bound parameters."
 msgstr "Die Erweiterung MySQL Improved beherrscht Parameterbindung."
+
+#: s/plsql.textile.tt2:171
+msgid ""
+"The remedy is to set the format modifier explicitly: @to_char(p_since, 'YYYY-"
+"MM-DD')@."
+msgstr ""
 
 #: s/postgresql.textile.tt2:7
 msgid ""
@@ -966,6 +1221,11 @@ msgstr "h1. Andere wahllose Ressourcen"
 msgid "h1. PHP"
 msgstr "h1. PHP"
 
+#: s/plsql.textile.tt2:1
+#, fuzzy
+msgid "h1. PL/SQL"
+msgstr "h2. PL/pgSQL"
+
 #: s/index.textile.tt2:36
 msgid "h1. Patches welcome"
 msgstr "h1. Verbesserungen sind willkommen"
@@ -1006,9 +1266,21 @@ msgstr "h1. Übersetzungen sind auch willkommen"
 msgid "h1. Who is Bobby Tables?"
 msgstr "h1. Wer ist Bobby Tables?"
 
+#: s/plsql.textile.tt2:18
+msgid "h2. Always prefer static SQL when possible"
+msgstr ""
+
 #: s/scheme.textile.tt2:3
 msgid "h2. CHICKEN Scheme"
 msgstr "h2. CHICKEN Scheme"
+
+#: s/plsql.textile.tt2:50
+msgid "h2. If you need dynamic SQL avoid string concatenation when possible"
+msgstr ""
+
+#: s/plsql.textile.tt2:116
+msgid "h2. Implicit Data Type Conversion Injection"
+msgstr ""
 
 #: s/postgresql.textile.tt2:61
 msgid "h2. PL/Perl"
@@ -1051,6 +1323,25 @@ msgstr "h3. PL/Tcl"
 #: s/ruby.textile.tt2:9
 msgid "or"
 msgstr "oder"
+
+#: s/plsql.textile.tt2:204
+msgid ""
+"v_query = SELECT username FROM users WHERE superuser = 0 and accessed_at >\n"
+"'2011-07-04' order by accessed_at desc"
+msgstr ""
+
+#: s/plsql.textile.tt2:151
+msgid ""
+"v_query = SELECT username FROM users WHERE superuser = 0 and accessed_at >\n"
+"'2011-07-04SUPRISE!' order by accessed_at desc"
+msgstr ""
+
+#: s/plsql.textile.tt2:163
+msgid ""
+"v_query = SELECT username FROM users WHERE superuser = 0 and accessed_at > "
+"''\n"
+"or superuser = 1 or username = 'whocares' order by accessed_at desc"
+msgstr ""
 
 #~ msgid "About Bobby Tables"
 #~ msgstr "Über Bobby Tables"
