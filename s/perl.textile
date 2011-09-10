@@ -11,6 +11,20 @@ foreach my $email (@emails) {
 }
 </code>
 
+However, you can't use parameterization for identifiers (table names, column names) so you need to use DBI's <tt>quote_identifier()</tt> method for that:
+
+<code>
+# Make sure a table name we want to use is safe:
+my $quoted_table_name = $dbh->quote_identifier($table_name);
+
+# Assume @cols contains a list of column names you need to fetch:
+my $cols = join ',', map { $dbh->quote_identifier($_) } @cols;
+
+my $sth = $dbh->prepare("SELECT $cols FROM $quoted_table_name ...");
+</code>
+
+You could also avoid writing SQL by hand by using "DBIx::Class":http://p3rl.org/DBIx::Class, "SQL::Abstract":http://p3rl.org/SQL::Abstract etc to generate your SQL for you programmatically.
+
 h2. To do
 
 Explain Perl's taint mode and how DBI supports taint mode, both inbound and outbound.
