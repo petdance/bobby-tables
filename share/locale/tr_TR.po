@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2011-08-17 02:18+0300\n"
-"PO-Revision-Date: 2011-09-18 01:12+0100\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2011-09-18 03:25+0100\n"
 "Last-Translator: Burak Gürsoy <burak@cpan.org>\n"
 "Language-Team: Turkish <>\n"
 "MIME-Version: 1.0\n"
@@ -38,11 +38,19 @@ msgstr ""
 
 #: s/scheme.textile.tt2:5
 msgid "\"CHICKEN\":http://www.call-with-current-continuation.org/ is a compiler for \"Scheme\":http://schemers.org/"
-msgstr "\"CHICKEN\":http://www.call-with-current-continuation.org/ \"Scheme\" için bir derleyicidir:http://schemers.org/"
+msgstr "\"CHICKEN\":http://www.call-with-current-continuation.org/, \"Scheme\":http://schemers.org/ için bir derleyicidir."
 
 #: s/java.textile.tt2:11
 msgid "\"Hibernate\":http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters also supports prepared statements."
 msgstr "\"Hibernate\":http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters hazırlanmış ifadeleride destekler."
+
+#: s/perl.textile.tt2:20
+msgid ""
+"# Assume @cols contains a list of column names you need to fetch:\n"
+"my $cols = join ',', map { $dbh->quote_identifier($_) } @cols;"
+msgstr ""
+"#  @cols değişkeninin, çekmeniz gereken sütun adlarını içerdiğini farzedin:\n"
+"my $cols = join ',', map { $dbh->quote_identifier($_) } @cols;"
 
 #: s/php.textile.tt2:47
 msgid ""
@@ -87,7 +95,7 @@ msgstr ""
 "* Mike Markley\n"
 "* \"Michael Schwern\":http://schwern.dreamhosters.com/\n"
 "* \"Jeana Clark\":http://jeanaclark.org/\n"
-"* \"Lars Lars Dɪᴇᴄᴋᴏᴡ\":http://search.cpan.org/~daxim/\n"
+"* \"Lars Dɪᴇᴄᴋᴏᴡ\":http://search.cpan.org/~daxim/\n"
 "* \"Jani Hur\":http://www.jani-hur.net"
 
 #: s/index.textile.tt2:32
@@ -236,6 +244,16 @@ msgstr ""
 "cmd = \"update people set name='%s' where id='%s'\" % (name, id)\n"
 "curs.execute(cmd)\n"
 "</code>"
+
+#: s/perl.textile.tt2:16
+msgid ""
+"<code>\n"
+"# Make sure a table name we want to use is safe:\n"
+"my $quoted_table_name = $dbh->quote_identifier($table_name);"
+msgstr ""
+"<code>\n"
+"# Kullanmak istediğimiz tablo adının güvenilir olduğundan emin olalım:\n"
+"my $quoted_table_name = $dbh->quote_identifier($table_name);"
 
 #: s/php.textile.tt2:27
 msgid ""
@@ -689,7 +707,7 @@ msgstr "Makaleler:"
 
 #: tt/header.tt:6
 msgid "Bobby Tables: A guide to preventing SQL injection"
-msgstr "Bobby Tables: SQL aşısını önlemek için bir kılavuz"
+msgstr "Bobby Tables: SQL a&#351;&#305;s&#305;n&#305; &#246;nlemek i&#231;in bir k&#305;lavuz"
 
 #: s/postgresql.textile.tt2:42
 msgid "Both the @p_column@ and the @p_value@ arguments are vulnerable. The way to avoid this problem is to use the @quote_ident()@ function to quote an SQL identifier (@p_column@ in this case) and @quote_lteral()@ to quote a literal value:"
@@ -760,7 +778,7 @@ msgstr "Sunulmasını istediğiniz dillerden birisini göremediniz mi? Lütfen, 
 msgid "Examples assume the following table structure:"
 msgstr "Örnekler, şu tablo yapısının varolduğunu öngörmektedir:"
 
-#: s/perl.textile.tt2:16
+#: s/perl.textile.tt2:30
 msgid "Explain Perl's taint mode and how DBI supports taint mode, both inbound and outbound.\n"
 msgstr "Perl'ün leke kipini ve DBI' ın buna desteğini her iki yönde de açıkla.\n"
 
@@ -768,14 +786,13 @@ msgstr "Perl'ün leke kipini ve DBI' ın buna desteğini her iki yönde de açı
 msgid "For such a simple case, you're actually better off writing a pure SQL function:"
 msgstr "Bu kadar basit bir durum için, saf bir SQL fonksiyonu yazmanız daha iyi olacaktır."
 
-#: tt/footer.tt:6
+#: tt/footer.tt:7
 msgid "Fork me on GitHub"
 msgstr "Beni GitHub' da koyala"
 
 #: s/csharp.textile.tt2:3
-#, perl-maketext-format
 msgid "From the \"C# Online\":http://en.csharp-online.net/ wiki page \"ASP.NET Security Hacks--Avoiding SQL Injection\":http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection"
-msgstr "\"C# Online\":http://en.csharp-online.net/ wiki sayfasından \"ASP.NET Güvenlik Yöntemleri--SQL aşısından kaçınmak\":http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection"
+msgstr "\"C# Online\":http://en.csharp-online.net/ sitesindeki \"ASP.NET Güvenlik Yöntemleri--SQL aşısından kaçınmak\":http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection wiki sayfasından:"
 
 #: s/index.textile.tt2:46
 msgid "Help translate this site! There are only 100 phrases. No programming necessary."
@@ -784,6 +801,10 @@ msgstr "Bu siteyi çevirmek için yardım edin! Sadece 100 paragraf var. Herhang
 #: s/php.textile.tt2:53
 msgid "Here's the long way to do bind parameters."
 msgstr "Şimdide, parametreleri bağlamak için uzun bir yöntem."
+
+#: s/perl.textile.tt2:14
+msgid "However, you can't use parameterization for identifiers (table names, column names) so you need to use DBI's <tt>quote_identifier()</tt> method for that:"
+msgstr "Ancak, tanımlayıcılar (tablo adları, sütun adları) için parametreler kullanamazsınız. Dolayısıyla, bu işlem için, DBI'ın <tt>quote_identifier()</tt> yöntemini kullanmalısınız:"
 
 #: s/plsql.textile.tt2:12
 msgid ""
@@ -1021,6 +1042,10 @@ msgstr " \"Ruby/DBI\":http://ruby-dbi.rubyforge.org/: kullanrak. \"Perl\":./perl
 msgid "Using the \"Python DB API\":http://wiki.python.org/moin/DatabaseProgramming/, don't do this:"
 msgstr "\"Python DB API\":http://wiki.python.org/moin/DatabaseProgramming/, kullanarak şunu yapmayın:"
 
+#: s/perl.textile.tt2:26
+msgid "You could also avoid writing SQL by hand by using \"DBIx::Class\":http://p3rl.org/DBIx::Class, \"SQL::Abstract\":http://p3rl.org/SQL::Abstract etc to generate your SQL for you programmatically."
+msgstr "Ayrıca, \"DBIx::Class\":http://p3rl.org/DBIx::Class kullanarak elle SQL yazmaktan kaçınabilir, \"SQL::Abstract\":http://p3rl.org/SQL::Abstract v.b. kullanarak SQL sorgunuzu otomatik oluşturabilirsiniz."
+
 #: s/postgresql.textile.tt2:27
 msgid ""
 "bc. CREATE OR REPLACE FUNCTION get_users(\n"
@@ -1232,7 +1257,7 @@ msgstr "h2. PL/pgSQL"
 #: s/asp.textile.tt2:12
 #: s/dotnet.textile.tt2:12
 #: s/java.textile.tt2:13
-#: s/perl.textile.tt2:14
+#: s/perl.textile.tt2:28
 #: s/python.textile.tt2:17
 #: s/ruby.textile.tt2:17
 #: s/scheme.textile.tt2:14
@@ -1258,6 +1283,14 @@ msgstr "h2. PDO katmanını kullanarak"
 #: s/postgresql.textile.tt2:69
 msgid "h3. PL/Tcl"
 msgstr "h3. PL/Tcl"
+
+#: s/perl.textile.tt2:23
+msgid ""
+"my $sth = $dbh->prepare(\"SELECT $cols FROM $quoted_table_name ...\");\n"
+"</code>"
+msgstr ""
+"my $sth = $dbh->prepare(\"SELECT $cols FROM $quoted_table_name ...\");\n"
+"</code>"
 
 #: s/ruby.textile.tt2:9
 msgid "or"
