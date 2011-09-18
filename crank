@@ -16,6 +16,7 @@ package Local::L10n; # Local::* is reserved
 use parent 'Locale::Maketext';
 use Locale::Maketext::Lexicon {
     de_DE => [Gettext => 'share/locale/de_DE.po'],
+    tr_TR => [Gettext => 'share/locale/tr_TR.po'],
 };
 
 package main;
