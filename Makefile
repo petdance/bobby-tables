@@ -2,6 +2,8 @@
 	crank \
 	clean
 
+PERL=perl
+PROVE=prove
 BUILD=build
 SOURCE=s
 LOCALE=share/locale
@@ -17,22 +19,22 @@ clean:
 crank: clean messages
 	mkdir -p $(BUILD)/ || true > /dev/null 2>&1
 	# force English for top directory
-	LANG=C perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
+	LANG=C $(PERL) crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)
 	# other languages in subdirectories
 	for pofile in $(LOCALE)/*.po ; do \
 	    language=`basename $$pofile .po` ; \
 	    mkdir -p $(BUILD)/$$language || true > /dev/null 2>&1 ; \
-	    LANG=$$language perl crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)/$$language ; \
+	    LANG=$$language $(PERL) crank --sourcepath=$(SOURCE) --buildpath=$(BUILD)/$$language ; \
 	    done
 	cp -R static/* $(BUILD)/
 
 test: crank
-	prove t/html.t
+	$(PROVE) t/html.t
 
 messages:
 	# wrap textile paragraphs into TT loc fragments
 	for textilefile in $(SOURCE)/*.textile ; do \
-	    perl -lne'BEGIN {$$/ = "\n\n";}; print "[% |loc %]$${_}[% END %]\n"' \
+	    $(PERL) -lne'BEGIN {$$/ = "\n\n";}; print "[% |loc %]$${_}[% END %]\n"' \
 	    < $$textilefile > $$textilefile.tt2 ; done
         # extract string literals to po template
 	xgettext.pl -g -u -P tt2 -o $(POTEMPLATE) tt/* $(SOURCE)/*
