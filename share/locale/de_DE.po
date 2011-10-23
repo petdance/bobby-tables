@@ -37,11 +37,13 @@ msgstr ""
 "\"CHICKEN\":http://www.call-with-current-continuation.org/ ist ein Compiler "
 "für \"Scheme\":http://schemers.org/"
 
-#: s/java.textile.tt2:11
+#: s/java.textile.tt2:44
+#, fuzzy
 msgid ""
-"\"Hibernate\":http://docs.jboss.org/hibernate/stable/core/reference/en/html/"
-"objectstate.html#objectstate-querying-executing-parameters also supports "
-"prepared statements."
+"\"Hibernate\":http://www.hibernate.org/ also supports prepared statements.  "
+"See the \"Hibernate Manual\":http://docs.jboss.org/hibernate/stable/core/"
+"reference/en/html/objectstate.html#objectstate-querying-executing-parameters "
+"for more information."
 msgstr ""
 "\"Hibernate\":http://docs.jboss.org/hibernate/stable/core/reference/en/html/"
 "objectstate.html#objectstate-querying-executing-parameters beherrscht auch "
@@ -66,6 +68,7 @@ msgstr ""
 #: s/index.textile.tt2:59
 #, fuzzy
 msgid ""
+"* \"Mike Angstadt\":http://www.mangst.com\n"
 "* \"Peter Ward\":http://identi.ca/flowblok/\n"
 "* \"David Wheeler\":http://justatheory.com\n"
 "* Scott Rose\n"
@@ -81,7 +84,7 @@ msgid ""
 "* \"Michael Schwern\":http://schwern.dreamhosters.com/\n"
 "* \"Jeana Clark\":http://jeanaclark.org/\n"
 "* \"Lars Dɪᴇᴄᴋᴏᴡ\":http://search.cpan.org/~daxim/\n"
-"* \"Jani Hur\":http://www.jani-hur.net"
+"* \"Jani Hur\":http://www.jani-hur.net\n"
 msgstr ""
 "* Scott Rose\n"
 "* Erik Osheim\n"
@@ -133,10 +136,6 @@ msgid ""
 msgstr ""
 "* \"SqlCommand.Prepare\":http://msdn.microsoft.com/en-us/library/system.data."
 "sqlclient.sqlcommand.prepare.aspx in der Klassenbibliothek des .NET-Framework"
-
-#: s/java.textile.tt2:15
-msgid "* Add some narrative\n"
-msgstr "* Mehr Erläuterung\n"
 
 #: s/dotnet.textile.tt2:14
 msgid ""
@@ -525,25 +524,6 @@ msgstr ""
 "Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]\n"
 "</code>"
 
-#: s/java.textile.tt2:3
-#, fuzzy
-msgid ""
-"<code>\n"
-"PreparedStatement statement = connection.prepareStatement(\n"
-"    \"update people set name = ? where id = ?\");\n"
-"statement.setString(1, name);\n"
-"statement.setString(2, id);\n"
-"statement.execute();\n"
-"</code>"
-msgstr ""
-"<code>\n"
-"PreparedStatement statement = connection.prepareStatement(\n"
-"    \"update people set name = ? where id = ?\");\n"
-"statement.setString(0, name);\n"
-"statement.setString(1, id);\n"
-"statement.execute();\n"
-"</code>"
-
 #: s/plsql.textile.tt2:100 s/plsql.textile.tt2:34 s/plsql.textile.tt2:68
 msgid ""
 "<code>\n"
@@ -670,6 +650,45 @@ msgstr ""
 "(Titeltext: \"Ihre Tochter heißt Hilfe ich werde in einer Führerscheinfabrik "
 "gefangengehalten.\")\n"
 "</p>"
+
+#: s/java.textile.tt2:22
+msgid ""
+"<pre>\n"
+"List<Person> people = //user input\n"
+"Connection connection = DriverManager.getConnection(...);\n"
+"connection.setAutoCommit(false);\n"
+"try{\n"
+"  PreparedStatement statement = connection.prepareStatement(\"UPDATE people "
+"SET lastName = ?, age = ? WHERE id = ?\");\n"
+"  for (Person person : people){\n"
+"    statement.setString(1, person.getLastName());\n"
+"    statement.setInt(2, person.getAge());\n"
+"    statement.setInt(3, person.getId());\n"
+"    statement.execute();\n"
+"  }\n"
+"  connection.commit();\n"
+"} catch (SQLException e){\n"
+"  connection.rollback();\n"
+"}\n"
+"</pre>"
+msgstr ""
+
+#: s/java.textile.tt2:7
+msgid ""
+"<pre>\n"
+"String name = //user input\n"
+"int age = //user input\n"
+"Connection connection = DriverManager.getConnection(...);\n"
+"PreparedStatement statement = connection.prepareStatement(\"SELECT * FROM "
+"people WHERE lastName = ? AND age > ?\");\n"
+"statement.setString(1, name); //lastName is a VARCHAR\n"
+"statement.setInt(2, age); //age is an INT\n"
+"ResultSet rs = statement.executeQuery();\n"
+"while (rs.next()){\n"
+"  //...\n"
+"}\n"
+"</pre>"
+msgstr ""
 
 #: s/php.textile.tt2:25
 msgid ""
@@ -893,6 +912,13 @@ msgid ""
 "2011-08-03 17:11:24"
 msgstr ""
 
+#: s/java.textile.tt2:40
+msgid ""
+"More information on @PreparedStatement@ can be found in the \"Oracle JDBC "
+"tutorial\":http://download.oracle.com/javase/tutorial/jdbc/basics/prepared."
+"html."
+msgstr ""
+
 #: s/php.textile.tt2:9
 msgid ""
 "Note that the query must be in single-quotes or have the @$@ escaped to "
@@ -905,6 +931,17 @@ msgstr ""
 #: s/plsql.textile.tt2:198
 msgid ""
 "Now the value of NLS parameter @NLS_DATE_FORMAT@ is ignored during the query."
+msgstr ""
+
+#: s/java.textile.tt2:20
+msgid ""
+"Once a @PreparedStatement@ object has been created, it can be reused "
+"multiple times for multiple queries (for example, when using the same query "
+"to update multiple rows in a table).  However, they are *not thread-safe* "
+"because of the many method calls involved in setting the parameters and "
+"executing the query.  Therefore, you should only define @PreparedStatement@ "
+"objects as method-level variables (as opposed to class-level variables) to "
+"avoid concurrency issues."
 msgstr ""
 
 #: s/csharp.textile.tt2:17
@@ -1035,6 +1072,11 @@ msgstr ""
 msgid "String concatenation opens doors to possible SQL injection exploits:"
 msgstr ""
 
+#: s/java.textile.tt2:48
+#, fuzzy
+msgid "TODO\n"
+msgstr "In Vorbereitung.\n"
+
 #: s/postgresql.textile.tt2:63 s/postgresql.textile.tt2:67
 msgid "TODO."
 msgstr "In Vorbereitung."
@@ -1056,6 +1098,17 @@ msgstr ""
 "Das ist alles. Nicht versuchen, ungültige Zeichen zu maskieren. Nicht "
 "versuchen, es eigenhändig zu machen. Lerne, parameterisierte Anweisungen zu "
 "benutzen, und zwar immer und jedes Mal."
+
+#: s/java.textile.tt2:5
+msgid ""
+"The \"JDBC API\":http://download.oracle.com/javase/tutorial/jdbc/index.html "
+"has a class called \"@PreparedStatement@\":http://download.oracle.com/"
+"javase/6/docs/api/java/sql/PreparedStatement.html, which allows the "
+"programmer to safely insert user-supplied data into a SQL query.  The "
+"location of each input value in the query string is marked with a question "
+"mark.  The various @set*()@ methods are then used to safely perform the "
+"insertion."
+msgstr ""
 
 #: s/php.textile.tt2:15
 msgid "The MySQL Improved extension handles bound parameters."
@@ -1301,12 +1354,24 @@ msgstr ""
 msgid "h2. CHICKEN Scheme"
 msgstr "h2. CHICKEN Scheme"
 
+#: s/java.textile.tt2:42
+msgid "h2. Hibernate"
+msgstr ""
+
 #: s/plsql.textile.tt2:50
 msgid "h2. If you need dynamic SQL avoid string concatenation when possible"
 msgstr ""
 
 #: s/plsql.textile.tt2:116
 msgid "h2. Implicit Data Type Conversion Injection"
+msgstr ""
+
+#: s/java.textile.tt2:3
+msgid "h2. JDBC"
+msgstr ""
+
+#: s/java.textile.tt2:46
+msgid "h2. MyBatis"
 msgstr ""
 
 #: s/postgresql.textile.tt2:61
@@ -1321,9 +1386,8 @@ msgstr "h2. PL/Python"
 msgid "h2. PL/pgSQL"
 msgstr "h2. PL/pgSQL"
 
-#: s/asp.textile.tt2:12 s/dotnet.textile.tt2:12 s/java.textile.tt2:13
-#: s/perl.textile.tt2:28 s/python.textile.tt2:17 s/ruby.textile.tt2:17
-#: s/scheme.textile.tt2:14
+#: s/asp.textile.tt2:12 s/dotnet.textile.tt2:12 s/perl.textile.tt2:28
+#: s/python.textile.tt2:17 s/ruby.textile.tt2:17 s/scheme.textile.tt2:14
 msgid "h2. To do"
 msgstr "h2. In Vorbereitung"
 
@@ -1375,6 +1439,27 @@ msgid ""
 "''\n"
 "or superuser = 1 or username = 'whocares' order by accessed_at desc"
 msgstr ""
+
+#~ msgid "* Add some narrative\n"
+#~ msgstr "* Mehr Erläuterung\n"
+
+#, fuzzy
+#~ msgid ""
+#~ "<code>\n"
+#~ "PreparedStatement statement = connection.prepareStatement(\n"
+#~ "    \"update people set name = ? where id = ?\");\n"
+#~ "statement.setString(1, name);\n"
+#~ "statement.setString(2, id);\n"
+#~ "statement.execute();\n"
+#~ "</code>"
+#~ msgstr ""
+#~ "<code>\n"
+#~ "PreparedStatement statement = connection.prepareStatement(\n"
+#~ "    \"update people set name = ? where id = ?\");\n"
+#~ "statement.setString(0, name);\n"
+#~ "statement.setString(1, id);\n"
+#~ "statement.execute();\n"
+#~ "</code>"
 
 #~ msgid "About Bobby Tables"
 #~ msgstr "Über Bobby Tables"
