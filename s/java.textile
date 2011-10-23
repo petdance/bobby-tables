@@ -1,15 +1,48 @@
 h1. Java
 
-<code>
-PreparedStatement statement = connection.prepareStatement(
-    "update people set name = ? where id = ?");
-statement.setString(1, name);
-statement.setString(2, id);
-statement.execute();
-</code>
+h2. JDBC
 
-"Hibernate":http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters also supports prepared statements.
+The "JDBC API":http://download.oracle.com/javase/tutorial/jdbc/index.html has a class called "<code>PreparedStatement</code>":http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html, which allows the programmer to safely insert user-supplied data into a SQL query.  The location of each input value in the query string is marked with a question mark.  The various <code>set*()</code> methods are then used to safely perform the insertion.
 
-h2. To do
+<pre>
+String name = //user input
+int age = //user input
+Connection connection = DriverManager.getConnection(...);
+PreparedStatement statement = connection.prepareStatement("SELECT * FROM people WHERE lastName = ? AND age > ?");
+statement.setString(1, name); //lastName is a VARCHAR
+statement.setInt(2, age); //age is an INT
+ResultSet rs = statement.executeQuery();
+while (rs.next()){
+  //...
+}
+</pre>
 
-* Add some narrative
+Once a <code>PreparedStatement</code> object has been created, it can be reused multiple times for multiple queries (for example, when using the same query to update multiple rows in a table).  However, they are *not thread-safe* because of the many method calls involved in setting the parameters and executing the query.  Therefore, you should only define <code>PreparedStatement</code> objects as method-level variables (as opposed to class-level variables) to avoid concurrency issues.
+
+<pre>
+List<Person> people = //user input
+Connection connection = DriverManager.getConnection(...);
+connection.setAutoCommit(false);
+try{
+  PreparedStatement statement = connection.prepareStatement("UPDATE people SET lastName = ?, age = ? WHERE id = ?");
+  for (Person person : people){
+    statement.setString(1, person.getLastName());
+    statement.setInt(2, person.getAge());
+    statement.setInt(3, person.getId());
+    statement.execute();
+  }
+  connection.commit();
+} catch (SQLException e){
+  connection.rollback();
+}
+</pre>
+
+More information on <code>PreparedStatement</code>s can be found in the "Oracle JDBC tutorial":http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html.
+
+h2. Hibernate
+
+"Hibernate":http://www.hibernate.org/ also supports prepared statements.  See the "Hibernate Manual":http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters for more information.
+
+h2. MyBatis
+
+TODO
