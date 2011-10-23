@@ -20,20 +20,20 @@ while (rs.next()){
 Once a @PreparedStatement@ object has been created, it can be reused multiple times for multiple queries (for example, when using the same query to update multiple rows in a table).  However, they are *not thread-safe* because of the many method calls involved in setting the parameters and executing the query.  Therefore, you should only define @PreparedStatement@ objects as method-level variables (as opposed to class-level variables) to avoid concurrency issues.
 
 <pre>
-List<Person> people = //user input
+List&lt;Person&gt; people = //user input
 Connection connection = DriverManager.getConnection(...);
 connection.setAutoCommit(false);
-try{
-  PreparedStatement statement = connection.prepareStatement("UPDATE people SET lastName = ?, age = ? WHERE id = ?");
-  for (Person person : people){
-    statement.setString(1, person.getLastName());
-    statement.setInt(2, person.getAge());
-    statement.setInt(3, person.getId());
-    statement.execute();
-  }
-  connection.commit();
-} catch (SQLException e){
-  connection.rollback();
+try {
+    PreparedStatement statement = connection.prepareStatement("UPDATE people SET lastName = ?, age = ? WHERE id = ?");
+    for (Person person : people){
+        statement.setString(1, person.getLastName());
+        statement.setInt(2, person.getAge());
+        statement.setInt(3, person.getId());
+        statement.execute();
+    }
+    connection.commit();
+} catch (SQLException e) {
+    connection.rollback();
 }
 </pre>
 
