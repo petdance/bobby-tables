@@ -68,6 +68,8 @@ msgstr ""
 #: s/index.textile.tt2:59
 #, fuzzy
 msgid ""
+"* \"Hannes Hofmann\":http://www5.informatik.uni-erlangen.de/en/our-team/"
+"hofmann-hannes\n"
 "* \"Mike Angstadt\":http://www.mangst.com\n"
 "* \"Peter Ward\":http://identi.ca/flowblok/\n"
 "* \"David Wheeler\":http://justatheory.com\n"
@@ -405,13 +407,14 @@ msgstr ""
 "</code>"
 
 #: s/scheme.textile.tt2:7
+#, fuzzy
 msgid ""
 "<code>\n"
 "(define DB (sqlite3:open  \"myexample.db\"))\n"
 "(sqlite3:exec DB \"INSERT INTO Person(name) VALUES(?)\" \"Luke Skywalker\")\n"
 "(sqlite3:for-each-row print DB \"SELECT id,name FROM Person WHERE id=?\" 3)\n"
 "(define adults (sqlite3:map-row DB \"SELECT name FROM Person WHERE age >= ?"
-"\" 18)\n"
+"\" 18))\n"
 "</code>"
 msgstr ""
 "<code>\n"
