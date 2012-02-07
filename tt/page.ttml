@@ -25,6 +25,7 @@
                 <div id="content">
                     [% body %]
                 </div>
+                <div style="clear:both;"></div>
                 [% PROCESS footer.tt %]
             </div>
         </div>
