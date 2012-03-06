@@ -1,33 +1,33 @@
-h1. ColdFusion
+ColdFusion
+==========
 
-In ColdFusion there is a tag called @cfqueryparam@ that should be used whenever writing inline queries.
+In ColdFusion there is a tag called <code class="inline">cfqueryparam</code> that should be used whenever writing inline queries.
 
-<code>
-&lt;cfquery name="queryTest">
-SELECT FirstName, LastName, Phone
-FROM   tblUser
-WHERE  Status =
-    &lt;cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#form.status#">
-&lt;/cfquery>
-</code>
+    <cfquery name="queryTest">
+    SELECT FirstName, LastName, Phone
+    FROM   tblUser
+    WHERE  Status =
+      <cfqueryparam cfsqltype="CF_SQL_VARCHAR" value="#form.status#">
+    </cfquery>
 
-Stored procedures can be invoked with the @cfstoredproc@ and @cfprocparam@ tags.
+
+Stored procedures can be invoked with the <code class="inline">cfstoredproc</code> and <code class="inline">cfprocparam</code> tags.
 
 Recent versions of ColdFusion provide a set of functions to run queries that
 have a slightly different syntax, but still provide parameterized queries.
 
-<code>
-  &lt;cfscript>
-    var myQuery = new Query(sql="
-      SELECT FirstName, LastName, Phone
-      FROM   tblUser
-      WHERE  Status = :status
-    ");
-    myQuery.addParam(
-      name      = "status",
-      value     = form.status,
-      cfsqltype = "cf_sql_varchar"
-    );
-    var rawQuery = myQuery.execute().getResult();
-  &lt;/cfscript>
-</code>
+
+    <cfscript>
+      var myQuery = new Query(sql="
+        SELECT FirstName, LastName, Phone
+        FROM   tblUser
+        WHERE  Status = :status
+      ");
+      myQuery.addParam(
+        name      = "status",
+        value     = form.status,
+        cfsqltype = "cf_sql_varchar"
+      );
+      var rawQuery = myQuery.execute().getResult();
+    </cfscript>
+

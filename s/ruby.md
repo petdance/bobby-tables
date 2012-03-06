@@ -1,19 +1,18 @@
-h1. Ruby
+Ruby
+====
 
-In Ruby on Rails using "ActiveRecord":http://guides.rubyonrails.org/active_record_querying.html:
+In Ruby on Rails using [ActiveRecord](http://guides.rubyonrails.org/active_record_querying.html):
 
-<code>
-Person.find :all, :conditions => ['id = ? or name = ?', id, name]
-</code>
+    Person.find :all, :conditions => ['id = ? or name = ?', id, name]
 
 or
 
-<code>
-Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]
-</code>
+    Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]
 
-Using "Ruby/DBI":http://ruby-dbi.rubyforge.org/: analog to "Perl":./perl.html.
 
-h2. To do
+Using [Ruby/DBI](http://ruby-dbi.rubyforge.org/): analog to [Perl](./perl.html).
 
-* Add some narrative.
+To do
+-----
+
+-   Add some narrative.

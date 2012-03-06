@@ -1,11 +1,10 @@
-h1. Delphi
+Delphi
+======
 
 To use a prepared statement, do something like this:
 
-<code>
-query.SQL.Text := 'update people set name=:Name where id=:ID';
-query.Prepare;
-query.ParamByName( 'Name' ).AsString := name;
-query.ParamByName( 'ID' ).AsInteger := id;
-query.ExecSQL;
-</code>
+    query.SQL.Text := 'update people set name=:Name where id=:ID';
+    query.Prepare;
+    query.ParamByName( 'Name' ).AsString := name;
+    query.ParamByName( 'ID' ).AsInteger := id;
+    query.ExecSQL;

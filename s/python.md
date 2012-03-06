@@ -1,19 +1,17 @@
-h1. Python
+Python
+======
 
-Using the "Python DB API":http://wiki.python.org/moin/DatabaseProgramming/, don't do this:
+Using the [Python DB API](http://wiki.python.org/moin/DatabaseProgramming/), don't do this:
 
-<code>
-# Do NOT do it this way.
-cmd = "update people set name='%s' where id='%s'" % (name, id)
-curs.execute(cmd)
-</code>
+    # Do NOT do it this way.
+    cmd = "update people set name='%s' where id='%s'" % (name, id)
+    curs.execute(cmd)
 
 Instead, do this:
 
-<code>
-curs.execute('update people set name=:1 where id=:2', [name, id])
-</code>
+    curs.execute('update people set name=:1 where id=:2', [name, id])
 
-h2. To do
+To do
+-----
 
-* Add some narrative.
+-   Add some narrative.
