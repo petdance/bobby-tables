@@ -8,7 +8,7 @@ eval 'use Carp::Always'; # Not everyone has it
 use Getopt::Long;
 use File::Slurp;
 use Encode qw(decode_utf8);
-use Text::Textile ();
+use Text::Markdown ();
 use Template ();
 use Template::Constants qw( :debug :chomp );
 
@@ -49,8 +49,7 @@ my $pages = [
 
 MAIN: {
     my $handle = Local::L10n->get_handle; # set LANG to localise
-    my $textile = Text::Textile::Bobby->new(disable_encode_entities => 1);
-    $textile->flavor( 'xhtml1' );
+    my $m = Text::Markdown->new;
 
     my @sidelinks;
 
@@ -95,30 +94,19 @@ MAIN: {
     while ( @pages ) {
         my ($section,$desc) = splice( @pages, 0, 2 );
 
-        my $source = read_file( "$sourcepath/$section.textile.tt2" );
+        my $source = read_file( "$sourcepath/$section.md" );
         my $first_pass;
         $tt_first_pass->process( \$source, undef, \$first_pass )
-            || die sprintf("file: %s\nerror: %s\n", "$sourcepath/$section.textile.tt2", $tt->error);
-        $vars->{body} = $textile->process( decode_utf8($first_pass) );
-        $vars->{body} =~ s{<code>\n}{<code>}smxg;
+            || die sprintf("file: %s\nerror: %s\n", "$sourcepath/$section.md", $tt->error);
+
+        my $html = $m->markdown(decode_utf8($first_pass));
+        $html =~ s{<code>\n}{<code>}smxg;
+        $vars->{body} = $html;
+        
         $vars->{currlang} = ( $desc eq 'Home' ) ? '' : $desc;
         $vars->{rel_static} = ( 'C' eq $ENV{LANG} ) ? q() : q(../); # path prefix to static assets
         $vars->{rfc_1766_lang} = ( 'C' eq $ENV{LANG} ) ? 'en' : [map {tr/_/-/;$_} $ENV{LANG}]->[0];
         $tt->process( 'page.ttml', $vars, "$section.html", { binmode => ':encoding(UTF-8)' } )
             || die sprintf("file: %s\nerror: %s\n", "$section.html", $tt->error);
     }
-}
-
-package Text::Textile::Bobby;
-
-use base 'Text::Textile';
-
-# This is for inline code formatting
-sub format_code {
-    my $self = shift;
-
-    my $text = $self->SUPER::format_code( @_ );
-    $text =~ s/<code>/<code class="inline">/g;
-
-    return $text;
 }

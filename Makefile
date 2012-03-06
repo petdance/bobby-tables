@@ -31,14 +31,14 @@ test: crank
 
 messages:
 	# wrap textile paragraphs into TT loc fragments
-	for textilefile in $(SOURCE)/*.textile ; do \
-	    perl -lne'BEGIN {$$/ = "\n\n";}; print "[% |loc %]$${_}[% END %]\n"' \
-	    < $$textilefile > $$textilefile.tt2 ; done
+#	for textilefile in $(SOURCE)/*.textile ; do \
+#	    perl -lne'BEGIN {$$/ = "\n\n";}; print "[% |loc %]$${_}[% END %]\n"' \
+#	    < $$textilefile > $$textilefile.tt2 ; done
         # extract string literals to po template
-	xgettext.pl -g -u -P tt2 -o $(POTEMPLATE) tt/* $(SOURCE)/*
+#	xgettext.pl -g -u -P tt2 -o $(POTEMPLATE) tt/* $(SOURCE)/*
 	# update po files
-	for pofile in $(LOCALE)/*.po ; do \
-	    msgmerge -U $$pofile $(POTEMPLATE) ; done
+#	for pofile in $(LOCALE)/*.po ; do \
+#	    msgmerge -U $$pofile $(POTEMPLATE) ; done
 
 # This is only useful for Andy
 rsync:
