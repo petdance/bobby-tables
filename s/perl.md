@@ -11,7 +11,7 @@ Perl's [DBI](http://search.cpan.org/dist/DBI), available on the [CPAN](http://se
         [...]
     }
 
-However, you can't use parameterization for identifiers (table names, column names) so you need to use DBI's <tt>quote_identifier()</tt> method for that:
+However, you can't use parameterization for identifiers (table names, column names) so you need to use DBI's <tt>quote\_identifier()</tt> method for that:
 
     # Make sure a table name we want to use is safe:
     my $quoted_table_name = $dbh->quote_identifier($table_name);
@@ -26,7 +26,7 @@ You could also avoid writing SQL by hand by using [DBIx::Class](http://p3rl.org/
 What is Taint mode?
 -------------------
 
-Taint mode is a special set of security checks that Perl performs on data input into your program from external sources. The input data is marked as  tainted (untrusted) and may not be used in commands that would allow you to shoot yourself in the foot. See perldoc perlsec for a detailed breakdown of what taint mode tracks.
+Taint mode is a special set of security checks that Perl performs on data input into your program from external sources. The input data is marked as  tainted (untrusted) and may not be used in commands that would allow you to shoot yourself in the foot. See [the perlsec manpage](http://perldoc.perl.org/perlsec.html) for a detailed breakdown of what taint mode tracks.
 
 To invoke taint mode:
 
