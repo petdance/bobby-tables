@@ -25,6 +25,23 @@ my $sth = $dbh->prepare("SELECT $cols FROM $quoted_table_name ...");
 
 You could also avoid writing SQL by hand by using "DBIx::Class":http://p3rl.org/DBIx::Class, "SQL::Abstract":http://p3rl.org/SQL::Abstract etc to generate your SQL for you programmatically.
 
+h2. What is Taint mode?
+
+Taint mode is a special set of security checks that Perl performs on data input into your program from external sources. The input data is marked as  tainted (untrusted) and may not be used in commands that would allow you to shoot yourself in the foot. See perldoc perlsec for a detailed breakdown of what taint mode tracks.
+
+To invoke taint mode:
+
+<code>
+# From the command line
+perl -T program.pl
+
+# At the top of your script
+#!/usr/bin/perl -T
+</code>
+
+When your script trips one of the taint checks your application will issue a fatal error message. For testing purposes '-t' will issue warnings instead of fatal errors. '-t' is not a substitute for '-T'.
+
+
 h2. To do
 
-Explain Perl's taint mode and how DBI supports taint mode, both inbound and outbound.
+Explain how DBI supports taint mode, both inbound and outbound.
