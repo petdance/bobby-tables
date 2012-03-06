@@ -12,14 +12,6 @@ use Text::Markdown ();
 use Template ();
 use Template::Constants qw( :debug :chomp );
 
-package Local::L10n; # Local::* is reserved
-use parent 'Locale::Maketext';
-use Locale::Maketext::Lexicon {
-    de_DE => [Gettext => 'share/locale/de_DE.po'],
-};
-
-package main;
-
 my $sourcepath = 's';
 my $buildpath  = 'build';
 
@@ -48,19 +40,9 @@ my $pages = [
 ];
 
 MAIN: {
-    my $handle = Local::L10n->get_handle; # set LANG to localise
     my $m = Text::Markdown->new;
 
     my @sidelinks;
-
-    my %tt_first_pass_defaults =(
-        FILTERS => {
-            'loc' => sub {
-                my ($lexicon_key) = @_;
-                return eval { $handle->maketext($lexicon_key) } || $lexicon_key;
-            },
-        },
-    );
 
     my %tt_defaults = (
         INCLUDE_PATH => [ qw( tt ) ],
@@ -70,11 +52,9 @@ MAIN: {
         PRE_CHOMP    => 1,
         POST_CHOMP   => 1,
         ENCODING     => 'utf8',
-        %tt_first_pass_defaults,
     );
 
     my $tt = Template->new( \%tt_defaults );
-    my $tt_first_pass = Template->new( \%tt_first_pass_defaults );
 
     my @pages = @{$pages};
     while ( @pages ) {
@@ -95,14 +75,10 @@ MAIN: {
         my ($section,$desc) = splice( @pages, 0, 2 );
 
         my $source = read_file( "$sourcepath/$section.md" );
-        my $first_pass;
-        $tt_first_pass->process( \$source, undef, \$first_pass )
-            || die sprintf("file: %s\nerror: %s\n", "$sourcepath/$section.md", $tt->error);
-
-        my $html = $m->markdown(decode_utf8($first_pass));
+        my $html = $m->markdown( $source );
         $html =~ s{<code>\n}{<code>}smxg;
         $vars->{body} = $html;
-        
+
         $vars->{currlang} = ( $desc eq 'Home' ) ? '' : $desc;
         $vars->{rel_static} = ( 'C' eq $ENV{LANG} ) ? q() : q(../); # path prefix to static assets
         $vars->{rfc_1766_lang} = ( 'C' eq $ENV{LANG} ) ? 'en' : [map {tr/_/-/;$_} $ENV{LANG}]->[0];
