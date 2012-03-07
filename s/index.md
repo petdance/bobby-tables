@@ -1,68 +1,68 @@
-Who is Bobby Tables?
-====================
+Wer ist Bobby Tables?
+======================
 
 <p>
 <a href="http://xkcd.com/327/"><img src="img/xkcd.png" alt="xkcd Bobby Tables Cartoon" height="205" width="666" /></a>
 <a href="http://xkcd.com/327/">From the comic strip xkcd</a><br />
-<b>School</b>: "Hi, this is your son's school. We're having some computer trouble."<br />
-<b>Mom</b>: "Oh, dear -- Did he break something?"<br />
-<b>School</b>: "In a way. Did you really name your son Robert'); DROP TABLE Students;-- ?"<br />
-<b>Mom</b>: "Oh. Yes. Little Bobby Tables we call him."<br />
-<b>School</b>: "Well, we've lost this year's student records. I hope you're happy."<br />
-<b>Mom</b>: "And I hope you've learned to sanitize your database inputs."<br />
-(title text: "Her daughter is named Help I'm trapped in a driver's license factory.")
+<b>School</b>: "Hallo, hier ist die Schule Ihres Sohnes. Wir haben im Moment Computerprobleme."<br />
+<b>Mom</b>: "Oh! Hat er etwas kaputt gemacht?"<br />
+<b>School</b>: "Irgendwie. Haben Sie Ihren Sohn wirklich Robert'); DROP TABLE Students;-- genannt ?"<br />
+<b>Mom</b>: "Oh. Ja. Wir rufen ihn Bobby Tables"<br />
+<b>School</b>: "Nun, wir haben die Schülerdaten des ganzen Jahres verloren. Ich hoffe, Sie sind jetzt glücklich."<br />
+<b>Mom</b>: "Und ich hoffe, Sie haben dabei gelernt, das Sie ihre Datenbankeingaben bereinigen sollten."<br />
+(titel text: "Ihre Tochter heißt: Hilfe, ich bin in ainer Führerscheinfabrik gefangen.")
 </p>
 
-How to avoid Bobby Tables
-=========================
+Wie kann man Bobby Tables verhindern?
+=====================================
 
-There is only one way to avoid Bobby Tables attacks
+Es gibt nur einen Weg um Bobby Table Angriffe zu verhindern
 
-* Do not create SQL statements that include outside data.
-* Use parameterized SQL calls.
+* Erstelle keine SQL-Anweisungen, die externe Daten verwenden
+* Benutze parametrisierte SQL Aufrufe
 
-That's it. Don't try to escape invalid characters. Don't try to do it yourself. Learn how to use parameterized statements. Always, every single time.
+Das ist alles. Versuche nicht, ungültige Zeichen zu escapen. Versuche es nicht selbst. Lerne, wie man parametrisierte Anweisungen benutzt. Immer. Wirklich immer!
 
-The strip gets one thing crucially wrong. The answer is not to "sanitize your database inputs" yourself. It is prone to error.
+Der Comic enthält einen schwerwiegenden Fehler. Die Antwort ist nicht "bereinige deine Datenbankeingaben", denn das ist fehleranfällig.
 
-Examples
-========
+Beispiele
+=========
 
-See the sidebar to the left for your specific language.
+In der linken Seitenleiste findest Du Beispiele für deine Sprache.
 
-Other random resources
-======================
+weitere Verweise
+================
 
 * [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies)
 * [http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)
 * [http://st-curriculum.oracle.com/tutorial/SQLInjection/](http://st-curriculum.oracle.com/tutorial/SQLInjection/)
 
-Patches welcome
-===============
+Patches wilkommen
+=================
 
-Don't see a language that you'd like to see represented? Please let me know if you have updates or additions through one of these methods, in decreasing order of preference.
+Fehlt eine Sprache, die Du hier gerne sehen würdest? Lass es mich wissen, wenn Du Updates oder Ergänzungen zu einer der Methoden hast.
 
-* Fork the [bobby-tables repository at github](http://github.com/petdance/bobby-tables), make your changes, and send me a pull request.
-* Add an issue in the [issue tracker](http://github.com/petdance/bobby-tables/issues).
-* Email me, Andy Lester, at andy at petdance.com.
+* Forke  [bobby-tables repository at github](http://github.com/petdance/bobby-tables), mach deine Änderungen und sende mir einen Pull-Request.
+* Wenn Du einen Fehler findest, kannst Du ihn über den Issue tracker [issue tracker](http://github.com/petdance/bobby-tables/issues) melden.
+* Sende eine E-Mail an mich, Andy Lester, via andy at petdance.com.
 
-Translations also welcome
-=========================
+Übersetzungen sind ebenfalls gerne gesehen
+==========================================
 
-Help translate this site! There are only 100 phrases. No programming necessary.
+Hilf mit diese Seite zu übersetzen. Es gibt nur 100 Sätz. Programmieren ist nicht notwendig.
 
-See the instructions at the [bobby-tables repository at github](http://github.com/petdance/bobby-tables#readme).
+Weitere Informationen findest Du im [bobby-tables repository bei github](http://github.com/petdance/bobby-tables#readme).
 
 To do
 =====
 
-* Explain why creating code from outside data is bad.
-* Potential speed win when reusing prepared statements.
+* Erkläre, warum man keinen Code mit externen Daten verwenden sollte.
+* Beschreibe den potentiellen Geschwindigkeitsgewinn bei der Verwendung von prepared statements.
 
-Thanks
+Dank
 ======
 
-Thanks to the following folks for their contributions:
+Danke an die folgenden Leute für ihre Unterstützung:
 
 * Kirk Kimmel
 * Nathan Mahdavi
