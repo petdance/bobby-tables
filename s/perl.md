@@ -1,7 +1,7 @@
 Perl
 ====
 
-Perl's [DBI](http://search.cpan.org/dist/DBI), available on the [CPAN](http://search.cpan.org), supports parameterized SQL calls.  Both the <code class="inline">do</code> method and <code class="inline">prepare</code> method support parameters ("placeholders", as they call them) for most database drivers. For example:
+Perl's [DBI](http://search.cpan.org/dist/DBI), available on the [CPAN](http://search.cpan.org), supports parameterized SQL calls.  Both the <code>do</code> method and <code>prepare</code> method support parameters ("placeholders", as they call them) for most database drivers. For example:
 
 
     $sth = $dbh->prepare("SELECT * FROM users WHERE email = ?");

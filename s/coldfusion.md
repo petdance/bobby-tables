@@ -1,7 +1,7 @@
 ColdFusion
 ==========
 
-In ColdFusion there is a tag called <code class="inline">cfqueryparam</code> that should be used whenever writing inline queries.
+In ColdFusion there is a tag called <code>cfqueryparam</code> that should be used whenever writing inline queries.
 
     <cfquery name="queryTest">
     SELECT FirstName, LastName, Phone
@@ -11,7 +11,7 @@ In ColdFusion there is a tag called <code class="inline">cfqueryparam</code> tha
     </cfquery>
 
 
-Stored procedures can be invoked with the <code class="inline">cfstoredproc</code> and <code class="inline">cfprocparam</code> tags.
+Stored procedures can be invoked with the <code>cfstoredproc</code> and <code>cfprocparam</code> tags.
 
 Recent versions of ColdFusion provide a set of functions to run queries that
 have a slightly different syntax, but still provide parameterized queries.

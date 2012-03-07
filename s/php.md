@@ -5,7 +5,7 @@ PHP is a little more disorganized than how [Perl handles parameters](./perl.html
 
     $result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', array($email) );
 
-Note that the query must be in single-quotes or have the <code class="inline">$</code> escaped to avoid PHP trying to parse it as a variable.
+Note that the query must be in single-quotes or have the <code>$</code> escaped to avoid PHP trying to parse it as a variable.
 
 **However**, you should probably be using an abstraction layer.  The [ODBC](http://php.net/manual/en/book.uodbc.php) and [PDO](http://www.php.net/manual/en/book.pdo.php) extensions both support parameterization and multiple databases:
 
