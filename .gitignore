@@ -1,5 +1,3 @@
 *~
 build/
-*.swp
-share/locale/messages.pot
 s/*.tt2
