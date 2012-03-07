@@ -1,7 +1,7 @@
 Perl
 ====
 
-Perl's [DBI](http://search.cpan.org/dist/DBI), available on the [CPAN](http://search.cpan.org), supports parameterized SQL calls.  Both the <code class="inline">do</code> method and <code class="inline">prepare</code> method support parameters ("placeholders", as they call them) for most database drivers. For example:
+Perl's [DBI](http://search.cpan.org/dist/DBI), available on the [CPAN](http://search.cpan.org), supports parameterized SQL calls.  Both the `do` method and `prepare` method support parameters ("placeholders", as they call them) for most database drivers. For example:
 
 
     $sth = $dbh->prepare("SELECT * FROM users WHERE email = ?");
@@ -36,7 +36,7 @@ To invoke taint mode:
     # At the top of your script
     #!/usr/bin/perl -T
 
-When your script trips one of the taint checks your application will issue a fatal error message. For testing purposes '-t' will issue warnings instead of fatal errors. '-t' is not a substitute for '-T'.
+When your script trips one of the taint checks your application will issue a fatal error message. For testing purposes `-t` will issue warnings instead of fatal errors. `-t` is not a substitute for `-T`.
 
 To do
 -----
