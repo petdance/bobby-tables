@@ -4,7 +4,7 @@ Java
 JDBC
 ----
 
-The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html) has a class called <code class="inline">[PreparedStatement](http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html)</code>, which allows the programmer to safely insert user-supplied data into a SQL query.  The location of each input value in the query string is marked with a question mark.  The various <code class="inline">set*()</code> methods are then used to safely perform the insertion.
+The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html) has a class called <code>[PreparedStatement](http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html)</code>, which allows the programmer to safely insert user-supplied data into a SQL query.  The location of each input value in the query string is marked with a question mark.  The various <code>set*()</code> methods are then used to safely perform the insertion.
 
     String name = //user input
     int age = //user input
@@ -18,7 +18,7 @@ The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html) has a
     }
 
 
-Once a <code class="inline">PreparedStatement</code> object has been created, it can be reused multiple times for multiple queries (for example, when using the same query to update multiple rows in a table).  However, they are **not thread-safe** because of the many method calls involved in setting the parameters and executing the query.  Therefore, you should only define <code class="inline">PreparedStatement</code> objects as method-level variables (as opposed to class-level variables) to avoid concurrency issues.
+Once a <code>PreparedStatement</code> object has been created, it can be reused multiple times for multiple queries (for example, when using the same query to update multiple rows in a table).  However, they are **not thread-safe** because of the many method calls involved in setting the parameters and executing the query.  Therefore, you should only define <code>PreparedStatement</code> objects as method-level variables (as opposed to class-level variables) to avoid concurrency issues.
 
 
     List<Person>; people = //user input
@@ -37,7 +37,7 @@ Once a <code class="inline">PreparedStatement</code> object has been created, it
         connection.rollback();
     }
 
-More information on <code class="inline">PreparedStatement</code> can be found in the [Oracle JDBC tutorial](http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html).
+More information on <code>PreparedStatement</code> can be found in the [Oracle JDBC tutorial](http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html).
 
 Hibernate
 ---------
