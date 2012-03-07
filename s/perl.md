@@ -11,7 +11,9 @@ Perl's [DBI](http://search.cpan.org/dist/DBI), available on the [CPAN](http://se
         [...]
     }
 
-However, you can't use parameterization for identifiers (table names, column names) so you need to use DBI's <tt>quote\_identifier()</tt> method for that:
+However, you can't use parameterization for identifiers (table
+names, column names) so you need to use DBI's `quote_identifier()`
+method for that:
 
     # Make sure a table name we want to use is safe:
     my $quoted_table_name = $dbh->quote_identifier($table_name);
