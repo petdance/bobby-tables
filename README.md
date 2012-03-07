@@ -34,10 +34,10 @@ For testing:
 Contributing page content
 -------------------------
 
-# Modify templates or page bodies. New pages have to be registered in the file `crank`.
-# Run `make` to build the site and inspect the result in the `build` directory.
-# Run `make test` to check for HTML errors.
-# Commit/publish changes, see `s/index.md`.
+1. Modify templates or page bodies. New pages have to be registered in the file `crank`.
+2. Run `make` to build the site and inspect the result in the `build` directory.
+3. Run `make test` to check for HTML errors.
+4. Commit/publish changes, see `s/index.md`.
 
 Translations
 ------------
