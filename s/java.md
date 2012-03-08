@@ -6,7 +6,7 @@ JDBC
 
 The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html)
 has a class called
-`[PreparedStatement](http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html)`,
+[`PreparedStatement`](http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html)
 which allows the programmer to safely insert user-supplied data
 into a SQL query.  The location of each input value in the query
 string is marked with a question mark.  The various `set*()` methods
@@ -15,7 +15,8 @@ are then used to safely perform the insertion.
     String name = //user input
     int age = //user input
     Connection connection = DriverManager.getConnection(...);
-    PreparedStatement statement = connection.prepareStatement("SELECT * FROM people WHERE lastName = ? AND age > ?");
+    PreparedStatement statement = connection.prepareStatement(
+            "SELECT * FROM people WHERE lastName = ? AND age > ?" );
     statement.setString(1, name); //lastName is a VARCHAR
     statement.setInt(2, age); //age is an INT
     ResultSet rs = statement.executeQuery();
@@ -37,7 +38,8 @@ issues.
     Connection connection = DriverManager.getConnection(...);
     connection.setAutoCommit(false);
     try {
-        PreparedStatement statement = connection.prepareStatement("UPDATE people SET lastName = ?, age = ? WHERE id = ?");
+        PreparedStatement statement = connection.prepareStatement(
+                "UPDATE people SET lastName = ?, age = ? WHERE id = ?");
         for (Person person : people){
             statement.setString(1, person.getLastName());
             statement.setInt(2, person.getAge());
@@ -63,4 +65,53 @@ for more information.
 MyBatis
 -------
 
-TODO
+[MyBatis](http://www.mybatis.org/) is a database framework that
+hides a lot of the JDBC code from the developer, allowing him or
+her to focus on writing SQL.  The SQL statements are typically
+stored in XML files.
+
+MyBatis automatically creates `PreparedStatement`s behind the scenes.
+Nothing extra needs to be done by the programmer.
+
+To give you some context, here's an example showing how a basic
+query is called with MyBatis.  The input data is passed into the
+`PeopleMapper` instance and then it gets inserted into the
+"selectPeopleByNameAndAge" query.
+
+XML mapping document
+====================
+
+    <?xml version="1.0" encoding="UTF-8" ?>
+    <!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.bobbytables.mybatis.PeopleMapper">
+    <select id="selectPeopleByNameAndAge" resultType="list">
+        <!-- lastName and age are automatically sanitized --->
+        SELECT * FROM people WHERE lastName = #{lastName} AND age > #{age}
+    </select>
+    </mapper>
+
+Mapper class
+============
+
+    public interface PeopleMapper {
+        List<Person> selectPeopleByNameAndAge(@Param("lastName") String name, @Param("age") int age);
+    }
+
+Invoking the query
+==================
+
+    String name = //user input
+    int age = //user input
+    SqlSessionFactory sqlMapper = //...
+    SqlSession session = sqlMapper.openSession();
+    try {
+        PeopleMapper mapper = session.getMapper(PeopleMapper.class);
+        List<Person> people = mapper.selectPeopleByNameAndAge(name, age); //data is automatically sanitized
+        for (Person person : people) {
+            //...
+        }
+    } finally {
+        session.close();
+    }
