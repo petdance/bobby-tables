@@ -57,10 +57,25 @@ More information on `PreparedStatement` can be found in the
 Hibernate
 ---------
 
-[Hibernate](http://www.hibernate.org/) also supports prepared
-statements.  See the
+[Hibernate](http://www.hibernate.org/) uses named parameters to
+safely insert data into a query.  A named parameter consists of a
+colon, followed by a unique name for the parameter.
+
+    String name = //user input
+    int age = //user input
+    Session session = //...
+    Query query = session.createQuery("from People where lastName = :name and age > :age");
+    query.setString("name", name);
+    query.setInteger("age", age);
+    Iterator people = query.iterate();
+
+Hibernate also supports positional parameters like `PreparedStatement`,
+but named parameters are generally preferred because they make the
+query a little easier to read.
+
+See the
 [Hibernate Manual](http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters)
-for more information.
+for more information on named parameters.
 
 MyBatis
 -------
