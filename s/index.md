@@ -1,17 +1,24 @@
 Who is Bobby Tables?
 ====================
 
-<p>
+[From the webcomic _xkcd_](http://xkcd.com/327/)
+
 <a href="http://xkcd.com/327/"><img src="img/xkcd.png" alt="xkcd Bobby Tables Cartoon" height="205" width="666" /></a>
-<a href="http://xkcd.com/327/">From the comic strip xkcd</a><br />
-<b>School</b>: "Hi, this is your son's school. We're having some computer trouble."<br />
-<b>Mom</b>: "Oh, dear -- Did he break something?"<br />
-<b>School</b>: "In a way. Did you really name your son Robert'); DROP TABLE Students;-- ?"<br />
-<b>Mom</b>: "Oh. Yes. Little Bobby Tables we call him."<br />
-<b>School</b>: "Well, we've lost this year's student records. I hope you're happy."<br />
-<b>Mom</b>: "And I hope you've learned to sanitize your database inputs."<br />
-(title text: "Her daughter is named Help I'm trapped in a driver's license factory.")
-</p>
+
+<br clear="right">
+
+**School**: Hi, this is your son's school. We're having some computer trouble.
+
+**Mom**: Oh, dear -- Did he break something?
+
+**School**: In a way. Did you really name your son `Robert'); DROP TABLE Students;--`?
+
+**Mom**: Oh. Yes. Little Bobby Tables we call him.
+
+**School**: Well, we've lost this year's student records. I hope you're happy.
+
+**Mom**: And I hope you've learned to sanitize your database inputs.
+
 
 How to avoid Bobby Tables
 =========================

@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #dcdcdc url('../img/bobby_bg.png') repeat-x top;
+    background: #dcdcdc url('/img/bobby_bg.png') repeat-x top;
     font-family: georgia, 'times new roman', serif;
 }
 
@@ -64,11 +64,11 @@ h1 a:visited {
 #topcontainer {
     height:10px;
     border-top:#666 1px solid;
-    background: #000 url('../img/toptop_bg.png') repeat-x bottom;
+    background: #000 url('/img/toptop_bg.png') repeat-x bottom;
 }
 
 #container, #container2 {
-    background: #FFF url('../img/container_bg.png') repeat-x top;
+    background: #FFF url('/img/container_bg.png') repeat-x top;
 }
 
 div#container2 > a > img { /* github banderole */
@@ -76,7 +76,7 @@ div#container2 > a > img { /* github banderole */
 }
 
 #banner {
-    background:black url('../img/top_bg.png') repeat-x top;
+    background:black url('/img/top_bg.png') repeat-x top;
     border-bottom: 1px solid #333;
 }
 
@@ -138,24 +138,17 @@ code {
 }
 
 pre code {
-	/* positioning */
-	display: block;
+    /* positioning */
+    display: block;
 }
-
-div#content > p > a > img { /* comic */
-    float: right;
-    border: 0;
-}
-
 
 /* left nav */
-
 
 #nav ul {
     width: 100%;
     margin:0;
     padding:0;
-    background: url('../img/navmenu_bg.png') no-repeat top right;
+    background: url('/img/navmenu_bg.png') no-repeat top right;
     margin-top:30px;
     font-family:'trebuchet ms', verdana, tahoma, 'sans serif';
 }
@@ -163,7 +156,7 @@ div#content > p > a > img { /* comic */
 #nav li {
     list-style:none;
     height:45px;
-    background: url('../img/nav_bgbottom.png') no-repeat -40px 44px;
+    background: url('/img/nav_bgbottom.png') no-repeat -40px 44px;
 }
 
 #nav ul li a {
@@ -219,7 +212,7 @@ div#content > p > a > img { /* comic */
 
 #footer {
     clear: both;
-    background: #000 url('../img/footer_bg.png') repeat-x top;
+    background: #000 url('/img/footer_bg.png') repeat-x top;
     padding: 3em 0 0;
     height:55px;
     margin:0px 0px 0px 0px;
