@@ -4,7 +4,13 @@ Java
 JDBC
 ----
 
-The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html) has a class called <code>[PreparedStatement](http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html)</code>, which allows the programmer to safely insert user-supplied data into a SQL query.  The location of each input value in the query string is marked with a question mark.  The various `set*()` methods are then used to safely perform the insertion.
+The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html)
+has a class called
+`[PreparedStatement](http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html)`,
+which allows the programmer to safely insert user-supplied data
+into a SQL query.  The location of each input value in the query
+string is marked with a question mark.  The various `set*()` methods
+are then used to safely perform the insertion.
 
     String name = //user input
     int age = //user input
@@ -14,12 +20,18 @@ The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html) has a
     statement.setInt(2, age); //age is an INT
     ResultSet rs = statement.executeQuery();
     while (rs.next()){
-      //...
+        //...
     }
 
 
-Once a `PreparedStatement` object has been created, it can be reused multiple times for multiple queries (for example, when using the same query to update multiple rows in a table).  However, they are **not thread-safe** because of the many method calls involved in setting the parameters and executing the query.  Therefore, you should only define `PreparedStatement` objects as method-level variables (as opposed to class-level variables) to avoid concurrency issues.
-
+Once a `PreparedStatement` object has been created, it can be reused
+multiple times for multiple queries (for example, when using the
+same query to update multiple rows in a table).  However, they are
+**not thread-safe** because of the many method calls involved in
+setting the parameters and executing the query.  Therefore, you
+should only define `PreparedStatement` objects as method-level
+variables (as opposed to class-level variables) to avoid concurrency
+issues.
 
     List<Person>; people = //user input
     Connection connection = DriverManager.getConnection(...);
@@ -37,12 +49,16 @@ Once a `PreparedStatement` object has been created, it can be reused multiple ti
         connection.rollback();
     }
 
-More information on `PreparedStatement` can be found in the [Oracle JDBC tutorial](http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html).
+More information on `PreparedStatement` can be found in the
+[Oracle JDBC tutorial](http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html).
 
 Hibernate
 ---------
 
-[Hibernate](http://www.hibernate.org/) also supports prepared statements.  See the [Hibernate Manual](http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters) for more information.
+[Hibernate](http://www.hibernate.org/) also supports prepared
+statements.  See the
+[Hibernate Manual](http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters)
+for more information.
 
 MyBatis
 -------
