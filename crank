@@ -74,7 +74,7 @@ MAIN: {
     while ( @pages ) {
         my ($section,$desc) = splice( @pages, 0, 2 );
 
-        my $source = read_file( "$sourcepath/$section.md" );
+        my $source = read_file( "$sourcepath/$section.md", binmode => ':encoding(UTF-8)' );
         my $html = $m->markdown( $source );
         $html =~ s{<code>\n}{<code>}smxg;
         $vars->{body} = $html;
