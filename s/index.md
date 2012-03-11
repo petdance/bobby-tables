@@ -41,8 +41,8 @@ Other random resources
 ======================
 
 * [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies)
-* [http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)
-* [http://st-curriculum.oracle.com/tutorial/SQLInjection/](http://st-curriculum.oracle.com/tutorial/SQLInjection/)
+* [How to Write Injection-Proof SQL](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)
+* [Defending Against SQL Injection Attacks](http://download.oracle.com/oll/tutorials/SQLInjection/index.htm)
 
 Patches welcome
 ===============
