@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>bobby-tables.com: A guide to preventing SQL injection[% IF currlang %] in [% currlang %][% END %]</title>
-        <link rel="stylesheet" type="text/css" href="/css/bobby.css" />
+        <link rel="stylesheet" type="text/css" href="css/bobby.css" />
         <script type="text/javascript">
             var _gaq = _gaq || [];
             _gaq.push(['_setAccount', 'UA-631706-8']);
