@@ -53,6 +53,13 @@ Don't see a language that you'd like to see represented? Please let me know if y
 * Add an issue in the [issue tracker](http://github.com/petdance/bobby-tables/issues).
 * Email me, Andy Lester, at andy at petdance.com.
 
+Translations also welcome
+=========================
+
+Help translate this site! There are less than 200 phrases. No programming necessary.
+
+See the instructions at the [bobby-tables repository at github](http://github.com/petdance/bobby-tables#readme).
+
 To do
 =====
 
