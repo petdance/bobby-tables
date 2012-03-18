@@ -9,7 +9,6 @@ default: crank
 
 clean:
 	rm -fr $(BUILD)
-	rm -fr $(SOURCE)/*.tt2
 
 crank: clean
 	mkdir -p $(BUILD)/ || true > /dev/null 2>&1
