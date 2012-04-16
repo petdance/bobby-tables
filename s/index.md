@@ -64,6 +64,7 @@ Thanks
 
 Thanks to the following folks for their contributions:
 
+* [Kim Christensen](http://www.smukkekim.dk)
 * Kirk Kimmel
 * Nathan Mahdavi
 * [Hannes Hofmann](http://www5.informatik.uni-erlangen.de/en/our-team/hofmann-hannes)
