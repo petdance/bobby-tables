@@ -1,7 +1,9 @@
 <div id="footer">
-<p>This site's content is available under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a>.</p>
+<a href="[% rel_static %]de_DE/[% section %]" xml:lang="de-DE" lang="de-DE" hreflang="de-DE">deutsch</a>
+<a href="[% rel_static %][% section %]" xml:lang="en" lang="en" hreflang="en">English</a>
+<p>[% |loc %]This site's content is available under the <a href="https://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution-ShareAlike 3.0 License</a>[% END %].</p>
 </div>
 <a href="http://github.com/petdance/bobby-tables"><img
-    src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"
+    src="http://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="[% |loc %]Fork me on GitHub[% END %]"
     height="149" width="149"
     /></a>

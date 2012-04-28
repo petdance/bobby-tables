@@ -1,3 +1,5 @@
 *~
 build/
 s/*.tt2
+share/locale/com.bobby-tables.pot
+share/locale/*/LC_MESSAGES/com.bobby-tables.mo

@@ -64,8 +64,8 @@ Other random resources
 ======================
 
 * [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies)
-* [http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)
-* [http://st-curriculum.oracle.com/tutorial/SQLInjection/](http://st-curriculum.oracle.com/tutorial/SQLInjection/)
+* [How to Write Injection-Proof SQL](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)
+* [Defending Against SQL Injection Attacks](http://download.oracle.com/oll/tutorials/SQLInjection/index.htm)
 
 Patches welcome
 ===============
@@ -75,6 +75,13 @@ Don't see a language that you'd like to see represented? Please let me know if y
 * Fork the [bobby-tables repository at github](http://github.com/petdance/bobby-tables), make your changes, and send me a pull request.
 * Add an issue in the [issue tracker](http://github.com/petdance/bobby-tables/issues).
 * Email me, Andy Lester, at andy at petdance.com.
+
+Translations also welcome
+=========================
+
+Help translate this site! There are less than 200 phrases. No programming necessary.
+
+See the instructions at the [bobby-tables repository at github](http://github.com/petdance/bobby-tables#readme).
 
 To do
 =====

@@ -24,7 +24,7 @@ For such a simple case, you're actually better off writing a pure SQL function:
         SELECT accessed_at FROM users WHERE username = $1;
     $$;
 
-But sometimes you have to do more complicated things. Perhaps you dynamically add @WHERE@ clause expressions based on input. In such cases, you'll end up using PL/pgSQL's @EXECUTE@ syntax. Here's an example with an SQL injection vulnerability:
+But sometimes you have to do more complicated things. Perhaps you dynamically add `WHERE` clause expressions based on input. In such cases, you'll end up using PL/pgSQL's `EXECUTE` syntax. Here's an example with an SQL injection vulnerability:
 
     CREATE OR REPLACE FUNCTION get_users(
         p_column TEXT,
@@ -41,7 +41,7 @@ But sometimes you have to do more complicated things. Perhaps you dynamically ad
     END;
     $$;
 
-Both the @p_column@ and the @p_value@ arguments are vulnerable. The way to avoid this problem is to use the @quote_ident()@ function to quote an SQL identifier (@p_column@ in this case) and @quote_lteral()@ to quote a literal value:
+Both the `p_column` and the `p_value` arguments are vulnerable. The way to avoid this problem is to use the `quote_ident()` function to quote an SQL identifier (`p_column` in this case) and `quote_lteral()` to quote a literal value:
 
     CREATE OR REPLACE FUNCTION get_users(
         p_column TEXT,
