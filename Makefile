@@ -36,7 +36,7 @@ crank: prereq clean messages
 	# other languages in subdirectories
 	# that substr is ugly, but nested evals of basename/dirname are worse
 	for pofile in $(LOCALE)/*/LC_MESSAGES/$(TEXTDOMAIN).po ; do \
-	    language=`expr substr $$pofile 14 5` ; \
+	    language=`perl -e'print substr(shift,13,5)' $$pofile` ; \
 	    mkdir -p $(BUILD)/$$language || true > /dev/null 2>&1 ; \
 	    LANG=$$language perl crank.pl --sourcepath=$(SOURCE) --buildpath=$(BUILD)/$$language ; \
 	    done
@@ -59,7 +59,7 @@ messages:
 
 l10n-stats: messages
 	for pofile in $(LOCALE)/*/LC_MESSAGES/$(TEXTDOMAIN).po ; do \
-	    echo -n "`expr substr $$pofile 14 5`: " ; \
+	    echo -n "`perl -e'print substr(shift,13,5)' $$pofile`: " ; \
 	    LANG=C msgfmt --statistics $$pofile -o /dev/null ; done
 
 # This is only useful for Andy
