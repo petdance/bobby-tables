@@ -1,6 +1,7 @@
 .PHONY: \
 	crank \
-	clean
+	clean \
+	prereq
 
 BUILD=build
 SOURCE=s
@@ -10,13 +11,25 @@ POTEMPLATE=$(LOCALE)/$(TEXTDOMAIN).pot
 
 default: crank
 
+prereq:
+	perl \
+		-MLocale::Maketext::Lexicon \
+		-MLocale::TextDomain \
+		-MLocale::Messages \
+		-MTest::HTML::Lint \
+		-MFile::Slurp \
+		-MGetopt::Long \
+		-MEncode \
+		-MPOSIX \
+		-e'# testing that we have all the modules we need'
+
 clean:
 	rm -fr $(BUILD)
 	rm -fr $(SOURCE)/*.tt2
 	rm -fr $(POTEMPLATE)
 	rm -fr $(LOCALE)/*/LC_MESSAGES/$(TEXTDOMAIN).mo
 
-crank: clean messages
+crank: prereq clean messages
 	mkdir -p $(BUILD)/ || true > /dev/null 2>&1
 	# force English for top directory
 	LANG=C perl crank.pl --sourcepath=$(SOURCE) --buildpath=$(BUILD)
