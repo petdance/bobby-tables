@@ -2059,11 +2059,11 @@ msgstr "Mach auf GitHub mit"
 msgid "Bobby Tables: A guide to preventing SQL injection"
 msgstr "Bobby Tables: Ein Leitfaden gegen SQL-Einschleusung"
 
-#: tt/page.tt:4
-msgid "bobby-tables.com: A guide to preventing SQL injection"
-msgstr "bobby-tables.com: Ein Leitfaden gegen SQL-Einschleusung"
-
 #. (currlang)
-#: tt/page.tt:4
+#: tt/page.tt:6
 msgid "bobby-tables.com: A guide to preventing SQL injection in {currlang}"
 msgstr "bobby-tables.com: Ein Leitfaden gegen SQL-Einschleusung in {currlang}"
+
+#: tt/page.tt:8
+msgid "bobby-tables.com: A guide to preventing SQL injection"
+msgstr "bobby-tables.com: Ein Leitfaden gegen SQL-Einschleusung"
