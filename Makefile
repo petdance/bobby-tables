@@ -13,14 +13,14 @@ default: crank
 
 prereq:
 	perl \
-		-MLocale::Maketext::Lexicon \
-		-MLocale::TextDomain \
-		-MLocale::Messages \
-		-MTest::HTML::Lint \
+		-MEncode \
 		-MFile::Slurp \
 		-MGetopt::Long \
-		-MEncode \
+		-MLocale::Maketext::Lexicon \
+		-MLocale::Messages \
+		-MLocale::TextDomain \
 		-MPOSIX \
+		-MTest::HTML::Lint \
 		-e'# testing that we have all the modules we need'
 
 clean:
