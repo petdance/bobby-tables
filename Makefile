@@ -12,16 +12,7 @@ POTEMPLATE=$(LOCALE)/$(TEXTDOMAIN).pot
 default: crank
 
 prereq:
-	perl \
-		-MEncode \
-		-MFile::Slurp \
-		-MGetopt::Long \
-		-MLocale::Maketext::Lexicon \
-		-MLocale::Messages \
-		-MLocale::TextDomain \
-		-MPOSIX \
-		-MTest::HTML::Lint \
-		-e'# testing that we have all the modules we need'
+	perl ./modules.pl
 
 clean:
 	rm -fr $(BUILD)
