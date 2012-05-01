@@ -1,19 +1,19 @@
 # Header entry was created by KBabel!
 #
-# Lars Dɪᴇᴄᴋᴏᴡ 迪拉斯 <daxim@cpan.org>, 2010, 2012.
 # This site's content is available under the Creative Commons Attribution-ShareAlike 3.0 License.
+# Lars Dɪᴇᴄᴋᴏᴡ 迪拉斯 <daxim@cpan.org>, 2010, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-03-11 23:04+0100\n"
+"PO-Revision-Date: 2012-05-01 22:53+0200\n"
 "Last-Translator: Lars Dɪᴇᴄᴋᴏᴡ <daxim@cpan.org>\n"
 "Language-Team: German <>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.2\n"
+"X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: crank.pl:30
@@ -22,20 +22,19 @@ msgstr "Übersicht"
 
 #: crank.pl:31
 msgid "Translations"
-msgstr ""
+msgstr "Übersetzungen"
 
 #: crank.pl:32
 msgid "About"
-msgstr ""
+msgstr "Über"
 
 #: s/about.md.tt2:1
-#, fuzzy
 msgid "# About Bobby Tables and SQL injection"
-msgstr "Bobby Tables: Ein Leitfaden gegen SQL-Einschleusung"
+msgstr "# Über Bobby Tables und SQL-Einschleusung"
 
 #: s/about.md.tt2:3
 msgid "# Why did Bobby's school lose their records?"
-msgstr ""
+msgstr "# Warum hat Bobbys Schule ihre Daten verloren?"
 
 #: s/about.md.tt2:5
 msgid ""
@@ -43,6 +42,10 @@ msgid ""
 "Students. When a new student arrives, the school inserts his/her name into "
 "this table. The code doing the insertion might look as follows:"
 msgstr ""
+"Die Schule hat anscheinend die Namen der Schüler in einer Tabelle namens "
+"`Students` gespeichert. Wenn sich ein neuer Schüler anmeldet, fügt die "
+"Schule seinen Namen zur Tabelle hinzu. Der dazugehörige Code könnte etwa "
+"so ausschauen:"
 
 #: s/about.md.tt2:7
 msgid ""
@@ -50,6 +53,9 @@ msgid ""
 "\";\n"
 "    execute_sql($sql);"
 msgstr ""
+"    $sql = \"INSERT INTO Students (Name) VALUES ('\" . $studentName . \"');"
+"\";\n"
+"    execute_sql($sql);"
 
 #: s/about.md.tt2:10
 msgid ""
@@ -59,32 +65,44 @@ msgid ""
 "of this code is that outside data, in this case the content of `"
 "$studentName`, becomes part of the SQL statement."
 msgstr ""
+"Die erste Zeile erzeugt einen String mit einem SQL-INSERT-Anweisung. Der "
+"Inhalt der Variable `$studentName` wird in die SQL-Anweisung eingefügt. Die "
+"zweite Zeile schickt die erzeugte SQL-Anweisung an die Datenbank. Die Falle "
+"in diesem Code ist, dass Daten von außerhalb, d.h. der Inhalt von "
+"`$studentName`, Teil der SQL-Anweisung werden."
 
 #: s/about.md.tt2:12
 msgid ""
 "First let's see what the SQL statement looks like if we insert a student "
 "named John:"
 msgstr ""
+"Wir betrachten zunächst, wie die SQL-Anweisung aussieht, wenn wir einen "
+"Schüler namens John hinzufügen:"
 
 #: s/about.md.tt2:14
 msgid "    INSERT INTO Students (Name) VALUES ('John');"
-msgstr ""
+msgstr "    INSERT INTO Students (Name) VALUES ('John');"
 
 #: s/about.md.tt2:16
 msgid ""
 "This does exactly what we want: it inserts John into the Students table."
 msgstr ""
+"Das ergibt genau, was wir wollen: John wird der Tabelle `Students` "
+"hinzugefügt."
 
 #: s/about.md.tt2:18
 msgid ""
 "Now we insert little Bobby Tables, by setting `$studentName` to `Robert'); "
 "DROP TABLE Students;--`. The SQL statement becomes:"
 msgstr ""
+"Jetzt fügen wir Klein Bobby Tables hinzu, indem wir `$studentName` den "
+"Wert `Robert'); DROP TABLE Students;--` zuweisen. Die SQL-Anweisung lautet:"
 
 #: s/about.md.tt2:20
 msgid ""
 "    INSERT INTO Students (Name) VALUES ('Robert'); DROP TABLE Students;--');"
 msgstr ""
+"    INSERT INTO Students (Name) VALUES ('Robert'); DROP TABLE Students;--');"
 
 #: s/about.md.tt2:22
 msgid ""
@@ -92,16 +110,17 @@ msgid ""
 "is now followed by a DROP TABLE statement which removes the entire Students "
 "table. Ouch!"
 msgstr ""
+"Dies fügt Robert der Tabelle `Students` hinzu, jedoch folgt der "
+"INSERT-Anweisung eine DROP-TABLE-Anweisung, die die gesamte Tabelle "
+"entfernt. Autsch!"
 
 #: s/about.md.tt2:24
-#, fuzzy
 msgid ""
 "\n"
 "# How to avoid Bobby Tables"
 msgstr ""
 "\n"
-"Wie man Bobby Tables vermeidet\n"
-"=============================="
+"# Wie man Bobby Tables vermeidet"
 
 #: s/about.md.tt2:27
 msgid "There is only one way to avoid Bobby Tables attacks"
@@ -127,13 +146,12 @@ msgstr ""
 "benutzen, und zwar immer und jedes Mal."
 
 #: s/about.md.tt2:34
-#, fuzzy
 msgid ""
 "The strip gets one thing crucially wrong. The answer is not to \"sanitize "
 "your database inputs\" yourself. It is prone to error.\n"
 msgstr ""
 "Im Comic wird eine Sache falsch gemacht. Die Antwort lautet nicht, die "
-"Datenbankeingaben selber zu bereinigen. Dies ist fehleranfällig."
+"Datenbankeingaben selber zu bereinigen. Dies ist fehleranfällig.\n"
 
 #: s/asp.md.tt2:1
 msgid ""
@@ -145,10 +163,9 @@ msgstr ""
 
 #: s/asp.md.tt2:4
 msgid "Older ASP uses positional placeholders."
-msgstr ""
+msgstr "Ältere Versionen von ASP benutzen Ordnungsplatzhalter."
 
 #: s/asp.md.tt2:6
-#, fuzzy
 msgid ""
 "    objCmd.CommandType = adCmdText;\n"
 "    objCmd.CommandText = \"UPDATE members SET photo = ? WHERE memberID = ?"
@@ -160,20 +177,21 @@ msgid ""
 "    objCmd.Execute(adExecuteNoRecords);"
 msgstr ""
 "    objCmd.CommandType = adCmdText;\n"
-"    objCmd.CommandText = \"UPDATE members SET photo = @filename WHERE "
-"memberID = @memberID\";\n"
-"    objCmd.Parameters.Append(objCmd.CreateParameter(\"@memberID\", "
-"adInteger, adParamInput, 4, memberid ));\n"
-"    objCmd.Parameters.Append(objCmd.CreateParameter(\"@filename\", "
-"adVarChar, adParamInput, 510, fileName));\n"
-"    objCmd.Execute(adExecuteNoRecords);\n"
-"    gblDelobjParams(objCmd);"
+"    objCmd.CommandText = \"UPDATE members SET photo = ? WHERE memberID = ?"
+"\";\n"
+"    objCmd.Parameters.Append(objCmd.CreateParameter(\"filename\", adVarChar, "
+"adParamInput, 510, fileName));\n"
+"    objCmd.Parameters.Append(objCmd.CreateParameter(\"memberID\", adInteger, "
+"adParamInput, 4, memberid ));\n"
+"    objCmd.Execute(adExecuteNoRecords);"
 
 #: s/asp.md.tt2:12
 msgid ""
 "\n"
 "Newer ASP (ASP.Net?) can handle named placeholders."
 msgstr ""
+"\n"
+"Neuere Versionen von ASP (ASP.Net?) können mit benannten Platzhaltern umgehen."
 
 #: s/asp.md.tt2:15
 msgid ""
@@ -446,12 +464,11 @@ msgid "[From the webcomic _xkcd_](http://xkcd.com/327/)"
 msgstr "[Vom Webcomic _xkcd_](http://xkcd.com/327/)"
 
 #: s/index.md.tt2:6
-#, fuzzy
 msgid ""
 "<a href=\"http://xkcd.com/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd Bobby "
 "Tables Cartoon\" height=\"205\" width=\"666\" /></a>"
 msgstr ""
-"<a href=\"http://xkcd.com/327/\"><img src=\"../img/xkcd.png\" alt=\"xkcd-"
+"<a href=\"http://xkcd.com/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd-"
 "Comic &quot;Bobby Tables&quot;\" height=\"205\" width=\"666\" /></a>"
 
 #: s/index.md.tt2:8
@@ -619,7 +636,6 @@ msgid "Thanks to the following folks for their contributions:"
 msgstr "Dank gilt den folgenden Leuten für ihre Mitwirkung:"
 
 #: s/index.md.tt2:63
-#, fuzzy
 msgid ""
 "* [Kim Christensen](http://www.smukkekim.dk)\n"
 "* Kirk Kimmel\n"
@@ -645,6 +661,7 @@ msgid ""
 "* [Jani Hur](http://www.jani-hur.net)\n"
 "* [Sven van Haastregt](http://www.liacs.nl/home/svhaastr/)\n"
 msgstr ""
+"* [Kim Christensen](http://www.smukkekim.dk)\n"
 "* Kirk Kimmel\n"
 "* Nathan Mahdavi\n"
 "* [Hannes Hofmann](http://www5.informatik.uni-erlangen.de/en/our-team/"
@@ -662,10 +679,11 @@ msgstr ""
 "* [Will Coleda](http://www.coleda.com/users/coke/)\n"
 "* Kai Baesler\n"
 "* Mike Markley\n"
-"* [Michael Schwern](http://schwern.dreamhosters.com/)\n"
+"* [Michael Schwern](http://schwern.net/)\n"
 "* [Jeana Clark](http://jeanaclark.org/)\n"
 "* [Lars Dɪᴇᴄᴋᴏᴡ](http://search.cpan.org/~daxim/)\n"
 "* [Jani Hur](http://www.jani-hur.net)\n"
+"* [Sven van Haastregt](http://www.liacs.nl/home/svhaastr/)\n"
 
 #: s/java.md.tt2:1
 msgid ""
@@ -1440,7 +1458,8 @@ msgstr ""
 "\n"
 "Wenn dynamisches SQL benötigt wird, soll wenn möglich Stringverknüpfung "
 "vermieden werden\n"
-"----------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
+"----------"
 
 #: s/plsql.md.tt2:50
 msgid "String concatenation opens doors to possible SQL injection exploits:"
@@ -2056,11 +2075,12 @@ msgstr ""
 
 #: s/translations.md.tt2:1
 msgid "# Translations"
-msgstr ""
+msgstr "# Übersetzungen"
 
 #: s/translations.md.tt2:3
 msgid "The following natural languages are supported on bobby-tables.com:"
 msgstr ""
+"Die folgenden natürlichen Sprachen werden auf bobby-tables.com unterstützt:"
 
 #: s/translations.md.tt2:5
 msgid ""
@@ -2068,6 +2088,9 @@ msgid ""
 "* [German](http://bobby-tables.com/de_DE/) (fairly current)\n"
 "* [Russian](http://bobby-tables.com/ru_RU/) (just starting)"
 msgstr ""
+"* [englisch](http://bobby-tables.com/) (ursprünglich)\n"
+"* [deutsch](http://bobby-tables.com/de_DE/) (ziemlich aktuell)\n"
+"* [russisch](http://bobby-tables.com/ru_RU/) (erst am Anfang)"
 
 #: s/translations.md.tt2:9
 msgid ""
@@ -2077,14 +2100,18 @@ msgid ""
 "tables)\n"
 "and ask a team member about how you can help."
 msgstr ""
+"Wir würden gerne auch Übersetzungen für andere Sprachen haben. Bitte schreibe "
+"an die [bobby-tables-Mailingliste](https://groups.google."
+"com/forum/#!forum/bobby-"
+"tables) und frage einen Teilnehmer, wie du helfen kannst."
 
 #: s/translations.md.tt2:14
 msgid "# Contributing translations"
-msgstr ""
+msgstr "# an Übersetzungen mitwirken"
 
 #: s/translations.md.tt2:16
 msgid "1. Run `make messages`."
-msgstr ""
+msgstr "1. Führe `make messages` aus."
 
 #: s/translations.md.tt2:18
 msgid ""
@@ -2100,12 +2127,24 @@ msgid ""
 "(Alternatively to copying, use the command `msginit`.) Naming convention\n"
 "examples:"
 msgstr ""
+"2. Überspringe diesen Schritt, wenn du nur eine Übersetzung verbesserst. "
+"Falls du eine neue Sprache anfängst, kopiere "
+"`share/locale/com.bobby-tables.pot` nach"
+"`share/locale/xx_YY/LC_MESSAGES/com.bobby-tables.po`, aber ersetze `xx` "
+"mit dem entsprechenden [Sprachcode](http://en.wikipedia."
+"org/wiki/List_of_ISO_639-1_codes) "
+"und `YY` mit dem [Territorialcode](http://en.wikipedia."
+"org/wiki/ISO_3166-1_alpha-2). "
+"(Alternativ zum Kopieren benutze den Befehl `msginit`.) Beispiele für die "
+"Namenskonvention:"
 
 #: s/translations.md.tt2:28
 msgid ""
 "        sv_SE.po    standard Swedish\n"
 "        pt_BR.po    Brazilian Portuguese"
 msgstr ""
+"        sv_SE.po    Standardschwedisch\n"
+"        pt_BR.po    brasilianisches Portugiesisch"
 
 #: s/translations.md.tt2:31
 msgid ""
@@ -2114,14 +2153,18 @@ msgid ""
 "is excellent, [Poedit](http://www.poedit.net/) is good. Any text editor\n"
 "supporting UTF-8 can handle PO files, but it will not be as convenient."
 msgstr ""
+"3. Bearbeite die PO-Datei. "
+"[Lokalize (vormals KBabel)](http://l10n.kde.org/tools/) ist ausgezeichnet, "
+"[Poedit](http://www.poedit.net/) ist gut. Jeder Texteditor, der UTF-8 "
+"unterstützt, kann mit PO-Dateien umgehen, aber es ist nicht so bequem."
 
 #: s/translations.md.tt2:35
 msgid "4. Run the normal `make` step."
-msgstr ""
+msgstr "4. Führe den normalen `make`-Schritt aus."
 
 #: s/translations.md.tt2:37
 msgid "# Guidelines for translations"
-msgstr ""
+msgstr "# Leitfaden für Übersetzungen"
 
 #: s/translations.md.tt2:39
 msgid ""
@@ -2132,6 +2175,12 @@ msgid ""
 " into the target language as-is. Indented paragraphs are also code.\n"
 " Translate only comments in such code blocks."
 msgstr ""
+"* Mache dich mit der Auszeichnungssprache \"Markdown\" vertraut, aus welcher "
+"HTML produziert wird. Der Gravis (\\`) ist ein für Übersetzungen wichtiger "
+"Teil der Syntax; er kennzeichnet Code, z.B. einen Variablennamen. Code wird "
+"nicht übersetzt, d.h. der Ursprungstext wird unverändert in die Zielsprache "
+"übernommen. Eingerückte Absätze stellen auch Code dar. Übersetze in solchen "
+"Codeblöcken nur die Kommentare."
 
 #: s/translations.md.tt2:46
 msgid ""
@@ -2141,14 +2190,21 @@ msgid ""
 "build files. (If you don't have [ack](http://betterthangrep.com)\n"
 "you can use `grep -R`."
 msgstr ""
+"* Um herauszufinden, woher ein englischer Text stammt, um den Kontext zu "
+"sehen, "
+"führe `ack -a 'source text goes here'` aus. Der überwiegende Teil des "
+"Ursprungstextes befindet sich im Verzeichnis `s/`. Führe zunächst `make "
+"clean` "
+"aus, um Duplikate in den Build-Dateien zu vermeiden. (Wenn du "
+"[ack](http://betterthangrep.com) nicht hast, kannst du `grep -R` verwenden."
 
 #: s/translations.md.tt2:52
 msgid "* You can check your progress by running `make l10n-status`."
-msgstr ""
+msgstr "* Du kannst deinen Fortschritt mittels `make l10n-status` beobachten."
 
 #: s/translations.md.tt2:54
 msgid "Apart from that, the normal rules for any translation apply:"
-msgstr ""
+msgstr "Außerdem gelten die normalen Richtlinien für jedwede Übersetzungen:"
 
 #: s/translations.md.tt2:56
 msgid ""
@@ -2156,6 +2212,10 @@ msgid ""
 "essence of each sentence/paragraph and reformulate it so it reads\n"
 "naturally. If you have to merge or rearrange sentence parts, do it."
 msgstr ""
+"* Übersetze nicht wortwörtlich, sondern drücke das Wesentliche eines "
+"Satzes/Absatzes aus und formuliere es so, dass es sich natürlich liest. "
+"Scheue "
+"nicht davor zurück, dafür Satzteile zu verbinden oder umzubauen."
 
 #: s/translations.md.tt2:60
 msgid ""
@@ -2167,6 +2227,17 @@ msgid ""
 "of a member of your potential audience: is the sentence still\n"
 "understandable? If not, add a parenthetical remark to the key word."
 msgstr ""
+"* Vermeide es, verständnistragende Wörter/technische Fachwörter unübersetzt "
+"zu "
+"lassen. Ziehe die Standardliteratur für existierende Übersetzungen zu Rate. "
+"(Softwarehersteller wie Microsoft oder KDE veröffentlichen "
+"Übersetzungstabellen, importiere sie auch in den PO-Editor.) Wenn du keine "
+"gute "
+"Übersetzung findest, stelle dir vor, du wärst in der Stelle deiner "
+"Zielgruppe: "
+"ist der Satz noch verständlich? Falls nicht, füge eine Erläuterung in "
+"Klammern "
+"hinzu."
 
 #: s/translations.md.tt2:68
 msgid ""
@@ -2176,6 +2247,13 @@ msgid ""
 "because the English text is ambiguous), use `git annotate` to find\n"
 "out who wrote it and ask for clarification.\n"
 msgstr ""
+"* Es kommt vor, dass der Ursprungstext falsch ist (Tipp- oder Sachfehler). "
+"Das "
+"sollte zunächst in einem gesonderten Patch unabhängig von deiner Übersetzung "
+"verbessert werden. Korrigiere es selbst, und falls das nicht geht (z.B. weil "
+"der englische Text mehrdeutig ist), benutze `git annotate`, um "
+"herauszufinden, "
+"wer das geschrieben hat und bitte um Klarstellung."
 
 #: tt/footer.tt:5
 msgid ""
