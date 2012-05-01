@@ -3,7 +3,7 @@ Who is Bobby Tables?
 
 [From the webcomic _xkcd_](http://xkcd.com/327/)
 
-<a href="http://xkcd.com/327/"><img src="img/xkcd.png" alt="xkcd Bobby Tables Cartoon" height="205" width="666" /></a>
+<a href="http://xkcd.com/327/"><img src="/img/xkcd.png" alt="xkcd Bobby Tables Cartoon" height="205" width="666" /></a>
 
 <br clear="right">
 
@@ -111,7 +111,7 @@ Thanks to the following folks for their contributions:
 * [Will Coleda](http://www.coleda.com/users/coke/)
 * Kai Baesler
 * Mike Markley
-* [Michael Schwern](http://schwern.dreamhosters.com/)
+* [Michael Schwern](http://schwern.net/)
 * [Jeana Clark](http://jeanaclark.org/)
 * [Lars Dɪᴇᴄᴋᴏᴡ](http://search.cpan.org/~daxim/)
 * [Jani Hur](http://www.jani-hur.net)
