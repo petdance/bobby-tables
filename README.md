@@ -44,25 +44,3 @@ Contributing page content
 2. Run `make` to build the site and inspect the result in the `build` directory.
 3. Run `make test` to check for HTML errors.
 4. Commit/publish changes, see `s/index.md`.
-
-Contributing translations
--------------------------
-
-1. Run `make messages`.
-2. Skip this step if you just amend a translation. If you need to start a new
-language, copy `share/locale/com.bobby-tables.pot` to
-`share/locale/xx_YY/LC_MESSAGES/com.bobby-tables.po`, but substitute `xx` for
-the appropriate
-[language code](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
-and `YY` for the
-[territory code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).
-(Alternatively to copying, use the command `msginit`.) Naming convention
-examples:
-
-        sv_SE.po    standard Swedish
-        pt_BR.po    Brazilian Portuguese
-
-3. Edit the PO file. [Lokalize (formerly KBabel)](http://l10n.kde.org/tools/)
-is excellent, [Poedit](http://www.poedit.net/) is good. Any text editor
-supporting UTF-8 can handle PO files, but it will not be as convenient.
-4. Continue at step 2. of the previous section.

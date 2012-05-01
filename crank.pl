@@ -27,22 +27,27 @@ GetOptions(
 
 -d $buildpath && -w $buildpath or die;
 
-my $home = decode 'UTF-8', __('Home');
+my $home         = decode 'UTF-8', __('Home');
+my $translations = decode 'UTF-8', __('Translations');
+my $about        = decode 'UTF-8', __('About');
+
 my $pages = [
-    index      => $home,
-    asp        => 'ASP',
-    coldfusion => 'ColdFusion',
-    csharp     => 'C#',
-    delphi     => 'Delphi',
-    dotnet     => '.NET',
-    java       => 'Java',
-    perl       => 'Perl',
-    php        => 'PHP',
-    plsql      => 'PL/SQL',
-    postgresql => 'PostgreSQL',
-    python     => 'Python',
-    ruby       => 'Ruby',
-    scheme     => 'Scheme',
+    index        => $home,
+    about        => $about,
+    asp          => 'ASP',
+    coldfusion   => 'ColdFusion',
+    csharp       => 'C#',
+    delphi       => 'Delphi',
+    dotnet       => '.NET',
+    java         => 'Java',
+    perl         => 'Perl',
+    php          => 'PHP',
+    plsql        => 'PL/SQL',
+    postgresql   => 'PostgreSQL',
+    python       => 'Python',
+    ruby         => 'Ruby',
+    scheme       => 'Scheme',
+    translations => $translations,
 ];
 
 MAIN: {

@@ -20,6 +20,121 @@ msgstr ""
 msgid "Home"
 msgstr "Übersicht"
 
+#: crank.pl:31
+msgid "Translations"
+msgstr ""
+
+#: crank.pl:32
+msgid "About"
+msgstr ""
+
+#: s/about.md.tt2:1
+#, fuzzy
+msgid "# About Bobby Tables and SQL injection"
+msgstr "Bobby Tables: Ein Leitfaden gegen SQL-Einschleusung"
+
+#: s/about.md.tt2:3
+msgid "# Why did Bobby's school lose their records?"
+msgstr ""
+
+#: s/about.md.tt2:5
+msgid ""
+"The school apparently stores the names of their students in a table called "
+"Students. When a new student arrives, the school inserts his/her name into "
+"this table. The code doing the insertion might look as follows:"
+msgstr ""
+
+#: s/about.md.tt2:7
+msgid ""
+"    $sql = \"INSERT INTO Students (Name) VALUES ('\" . $studentName . \"');"
+"\";\n"
+"    execute_sql($sql);"
+msgstr ""
+
+#: s/about.md.tt2:10
+msgid ""
+"The first line creates a string containing an SQL INSERT statement. The "
+"content of the `$studentName` variable is glued into the SQL statement. The "
+"second line sends the resulting SQL statement to the database. The pitfall "
+"of this code is that outside data, in this case the content of `"
+"$studentName`, becomes part of the SQL statement."
+msgstr ""
+
+#: s/about.md.tt2:12
+msgid ""
+"First let's see what the SQL statement looks like if we insert a student "
+"named John:"
+msgstr ""
+
+#: s/about.md.tt2:14
+msgid "    INSERT INTO Students (Name) VALUES ('John');"
+msgstr ""
+
+#: s/about.md.tt2:16
+msgid ""
+"This does exactly what we want: it inserts John into the Students table."
+msgstr ""
+
+#: s/about.md.tt2:18
+msgid ""
+"Now we insert little Bobby Tables, by setting `$studentName` to `Robert'); "
+"DROP TABLE Students;--`. The SQL statement becomes:"
+msgstr ""
+
+#: s/about.md.tt2:20
+msgid ""
+"    INSERT INTO Students (Name) VALUES ('Robert'); DROP TABLE Students;--');"
+msgstr ""
+
+#: s/about.md.tt2:22
+msgid ""
+"This inserts Robert into the Students table. However, the INSERT statement "
+"is now followed by a DROP TABLE statement which removes the entire Students "
+"table. Ouch!"
+msgstr ""
+
+#: s/about.md.tt2:24
+#, fuzzy
+msgid ""
+"\n"
+"# How to avoid Bobby Tables"
+msgstr ""
+"\n"
+"Wie man Bobby Tables vermeidet\n"
+"=============================="
+
+#: s/about.md.tt2:27
+msgid "There is only one way to avoid Bobby Tables attacks"
+msgstr "Man kann Bobby-Tables-Angriffe nur vermeiden,"
+
+#: s/about.md.tt2:29
+msgid ""
+"* Do not create SQL statements that include outside data.\n"
+"* Use parameterized SQL calls."
+msgstr ""
+"* indem man keine SQL-Anweisungen erstellt, die von außen kommende Daten "
+"enthalten.\n"
+"* indem man SQL-Aufrufe mit Parametern tätigt."
+
+#: s/about.md.tt2:32
+msgid ""
+"That's it. Don't try to escape invalid characters. Don't try to do it "
+"yourself. Learn how to use parameterized statements. Always, every single "
+"time."
+msgstr ""
+"Das ist alles. Nicht versuchen, ungültige Zeichen zu maskieren. Nicht "
+"versuchen, es eigenhändig zu machen. Lerne, parameterisierte Anweisungen zu "
+"benutzen, und zwar immer und jedes Mal."
+
+#: s/about.md.tt2:34
+#, fuzzy
+msgid ""
+"The strip gets one thing crucially wrong. The answer is not to \"sanitize "
+"your database inputs\" yourself. It is prone to error.\n"
+msgstr ""
+"Im Comic wird eine Sache falsch gemacht. Die Antwort lautet nicht, die "
+"Datenbankeingaben selber zu bereinigen. Dies ist fehleranfällig."
+
 #: s/asp.md.tt2:1
 msgid ""
 "ASP\n"
@@ -381,111 +496,7 @@ msgstr ""
 "**Mutter**: Und ich hoffe, Sie haben gelernt, Datenbankeingaben zu "
 "bereinigen."
 
-#: s/index.md.tt2:22
-msgid ""
-"\n"
-"Why did Bobby's school lose their records?\n"
-"=========================================="
-msgstr ""
-
-#: s/index.md.tt2:26
-msgid ""
-"The school apparently stores the names of their students in a table called "
-"Students. When a new student arrives, the school inserts his/her name into "
-"this table. The code doing the insertion might look as follows:"
-msgstr ""
-
-#: s/index.md.tt2:28
-msgid ""
-"    $sql = \"INSERT INTO Students (Name) VALUES ('\" . $studentName . \"');"
-"\";\n"
-"    execute_sql($sql);"
-msgstr ""
-
-#: s/index.md.tt2:31
-msgid ""
-"The first line creates a string containing an SQL INSERT statement. The "
-"content of the `$studentName` variable is glued into the SQL statement. The "
-"second line sends the resulting SQL statement to the database. The pitfall "
-"of this code is that outside data, in this case the content of `"
-"$studentName`, becomes part of the SQL statement."
-msgstr ""
-
-#: s/index.md.tt2:33
-msgid ""
-"First let's see what the SQL statement looks like if we insert a student "
-"named John:"
-msgstr ""
-
-#: s/index.md.tt2:35
-msgid "    INSERT INTO Students (Name) VALUES ('John');"
-msgstr ""
-
-#: s/index.md.tt2:37
-msgid ""
-"This does exactly what we want: it inserts John into the Students table."
-msgstr ""
-
-#: s/index.md.tt2:39
-msgid ""
-"Now we insert little Bobby Tables, by setting `$studentName` to `Robert'); "
-"DROP TABLE Students;--`. The SQL statement becomes:"
-msgstr ""
-
-#: s/index.md.tt2:41
-msgid ""
-"    INSERT INTO Students (Name) VALUES ('Robert'); DROP TABLE Students;--');"
-msgstr ""
-
-#: s/index.md.tt2:43
-msgid ""
-"This inserts Robert into the Students table. However, the INSERT statement "
-"is now followed by a DROP TABLE statement which removes the entire Students "
-"table. Ouch!"
-msgstr ""
-
-#: s/index.md.tt2:45
-msgid ""
-"\n"
-"How to avoid Bobby Tables\n"
-"========================="
-msgstr ""
-"\n"
-"Wie man Bobby Tables vermeidet\n"
-"=============================="
-
-#: s/index.md.tt2:49
-msgid "There is only one way to avoid Bobby Tables attacks"
-msgstr "Man kann Bobby-Tables-Angriffe nur vermeiden,"
-
-#: s/index.md.tt2:51
-msgid ""
-"* Do not create SQL statements that include outside data.\n"
-"* Use parameterized SQL calls."
-msgstr ""
-"* indem man keine SQL-Anweisungen erstellt, die von außen kommende Daten "
-"enthalten.\n"
-"* indem man SQL-Aufrufe mit Parametern tätigt."
-
-#: s/index.md.tt2:54
-msgid ""
-"That's it. Don't try to escape invalid characters. Don't try to do it "
-"yourself. Learn how to use parameterized statements. Always, every single "
-"time."
-msgstr ""
-"Das ist alles. Nicht versuchen, ungültige Zeichen zu maskieren. Nicht "
-"versuchen, es eigenhändig zu machen. Lerne, parameterisierte Anweisungen zu "
-"benutzen, und zwar immer und jedes Mal."
-
-#: s/index.md.tt2:56
-msgid ""
-"The strip gets one thing crucially wrong. The answer is not to \"sanitize "
-"your database inputs\" yourself. It is prone to error."
-msgstr ""
-"Im Comic wird eine Sache falsch gemacht. Die Antwort lautet nicht, die "
-"Datenbankeingaben selber zu bereinigen. Dies ist fehleranfällig."
-
-#: s/index.md.tt2:58
+#: s/index.md.tt2:24
 msgid ""
 "Examples\n"
 "========"
@@ -493,11 +504,11 @@ msgstr ""
 "Beispiele\n"
 "========="
 
-#: s/index.md.tt2:61
+#: s/index.md.tt2:27
 msgid "See the sidebar to the left for your specific language."
 msgstr "Siehe Kasten links für die jeweilige Sprache."
 
-#: s/index.md.tt2:63
+#: s/index.md.tt2:29
 msgid ""
 "Other random resources\n"
 "======================"
@@ -505,7 +516,7 @@ msgstr ""
 "Andere wahllose Ressourcen\n"
 "=========================="
 
-#: s/index.md.tt2:66
+#: s/index.md.tt2:32
 msgid ""
 "* [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/"
 "sql-injection-myths-and-fallacies)\n"
@@ -521,7 +532,7 @@ msgstr ""
 "* [Defending Against SQL Injection Attacks](http://download.oracle.com/oll/"
 "tutorials/SQLInjection/index.htm)"
 
-#: s/index.md.tt2:70
+#: s/index.md.tt2:36
 msgid ""
 "Patches welcome\n"
 "==============="
@@ -529,7 +540,7 @@ msgstr ""
 "Verbesserungen sind willkommen\n"
 "=============================="
 
-#: s/index.md.tt2:73
+#: s/index.md.tt2:39
 msgid ""
 "Don't see a language that you'd like to see represented? Please let me know "
 "if you have updates or additions through one of these methods, in decreasing "
@@ -538,7 +549,7 @@ msgstr ""
 "Wird eine Sprache vermisst? Bitte melde Verbesserungen oder Ergänzungen auf "
 "eine dieser drei Arten, in absteigender Reihenfolge der Bevorzugung."
 
-#: s/index.md.tt2:75
+#: s/index.md.tt2:41
 msgid ""
 "* Fork the [bobby-tables repository at github](http://github.com/petdance/"
 "bobby-tables), make your changes, and send me a pull request.\n"
@@ -553,7 +564,7 @@ msgstr ""
 "petdance/bobby-tables/issues).\n"
 "* Schicke mir eine Email: Andy Lester, andy at petdance.com."
 
-#: s/index.md.tt2:79
+#: s/index.md.tt2:45
 msgid ""
 "Translations also welcome\n"
 "========================="
@@ -561,7 +572,7 @@ msgstr ""
 "Übersetzungen sind auch willkommen\n"
 "=================================="
 
-#: s/index.md.tt2:82
+#: s/index.md.tt2:48
 msgid ""
 "Help translate this site! There are less than 200 phrases. No programming "
 "necessary."
@@ -569,7 +580,7 @@ msgstr ""
 "Hilf mit, diesen Webauftritt zu übersetzen! Es sind weniger als 200 "
 "Ausdrücke. Keine Programmierung notwendig."
 
-#: s/index.md.tt2:84
+#: s/index.md.tt2:50
 msgid ""
 "See the instructions at the [bobby-tables repository at github](http://"
 "github.com/petdance/bobby-tables#readme)."
@@ -577,7 +588,7 @@ msgstr ""
 "Siehe Anleitung im [Repository bobby-tables auf github](http://github.com/"
 "petdance/bobby-tables#readme)."
 
-#: s/index.md.tt2:86
+#: s/index.md.tt2:52
 msgid ""
 "To do\n"
 "====="
@@ -585,7 +596,7 @@ msgstr ""
 "In Vorbereitung\n"
 "==============="
 
-#: s/index.md.tt2:89
+#: s/index.md.tt2:55
 msgid ""
 "* Explain why creating code from outside data is bad.\n"
 "* Potential speed win when reusing prepared statements."
@@ -595,7 +606,7 @@ msgstr ""
 "* Möglicher Geschwindigkeitszuwachs unter Wiederverwendung vorbereiteter "
 "Anweisungen."
 
-#: s/index.md.tt2:92
+#: s/index.md.tt2:58
 msgid ""
 "Thanks\n"
 "======"
@@ -603,11 +614,11 @@ msgstr ""
 "Danksagung\n"
 "=========="
 
-#: s/index.md.tt2:95
+#: s/index.md.tt2:61
 msgid "Thanks to the following folks for their contributions:"
 msgstr "Dank gilt den folgenden Leuten für ihre Mitwirkung:"
 
-#: s/index.md.tt2:97
+#: s/index.md.tt2:63
 #, fuzzy
 msgid ""
 "* [Kim Christensen](http://www.smukkekim.dk)\n"
@@ -2042,6 +2053,129 @@ msgstr ""
 "3)\n"
 "    (define adults (sqlite3:map-row DB \"SELECT name FROM Person WHERE age "
 ">= ?\" 18))"
+
+#: s/translations.md.tt2:1
+msgid "# Translations"
+msgstr ""
+
+#: s/translations.md.tt2:3
+msgid "The following natural languages are supported on bobby-tables.com:"
+msgstr ""
+
+#: s/translations.md.tt2:5
+msgid ""
+"* [English](http://bobby-tables.com/) (native)\n"
+"* [German](http://bobby-tables.com/de_DE/) (fairly current)\n"
+"* [Russian](http://bobby-tables.com/ru_RU/) (just starting)"
+msgstr ""
+
+#: s/translations.md.tt2:9
+msgid ""
+"We'd love to have translations into other languages as well.  Please\n"
+"contact the\n"
+"[bobby-tables mailing list](https://groups.google.com/forum/#!forum/bobby-"
+"tables)\n"
+"and ask a team member about how you can help."
+msgstr ""
+
+#: s/translations.md.tt2:14
+msgid "# Contributing translations"
+msgstr ""
+
+#: s/translations.md.tt2:16
+msgid "1. Run `make messages`."
+msgstr ""
+
+#: s/translations.md.tt2:18
+msgid ""
+"2. Skip this step if you just amend a translation. If you need to start a "
+"new\n"
+"language, copy `share/locale/com.bobby-tables.pot` to\n"
+"`share/locale/xx_YY/LC_MESSAGES/com.bobby-tables.po`, but substitute `xx` "
+"for\n"
+"the appropriate\n"
+"[language code](http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)\n"
+"and `YY` for the\n"
+"[territory code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2).\n"
+"(Alternatively to copying, use the command `msginit`.) Naming convention\n"
+"examples:"
+msgstr ""
+
+#: s/translations.md.tt2:28
+msgid ""
+"        sv_SE.po    standard Swedish\n"
+"        pt_BR.po    Brazilian Portuguese"
+msgstr ""
+
+#: s/translations.md.tt2:31
+msgid ""
+"3. Edit the PO file. [Lokalize (formerly KBabel)](http://l10n.kde.org/"
+"tools/)\n"
+"is excellent, [Poedit](http://www.poedit.net/) is good. Any text editor\n"
+"supporting UTF-8 can handle PO files, but it will not be as convenient."
+msgstr ""
+
+#: s/translations.md.tt2:35
+msgid "4. Run the normal `make` step."
+msgstr ""
+
+#: s/translations.md.tt2:37
+msgid "# Guidelines for translations"
+msgstr ""
+
+#: s/translations.md.tt2:39
+msgid ""
+"* Become familiar with the source mark-up language \"Markdown\" used for\n"
+" producing the rendered HTML. The backtick (\\`) is an important piece\n"
+" of syntax pertaining to translation, it indicates code, e.g. a\n"
+" variable name, and code is not translated, i.e. copy the source text\n"
+" into the target language as-is. Indented paragraphs are also code.\n"
+" Translate only comments in such code blocks."
+msgstr ""
+
+#: s/translations.md.tt2:46
+msgid ""
+"* To find out where a piece of English is from to see the context,\n"
+"run `ack -a 'source text goes here'`. Most of the source text is\n"
+"in directory `s/`. Run `make clean` first to avoid duplicates in\n"
+"build files. (If you don't have [ack](http://betterthangrep.com)\n"
+"you can use `grep -R`."
+msgstr ""
+
+#: s/translations.md.tt2:52
+msgid "* You can check your progress by running `make l10n-status`."
+msgstr ""
+
+#: s/translations.md.tt2:54
+msgid "Apart from that, the normal rules for any translation apply:"
+msgstr ""
+
+#: s/translations.md.tt2:56
+msgid ""
+"* Don't translate literally or word-by-word, instead capture the\n"
+"essence of each sentence/paragraph and reformulate it so it reads\n"
+"naturally. If you have to merge or rearrange sentence parts, do it."
+msgstr ""
+
+#: s/translations.md.tt2:60
+msgid ""
+"* Avoid keeping key words/technical jargon in English, consult the\n"
+"standard literature for existing translations of key words. (Software\n"
+"vendors such as Microsoft and KDE publish shared translation tables,\n"
+"import those into your PO editor, too.) In case you find no good\n"
+"translation, use your imagination and put yourself into the position\n"
+"of a member of your potential audience: is the sentence still\n"
+"understandable? If not, add a parenthetical remark to the key word."
+msgstr ""
+
+#: s/translations.md.tt2:68
+msgid ""
+"* It can happen that source text is wrong in some way (typos, factual\n"
+"errors). This should be improved first in a separate patch, independent\n"
+"from your translation. Fix it yourself, and if not possible (e.g.\n"
+"because the English text is ambiguous), use `git annotate` to find\n"
+"out who wrote it and ask for clarification.\n"
+msgstr ""
 
 #: tt/footer.tt:5
 msgid ""
