@@ -1,8 +1,6 @@
-# Localization file for bobby-tables.com
-# Copyright (C) 2008-2012 Andy Lester
+# Russian localization file for bobby-tables.com
+# Copyright (C) 2008-2012 Andy Lester <andy@petdance.com>
 # This site's content is available under the Creative Commons Attribution-ShareAlike 3.0 License.
-# Andy Lester <andy@petdance.com>
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"

@@ -1,6 +1,7 @@
 # Header entry was created by KBabel!
 #
 # Lars Dɪᴇᴄᴋᴏᴡ 迪拉斯 <daxim@cpan.org>, 2010, 2012.
+# This site's content is available under the Creative Commons Attribution-ShareAlike 3.0 License.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
