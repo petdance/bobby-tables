@@ -11,7 +11,9 @@ my @modules = qw(
     Locale::Messages
     Locale::TextDomain
     POSIX
+    Template
     Test::HTML::Lint
+    Text::Markdown
 );
 
 print "# Checking that we have all our necessary modules.\n";
