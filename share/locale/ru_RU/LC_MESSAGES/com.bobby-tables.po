@@ -1,0 +1,1335 @@
+# Localization file for bobby-tables.com
+# Copyright (C) 2008-2012 Andy Lester
+# This site's content is available under the Creative Commons Attribution-ShareAlike 3.0 License.
+# Andy Lester <andy@petdance.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2012-05-01 07:25-0600\n"
+"Last-Translator: Andy Lester <andy@petdance.com>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: crank.pl:30
+msgid "Home"
+msgstr ""
+
+#: s/asp.md.tt2:1
+msgid ""
+"ASP\n"
+"==="
+msgstr ""
+
+#: s/asp.md.tt2:4
+msgid "Older ASP uses positional placeholders."
+msgstr ""
+
+#: s/asp.md.tt2:6
+msgid ""
+"    objCmd.CommandType = adCmdText;\n"
+"    objCmd.CommandText = \"UPDATE members SET photo = ? WHERE memberID = ?\";\n"
+"    objCmd.Parameters.Append(objCmd.CreateParameter(\"filename\", adVarChar, adParamInput, 510, fileName));\n"
+"    objCmd.Parameters.Append(objCmd.CreateParameter(\"memberID\", adInteger, adParamInput, 4, memberid ));\n"
+"    objCmd.Execute(adExecuteNoRecords);"
+msgstr ""
+
+#: s/asp.md.tt2:12
+msgid ""
+"\n"
+"Newer ASP (ASP.Net?) can handle named placeholders."
+msgstr ""
+
+#: s/asp.md.tt2:15
+msgid ""
+"    objCmd.CommandType = adCmdText;\n"
+"    objCmd.CommandText = \"UPDATE members SET photo = @filename WHERE memberID = @memberID\";\n"
+"    objCmd.Parameters.Append(objCmd.CreateParameter(\"@memberID\", adInteger, adParamInput, 4, memberid ));\n"
+"    objCmd.Parameters.Append(objCmd.CreateParameter(\"@filename\", adVarChar, adParamInput, 510, fileName));\n"
+"    objCmd.Execute(adExecuteNoRecords);\n"
+"    gblDelobjParams(objCmd);"
+msgstr ""
+
+#: s/asp.md.tt2:22
+#: s/dotnet.md.tt2:13
+#: s/perl.md.tt2:43
+#: s/python.md.tt2:14
+#: s/ruby.md.tt2:15
+#: s/scheme.md.tt2:15
+msgid ""
+"To do\n"
+"-----"
+msgstr ""
+
+#: s/asp.md.tt2:25
+msgid "Add some narrative\n"
+msgstr ""
+
+#: s/coldfusion.md.tt2:1
+msgid ""
+"ColdFusion\n"
+"=========="
+msgstr ""
+
+#: s/coldfusion.md.tt2:4
+msgid "In ColdFusion there is a tag called `cfqueryparam` that should be used whenever writing inline queries."
+msgstr ""
+
+#: s/coldfusion.md.tt2:6
+msgid ""
+"    <cfquery name=\"queryTest\">\n"
+"    SELECT FirstName, LastName, Phone\n"
+"    FROM   tblUser\n"
+"    WHERE  Status =\n"
+"      <cfqueryparam cfsqltype=\"CF_SQL_VARCHAR\" value=\"#form.status#\">\n"
+"    </cfquery>"
+msgstr ""
+
+#: s/coldfusion.md.tt2:13
+msgid ""
+"\n"
+"Stored procedures can be invoked with the `cfstoredproc` and `cfprocparam` tags."
+msgstr ""
+
+#: s/coldfusion.md.tt2:16
+msgid ""
+"Recent versions of ColdFusion provide a set of functions to run queries that\n"
+"have a slightly different syntax, but still provide parameterized queries."
+msgstr ""
+
+#: s/coldfusion.md.tt2:19
+msgid ""
+"\n"
+"    <cfscript>\n"
+"      var myQuery = new Query(sql=\"\n"
+"        SELECT FirstName, LastName, Phone\n"
+"        FROM   tblUser\n"
+"        WHERE  Status = :status\n"
+"      \");\n"
+"      myQuery.addParam(\n"
+"        name      = \"status\",\n"
+"        value     = form.status,\n"
+"        cfsqltype = \"cf_sql_varchar\"\n"
+"      );\n"
+"      var rawQuery = myQuery.execute().getResult();\n"
+"    </cfscript>"
+msgstr ""
+
+#: s/csharp.md.tt2:1
+msgid ""
+"C\\#\n"
+"==="
+msgstr ""
+
+#: s/csharp.md.tt2:4
+msgid "From the [C# Online](http://en.csharp-online.net/) wiki page [ASP.NET Security Hacks--Avoiding SQL Injection](http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection)"
+msgstr ""
+
+#: s/csharp.md.tt2:6
+msgid ""
+"\n"
+"    SqlCommand userInfoQuery = new SqlCommand(\n"
+"        \"SELECT id, name, email FROM users WHERE id = @UserName\",\n"
+"        someSqlConnection);"
+msgstr ""
+
+#: s/csharp.md.tt2:11
+msgid ""
+"    SqlParameter userNameParam = userInfoQuery.Parameters.Add(\"@UserName\",\n"
+"        SqlDbType.VarChar, 25 /* max length of field */ );"
+msgstr ""
+
+#: s/csharp.md.tt2:14
+msgid ""
+"    // userName is some string valued user input variable\n"
+"    userNameParam.Value = userName;"
+msgstr ""
+
+#: s/csharp.md.tt2:17
+msgid "Or simpler:"
+msgstr ""
+
+#: s/csharp.md.tt2:19
+msgid ""
+"\n"
+"    String username = \"joe.bloggs\";\n"
+"    SqlCommand sqlQuery = new SqlCommand(\"SELECT user_id, first_name,last_name FROM users WHERE username = ?username\",  sqlConnection);\n"
+"    sqlQuery.Parameters.AddWithValue(\"?username\", username);\n"
+msgstr ""
+
+#: s/delphi.md.tt2:1
+msgid ""
+"Delphi\n"
+"======"
+msgstr ""
+
+#: s/delphi.md.tt2:4
+msgid "To use a prepared statement, do something like this:"
+msgstr ""
+
+#: s/delphi.md.tt2:6
+msgid ""
+"    query.SQL.Text := 'update people set name=:Name where id=:ID';\n"
+"    query.Prepare;\n"
+"    query.ParamByName( 'Name' ).AsString := name;\n"
+"    query.ParamByName( 'ID' ).AsInteger := id;\n"
+"    query.ExecSQL;\n"
+msgstr ""
+
+#: s/dotnet.md.tt2:1
+msgid ""
+".NET\n"
+"===="
+msgstr ""
+
+#: s/dotnet.md.tt2:4
+msgid "Reference:"
+msgstr ""
+
+#: s/dotnet.md.tt2:6
+msgid "-    [SqlCommand.Prepare](http://msdn.microsoft.com/en-us/library/system.data.sqlclient.sqlcommand.prepare.aspx) in the .NET Framework Class Library"
+msgstr ""
+
+#: s/dotnet.md.tt2:8
+msgid "Articles:"
+msgstr ""
+
+#: s/dotnet.md.tt2:10
+msgid ""
+"-   [SQL injection](http://msdn.microsoft.com/en-us/library/ms161953.aspx) on MSDN\n"
+"-   [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET Debugging blog"
+msgstr ""
+
+#: s/dotnet.md.tt2:16
+msgid ""
+"-   Add some narrative\n"
+"-   Show code examples\n"
+msgstr ""
+
+#: s/index.md.tt2:1
+msgid ""
+"Who is Bobby Tables?\n"
+"===================="
+msgstr ""
+"(Russian translation of \"Who is Bobby Tables?\")\n"
+"===================="
+
+#: s/index.md.tt2:4
+msgid "[From the webcomic _xkcd_](http://xkcd.com/327/)"
+msgstr ""
+
+#: s/index.md.tt2:6
+msgid "<a href=\"http://xkcd.com/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd Bobby Tables Cartoon\" height=\"205\" width=\"666\" /></a>"
+msgstr ""
+
+#: s/index.md.tt2:8
+msgid "<br clear=\"right\">"
+msgstr ""
+
+#: s/index.md.tt2:10
+msgid "**School**: Hi, this is your son's school. We're having some computer trouble."
+msgstr ""
+
+#: s/index.md.tt2:12
+msgid "**Mom**: Oh, dear -- Did he break something?"
+msgstr ""
+
+#: s/index.md.tt2:14
+msgid "**School**: In a way. Did you really name your son `Robert'); DROP TABLE Students;--`?"
+msgstr ""
+
+#: s/index.md.tt2:16
+msgid "**Mom**: Oh. Yes. Little Bobby Tables we call him."
+msgstr ""
+
+#: s/index.md.tt2:18
+msgid "**School**: Well, we've lost this year's student records. I hope you're happy."
+msgstr ""
+
+#: s/index.md.tt2:20
+msgid "**Mom**: And I hope you've learned to sanitize your database inputs."
+msgstr ""
+
+#: s/index.md.tt2:22
+msgid ""
+"\n"
+"Why did Bobby's school lose their records?\n"
+"=========================================="
+msgstr ""
+
+#: s/index.md.tt2:26
+msgid "The school apparently stores the names of their students in a table called Students. When a new student arrives, the school inserts his/her name into this table. The code doing the insertion might look as follows:"
+msgstr ""
+
+#: s/index.md.tt2:28
+msgid ""
+"    $sql = \"INSERT INTO Students (Name) VALUES ('\" . $studentName . \"');\";\n"
+"    execute_sql($sql);"
+msgstr ""
+
+#: s/index.md.tt2:31
+msgid "The first line creates a string containing an SQL INSERT statement. The content of the `$studentName` variable is glued into the SQL statement. The second line sends the resulting SQL statement to the database. The pitfall of this code is that outside data, in this case the content of `$studentName`, becomes part of the SQL statement."
+msgstr ""
+
+#: s/index.md.tt2:33
+msgid "First let's see what the SQL statement looks like if we insert a student named John:"
+msgstr ""
+
+#: s/index.md.tt2:35
+msgid "    INSERT INTO Students (Name) VALUES ('John');"
+msgstr ""
+
+#: s/index.md.tt2:37
+msgid "This does exactly what we want: it inserts John into the Students table."
+msgstr ""
+
+#: s/index.md.tt2:39
+msgid "Now we insert little Bobby Tables, by setting `$studentName` to `Robert'); DROP TABLE Students;--`. The SQL statement becomes:"
+msgstr ""
+
+#: s/index.md.tt2:41
+msgid "    INSERT INTO Students (Name) VALUES ('Robert'); DROP TABLE Students;--');"
+msgstr ""
+
+#: s/index.md.tt2:43
+msgid "This inserts Robert into the Students table. However, the INSERT statement is now followed by a DROP TABLE statement which removes the entire Students table. Ouch!"
+msgstr ""
+
+#: s/index.md.tt2:45
+msgid ""
+"\n"
+"How to avoid Bobby Tables\n"
+"========================="
+msgstr ""
+
+#: s/index.md.tt2:49
+msgid "There is only one way to avoid Bobby Tables attacks"
+msgstr ""
+
+#: s/index.md.tt2:51
+msgid ""
+"* Do not create SQL statements that include outside data.\n"
+"* Use parameterized SQL calls."
+msgstr ""
+
+#: s/index.md.tt2:54
+msgid "That's it. Don't try to escape invalid characters. Don't try to do it yourself. Learn how to use parameterized statements. Always, every single time."
+msgstr ""
+
+#: s/index.md.tt2:56
+msgid "The strip gets one thing crucially wrong. The answer is not to \"sanitize your database inputs\" yourself. It is prone to error."
+msgstr ""
+
+#: s/index.md.tt2:58
+msgid ""
+"Examples\n"
+"========"
+msgstr ""
+
+#: s/index.md.tt2:61
+msgid "See the sidebar to the left for your specific language."
+msgstr ""
+
+#: s/index.md.tt2:63
+msgid ""
+"Other random resources\n"
+"======================"
+msgstr ""
+
+#: s/index.md.tt2:66
+msgid ""
+"* [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies)\n"
+"* [How to Write Injection-Proof SQL](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)\n"
+"* [Defending Against SQL Injection Attacks](http://download.oracle.com/oll/tutorials/SQLInjection/index.htm)"
+msgstr ""
+
+#: s/index.md.tt2:70
+msgid ""
+"Patches welcome\n"
+"==============="
+msgstr ""
+
+#: s/index.md.tt2:73
+msgid "Don't see a language that you'd like to see represented? Please let me know if you have updates or additions through one of these methods, in decreasing order of preference."
+msgstr ""
+
+#: s/index.md.tt2:75
+msgid ""
+"* Fork the [bobby-tables repository at github](http://github.com/petdance/bobby-tables), make your changes, and send me a pull request.\n"
+"* Add an issue in the [issue tracker](http://github.com/petdance/bobby-tables/issues).\n"
+"* Email me, Andy Lester, at andy at petdance.com."
+msgstr ""
+
+#: s/index.md.tt2:79
+msgid ""
+"Translations also welcome\n"
+"========================="
+msgstr ""
+
+#: s/index.md.tt2:82
+msgid "Help translate this site! There are less than 200 phrases. No programming necessary."
+msgstr ""
+
+#: s/index.md.tt2:84
+msgid "See the instructions at the [bobby-tables repository at github](http://github.com/petdance/bobby-tables#readme)."
+msgstr ""
+
+#: s/index.md.tt2:86
+msgid ""
+"To do\n"
+"====="
+msgstr ""
+
+#: s/index.md.tt2:89
+msgid ""
+"* Explain why creating code from outside data is bad.\n"
+"* Potential speed win when reusing prepared statements."
+msgstr ""
+
+#: s/index.md.tt2:92
+msgid ""
+"Thanks\n"
+"======"
+msgstr ""
+
+#: s/index.md.tt2:95
+msgid "Thanks to the following folks for their contributions:"
+msgstr ""
+
+#: s/index.md.tt2:97
+msgid ""
+"* [Kim Christensen](http://www.smukkekim.dk)\n"
+"* Kirk Kimmel\n"
+"* Nathan Mahdavi\n"
+"* [Hannes Hofmann](http://www5.informatik.uni-erlangen.de/en/our-team/hofmann-hannes)\n"
+"* [Mike Angstadt](http://www.mangst.com)\n"
+"* [Peter Ward](http://identi.ca/flowblok/)\n"
+"* [David Wheeler](http://justatheory.com)\n"
+"* Scott Rose\n"
+"* Erik Osheim\n"
+"* Russ Sivak\n"
+"* [Iain Collins](http://iaincollins.com)\n"
+"* Kristoffer Sall Hansen\n"
+"* Jeff Emminger\n"
+"* [Travis Swicegood](http://www.travisswicegood.com/)\n"
+"* [Will Coleda](http://www.coleda.com/users/coke/)\n"
+"* Kai Baesler\n"
+"* Mike Markley\n"
+"* [Michael Schwern](http://schwern.net/)\n"
+"* [Jeana Clark](http://jeanaclark.org/)\n"
+"* [Lars Dɪᴇᴄᴋᴏᴡ](http://search.cpan.org/~daxim/)\n"
+"* [Jani Hur](http://www.jani-hur.net)\n"
+"* [Sven van Haastregt](http://www.liacs.nl/home/svhaastr/)\n"
+msgstr ""
+
+#: s/java.md.tt2:1
+msgid ""
+"Java\n"
+"===="
+msgstr ""
+
+#: s/java.md.tt2:4
+msgid ""
+"JDBC\n"
+"----"
+msgstr ""
+
+#: s/java.md.tt2:7
+msgid ""
+"The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html)\n"
+"has a class called\n"
+"[`PreparedStatement`](http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html)\n"
+"which allows the programmer to safely insert user-supplied data\n"
+"into a SQL query.  The location of each input value in the query\n"
+"string is marked with a question mark.  The various `set*()` methods\n"
+"are then used to safely perform the insertion."
+msgstr ""
+
+#: s/java.md.tt2:15
+msgid ""
+"    String name = //user input\n"
+"    int age = //user input\n"
+"    Connection connection = DriverManager.getConnection(...);\n"
+"    PreparedStatement statement = connection.prepareStatement(\n"
+"            \"SELECT * FROM people WHERE lastName = ? AND age > ?\" );\n"
+"    statement.setString(1, name); //lastName is a VARCHAR\n"
+"    statement.setInt(2, age); //age is an INT\n"
+"    ResultSet rs = statement.executeQuery();\n"
+"    while (rs.next()){\n"
+"        //...\n"
+"    }"
+msgstr ""
+
+#: s/java.md.tt2:27
+msgid ""
+"\n"
+"Once a `PreparedStatement` object has been created, it can be reused\n"
+"multiple times for multiple queries (for example, when using the\n"
+"same query to update multiple rows in a table).  However, they are\n"
+"**not thread-safe** because of the many method calls involved in\n"
+"setting the parameters and executing the query.  Therefore, you\n"
+"should only define `PreparedStatement` objects as method-level\n"
+"variables (as opposed to class-level variables) to avoid concurrency\n"
+"issues."
+msgstr ""
+
+#: s/java.md.tt2:37
+msgid ""
+"    List<Person>; people = //user input\n"
+"    Connection connection = DriverManager.getConnection(...);\n"
+"    connection.setAutoCommit(false);\n"
+"    try {\n"
+"        PreparedStatement statement = connection.prepareStatement(\n"
+"                \"UPDATE people SET lastName = ?, age = ? WHERE id = ?\");\n"
+"        for (Person person : people){\n"
+"            statement.setString(1, person.getLastName());\n"
+"            statement.setInt(2, person.getAge());\n"
+"            statement.setInt(3, person.getId());\n"
+"            statement.execute();\n"
+"        }\n"
+"        connection.commit();\n"
+"    } catch (SQLException e) {\n"
+"        connection.rollback();\n"
+"    }"
+msgstr ""
+
+#: s/java.md.tt2:54
+msgid ""
+"More information on `PreparedStatement` can be found in the\n"
+"[Oracle JDBC tutorial](http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html)."
+msgstr ""
+
+#: s/java.md.tt2:57
+msgid ""
+"Hibernate\n"
+"---------"
+msgstr ""
+
+#: s/java.md.tt2:60
+msgid ""
+"[Hibernate](http://www.hibernate.org/) uses named parameters to\n"
+"safely insert data into a query.  A named parameter consists of a\n"
+"colon, followed by a unique name for the parameter."
+msgstr ""
+
+#: s/java.md.tt2:64
+msgid ""
+"    String name = //user input\n"
+"    int age = //user input\n"
+"    Session session = //...\n"
+"    Query query = session.createQuery(\"from People where lastName = :name and age > :age\");\n"
+"    query.setString(\"name\", name);\n"
+"    query.setInteger(\"age\", age);\n"
+"    Iterator people = query.iterate();"
+msgstr ""
+
+#: s/java.md.tt2:72
+msgid ""
+"Hibernate also supports positional parameters like `PreparedStatement`,\n"
+"but named parameters are generally preferred because they make the\n"
+"query a little easier to read."
+msgstr ""
+
+#: s/java.md.tt2:76
+msgid ""
+"See the\n"
+"[Hibernate Manual](http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters)\n"
+"for more information on named parameters."
+msgstr ""
+
+#: s/java.md.tt2:80
+msgid ""
+"MyBatis\n"
+"-------"
+msgstr ""
+
+#: s/java.md.tt2:83
+msgid ""
+"[MyBatis](http://www.mybatis.org/) is a database framework that\n"
+"hides a lot of the JDBC code from the developer, allowing him or\n"
+"her to focus on writing SQL.  The SQL statements are typically\n"
+"stored in XML files."
+msgstr ""
+
+#: s/java.md.tt2:88
+msgid ""
+"MyBatis automatically creates `PreparedStatement`s behind the scenes.\n"
+"Nothing extra needs to be done by the programmer."
+msgstr ""
+
+#: s/java.md.tt2:91
+msgid ""
+"To give you some context, here's an example showing how a basic\n"
+"query is called with MyBatis.  The input data is passed into the\n"
+"`PeopleMapper` instance and then it gets inserted into the\n"
+"\"selectPeopleByNameAndAge\" query."
+msgstr ""
+
+#: s/java.md.tt2:96
+msgid ""
+"XML mapping document\n"
+"===================="
+msgstr ""
+
+#: s/java.md.tt2:99
+msgid ""
+"    <?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n"
+"    <!DOCTYPE mapper\n"
+"    PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\n"
+"    \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\n"
+"    <mapper namespace=\"com.bobbytables.mybatis.PeopleMapper\">\n"
+"    <select id=\"selectPeopleByNameAndAge\" resultType=\"list\">\n"
+"        <!-- lastName and age are automatically sanitized --->\n"
+"        SELECT * FROM people WHERE lastName = #{lastName} AND age > #{age}\n"
+"    </select>\n"
+"    </mapper>"
+msgstr ""
+
+#: s/java.md.tt2:110
+msgid ""
+"Mapper class\n"
+"============"
+msgstr ""
+
+#: s/java.md.tt2:113
+msgid ""
+"    public interface PeopleMapper {\n"
+"        List<Person> selectPeopleByNameAndAge(@Param(\"lastName\") String name, @Param(\"age\") int age);\n"
+"    }"
+msgstr ""
+
+#: s/java.md.tt2:117
+msgid ""
+"Invoking the query\n"
+"=================="
+msgstr ""
+
+#: s/java.md.tt2:120
+msgid ""
+"    String name = //user input\n"
+"    int age = //user input\n"
+"    SqlSessionFactory sqlMapper = //...\n"
+"    SqlSession session = sqlMapper.openSession();\n"
+"    try {\n"
+"        PeopleMapper mapper = session.getMapper(PeopleMapper.class);\n"
+"        List<Person> people = mapper.selectPeopleByNameAndAge(name, age); //data is automatically sanitized\n"
+"        for (Person person : people) {\n"
+"            //...\n"
+"        }\n"
+"    } finally {\n"
+"        session.close();\n"
+"    }\n"
+msgstr ""
+
+#: s/perl.md.tt2:1
+msgid ""
+"Perl\n"
+"===="
+msgstr ""
+
+#: s/perl.md.tt2:4
+msgid "Perl's [DBI](http://search.cpan.org/dist/DBI), available on the [CPAN](http://search.cpan.org), supports parameterized SQL calls.  Both the `do` method and `prepare` method support parameters (\"placeholders\", as they call them) for most database drivers. For example:"
+msgstr ""
+
+#: s/perl.md.tt2:6
+msgid ""
+"\n"
+"    $sth = $dbh->prepare(\"SELECT * FROM users WHERE email = ?\");\n"
+"    foreach my $email (@emails) {\n"
+"        $sth->execute($email);\n"
+"        $row = $sth->fetchrow_hashref;\n"
+"        [...]\n"
+"    }"
+msgstr ""
+
+#: s/perl.md.tt2:14
+msgid ""
+"However, you can't use parameterization for identifiers (table\n"
+"names, column names) so you need to use DBI's `quote_identifier()`\n"
+"method for that:"
+msgstr ""
+
+#: s/perl.md.tt2:18
+msgid ""
+"    # Make sure a table name we want to use is safe:\n"
+"    my $quoted_table_name = $dbh->quote_identifier($table_name);"
+msgstr ""
+
+#: s/perl.md.tt2:21
+msgid ""
+"    # Assume @cols contains a list of column names you need to fetch:\n"
+"    my $cols = join ',', map { $dbh->quote_identifier($_) } @cols;"
+msgstr ""
+
+#: s/perl.md.tt2:24
+msgid "    my $sth = $dbh->prepare(\"SELECT $cols FROM $quoted_table_name ...\");"
+msgstr ""
+
+#: s/perl.md.tt2:26
+msgid "You could also avoid writing SQL by hand by using [DBIx::Class](http://p3rl.org/DBIx::Class), [SQL::Abstract](http://p3rl.org/SQL::Abstract) etc to generate your SQL for you programmatically."
+msgstr ""
+
+#: s/perl.md.tt2:28
+msgid ""
+"What is Taint mode?\n"
+"-------------------"
+msgstr ""
+
+#: s/perl.md.tt2:31
+msgid "Taint mode is a special set of security checks that Perl performs on data input into your program from external sources. The input data is marked as  tainted (untrusted) and may not be used in commands that would allow you to shoot yourself in the foot. See [the perlsec manpage](http://perldoc.perl.org/perlsec.html) for a detailed breakdown of what taint mode tracks."
+msgstr ""
+
+#: s/perl.md.tt2:33
+msgid "To invoke taint mode:"
+msgstr ""
+
+#: s/perl.md.tt2:35
+msgid ""
+"    # From the command line\n"
+"    perl -T program.pl"
+msgstr ""
+
+#: s/perl.md.tt2:38
+msgid ""
+"    # At the top of your script\n"
+"    #!/usr/bin/perl -T"
+msgstr ""
+
+#: s/perl.md.tt2:41
+msgid "When your script trips one of the taint checks your application will issue a fatal error message. For testing purposes `-t` will issue warnings instead of fatal errors. `-t` is not a substitute for `-T`."
+msgstr ""
+
+#: s/perl.md.tt2:46
+msgid "Explain how DBI supports taint mode, both inbound and outbound.\n"
+msgstr ""
+
+#: s/php.md.tt2:1
+msgid ""
+"PHP\n"
+"==="
+msgstr ""
+
+#: s/php.md.tt2:4
+msgid ""
+"PHP is a little more disorganized than how\n"
+"[Perl handles parameters](./perl.html).\n"
+"The standard [MySQL extension](http://php.net/manual/en/book.mysql.php)\n"
+"doesn't support parameterization, although the\n"
+"[PostgreSQL extension](http://www.php.net/manual/en/book.pgsql.php) does:"
+msgstr ""
+
+#: s/php.md.tt2:10
+msgid "    $result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', array($email) );"
+msgstr ""
+
+#: s/php.md.tt2:12
+msgid ""
+"Note that the query must be in single-quotes or have the `$` escaped\n"
+"to avoid PHP trying to parse it as a variable."
+msgstr ""
+
+#: s/php.md.tt2:15
+msgid ""
+"**However**, you should probably be using an abstraction layer.\n"
+"The [ODBC](http://php.net/manual/en/book.uodbc.php) and\n"
+"[PDO](http://www.php.net/manual/en/book.pdo.php) extensions both\n"
+"support parameterization and multiple databases:"
+msgstr ""
+
+#: s/php.md.tt2:20
+msgid ""
+"Using mysqli\n"
+"------------"
+msgstr ""
+
+#: s/php.md.tt2:23
+msgid "The MySQL Improved extension handles bound parameters."
+msgstr ""
+
+#: s/php.md.tt2:25
+msgid ""
+"    $stmt = $db->prepare('update people set name = ? where id = ?');\n"
+"    $stmt->bind_param('si',$name,$id);\n"
+"    $stmt->execute();"
+msgstr ""
+
+#: s/php.md.tt2:29
+msgid ""
+"Using ADODB\n"
+"-----------"
+msgstr ""
+
+#: s/php.md.tt2:32
+msgid "ADODB provides a way to prepare, bind and execute all in the same method call."
+msgstr ""
+
+#: s/php.md.tt2:34
+msgid ""
+"    $dbConnection = NewADOConnection($connectionString);\n"
+"    $sqlResult = $dbConnection->Execute(\n"
+"        'SELECT user_id,first_name,last_name FROM users WHERE username=? AND password=?',\n"
+"        array($_REQUEST['username'], sha1($_REQUEST['password'])\n"
+"    );"
+msgstr ""
+
+#: s/php.md.tt2:40
+msgid ""
+"Using the ODBC layer\n"
+"--------------------"
+msgstr ""
+
+#: s/php.md.tt2:43
+msgid ""
+"    $stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );\n"
+"    $success = odbc_execute( $stmt, array($email) );"
+msgstr ""
+
+#: s/php.md.tt2:46
+msgid "Or:"
+msgstr ""
+
+#: s/php.md.tt2:48
+msgid ""
+"    $res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array($email));\n"
+"    $sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');\n"
+"    $sth->execute(array(':email' => $email));"
+msgstr ""
+
+#: s/php.md.tt2:52
+msgid ""
+"Using the PDO layer\n"
+"-------------------"
+msgstr ""
+
+#: s/php.md.tt2:55
+msgid "Here's the long way to do bind parameters."
+msgstr ""
+
+#: s/php.md.tt2:57
+msgid ""
+"    $dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);\n"
+"    $stmt = $dbh->prepare('INSERT INTO REGISTRY (name, value) VALUES (:name, :value)');\n"
+"    $stmt->bindParam(':name', $name);\n"
+"    $stmt->bindParam(':value', $value);"
+msgstr ""
+
+#: s/php.md.tt2:62
+msgid ""
+"    // insert one row\n"
+"    $name = 'one';\n"
+"    $value = 1;\n"
+"    $stmt->execute();"
+msgstr ""
+
+#: s/php.md.tt2:67
+msgid "And a shorter way to pass things in."
+msgstr ""
+
+#: s/php.md.tt2:69
+msgid ""
+"    $dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);\n"
+"    $stmt = $dbh->prepare('UPDATE people SET name = :new_name WHERE id = :id');\n"
+"    $stmt->execute( array('new_name' => $name, 'id' => $id) );\n"
+msgstr ""
+
+#: s/plsql.md.tt2:1
+msgid ""
+"PL/SQL\n"
+"======"
+msgstr ""
+
+#: s/plsql.md.tt2:4
+msgid "Examples assume the following table structure:"
+msgstr ""
+
+#: s/plsql.md.tt2:6
+msgid ""
+"    CREATE TABLE users (\n"
+"        username VARCHAR2(8) UNIQUE,\n"
+"        accessed_at DATE,\n"
+"        superuser NUMBER(1,0)\n"
+"    );"
+msgstr ""
+
+#: s/plsql.md.tt2:12
+msgid ""
+"    INSERT INTO users VALUES ('janihur',  sysdate,      0);\n"
+"    INSERT INTO users VALUES ('petdance', sysdate - 12, 1);\n"
+"    INSERT INTO users VALUES ('albundy',  sysdate - 3,  0);\n"
+"    INSERT INTO users VALUES ('donduck',  sysdate - 18, 0);"
+msgstr ""
+
+#: s/plsql.md.tt2:17
+msgid ""
+"Always prefer static SQL when possible\n"
+"--------------------------------------"
+msgstr ""
+
+#: s/plsql.md.tt2:20
+msgid "Static SQL leaves no room for SQL injection."
+msgstr ""
+
+#: s/plsql.md.tt2:22
+msgid ""
+"    CREATE OR REPLACE FUNCTION user_access (\n"
+"        p_uname IN VARCHAR2\n"
+"    ) RETURN date AS\n"
+"        v_accessed_at date;\n"
+"    BEGIN\n"
+"        SELECT accessed_at INTO v_accessed_at FROM users WHERE username = p_uname;\n"
+"        RETURN v_accessed_at;\n"
+"    END;\n"
+"    /"
+msgstr ""
+
+#: s/plsql.md.tt2:32
+#: s/plsql.md.tt2:64
+#: s/plsql.md.tt2:94
+msgid ""
+"\n"
+"    SELECT user_access('janihur')\n"
+"      AS \"JANIHUR LAST SEEN\" FROM DUAL;"
+msgstr ""
+
+#: s/plsql.md.tt2:36
+#: s/plsql.md.tt2:68
+#: s/plsql.md.tt2:98
+msgid ""
+"    JANIHUR LAST SEEN\n"
+"    -------------------\n"
+"    2011-08-03 17:11:24"
+msgstr ""
+
+#: s/plsql.md.tt2:40
+#: s/plsql.md.tt2:72
+#: s/plsql.md.tt2:102
+msgid ""
+"    SELECT user_access('whocares'' or superuser = 1 or username = ''whocares') \n"
+"      AS \"SUPERUSER LAST SEEN\" FROM DUAL;"
+msgstr ""
+
+#: s/plsql.md.tt2:43
+#: s/plsql.md.tt2:105
+msgid ""
+"    SUPERUSER LAST SEEN\n"
+"    -------------------"
+msgstr ""
+
+#: s/plsql.md.tt2:46
+msgid ""
+"\n"
+"If you need dynamic SQL avoid string concatenation when possible\n"
+"----------------------------------------------------------------"
+msgstr ""
+
+#: s/plsql.md.tt2:50
+msgid "String concatenation opens doors to possible SQL injection exploits:"
+msgstr ""
+
+#: s/plsql.md.tt2:52
+msgid ""
+"    CREATE OR REPLACE FUNCTION user_access (\n"
+"        p_uname IN VARCHAR2\n"
+"    ) RETURN date AS\n"
+"        v_accessed_at date;\n"
+"        v_query constant varchar2(32767) := \n"
+"          'SELECT accessed_at FROM users WHERE username = ''' || p_uname || '''';\n"
+"    BEGIN\n"
+"        EXECUTE IMMEDIATE v_query INTO v_accessed_at;\n"
+"        RETURN v_accessed_at;\n"
+"    END;\n"
+"    /"
+msgstr ""
+
+#: s/plsql.md.tt2:75
+msgid ""
+"    SUPERUSER LAST SEEN\n"
+"    -------------------\n"
+"    2011-07-22 17:11:24"
+msgstr ""
+
+#: s/plsql.md.tt2:79
+msgid "Instead use bind variables:"
+msgstr ""
+
+#: s/plsql.md.tt2:81
+msgid ""
+"\n"
+"    CREATE OR REPLACE FUNCTION user_access (\n"
+"        p_uname IN VARCHAR2\n"
+"    ) RETURN date AS\n"
+"        v_accessed_at date;\n"
+"        v_query constant varchar2(32767) := \n"
+"          'SELECT accessed_at FROM users WHERE username = :a';\n"
+"    BEGIN\n"
+"        EXECUTE IMMEDIATE v_query INTO v_accessed_at USING p_uname;\n"
+"        RETURN v_accessed_at;\n"
+"    END;\n"
+"    /"
+msgstr ""
+
+#: s/plsql.md.tt2:108
+msgid ""
+"Implicit Data Type Conversion Injection\n"
+"---------------------------------------"
+msgstr ""
+
+#: s/plsql.md.tt2:111
+msgid "Also NLS session parameters (`NLS_DATE_FORMAT`, `NLS_TIMESTAMP_FORMAT`, `NLS_TIMESTAMP_TZ_FORMAT`, `NLS_NUMERIC_CHARACTER`) can be used to modify or inject SQL statements."
+msgstr ""
+
+#: s/plsql.md.tt2:113
+msgid "In next example data type conversion takes place when `p_since` is implicitly converted to a string for concatenation. Note how the value of `NLS_DATE_FORMAT` affects to the query string in `users_since()` function!"
+msgstr ""
+
+#: s/plsql.md.tt2:115
+#: s/plsql.md.tt2:163
+msgid "    ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';"
+msgstr ""
+
+#: s/plsql.md.tt2:117
+#: s/plsql.md.tt2:165
+msgid ""
+"    CREATE OR REPLACE TYPE userlist_t AS TABLE OF VARCHAR2(8);\n"
+"    /"
+msgstr ""
+
+#: s/plsql.md.tt2:120
+msgid ""
+"    CREATE OR REPLACE FUNCTION users_since(\n"
+"        p_since IN DATE\n"
+"    ) RETURN userlist_t PIPELINED AS\n"
+"        v_users userlist_t;\n"
+"        v_query constant varchar2(32767) := \n"
+"          'SELECT username FROM users WHERE superuser = 0 and accessed_at > ''' || p_since || ''' order by accessed_at desc';\n"
+"    BEGIN\n"
+"        DBMS_OUTPUT.PUT_LINE('v_query = ' || v_query);\n"
+"        EXECUTE IMMEDIATE v_query BULK COLLECT INTO v_users;"
+msgstr ""
+
+#: s/plsql.md.tt2:130
+#: s/plsql.md.tt2:178
+msgid ""
+"        FOR i IN v_users.FIRST .. v_users.LAST LOOP\n"
+"          PIPE ROW(v_users(i));\n"
+"        END LOOP;"
+msgstr ""
+
+#: s/plsql.md.tt2:134
+#: s/plsql.md.tt2:182
+msgid ""
+"        RETURN;\n"
+"    END;\n"
+"    /"
+msgstr ""
+
+#: s/plsql.md.tt2:138
+msgid ""
+"\n"
+"    ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD\"SUPRISE!\"';\n"
+"    SELECT COLUMN_VALUE AS \"REGULARS\" FROM TABLE(users_since(sysdate - 30));"
+msgstr ""
+
+#: s/plsql.md.tt2:142
+msgid ""
+"    v_query = SELECT username FROM users WHERE superuser = 0 and accessed_at >\n"
+"    '2011-07-04SUPRISE!' order by accessed_at desc"
+msgstr ""
+
+#: s/plsql.md.tt2:145
+msgid ""
+"    REGULARS\n"
+"    --------\n"
+"    janihur\n"
+"    albundy\n"
+"    donduck"
+msgstr ""
+
+#: s/plsql.md.tt2:151
+msgid ""
+"    ALTER SESSION SET NLS_DATE_FORMAT = '\"'' or superuser = 1 or username = ''whocares\"';\n"
+"    SELECT COLUMN_VALUE AS \"SUPERUSER IS\" FROM TABLE(users_since(sysdate - 30));"
+msgstr ""
+
+#: s/plsql.md.tt2:154
+msgid ""
+"    v_query = SELECT username FROM users WHERE superuser = 0 and accessed_at > ''\n"
+"    or superuser = 1 or username = 'whocares' order by accessed_at desc"
+msgstr ""
+
+#: s/plsql.md.tt2:157
+msgid ""
+"    SUPERUSE\n"
+"    --------\n"
+"    petdance"
+msgstr ""
+
+#: s/plsql.md.tt2:161
+msgid "The remedy is to set the format modifier explicitly: `to_char(p_since, 'YYYY-MM-DD')`."
+msgstr ""
+
+#: s/plsql.md.tt2:168
+msgid ""
+"    CREATE OR REPLACE FUNCTION users_since(\n"
+"        p_since IN DATE\n"
+"    ) RETURN userlist_t PIPELINED AS\n"
+"        v_users userlist_t;\n"
+"        v_query constant varchar2(32767) := \n"
+"          'SELECT username FROM users WHERE superuser = 0 and accessed_at > ''' || to_char(p_since, 'YYYY-MM-DD') || ''' order by accessed_at desc';\n"
+"    BEGIN\n"
+"        DBMS_OUTPUT.PUT_LINE('v_query = ' || v_query);\n"
+"        EXECUTE IMMEDIATE v_query BULK COLLECT INTO v_users;"
+msgstr ""
+
+#: s/plsql.md.tt2:186
+msgid "Now the value of NLS parameter `NLS_DATE_FORMAT` is ignored during the query."
+msgstr ""
+
+#: s/plsql.md.tt2:188
+msgid ""
+"    ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD\"SUPRISE!\"';\n"
+"    SELECT COLUMN_VALUE AS \"REGULARS\" FROM TABLE(users_since(sysdate - 30));"
+msgstr ""
+
+#: s/plsql.md.tt2:191
+msgid ""
+"    v_query = SELECT username FROM users WHERE superuser = 0 and accessed_at >\n"
+"    '2011-07-04' order by accessed_at desc"
+msgstr ""
+
+#: s/plsql.md.tt2:194
+msgid ""
+"    REGULARS\n"
+"    --------\n"
+"    janihur\n"
+"    albundy\n"
+"    donduck\n"
+msgstr ""
+
+#: s/postgresql.md.tt2:1
+msgid ""
+"PostgreSQL\n"
+"=========="
+msgstr ""
+
+#: s/postgresql.md.tt2:4
+msgid "All of PostgreSQL's [procedural languages](http://www.postgresql.org/docs/current/static/xplang.html), which allow you to write functions and procedures inside the database, allow you to execute arbitrary SQL statements."
+msgstr ""
+
+#: s/postgresql.md.tt2:6
+msgid ""
+"PL/pgSQL\n"
+"--------"
+msgstr ""
+
+#: s/postgresql.md.tt2:9
+msgid "The safest way to execute SQL inside a PL/pgSQL statement is just to do so:"
+msgstr ""
+
+#: s/postgresql.md.tt2:11
+msgid ""
+"    CREATE OR REPLACE FUNCTION user_access (\n"
+"        p_uname TEXT\n"
+"    ) RETURNS timestamp language plpgsql AS $$\n"
+"    BEGIN\n"
+"        RETURN accessed_at FROM users WHERE username = p_uname;\n"
+"    END;\n"
+"    $$;"
+msgstr ""
+
+#: s/postgresql.md.tt2:19
+msgid "For such a simple case, you're actually better off writing a pure SQL function:"
+msgstr ""
+
+#: s/postgresql.md.tt2:21
+msgid ""
+"    CREATE OR REPLACE FUNCTION user_access (\n"
+"        p_uname TEXT\n"
+"    ) RETURNS timestamp language sql AS $$\n"
+"        SELECT accessed_at FROM users WHERE username = $1;\n"
+"    $$;"
+msgstr ""
+
+#: s/postgresql.md.tt2:27
+msgid "But sometimes you have to do more complicated things. Perhaps you dynamically add `WHERE` clause expressions based on input. In such cases, you'll end up using PL/pgSQL's `EXECUTE` syntax. Here's an example with an SQL injection vulnerability:"
+msgstr ""
+
+#: s/postgresql.md.tt2:29
+msgid ""
+"    CREATE OR REPLACE FUNCTION get_users(\n"
+"        p_column TEXT,\n"
+"        p_value  TEXT\n"
+"    ) RETURNS SETOF users LANGUAGE plpgsql AS $$\n"
+"    DECLARE\n"
+"        query TEXT := 'SELECT * FROM users';\n"
+"    BEGIN\n"
+"        IF p_column IS NOT NULL THEN\n"
+"            query := query || ' WHERE ' || p_column\n"
+"                  || $_$ = '$_$ || p_value || $_$'$_$;\n"
+"        END IF;\n"
+"        RETURN QUERY EXECUTE query;\n"
+"    END;\n"
+"    $$;"
+msgstr ""
+
+#: s/postgresql.md.tt2:44
+msgid "Both the `p_column` and the `p_value` arguments are vulnerable. The way to avoid this problem is to use the `quote_ident()` function to quote an SQL identifier (`p_column` in this case) and `quote_lteral()` to quote a literal value:"
+msgstr ""
+
+#: s/postgresql.md.tt2:46
+msgid ""
+"    CREATE OR REPLACE FUNCTION get_users(\n"
+"        p_column TEXT,\n"
+"        p_value  TEXT\n"
+"    ) RETURNS SETOF users LANGUAGE plpgsql AS $$\n"
+"    DECLARE\n"
+"        query TEXT := 'SELECT * FROM users';\n"
+"    BEGIN\n"
+"        IF p_column IS NOT NULL THEN\n"
+"            query := query || ' WHERE ' || quote_ident(p_column)\n"
+"                  || ' = ' || quote_literal(p_value);\n"
+"        END IF;\n"
+"        RETURN QUERY EXECUTE query;\n"
+"    END;\n"
+"    $$;"
+msgstr ""
+
+#: s/postgresql.md.tt2:61
+msgid "It's quite a bit easier to read, too!"
+msgstr ""
+
+#: s/postgresql.md.tt2:63
+msgid ""
+"PL/Perl\n"
+"-------"
+msgstr ""
+
+#: s/postgresql.md.tt2:66
+#: s/postgresql.md.tt2:71
+msgid "TODO."
+msgstr ""
+
+#: s/postgresql.md.tt2:68
+msgid ""
+"PL/Python\n"
+"---------"
+msgstr ""
+
+#: s/postgresql.md.tt2:73
+msgid "### PL/Tcl"
+msgstr ""
+
+#: s/postgresql.md.tt2:75
+msgid "TODO.\n"
+msgstr ""
+
+#: s/python.md.tt2:1
+msgid ""
+"Python\n"
+"======"
+msgstr ""
+
+#: s/python.md.tt2:4
+msgid "Using the [Python DB API](http://wiki.python.org/moin/DatabaseProgramming/), don't do this:"
+msgstr ""
+
+#: s/python.md.tt2:6
+msgid ""
+"    # Do NOT do it this way.\n"
+"    cmd = \"update people set name='%s' where id='%s'\" % (name, id)\n"
+"    curs.execute(cmd)"
+msgstr ""
+
+#: s/python.md.tt2:10
+msgid "Instead, do this:"
+msgstr ""
+
+#: s/python.md.tt2:12
+msgid "    curs.execute('update people set name=:1 where id=:2', [name, id])"
+msgstr ""
+
+#: s/python.md.tt2:17
+#: s/ruby.md.tt2:18
+#: s/scheme.md.tt2:18
+msgid "-   Add some narrative.\n"
+msgstr ""
+
+#: s/ruby.md.tt2:1
+msgid ""
+"Ruby\n"
+"===="
+msgstr ""
+
+#: s/ruby.md.tt2:4
+msgid "In Ruby on Rails using [ActiveRecord](http://guides.rubyonrails.org/active_record_querying.html):"
+msgstr ""
+
+#: s/ruby.md.tt2:6
+msgid "    Person.find :all, :conditions => ['id = ? or name = ?', id, name]"
+msgstr ""
+
+#: s/ruby.md.tt2:8
+msgid "or"
+msgstr ""
+
+#: s/ruby.md.tt2:10
+msgid "    Person.find_by_sql ['SELECT * from persons WHERE name = ?', name]"
+msgstr ""
+
+#: s/ruby.md.tt2:12
+msgid ""
+"\n"
+"Using [Ruby/DBI](http://ruby-dbi.rubyforge.org/): analog to [Perl](./perl.html)."
+msgstr ""
+
+#: s/scheme.md.tt2:1
+msgid ""
+"Scheme\n"
+"======"
+msgstr ""
+
+#: s/scheme.md.tt2:4
+msgid ""
+"CHICKEN Scheme\n"
+"--------------"
+msgstr ""
+
+#: s/scheme.md.tt2:7
+msgid "[CHICKEN](http://www.call-with-current-continuation.org/) is a compiler for [Scheme](http://schemers.org/)"
+msgstr ""
+
+#: s/scheme.md.tt2:9
+msgid ""
+"\n"
+"    (define DB (sqlite3:open  \"myexample.db\"))\n"
+"    (sqlite3:exec DB \"INSERT INTO Person(name) VALUES(?)\" \"Luke Skywalker\")\n"
+"    (sqlite3:for-each-row print DB \"SELECT id,name FROM Person WHERE id=?\" 3)\n"
+"    (define adults (sqlite3:map-row DB \"SELECT name FROM Person WHERE age >= ?\" 18))"
+msgstr ""
+
+#: tt/footer.tt:5
+msgid "This site's content is available under the <a href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 License</a>"
+msgstr ""
+
+#: tt/footer.tt:8
+msgid "Fork me on GitHub"
+msgstr ""
+
+#: tt/header.tt:6
+msgid "Bobby Tables: A guide to preventing SQL injection"
+msgstr ""
+
+#. (currlang)
+#: tt/page.tt:6
+msgid "bobby-tables.com: A guide to preventing SQL injection in {currlang}"
+msgstr ""
+
+#: tt/page.tt:8
+msgid "bobby-tables.com: A guide to preventing SQL injection"
+msgstr ""
+

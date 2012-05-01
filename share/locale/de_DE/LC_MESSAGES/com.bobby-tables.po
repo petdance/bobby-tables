@@ -330,8 +330,9 @@ msgid "[From the webcomic _xkcd_](http://xkcd.com/327/)"
 msgstr "[Vom Webcomic _xkcd_](http://xkcd.com/327/)"
 
 #: s/index.md.tt2:6
+#, fuzzy
 msgid ""
-"<a href=\"http://xkcd.com/327/\"><img src=\"img/xkcd.png\" alt=\"xkcd Bobby "
+"<a href=\"http://xkcd.com/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd Bobby "
 "Tables Cartoon\" height=\"205\" width=\"666\" /></a>"
 msgstr ""
 "<a href=\"http://xkcd.com/327/\"><img src=\"../img/xkcd.png\" alt=\"xkcd-"
@@ -626,7 +627,7 @@ msgid ""
 "* [Will Coleda](http://www.coleda.com/users/coke/)\n"
 "* Kai Baesler\n"
 "* Mike Markley\n"
-"* [Michael Schwern](http://schwern.dreamhosters.com/)\n"
+"* [Michael Schwern](http://schwern.net/)\n"
 "* [Jeana Clark](http://jeanaclark.org/)\n"
 "* [Lars Dɪᴇᴄᴋᴏᴡ](http://search.cpan.org/~daxim/)\n"
 "* [Jani Hur](http://www.jani-hur.net)\n"
@@ -2041,7 +2042,7 @@ msgstr ""
 "    (define adults (sqlite3:map-row DB \"SELECT name FROM Person WHERE age "
 ">= ?\" 18))"
 
-#: tt/footer.tt:4
+#: tt/footer.tt:5
 msgid ""
 "This site's content is available under the <a href=\"https://creativecommons."
 "org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 "
@@ -2051,7 +2052,7 @@ msgstr ""
 "org/licenses/by-sa/3.0/\">Creative-Commons-Lizenz mit Namensnennung und "
 "Weitergabe unter gleichen Bedingungen, Version 3.0</a>."
 
-#: tt/footer.tt:7
+#: tt/footer.tt:8
 msgid "Fork me on GitHub"
 msgstr "Mach auf GitHub mit"
 
