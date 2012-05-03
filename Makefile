@@ -34,7 +34,7 @@ crank: prereq clean messages
 	cp -R static/* $(BUILD)/
 
 test: crank
-	prove t/html.t
+	prove t/*.t
 
 messages:
 	# wrap markdown paragraphs into TT loc fragments
