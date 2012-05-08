@@ -111,7 +111,7 @@ MAIN: {
         $html =~ s{<code>\n}{<code>}smxg;
         $vars->{body} = $html;
         $vars->{section} = ($section eq 'index') ? '.' : "$section.html";
-        $vars->{currlang} = ( $desc eq $home ) ? '' : $desc;
+        $vars->{currlang} = ( $desc eq $home or $desc eq $about or $desc eq $translations ) ? '' : $desc;
         {
             local $ENV{LANG} = 'C';
             open my $git, '-|', qw(git log --pretty=format:commit-hash=%h;ref-names=%d;committer-date-relative=%cr);
