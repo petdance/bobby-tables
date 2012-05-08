@@ -6,25 +6,25 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"PO-Revision-Date: 2012-05-01 20:51-0600\n"
-"Last-Translator: Andy Lester <andy@petdance.com>\n"
+"PO-Revision-Date: 2012-06-12 22:44+0200\n"
+"Last-Translator: Lars Dɪᴇᴄᴋᴏᴡ <daxim@cpan.org>\n"
 "Language-Team: German <>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: de\n"
 "X-Generator: Lokalize 1.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: crank.pl:30
+#: crank.pl:31
 msgid "Home"
 msgstr "Übersicht"
 
-#: crank.pl:31
+#: crank.pl:32
 msgid "Translations"
 msgstr "Übersetzungen"
 
-#: crank.pl:32
+#: crank.pl:33
 msgid "About"
 msgstr "Über"
 
@@ -328,7 +328,7 @@ msgid ""
 "NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection)"
 msgstr ""
 "[ASP.NET Security Hacks — Avoiding SQL Injection](http://en.csharp-online."
-"net/ASP.NET_Security_Hacks%E2%80%Avoiding_SQL_Injection) aus dem [C#-Online-"
+"net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection) aus dem [C#-Online-"
 "Wiki](http://en.csharp-online.net/)"
 
 #: s/csharp.md.tt2:6
@@ -514,7 +514,7 @@ msgstr ""
 "**Mutter**: Und ich hoffe, Sie haben gelernt, Datenbankeingaben zu "
 "bereinigen."
 
-#: s/index.md.tt2:24
+#: s/index.md.tt2:22
 msgid ""
 "Examples\n"
 "========"
@@ -522,12 +522,11 @@ msgstr ""
 "Beispiele\n"
 "========="
 
-#: s/index.md.tt2:27
+#: s/index.md.tt2:25
 msgid "See the sidebar to the left for your specific language."
 msgstr "Siehe Kasten links für die jeweilige Sprache."
 
-#: s/index.md.tt2:29
-#, fuzzy
+#: s/index.md.tt2:27
 msgid ""
 "Other resources\n"
 "==============="
@@ -535,7 +534,7 @@ msgstr ""
 "Andere Ressourcen\n"
 "================="
 
-#: s/index.md.tt2:32
+#: s/index.md.tt2:30
 msgid ""
 "* [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/"
 "sql-injection-myths-and-fallacies)\n"
@@ -551,7 +550,7 @@ msgstr ""
 "* [Defending Against SQL Injection Attacks](http://download.oracle.com/oll/"
 "tutorials/SQLInjection/index.htm)"
 
-#: s/index.md.tt2:36
+#: s/index.md.tt2:34
 msgid ""
 "Patches welcome\n"
 "==============="
@@ -559,7 +558,7 @@ msgstr ""
 "Verbesserungen sind willkommen\n"
 "=============================="
 
-#: s/index.md.tt2:39
+#: s/index.md.tt2:37
 msgid ""
 "Don't see a language that you'd like to see represented? Please let me know "
 "if you have updates or additions through one of these methods, in decreasing "
@@ -568,7 +567,7 @@ msgstr ""
 "Wird eine Sprache vermisst? Bitte melde Verbesserungen oder Ergänzungen auf "
 "eine dieser drei Arten, in absteigender Reihenfolge der Bevorzugung."
 
-#: s/index.md.tt2:41
+#: s/index.md.tt2:39
 msgid ""
 "* Fork the [bobby-tables repository at github](http://github.com/petdance/"
 "bobby-tables), make your changes, and send me a pull request.\n"
@@ -583,7 +582,7 @@ msgstr ""
 "petdance/bobby-tables/issues).\n"
 "* Schicke mir eine Email: Andy Lester, andy at petdance.com."
 
-#: s/index.md.tt2:45
+#: s/index.md.tt2:43
 msgid ""
 "Translations also welcome\n"
 "========================="
@@ -591,7 +590,7 @@ msgstr ""
 "Übersetzungen sind auch willkommen\n"
 "=================================="
 
-#: s/index.md.tt2:48
+#: s/index.md.tt2:46
 msgid ""
 "Help translate this site! There are less than 200 phrases. No programming "
 "necessary."
@@ -599,7 +598,7 @@ msgstr ""
 "Hilf mit, diesen Webauftritt zu übersetzen! Es sind weniger als 200 "
 "Ausdrücke. Keine Programmierung notwendig."
 
-#: s/index.md.tt2:50
+#: s/index.md.tt2:48
 msgid ""
 "See the instructions at the [bobby-tables repository at github](http://"
 "github.com/petdance/bobby-tables#readme)."
@@ -607,7 +606,7 @@ msgstr ""
 "Siehe Anleitung im [Repository bobby-tables auf github](http://github.com/"
 "petdance/bobby-tables#readme)."
 
-#: s/index.md.tt2:52
+#: s/index.md.tt2:50
 msgid ""
 "To do\n"
 "====="
@@ -615,7 +614,7 @@ msgstr ""
 "In Vorbereitung\n"
 "==============="
 
-#: s/index.md.tt2:55
+#: s/index.md.tt2:53
 msgid ""
 "* Explain why creating code from outside data is bad.\n"
 "* Potential speed win when reusing prepared statements."
@@ -625,7 +624,7 @@ msgstr ""
 "* Möglicher Geschwindigkeitszuwachs unter Wiederverwendung vorbereiteter "
 "Anweisungen."
 
-#: s/index.md.tt2:58
+#: s/index.md.tt2:56
 msgid ""
 "Thanks\n"
 "======"
@@ -633,12 +632,11 @@ msgstr ""
 "Danksagung\n"
 "=========="
 
-#: s/index.md.tt2:61
+#: s/index.md.tt2:59
 msgid "Thanks to the following folks for their contributions:"
 msgstr "Dank gilt den folgenden Leuten für ihre Mitwirkung:"
 
-#: s/index.md.tt2:63
-#, fuzzy
+#: s/index.md.tt2:61
 msgid ""
 "* [Kim Christensen](http://www.smukkekim.dk)\n"
 "* Kirk Kimmel\n"
@@ -688,6 +686,7 @@ msgstr ""
 "* [Lars Dɪᴇᴄᴋᴏᴡ](http://search.cpan.org/~daxim/)\n"
 "* [Jani Hur](http://www.jani-hur.net)\n"
 "* [Sven van Haastregt](http://www.liacs.nl/home/svhaastr/)\n"
+"* Andrey Chasovskikh\n"
 
 #: s/java.md.tt2:1
 msgid ""
@@ -1462,7 +1461,8 @@ msgstr ""
 "\n"
 "Wenn dynamisches SQL benötigt wird, soll wenn möglich Stringverknüpfung "
 "vermieden werden\n"
-"----------------------------------------------------------------------------------------"
+"------------------------------------------------------------------------------"
+"----------"
 
 #: s/plsql.md.tt2:50
 msgid "String concatenation opens doors to possible SQL injection exploits:"
@@ -1988,18 +1988,16 @@ msgid "Instead, do this:"
 msgstr "Stattdessen korrekt:"
 
 #: s/python.md.tt2:12
-#, fuzzy
 msgid ""
 "    cmd = \"update people set name=%s where id=%s\"\n"
 "    curs.execute(cmd, (name, id))"
 msgstr ""
-"    # Dieses Beispiel ist FALSCH.\n"
-"    cmd = \"update people set name='%s' where id='%s'\" % (name, id)\n"
-"    curs.execute(cmd)"
+"    cmd = \"update people set name=%s where id=%s\"\n"
+"    curs.execute(cmd, (name, id))"
 
 #: s/python.md.tt2:15
 msgid "Note that the placeholder syntax depends on the database you are using."
-msgstr ""
+msgstr "Die Platzhaltersyntax richtet sich nach der verwendeten Datenbank."
 
 #: s/python.md.tt2:17
 msgid ""
@@ -2016,6 +2014,18 @@ msgid ""
 "                    \n"
 "The values for the most common databases are:"
 msgstr ""
+"    'qmark'         Fragezeichen, \n"
+"                    z.B. '...WHERE name=?'\n"
+"    'numeric'       Position, \n"
+"                    z.B. '...WHERE name=:1'\n"
+"    'named'         benannt, \n"
+"                    z.B. '...WHERE name=:name'\n"
+"    'format'        Formatierungscode wie aus printf in ANSI C, \n"
+"                    z.B. '...WHERE name=%s'\n"
+"    'pyformat'      erweiterte Python-Formatierungscodes, \n"
+"                    z.B. '...WHERE name=%(name)s'\n"
+"                    \n"
+"Die Werte für die gängigsten Datenbanken lauten:"
 
 #: s/python.md.tt2:30
 msgid ""
@@ -2029,14 +2039,23 @@ msgid ""
 "So if you are using MySQL or PostgreSQL, use `%s` (even for numbers and\n"
 "other non-string values!) and if you are using SQLite use `?`"
 msgstr ""
+"    >>> import MySQLdb; print MySQLdb.paramstyle\n"
+"    format\n"
+"    >>> import psycopg2; print psycopg2.paramstyle\n"
+"    pyformat\n"
+"    >>> import sqlite3; print sqlite3.paramstyle\n"
+"    qmark\n"
+"    \n"
+"D.h. wenn MySQL oder PostgreSQL verwendet werden, soll man `%s` schreiben\n"
+"(auch für Zahlen und Nicht-String-Werte!) und bei SQLite `?`."
 
 #: s/python.md.tt2:40
-#, fuzzy
 msgid ""
 "\n"
 "To do\n"
 "-----"
 msgstr ""
+"\n"
 "In Vorbereitung\n"
 "---------------"
 
@@ -2145,15 +2164,14 @@ msgstr ""
 "* [russisch](http://bobby-tables.com/ru_RU/) (erst am Anfang)"
 
 #: s/translations.md.tt2:9
-#, fuzzy
 msgid ""
 "We'd love to have translations into other languages as well.  Please contact "
 "the [bobby-tables mailing list][1] and ask a team member about how you can "
 "help."
 msgstr ""
 "Wir würden gerne auch Übersetzungen für andere Sprachen haben. Bitte "
-"schreibe an die [bobby-tables-Mailingliste](https://groups.google.com/forum/"
-"#!forum/bobby-tables) und frage einen Teilnehmer, wie du helfen kannst."
+"schreibe an die [bobby-tables-Mailingliste][1] und frage einen Teilnehmer, "
+"wie du helfen kannst."
 
 #: s/translations.md.tt2:11
 msgid "# Contributing translations"
@@ -2164,7 +2182,6 @@ msgid "1. Run `make messages`."
 msgstr "1. Führe `make messages` aus."
 
 #: s/translations.md.tt2:15
-#, fuzzy
 msgid ""
 "2. Skip this step if you just amend a translation. If you need to start a "
 "new language, copy `share/locale/com.bobby-tables.pot` to `share/locale/"
@@ -2176,10 +2193,9 @@ msgstr ""
 "2. Überspringe diesen Schritt, wenn du nur eine Übersetzung verbesserst. "
 "Falls du eine neue Sprache anfängst, kopiere `share/locale/com.bobby-tables."
 "pot` nach`share/locale/xx_YY/LC_MESSAGES/com.bobby-tables.po`, aber ersetze "
-"`xx` mit dem entsprechenden [Sprachcode](http://en.wikipedia.org/wiki/"
-"List_of_ISO_639-1_codes) und `YY` mit dem [Territorialcode](http://en."
-"wikipedia.org/wiki/ISO_3166-1_alpha-2). (Alternativ zum Kopieren benutze den "
-"Befehl `msginit`.) Beispiele für die Namenskonvention:"
+"`xx` mit dem entsprechenden [Sprachcode][2] und `YY` mit dem "
+"[Territorialcode][3]. (Alternativ zum Kopieren benutze den Befehl "
+"`msginit`.) Beispiele für die Namenskonvention:"
 
 #: s/translations.md.tt2:17
 msgid ""
@@ -2190,16 +2206,14 @@ msgstr ""
 "        pt_BR.po    brasilianisches Portugiesisch"
 
 #: s/translations.md.tt2:20
-#, fuzzy
 msgid ""
 "3. Edit the PO file. [Lokalize (formerly KBabel)][Lokalize] is excellent, "
 "[Poedit][Poedit] is good. Any text editor supporting UTF-8 can handle PO "
 "files, but it will not be as convenient."
 msgstr ""
-"3. Bearbeite die PO-Datei. [Lokalize (vormals KBabel)](http://l10n.kde.org/"
-"tools/) ist ausgezeichnet, [Poedit](http://www.poedit.net/) ist gut. Jeder "
-"Texteditor, der UTF-8 unterstützt, kann mit PO-Dateien umgehen, aber es ist "
-"nicht so bequem."
+"3. Bearbeite die PO-Datei. [Lokalize (vormals KBabel)][Lokalize] ist "
+"ausgezeichnet, [Poedit][Poedit] ist gut. Jeder Texteditor, der UTF-8 "
+"unterstützt, kann mit PO-Dateien umgehen, aber es ist nicht so bequem."
 
 #: s/translations.md.tt2:22
 msgid "4. Run the normal `make` step."
@@ -2210,7 +2224,6 @@ msgid "# Guidelines for translations"
 msgstr "# Leitfaden für Übersetzungen"
 
 #: s/translations.md.tt2:26
-#, fuzzy
 msgid ""
 "* Become familiar with the source mark-up language [Markdown][Markdown] used "
 "for producing the rendered HTML. The backtick (\\`) is an important piece of "
@@ -2219,15 +2232,14 @@ msgid ""
 "language as-is. Indented paragraphs are also code.  Translate only comments "
 "in such code blocks."
 msgstr ""
-"* Mache dich mit der Auszeichnungssprache \"Markdown\" vertraut, aus welcher "
-"HTML produziert wird. Der Gravis (\\`) ist ein für Übersetzungen wichtiger "
-"Teil der Syntax; er kennzeichnet Code, z.B. einen Variablennamen. Code wird "
-"nicht übersetzt, d.h. der Ursprungstext wird unverändert in die Zielsprache "
-"übernommen. Eingerückte Absätze stellen auch Code dar. Übersetze in solchen "
-"Codeblöcken nur die Kommentare."
+"* Mache dich mit der Auszeichnungssprache [Markdown][Markdown] vertraut, aus "
+"welcher HTML produziert wird. Der Gravis (\\`) ist ein für Übersetzungen "
+"wichtiger Teil der Syntax; er kennzeichnet Code, z.B. einen Variablennamen. "
+"Code wird nicht übersetzt, d.h. der Ursprungstext wird unverändert in die "
+"Zielsprache übernommen. Eingerückte Absätze stellen auch Code dar. Übersetze "
+"in solchen Codeblöcken nur die Kommentare."
 
 #: s/translations.md.tt2:28
-#, fuzzy
 msgid ""
 "* To find out where a piece of English is from to see the context, run `ack -"
 "a 'source text goes here'`. Most of the source text is in directory `s/`. "
@@ -2238,7 +2250,7 @@ msgstr ""
 "sehen, führe `ack -a 'source text goes here'` aus. Der überwiegende Teil des "
 "Ursprungstextes befindet sich im Verzeichnis `s/`. Führe zunächst `make "
 "clean` aus, um Duplikate in den Build-Dateien zu vermeiden. (Wenn du [ack]"
-"(http://betterthangrep.com) nicht hast, kannst du `grep -R` verwenden."
+"[ack] nicht hast, kannst du `grep -R` verwenden."
 
 #: s/translations.md.tt2:30
 msgid "* You can check your progress by running `make l10n-status`."
@@ -2249,7 +2261,6 @@ msgid "Apart from that, the normal rules for any translation apply:"
 msgstr "Außerdem gelten die normalen Richtlinien für jedwede Übersetzungen:"
 
 #: s/translations.md.tt2:34
-#, fuzzy
 msgid ""
 "* Don't translate literally or word-by-word, instead capture the essence of "
 "each sentence/paragraph and reformulate it so it reads naturally. If you "
@@ -2260,7 +2271,6 @@ msgstr ""
 "nicht davor zurück, dafür Satzteile zu verbinden oder umzubauen."
 
 #: s/translations.md.tt2:36
-#, fuzzy
 msgid ""
 "* Avoid keeping key words/technical jargon in English, consult the standard "
 "literature for existing translations of key words. (Software vendors such as "
@@ -2279,7 +2289,6 @@ msgstr ""
 "Erläuterung in Klammern hinzu."
 
 #: s/translations.md.tt2:38
-#, fuzzy
 msgid ""
 "* It can happen that source text is wrong in some way (typos, factual "
 "errors). This should be improved first in a separate patch, independent from "
@@ -2303,6 +2312,13 @@ msgid ""
 "[Lokalize]: http://l10n.kde.org/tools/\n"
 "[Poedit]: http://www.poedit.net/\n"
 msgstr ""
+"[1]: https://groups.google.com/forum/#!forum/bobby-tables\n"
+"[2]: http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes\n"
+"[3]: http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2\n"
+"[ack]: http://betterthangrep.com/\n"
+"[Markdown]: http://daringfireball.net/projects/markdown/\n"
+"[Lokalize]: http://l10n.kde.org/tools/\n"
+"[Poedit]: http://www.poedit.net/\n"
 
 #: tt/footer.tt:5
 msgid ""
@@ -2331,7 +2347,3 @@ msgstr "bobby-tables.com: Ein Leitfaden gegen SQL-Einschleusung in {currlang}"
 msgid "bobby-tables.com: A guide to preventing SQL injection"
 msgstr "bobby-tables.com: Ein Leitfaden gegen SQL-Einschleusung"
 
-#~ msgid ""
-#~ "    curs.execute('update people set name=:1 where id=:2', [name, id])"
-#~ msgstr ""
-#~ "    curs.execute('update people set name=:1 where id=:2', [name, id])"
