@@ -39,7 +39,7 @@ test: crank
 messages:
 	# wrap markdown paragraphs into TT loc fragments
 	for markdownfile in $(SOURCE)/*.md; do \
-	    perl -lne'BEGIN {$$/ = "\n\n";}; print "[% |loc %]$${_}[% END %]\n"' \
+	    perl -lne'BEGIN {$$/ = "\n\n";}; print "[% |loc %]$${_}[% END %]\n" if $${_}' \
 	    < $$markdownfile > $$markdownfile.tt2 ; done
 	# extract string literals to po template
 	xgettext.pl -u -g -P tt2 -P perl -o $(POTEMPLATE) tt/* $(SOURCE)/*.tt2 crank.pl
