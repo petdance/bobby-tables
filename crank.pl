@@ -16,6 +16,7 @@ bind_textdomain_codeset 'com.bobby-tables' => 'UTF-8';
 use Text::Markdown ();
 use Template ();
 use Template::Constants qw( :debug :chomp );
+use URI qw();
 
 my $sourcepath = 's';
 my $buildpath  = 'build';
@@ -111,6 +112,17 @@ MAIN: {
         $vars->{body} = $html;
         $vars->{section} = ($section eq 'index') ? '.' : "$section.html";
         $vars->{currlang} = ( $desc eq $home ) ? '' : $desc;
+        {
+            local $ENV{LANG} = 'C';
+            open my $git, '-|', qw(git log --pretty=format:commit-hash=%h;ref-names=%d;committer-date-relative=%cr);
+            if ($git) {
+                chomp(my $log = <$git>);
+                my $u = URI->new;
+                $u->scheme('tag');
+                $u->opaque("bobby-tables.com,2012:$log");
+                $vars->{git} = $u->as_string;
+            }
+        }
         $tt->process( 'page.tt', $vars, "$section.html", { binmode => ':encoding(UTF-8)' } )
             || die sprintf("file: %s\nerror: %s\n", "$section.html", $tt->error);
     }

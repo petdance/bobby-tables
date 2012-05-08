@@ -9,6 +9,7 @@
             [% END %]
         </title>
         <link rel="stylesheet" type="text/css" href="[% rel_static %]css/bobby.css" />
+        [% IF git %]<link rel="via" href="[% git %]" />[% END %]
     </head>
     <body>
         <div id="wrap">

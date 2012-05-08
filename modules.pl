@@ -14,6 +14,7 @@ my @modules = qw(
     Template
     Test::HTML::Lint
     Text::Markdown
+    URI
 );
 
 print "# Checking that we have all our necessary modules.\n";
