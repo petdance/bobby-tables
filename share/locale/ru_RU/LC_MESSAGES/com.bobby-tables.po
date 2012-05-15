@@ -127,7 +127,7 @@ msgid ""
 msgstr ""
 
 #: s/asp.md.tt2:4
-msgid "Older ASP uses positional placeholders."
+msgid "В ASP используются метки в качестве значений параметров."
 msgstr ""
 
 #: s/asp.md.tt2:6
@@ -145,7 +145,7 @@ msgstr ""
 #: s/asp.md.tt2:12
 msgid ""
 "\n"
-"Newer ASP (ASP.Net?) can handle named placeholders."
+"В ASP.NET поддерживаются именованные параметры."
 msgstr ""
 
 #: s/asp.md.tt2:15
@@ -164,12 +164,12 @@ msgstr ""
 #: s/asp.md.tt2:22 s/dotnet.md.tt2:13 s/perl.md.tt2:43 s/python.md.tt2:14
 #: s/ruby.md.tt2:15 s/scheme.md.tt2:15
 msgid ""
-"To do\n"
+"Список дел\n"
 "-----"
 msgstr ""
 
 #: s/asp.md.tt2:25
-msgid "Add some narrative\n"
+msgid "Добавить больше материала\n"
 msgstr ""
 
 #: s/coldfusion.md.tt2:1
@@ -179,9 +179,13 @@ msgid ""
 msgstr ""
 
 #: s/coldfusion.md.tt2:4
+<<<<<<< HEAD
 msgid ""
 "In ColdFusion there is a tag called `cfqueryparam` that should be used "
 "whenever writing inline queries."
+=======
+msgid "В ColdFusion есть тег `cfqueryparam`, который всегда нужно использовать во встроенных запросах."
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/coldfusion.md.tt2:6
@@ -197,15 +201,24 @@ msgstr ""
 #: s/coldfusion.md.tt2:13
 msgid ""
 "\n"
+<<<<<<< HEAD
 "Stored procedures can be invoked with the `cfstoredproc` and `cfprocparam` "
 "tags."
+=======
+"Хранимые процедуры также могут вызываться с тегами `cfstoredproc` и `cfprocparam`."
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/coldfusion.md.tt2:16
 msgid ""
+<<<<<<< HEAD
 "Recent versions of ColdFusion provide a set of functions to run queries "
 "that\n"
 "have a slightly different syntax, but still provide parameterized queries."
+=======
+"Последние версии ColdFusion предоставляют набор функций для выполнения запросов,\n"
+"которые имеют немного другой синтаксис, но по-прежнему позволяют параметризовать запрос."
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/coldfusion.md.tt2:19
@@ -233,10 +246,14 @@ msgid ""
 msgstr ""
 
 #: s/csharp.md.tt2:4
+<<<<<<< HEAD
 msgid ""
 "From the [C# Online](http://en.csharp-online.net/) wiki page [ASP.NET "
 "Security Hacks--Avoiding SQL Injection](http://en.csharp-online.net/ASP."
 "NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection)"
+=======
+msgid "С сайта [C# Online](http://en.csharp-online.net/), из вики-странички [ASP.NET Security Hacks--Avoiding SQL Injection](http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection)"
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/csharp.md.tt2:6
@@ -249,19 +266,24 @@ msgstr ""
 
 #: s/csharp.md.tt2:11
 msgid ""
+<<<<<<< HEAD
 "    SqlParameter userNameParam = userInfoQuery.Parameters.Add(\"@UserName"
 "\",\n"
 "        SqlDbType.VarChar, 25 /* max length of field */ );"
+=======
+"    SqlParameter userNameParam = userInfoQuery.Parameters.Add(\"@UserName\",\n"
+"        SqlDbType.VarChar, 25 /* максимальная длина поля */ );"
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/csharp.md.tt2:14
 msgid ""
-"    // userName is some string valued user input variable\n"
+"    // userName — это строка, которую ввел пользователь\n"
 "    userNameParam.Value = userName;"
 msgstr ""
 
 #: s/csharp.md.tt2:17
-msgid "Or simpler:"
+msgid "Или проще:"
 msgstr ""
 
 #: s/csharp.md.tt2:19
@@ -280,7 +302,7 @@ msgid ""
 msgstr ""
 
 #: s/delphi.md.tt2:4
-msgid "To use a prepared statement, do something like this:"
+msgid "Пример использования подготовленных выражений:"
 msgstr ""
 
 #: s/delphi.md.tt2:6
@@ -299,50 +321,63 @@ msgid ""
 msgstr ""
 
 #: s/dotnet.md.tt2:4
-msgid "Reference:"
+msgid "Ссылки:"
 msgstr ""
 
 #: s/dotnet.md.tt2:6
+<<<<<<< HEAD
 msgid ""
 "-    [SqlCommand.Prepare](http://msdn.microsoft.com/en-us/library/system."
 "data.sqlclient.sqlcommand.prepare.aspx) in the .NET Framework Class Library"
+=======
+msgid "-    Метод [SqlCommand.Prepare](http://msdn.microsoft.com/ru-ru/library/system.data.sqlclient.sqlcommand.prepare.aspx) в библиотеке классов .NET Framework"
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/dotnet.md.tt2:8
-msgid "Articles:"
+msgid "Статьи:"
 msgstr ""
 
 #: s/dotnet.md.tt2:10
 msgid ""
+<<<<<<< HEAD
 "-   [SQL injection](http://msdn.microsoft.com/en-us/library/ms161953.aspx) "
 "on MSDN\n"
 "-   [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/"
 "archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET "
 "Debugging blog"
+=======
+"-   [«Атака путем внедрения кода SQL»](http://msdn.microsoft.com/ru-ru/library/ms161953(v=SQL.100).aspx) на портале MSDN\n"
+"-   [«SQL-инъекции и способы защиты от них»](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) в блоге ASP.NET Debugging"
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/dotnet.md.tt2:16
 msgid ""
-"-   Add some narrative\n"
-"-   Show code examples\n"
+"-   Добавить больше материала\n"
+"-   Добавить примеры кода\n"
 msgstr ""
 
 #: s/index.md.tt2:1
 msgid ""
-"Who is Bobby Tables?\n"
+"Кто такой Робин-Брось-Таблицу?\n"
 "===================="
 msgstr ""
-"(Russian translation of \"Who is Bobby Tables?\")\n"
+"Кто такой Робин-Брось-Таблицу?\n"
 "===================="
 
 #: s/index.md.tt2:4
-msgid "[From the webcomic _xkcd_](http://xkcd.com/327/)"
+msgid "[Из комикса _xkcd_](http://xkcd.ru/327/)"
 msgstr ""
 
 #: s/index.md.tt2:6
+<<<<<<< HEAD
 msgid ""
 "<a href=\"http://xkcd.com/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd Bobby "
 "Tables Cartoon\" height=\"205\" width=\"666\" /></a>"
+=======
+msgid "<a href=\"http://xkcd.ru/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd Мамины эксплойты\" height=\"205\" width=\"666\" /></a>"
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/index.md.tt2:8
@@ -350,36 +385,122 @@ msgid "<br clear=\"right\">"
 msgstr ""
 
 #: s/index.md.tt2:10
+<<<<<<< HEAD
 msgid ""
 "**School**: Hi, this is your son's school. We're having some computer "
 "trouble."
+=======
+msgid "**Школа**: Здравствуйте, это из школы, где учится ваш сын. У нас тут неприятности с компьютером."
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/index.md.tt2:12
-msgid "**Mom**: Oh, dear -- Did he break something?"
+msgid "**Мама**: О, боже. Он что-то сломал?"
 msgstr ""
 
 #: s/index.md.tt2:14
+<<<<<<< HEAD
 msgid ""
 "**School**: In a way. Did you really name your son `Robert'); DROP TABLE "
 "Students;--`?"
+=======
+msgid "**Школа**: Можно сказать... Вы действительно назвали своего сына Роберт'); DROP TABLE Students;--?"
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/index.md.tt2:16
-msgid "**Mom**: Oh. Yes. Little Bobby Tables we call him."
+msgid "**Мама**: А, да. Дома мы его зовем Робин-Брось-Таблицу."
 msgstr ""
 
 #: s/index.md.tt2:18
+<<<<<<< HEAD
 msgid ""
 "**School**: Well, we've lost this year's student records. I hope you're "
 "happy."
+=======
+msgid "**Школа**: Теперь у нас стерлась база учеников за этот год. Надеюсь, вы рады."
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/index.md.tt2:20
-msgid "**Mom**: And I hope you've learned to sanitize your database inputs."
+msgid "**Мама**: А я надеюсь, что это научит вас экранировать символы во входных данных."
 msgstr ""
 
+<<<<<<< HEAD
 #: s/index.md.tt2:24
+=======
+#: s/index.md.tt2:22
+msgid ""
+"\n"
+"Почему в школе Роберта потеряли базу учеников?\n"
+"=========================================="
+msgstr ""
+
+#: s/index.md.tt2:26
+msgid "Очевидно, записи обо всех учениках в школе хранятся в таблице с названием Students. Когда приходит новый ученик, в таблицу вставляется новая запись с его именем. Код вставки может выглядеть так:"
+msgstr ""
+
+#: s/index.md.tt2:28
+msgid ""
+"    $sql = \"INSERT INTO Students (Name) VALUES ('\" . $studentName . \"');\";\n"
+"    execute_sql($sql);"
+msgstr ""
+
+#: s/index.md.tt2:31
+msgid "The first line creates a string containing an SQL INSERT statement. The content of the `$studentName` variable is glued into the SQL statement. The second line sends the resulting SQL statement to the database. The pitfall of this code is that outside data, in this case the content of `$studentName`, becomes part of the SQL statement."
+msgstr ""
+
+#: s/index.md.tt2:33
+msgid "First let's see what the SQL statement looks like if we insert a student named John:"
+msgstr ""
+
+#: s/index.md.tt2:35
+msgid "    INSERT INTO Students (Name) VALUES ('John');"
+msgstr ""
+
+#: s/index.md.tt2:37
+msgid "This does exactly what we want: it inserts John into the Students table."
+msgstr ""
+
+#: s/index.md.tt2:39
+msgid "Now we insert little Bobby Tables, by setting `$studentName` to `Robert'); DROP TABLE Students;--`. The SQL statement becomes:"
+msgstr ""
+
+#: s/index.md.tt2:41
+msgid "    INSERT INTO Students (Name) VALUES ('Robert'); DROP TABLE Students;--');"
+msgstr ""
+
+#: s/index.md.tt2:43
+msgid "This inserts Robert into the Students table. However, the INSERT statement is now followed by a DROP TABLE statement which removes the entire Students table. Ouch!"
+msgstr ""
+
+#: s/index.md.tt2:45
+msgid ""
+"\n"
+"How to avoid Bobby Tables\n"
+"========================="
+msgstr ""
+
+#: s/index.md.tt2:49
+msgid "There is only one way to avoid Bobby Tables attacks"
+msgstr ""
+
+#: s/index.md.tt2:51
+msgid ""
+"* Do not create SQL statements that include outside data.\n"
+"* Use parameterized SQL calls."
+msgstr ""
+
+#: s/index.md.tt2:54
+msgid "That's it. Don't try to escape invalid characters. Don't try to do it yourself. Learn how to use parameterized statements. Always, every single time."
+msgstr ""
+
+#: s/index.md.tt2:56
+msgid "The strip gets one thing crucially wrong. The answer is not to \"sanitize your database inputs\" yourself. It is prone to error."
+msgstr ""
+
+#: s/index.md.tt2:58
+>>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgid ""
 "Examples\n"
 "========"
