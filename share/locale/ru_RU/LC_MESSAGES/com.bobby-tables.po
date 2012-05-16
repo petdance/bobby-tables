@@ -295,47 +295,47 @@ msgid "    INSERT INTO Students (Name) VALUES ('Robert'); DROP TABLE Students;--
 msgstr ""
 
 #: s/index.md.tt2:43
-msgid "This inserts Robert into the Students table. However, the INSERT statement is now followed by a DROP TABLE statement which removes the entire Students table. Ouch!"
+msgid "Это команда вставляет запись о Роберте в таблицу Students. Однако, после команды INSERT идет команда DROP TABLE, которая удаляет всю таблицу студентов. Ой!"
 msgstr ""
 
 #: s/index.md.tt2:45
 msgid ""
 "\n"
-"How to avoid Bobby Tables\n"
+"Как избежать случая с Робертом-Брось-Таблицу\n"
 "========================="
 msgstr ""
 
 #: s/index.md.tt2:49
-msgid "There is only one way to avoid Bobby Tables attacks"
+msgid "Есть только один способ избежать таких атак"
 msgstr ""
 
 #: s/index.md.tt2:51
 msgid ""
-"* Do not create SQL statements that include outside data.\n"
-"* Use parameterized SQL calls."
+"* Не создавайте SQL выражений, которыесодержат пользовательский ввод.\n"
+"* Используйте параметризованные SQL вызовы."
 msgstr ""
 
 #: s/index.md.tt2:54
-msgid "That's it. Don't try to escape invalid characters. Don't try to do it yourself. Learn how to use parameterized statements. Always, every single time."
+msgid "Вот и все. Не пытайтесь экранировать неверные символы самостоятельно. Не пытайтесь делать это сами. Научитесь использовать параметризованные выражения. Каждый раз, всегда."
 msgstr ""
 
 #: s/index.md.tt2:56
-msgid "The strip gets one thing crucially wrong. The answer is not to \"sanitize your database inputs\" yourself. It is prone to error."
+msgid "В комиксе есть одна ошибка. \"Экранировать входные данные\" самому — это неверный способ, он подвержен ошибкам."
 msgstr ""
 
 #: s/index.md.tt2:58
 msgid ""
-"Examples\n"
+"Примеры\n"
 "========"
 msgstr ""
 
 #: s/index.md.tt2:61
-msgid "See the sidebar to the left for your specific language."
+msgid "Смотрите разделы меню слева, чтобы увидеть примеры для конкретного языка."
 msgstr ""
 
 #: s/index.md.tt2:63
 msgid ""
-"Other random resources\n"
+"Другие ресурсы\n"
 "======================"
 msgstr ""
 
@@ -348,55 +348,55 @@ msgstr ""
 
 #: s/index.md.tt2:70
 msgid ""
-"Patches welcome\n"
+"Дополнения приветствуются\n"
 "==============="
 msgstr ""
 
 #: s/index.md.tt2:73
-msgid "Don't see a language that you'd like to see represented? Please let me know if you have updates or additions through one of these methods, in decreasing order of preference."
+msgid "Не находите нужного вам языка?Пожалуйста, дайте знать, если у вас есть какие-либо изменения или дополнения, перечисленные ниже в порядке убывания важности:"
 msgstr ""
 
 #: s/index.md.tt2:75
 msgid ""
-"* Fork the [bobby-tables repository at github](http://github.com/petdance/bobby-tables), make your changes, and send me a pull request.\n"
-"* Add an issue in the [issue tracker](http://github.com/petdance/bobby-tables/issues).\n"
-"* Email me, Andy Lester, at andy at petdance.com."
+"* Сделайте ветку [репозитория bobby-tables на github](http://github.com/petdance/bobby-tables), сделайте необходимые изменения, и пришлите запрос на изменение.\n"
+"* Добавьте заявку в [трекер](http://github.com/petdance/bobby-tables/issues).\n"
+"* Напишите мне, Энди Лестеру, по адресу andy at petdance.com."
 msgstr ""
 
 #: s/index.md.tt2:79
 msgid ""
-"Translations also welcome\n"
+"Переводы также приветствуются\n"
 "========================="
 msgstr ""
 
 #: s/index.md.tt2:82
-msgid "Help translate this site! There are less than 200 phrases. No programming necessary."
+msgid "Помогите перевести этот сайт! Тут меньше двухсот фраз. И никакого программирования."
 msgstr ""
 
 #: s/index.md.tt2:84
-msgid "See the instructions at the [bobby-tables repository at github](http://github.com/petdance/bobby-tables#readme)."
+msgid "Смотрите инструкции в [репозитории bobby-tables на github](http://github.com/petdance/bobby-tables#readme)."
 msgstr ""
 
 #: s/index.md.tt2:86
 msgid ""
-"To do\n"
+"Список дел\n"
 "====="
 msgstr ""
 
 #: s/index.md.tt2:89
 msgid ""
-"* Explain why creating code from outside data is bad.\n"
-"* Potential speed win when reusing prepared statements."
+"* Объяснить, почему создание кода, содержащего данные извне, это плохо.\n"
+"* Потенциальный прирост в скорости выполнения запросов при использовании подготовленных выражений."
 msgstr ""
 
 #: s/index.md.tt2:92
 msgid ""
-"Thanks\n"
+"Благодарности\n"
 "======"
 msgstr ""
 
 #: s/index.md.tt2:95
-msgid "Thanks to the following folks for their contributions:"
+msgid "Спасибо следующим людям за их вклад:"
 msgstr ""
 
 #: s/index.md.tt2:97
@@ -439,24 +439,24 @@ msgstr ""
 
 #: s/java.md.tt2:7
 msgid ""
-"The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html)\n"
-"has a class called\n"
+"В [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html)\n"
+"содержится класс,\n"
 "[`PreparedStatement`](http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html)\n"
-"which allows the programmer to safely insert user-supplied data\n"
-"into a SQL query.  The location of each input value in the query\n"
-"string is marked with a question mark.  The various `set*()` methods\n"
-"are then used to safely perform the insertion."
+"который позволяет разработчику безопасно вставлять данные из пользовательского ввода\n"
+"в SQL запрос. Позиция каждого входного значения в запросе\n"
+"помечена вопросительным знаком. Затем используются различные `set*()` методы\n"
+"для того чтобы безопасно произвести вставки."
 msgstr ""
 
 #: s/java.md.tt2:15
 msgid ""
-"    String name = //user input\n"
-"    int age = //user input\n"
+"    String name = //пользовательский ввод\n"
+"    int age = //пользовательский ввод\n"
 "    Connection connection = DriverManager.getConnection(...);\n"
 "    PreparedStatement statement = connection.prepareStatement(\n"
 "            \"SELECT * FROM people WHERE lastName = ? AND age > ?\" );\n"
-"    statement.setString(1, name); //lastName is a VARCHAR\n"
-"    statement.setInt(2, age); //age is an INT\n"
+"    statement.setString(1, name); //lastName это VARCHAR\n"
+"    statement.setInt(2, age); //age это INT\n"
 "    ResultSet rs = statement.executeQuery();\n"
 "    while (rs.next()){\n"
 "        //...\n"
