@@ -1537,28 +1537,39 @@ msgid ""
 msgstr ""
 
 #: s/python.md.tt2:4
+<<<<<<< HEAD
 msgid ""
 "Using the [Python DB API](http://wiki.python.org/moin/DatabaseProgramming/), "
 "don't do this:"
+=======
+msgid "Используя [Python DB API](http://wiki.python.org/moin/DatabaseProgramming/), не делайте так:"
+>>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: s/python.md.tt2:6
 msgid ""
-"    # Do NOT do it this way.\n"
+"    # НЕ делайте так.\n"
 "    cmd = \"update people set name='%s' where id='%s'\" % (name, id)\n"
 "    curs.execute(cmd)"
 msgstr ""
 
 #: s/python.md.tt2:10
-msgid "Instead, do this:"
+msgid "Лучше сделать так:"
 msgstr ""
 
 #: s/python.md.tt2:12
 msgid "    curs.execute('update people set name=:1 where id=:2', [name, id])"
 msgstr ""
 
+<<<<<<< HEAD
 #: s/python.md.tt2:17 s/ruby.md.tt2:18 s/scheme.md.tt2:18
 msgid "-   Add some narrative.\n"
+=======
+#: s/python.md.tt2:17
+#: s/ruby.md.tt2:18
+#: s/scheme.md.tt2:18
+msgid "-   Добавить больше материала.\n"
+>>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: s/ruby.md.tt2:1
@@ -1568,9 +1579,13 @@ msgid ""
 msgstr ""
 
 #: s/ruby.md.tt2:4
+<<<<<<< HEAD
 msgid ""
 "In Ruby on Rails using [ActiveRecord](http://guides.rubyonrails.org/"
 "active_record_querying.html):"
+=======
+msgid "В Ruby on Rails используется шаблон [ActiveRecord](http://guides.rubyonrails.org/active_record_querying.html):"
+>>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: s/ruby.md.tt2:6
@@ -1588,8 +1603,12 @@ msgstr ""
 #: s/ruby.md.tt2:12
 msgid ""
 "\n"
+<<<<<<< HEAD
 "Using [Ruby/DBI](http://ruby-dbi.rubyforge.org/): analog to [Perl](./perl."
 "html)."
+=======
+"Использование [Ruby/DBI](http://ruby-dbi.rubyforge.org/): аналог [Perl](./perl.html)."
+>>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: s/scheme.md.tt2:1
@@ -1605,9 +1624,13 @@ msgid ""
 msgstr ""
 
 #: s/scheme.md.tt2:7
+<<<<<<< HEAD
 msgid ""
 "[CHICKEN](http://www.call-with-current-continuation.org/) is a compiler for "
 "[Scheme](http://schemers.org/)"
+=======
+msgid "[CHICKEN](http://www.call-with-current-continuation.org/) — это компилятор для языка [Scheme](http://schemers.org/)"
+>>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: s/scheme.md.tt2:9
@@ -1748,10 +1771,14 @@ msgid ""
 msgstr ""
 
 #: tt/footer.tt:5
+<<<<<<< HEAD
 msgid ""
 "This site's content is available under the <a href=\"https://creativecommons."
 "org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 "
 "License</a>"
+=======
+msgid "Содержимое этого сайта распространяется по лицензии <a href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 License</a>"
+>>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: tt/footer.tt:8
@@ -1759,14 +1786,14 @@ msgid "Fork me on GitHub"
 msgstr ""
 
 #: tt/header.tt:6
-msgid "Bobby Tables: A guide to preventing SQL injection"
+msgid "Bobby Tables: Руководство по предотвращению SQL инъекций"
 msgstr ""
 
 #. (currlang)
 #: tt/page.tt:6
-msgid "bobby-tables.com: A guide to preventing SQL injection in {currlang}"
+msgid "bobby-tables.com: Руководство по предотвращению SQL инъекций, {currlang}"
 msgstr ""
 
 #: tt/page.tt:8
-msgid "bobby-tables.com: A guide to preventing SQL injection"
+msgid "bobby-tables.com: Руководство по предотвращению SQL инъекций"
 msgstr ""
