@@ -341,9 +341,9 @@ msgstr ""
 
 #: s/index.md.tt2:66
 msgid ""
-"* [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies)\n"
-"* [How to Write Injection-Proof SQL](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)\n"
-"* [Defending Against SQL Injection Attacks](http://download.oracle.com/oll/tutorials/SQLInjection/index.htm)"
+"* [Мифы и заблуждения об SQL инъекциях](http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies)\n"
+"* [Как писать SQL, устойчивый к инъекциям](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)\n"
+"* [Защиты от SQL инъекций](http://download.oracle.com/oll/tutorials/SQLInjection/index.htm)"
 msgstr ""
 
 #: s/index.md.tt2:70
@@ -353,7 +353,7 @@ msgid ""
 msgstr ""
 
 #: s/index.md.tt2:73
-msgid "Не находите нужного вам языка?Пожалуйста, дайте знать, если у вас есть какие-либо изменения или дополнения, перечисленные ниже в порядке убывания важности:"
+msgid "Не находите нужного вам языка? Пожалуйста, дайте знать, если у вас есть какие-либо изменения или дополнения, перечисленные ниже в порядке убывания предпочтительности:"
 msgstr ""
 
 #: s/index.md.tt2:75
@@ -466,19 +466,18 @@ msgstr ""
 #: s/java.md.tt2:27
 msgid ""
 "\n"
-"Once a `PreparedStatement` object has been created, it can be reused\n"
-"multiple times for multiple queries (for example, when using the\n"
-"same query to update multiple rows in a table).  However, they are\n"
-"**not thread-safe** because of the many method calls involved in\n"
-"setting the parameters and executing the query.  Therefore, you\n"
-"should only define `PreparedStatement` objects as method-level\n"
-"variables (as opposed to class-level variables) to avoid concurrency\n"
-"issues."
+"После того как объект `PreparedStatement` был создан, он может быть использован\n"
+"много раз для разных запросов (например, для выполнения\n"
+"одного и того же запроса на обновления разных записей). Однако такие вызовы\n"
+"**неявляются потокобезопасными**, поскольку при установке параметров и выполнении запроса\n"
+"вызывается множество методов.  Поэтому для избежания проблем\n"
+"с многопоточностью следует использовать объект `PreparedStatement`\n"
+"как локальную переменную метода нежели как поле класса."
 msgstr ""
 
 #: s/java.md.tt2:37
 msgid ""
-"    List<Person>; people = //user input\n"
+"    List<Person>; people = //пользовательский ввод\n"
 "    Connection connection = DriverManager.getConnection(...);\n"
 "    connection.setAutoCommit(false);\n"
 "    try {\n"
@@ -498,8 +497,8 @@ msgstr ""
 
 #: s/java.md.tt2:54
 msgid ""
-"More information on `PreparedStatement` can be found in the\n"
-"[Oracle JDBC tutorial](http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html)."
+"Больше информации о классе `PreparedStatement` можно найти в:\n"
+"[Руководство Oracle по JDBC](http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html)."
 msgstr ""
 
 #: s/java.md.tt2:57
@@ -510,15 +509,15 @@ msgstr ""
 
 #: s/java.md.tt2:60
 msgid ""
-"[Hibernate](http://www.hibernate.org/) uses named parameters to\n"
-"safely insert data into a query.  A named parameter consists of a\n"
-"colon, followed by a unique name for the parameter."
+"[Hibernate](http://www.hibernate.org/) использует именованные параметры\n"
+"для безопасной вставки данных в запрос.  Именованный параметр состоит из\n"
+"двоеточия и уникального имени параметра."
 msgstr ""
 
 #: s/java.md.tt2:64
 msgid ""
-"    String name = //user input\n"
-"    int age = //user input\n"
+"    String name = //пользовательски ввод\n"
+"    int age = //пользовательски ввод\n"
 "    Session session = //...\n"
 "    Query query = session.createQuery(\"from People where lastName = :name and age > :age\");\n"
 "    query.setString(\"name\", name);\n"
@@ -528,16 +527,16 @@ msgstr ""
 
 #: s/java.md.tt2:72
 msgid ""
-"Hibernate also supports positional parameters like `PreparedStatement`,\n"
-"but named parameters are generally preferred because they make the\n"
-"query a little easier to read."
+"Hibernate также использует позиционные параметры, как `PreparedStatement`,\n"
+"однако использование именованных параметров более предпочтительно,\n"
+"поскольку иъ использование повышает читаемость."
 msgstr ""
 
 #: s/java.md.tt2:76
 msgid ""
-"See the\n"
-"[Hibernate Manual](http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters)\n"
-"for more information on named parameters."
+"Смотрите\n"
+"[Руководство Hibernate](http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters)\n"
+"для более подробной информации об именованных параметрах."
 msgstr ""
 
 #: s/java.md.tt2:80
