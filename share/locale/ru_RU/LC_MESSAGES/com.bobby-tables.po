@@ -775,9 +775,9 @@ msgstr ""
 
 #: s/java.md.tt2:72
 msgid ""
-"Hibernate также использует позиционные параметры, как `PreparedStatement`,\n"
+"В Hibernate также можно использовать позиционные параметры, как и в `PreparedStatement`,\n"
 "однако использование именованных параметров более предпочтительно,\n"
-"поскольку иъ использование повышает читаемость."
+"поскольку они повышают читаемость."
 msgstr ""
 
 #: s/java.md.tt2:76
@@ -789,7 +789,7 @@ msgid ""
 "for more information on named parameters."
 =======
 "Смотрите\n"
-"[Руководство Hibernate](http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters)\n"
+"[Руководство по Hibernate](http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters)\n"
 "для более подробной информации об именованных параметрах."
 >>>>>>> 347ae2b... JDBC and Hibernate parts have been translated.
 msgstr ""
@@ -802,29 +802,29 @@ msgstr ""
 
 #: s/java.md.tt2:83
 msgid ""
-"[MyBatis](http://www.mybatis.org/) is a database framework that\n"
-"hides a lot of the JDBC code from the developer, allowing him or\n"
-"her to focus on writing SQL.  The SQL statements are typically\n"
-"stored in XML files."
+"[MyBatis](http://www.mybatis.org/) — это фреймворк для работы с базой данных,\n"
+"который скрывает от разработчика большинство JDBC кода,\n"
+"позволяя сфокусироваться на самих запросах.  SQL запросы обычно\n"
+"хранятся в XML файлах."
 msgstr ""
 
 #: s/java.md.tt2:88
 msgid ""
-"MyBatis automatically creates `PreparedStatement`s behind the scenes.\n"
-"Nothing extra needs to be done by the programmer."
+"Внутри MyBatis автоматически создает объекты `PreparedStatement`.\n"
+"Разработчику ничего не нужно для этого делать."
 msgstr ""
 
 #: s/java.md.tt2:91
 msgid ""
-"To give you some context, here's an example showing how a basic\n"
-"query is called with MyBatis.  The input data is passed into the\n"
-"`PeopleMapper` instance and then it gets inserted into the\n"
-"\"selectPeopleByNameAndAge\" query."
+"Ниже расположен пример, который поясняет на практике основы\n"
+"выполнения запросов с MyBatis.  Входные данные передаются в объект\n"
+"`PeopleMapper`, а затем вставляются с помощью запроса\n"
+"\"selectPeopleByNameAndAge\"."
 msgstr ""
 
 #: s/java.md.tt2:96
 msgid ""
-"XML mapping document\n"
+"XML документ с привязками\n"
 "===================="
 msgstr ""
 
@@ -836,7 +836,7 @@ msgid ""
 "    \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\n"
 "    <mapper namespace=\"com.bobbytables.mybatis.PeopleMapper\">\n"
 "    <select id=\"selectPeopleByNameAndAge\" resultType=\"list\">\n"
-"        <!-- lastName and age are automatically sanitized --->\n"
+"        <!-- lastName и age автоматически эскапируются --->\n"
 "        SELECT * FROM people WHERE lastName = #{lastName} AND age > #{age}\n"
 "    </select>\n"
 "    </mapper>"
@@ -844,7 +844,7 @@ msgstr ""
 
 #: s/java.md.tt2:110
 msgid ""
-"Mapper class\n"
+"Класс Mapper'а\n"
 "============"
 msgstr ""
 
@@ -858,20 +858,24 @@ msgstr ""
 
 #: s/java.md.tt2:117
 msgid ""
-"Invoking the query\n"
+"Выполнение запроса\n"
 "=================="
 msgstr ""
 
 #: s/java.md.tt2:120
 msgid ""
-"    String name = //user input\n"
-"    int age = //user input\n"
+"    String name = //пользовательский ввод\n"
+"    int age = //пользовательский ввод\n"
 "    SqlSessionFactory sqlMapper = //...\n"
 "    SqlSession session = sqlMapper.openSession();\n"
 "    try {\n"
 "        PeopleMapper mapper = session.getMapper(PeopleMapper.class);\n"
+<<<<<<< HEAD
 "        List<Person> people = mapper.selectPeopleByNameAndAge(name, age); //"
 "data is automatically sanitized\n"
+=======
+"        List<Person> people = mapper.selectPeopleByNameAndAge(name, age); //данные автоматически эскапируются\n"
+>>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 "        for (Person person : people) {\n"
 "            //...\n"
 "        }\n"
@@ -887,11 +891,15 @@ msgid ""
 msgstr ""
 
 #: s/perl.md.tt2:4
+<<<<<<< HEAD
 msgid ""
 "Perl's [DBI](http://search.cpan.org/dist/DBI), available on the [CPAN]"
 "(http://search.cpan.org), supports parameterized SQL calls.  Both the `do` "
 "method and `prepare` method support parameters (\"placeholders\", as they "
 "call them) for most database drivers. For example:"
+=======
+msgid "Perl [DBI](http://search.cpan.org/dist/DBI), доступный на [CPAN](http://search.cpan.org), поддерживает параметризованные SQL запросы.  Оба метода — `do` и `prepare` — поддерживают параметры (они называются \"метками\") для большинства баз данных. Например:"
+>>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 msgstr ""
 
 #: s/perl.md.tt2:6
@@ -907,20 +915,19 @@ msgstr ""
 
 #: s/perl.md.tt2:14
 msgid ""
-"However, you can't use parameterization for identifiers (table\n"
-"names, column names) so you need to use DBI's `quote_identifier()`\n"
-"method for that:"
+"Однако параметризацию нельзя использовать для идентификаторов (имен таблиц,\n"
+"имен колонок), поэтому необходимо использовать метод DBI `quote_identifier()`:"
 msgstr ""
 
 #: s/perl.md.tt2:18
 msgid ""
-"    # Make sure a table name we want to use is safe:\n"
+"    # Убедимся, что имя таблицы, которое мы хотим использовать, является безопасным:\n"
 "    my $quoted_table_name = $dbh->quote_identifier($table_name);"
 msgstr ""
 
 #: s/perl.md.tt2:21
 msgid ""
-"    # Assume @cols contains a list of column names you need to fetch:\n"
+"    # Предполагается, что @cols содержит список имен колонок, из которых вы хотите выбрать данные:\n"
 "    my $cols = join ',', map { $dbh->quote_identifier($_) } @cols;"
 msgstr ""
 
@@ -930,52 +937,64 @@ msgid ""
 msgstr ""
 
 #: s/perl.md.tt2:26
+<<<<<<< HEAD
 msgid ""
 "You could also avoid writing SQL by hand by using [DBIx::Class](http://p3rl."
 "org/DBIx::Class), [SQL::Abstract](http://p3rl.org/SQL::Abstract) etc to "
 "generate your SQL for you programmatically."
+=======
+msgid "Вы можете также вручную писать запросы с использованием [DBIx::Class](http://p3rl.org/DBIx::Class), [SQL::Abstract](http://p3rl.org/SQL::Abstract) и т.д., которые сгенерируют нужный SQL код."
+>>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 msgstr ""
 
 #: s/perl.md.tt2:28
 msgid ""
-"What is Taint mode?\n"
+"Режим Taint\n"
 "-------------------"
 msgstr ""
 
 #: s/perl.md.tt2:31
+<<<<<<< HEAD
 msgid ""
 "Taint mode is a special set of security checks that Perl performs on data "
 "input into your program from external sources. The input data is marked as  "
 "tainted (untrusted) and may not be used in commands that would allow you to "
 "shoot yourself in the foot. See [the perlsec manpage](http://perldoc.perl."
 "org/perlsec.html) for a detailed breakdown of what taint mode tracks."
+=======
+msgid "Режим Taint содержит набор специальных проверок безопасности, который Perl выполняет над входными данными вашей программы. Входные данные помечаются "грязными" (непроверенными) и не могут быть использованы в командах, с помощью которых вы можете выстрелить себе в ногу. За более детальной информацией обратитесь к [странице помощи perlsec](http://perldoc.perl.org/perlsec.html)."
+>>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 msgstr ""
 
 #: s/perl.md.tt2:33
-msgid "To invoke taint mode:"
+msgid "Включение taint режима:"
 msgstr ""
 
 #: s/perl.md.tt2:35
 msgid ""
-"    # From the command line\n"
+"    # Из командной строки\n"
 "    perl -T program.pl"
 msgstr ""
 
 #: s/perl.md.tt2:38
 msgid ""
-"    # At the top of your script\n"
+"    # В начале скрипта\n"
 "    #!/usr/bin/perl -T"
 msgstr ""
 
 #: s/perl.md.tt2:41
+<<<<<<< HEAD
 msgid ""
 "When your script trips one of the taint checks your application will issue a "
 "fatal error message. For testing purposes `-t` will issue warnings instead "
 "of fatal errors. `-t` is not a substitute for `-T`."
+=======
+msgid "Когда в приложении не срабатывает какая-либо проверка, возникает ошибка. Для отладки используйте параметр `-t`: вместо ошибок будут выдаватьсчя предупреждения. `-t` не является заменой `-T`."
+>>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 msgstr ""
 
 #: s/perl.md.tt2:46
-msgid "Explain how DBI supports taint mode, both inbound and outbound.\n"
+msgid "Объяснить, как DBI поддерживаем taint режим, входящий и исходящий.\n"
 msgstr ""
 
 #: s/php.md.tt2:1
