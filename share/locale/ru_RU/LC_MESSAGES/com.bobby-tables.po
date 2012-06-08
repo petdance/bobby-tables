@@ -712,11 +712,10 @@ msgstr ""
 
 #: s/php.md.tt2:4
 msgid ""
-"PHP is a little more disorganized than how\n"
-"[Perl handles parameters](./perl.html).\n"
-"The standard [MySQL extension](http://php.net/manual/en/book.mysql.php)\n"
-"doesn't support parameterization, although the\n"
-"[PostgreSQL extension](http://www.php.net/manual/en/book.pgsql.php) does:"
+"В PHP поддержка параметров менее организованна, чем в [Perl](./perl.html).\n"
+"Стандартное [расширение MySQL](http://php.net/manual/en/book.mysql.php)\n"
+"не поддерживает параметризацию, а, например,\n"
+"[PostgreSQL расширение](http://www.php.net/manual/en/book.pgsql.php) поддерживает:"
 msgstr ""
 
 #: s/php.md.tt2:10
@@ -725,26 +724,25 @@ msgstr ""
 
 #: s/php.md.tt2:12
 msgid ""
-"Note that the query must be in single-quotes or have the `$` escaped\n"
-"to avoid PHP trying to parse it as a variable."
+"Обратите внимание, что запрос должен быть обрамлен одинарными кавычками или же симпол '$' должен быть эскапирован, чтобы PHP не принял его за переменную."
 msgstr ""
 
 #: s/php.md.tt2:15
 msgid ""
-"**However**, you should probably be using an abstraction layer.\n"
-"The [ODBC](http://php.net/manual/en/book.uodbc.php) and\n"
-"[PDO](http://www.php.net/manual/en/book.pdo.php) extensions both\n"
-"support parameterization and multiple databases:"
+"**Однако лучше всего** следует использовать дополнительный уровень абстракции.\n"
+"[ODBC](http://php.net/manual/en/book.uodbc.php) и\n"
+"[PDO](http://www.php.net/manual/en/book.pdo.php) расширения\n"
+"поддерживают параметризацию и запросы к разным базам данных:"
 msgstr ""
 
 #: s/php.md.tt2:20
 msgid ""
-"Using mysqli\n"
+"Использование mysqli\n"
 "------------"
 msgstr ""
 
 #: s/php.md.tt2:23
-msgid "The MySQL Improved extension handles bound parameters."
+msgid "Расширение MySQL Improved умеет обрабатывать связанные параметры."
 msgstr ""
 
 #: s/php.md.tt2:25
@@ -756,12 +754,12 @@ msgstr ""
 
 #: s/php.md.tt2:29
 msgid ""
-"Using ADODB\n"
+"Использование ADODB\n"
 "-----------"
 msgstr ""
 
 #: s/php.md.tt2:32
-msgid "ADODB provides a way to prepare, bind and execute all in the same method call."
+msgid "ADODB предоставляет возможность подготавливать, связывать и выполнять запрос с помощью одного метода."
 msgstr ""
 
 #: s/php.md.tt2:34
@@ -775,7 +773,7 @@ msgstr ""
 
 #: s/php.md.tt2:40
 msgid ""
-"Using the ODBC layer\n"
+"Использование ODBC слоя\n"
 "--------------------"
 msgstr ""
 
@@ -786,7 +784,7 @@ msgid ""
 msgstr ""
 
 #: s/php.md.tt2:46
-msgid "Or:"
+msgid "Или:"
 msgstr ""
 
 #: s/php.md.tt2:48
@@ -798,12 +796,12 @@ msgstr ""
 
 #: s/php.md.tt2:52
 msgid ""
-"Using the PDO layer\n"
+"Использование PDO слоя\n"
 "-------------------"
 msgstr ""
 
 #: s/php.md.tt2:55
-msgid "Here's the long way to do bind parameters."
+msgid "Вот длинный способ связывания параметров со значениями."
 msgstr ""
 
 #: s/php.md.tt2:57
@@ -816,14 +814,14 @@ msgstr ""
 
 #: s/php.md.tt2:62
 msgid ""
-"    // insert one row\n"
+"    // вставка одной записи\n"
 "    $name = 'one';\n"
 "    $value = 1;\n"
 "    $stmt->execute();"
 msgstr ""
 
 #: s/php.md.tt2:67
-msgid "And a shorter way to pass things in."
+msgid "А вот более короткий способ."
 msgstr ""
 
 #: s/php.md.tt2:69
