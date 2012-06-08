@@ -838,7 +838,7 @@ msgid ""
 msgstr ""
 
 #: s/plsql.md.tt2:4
-msgid "Examples assume the following table structure:"
+msgid "В примерах используется таблица со следующей структурой:"
 msgstr ""
 
 #: s/plsql.md.tt2:6
@@ -860,12 +860,12 @@ msgstr ""
 
 #: s/plsql.md.tt2:17
 msgid ""
-"Always prefer static SQL when possible\n"
+"Если возможно, всегда выбирайте статический SQL\n"
 "--------------------------------------"
 msgstr ""
 
 #: s/plsql.md.tt2:20
-msgid "Static SQL leaves no room for SQL injection."
+msgid "Статический SQL позволяет избежать инъекций."
 msgstr ""
 
 #: s/plsql.md.tt2:22
@@ -917,12 +917,12 @@ msgstr ""
 #: s/plsql.md.tt2:46
 msgid ""
 "\n"
-"If you need dynamic SQL avoid string concatenation when possible\n"
+"Если все же нужно использовать динамический SQL, избегайте конкатенации строк\n"
 "----------------------------------------------------------------"
 msgstr ""
 
 #: s/plsql.md.tt2:50
-msgid "String concatenation opens doors to possible SQL injection exploits:"
+msgid "Конкатенация строк позволяет инъектировать SQL:"
 msgstr ""
 
 #: s/plsql.md.tt2:52
@@ -948,7 +948,7 @@ msgid ""
 msgstr ""
 
 #: s/plsql.md.tt2:79
-msgid "Instead use bind variables:"
+msgid "Вместо этого используйте связанные переменные:"
 msgstr ""
 
 #: s/plsql.md.tt2:81
@@ -969,16 +969,16 @@ msgstr ""
 
 #: s/plsql.md.tt2:108
 msgid ""
-"Implicit Data Type Conversion Injection\n"
+"Неявная инъекция при конвертировании типов данных\n"
 "---------------------------------------"
 msgstr ""
 
 #: s/plsql.md.tt2:111
-msgid "Also NLS session parameters (`NLS_DATE_FORMAT`, `NLS_TIMESTAMP_FORMAT`, `NLS_TIMESTAMP_TZ_FORMAT`, `NLS_NUMERIC_CHARACTER`) can be used to modify or inject SQL statements."
+msgid "Параметры сессии NLS (`NLS_DATE_FORMAT`, `NLS_TIMESTAMP_FORMAT`, `NLS_TIMESTAMP_TZ_FORMAT`, `NLS_NUMERIC_CHARACTER`) также могут быть использованы для того что бы изменять или инъектировать SQL выражения."
 msgstr ""
 
 #: s/plsql.md.tt2:113
-msgid "In next example data type conversion takes place when `p_since` is implicitly converted to a string for concatenation. Note how the value of `NLS_DATE_FORMAT` affects to the query string in `users_since()` function!"
+msgid "В следующем примере происходит конвертация типов данных, когда `p_since` неявно когвертируется в строку, а затем результат используется для конкатенации. Обратите внимание, что значение `NLS_DATE_FORMAT` влияет на тсроку запроса в функции `users_since()`!"
 msgstr ""
 
 #: s/plsql.md.tt2:115
@@ -1064,7 +1064,7 @@ msgid ""
 msgstr ""
 
 #: s/plsql.md.tt2:161
-msgid "The remedy is to set the format modifier explicitly: `to_char(p_since, 'YYYY-MM-DD')`."
+msgid "Спасение в том, чтобы задавать идентификатор формата явно: `to_char(p_since, 'YYYY-MM-DD')`."
 msgstr ""
 
 #: s/plsql.md.tt2:168
@@ -1081,7 +1081,7 @@ msgid ""
 msgstr ""
 
 #: s/plsql.md.tt2:186
-msgid "Now the value of NLS parameter `NLS_DATE_FORMAT` is ignored during the query."
+msgid "Теперь значение NLS параметра `NLS_DATE_FORMAT` будет проигнорировано."
 msgstr ""
 
 #: s/plsql.md.tt2:188
