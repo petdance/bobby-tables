@@ -1443,11 +1443,15 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:4
+<<<<<<< HEAD
 msgid ""
 "All of PostgreSQL's [procedural languages](http://www.postgresql.org/docs/"
 "current/static/xplang.html), which allow you to write functions and "
 "procedures inside the database, allow you to execute arbitrary SQL "
 "statements."
+=======
+msgid "Все [процедурные языки](http://www.postgresql.org/docs/current/static/xplang.html) PostgreSQL, которые позволяют писать функции и процедуры для баз данных, позволяют также выполнять произвольные SQL выражения."
+>>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:6
@@ -1457,8 +1461,12 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:9
+<<<<<<< HEAD
 msgid ""
 "The safest way to execute SQL inside a PL/pgSQL statement is just to do so:"
+=======
+msgid "Самый безопасный способ выполнения SQL внутри PL/pgSQL выражений:"
+>>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:11
@@ -1473,9 +1481,13 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:19
+<<<<<<< HEAD
 msgid ""
 "For such a simple case, you're actually better off writing a pure SQL "
 "function:"
+=======
+msgid "Для такого простого случая лучше всего написать чистую SQL функцию:"
+>>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:21
@@ -1488,11 +1500,15 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:27
+<<<<<<< HEAD
 msgid ""
 "But sometimes you have to do more complicated things. Perhaps you "
 "dynamically add `WHERE` clause expressions based on input. In such cases, "
 "you'll end up using PL/pgSQL's `EXECUTE` syntax. Here's an example with an "
 "SQL injection vulnerability:"
+=======
+msgid "Однако иногда приходится делать вещи посложнее. Возможно, вам нужно будет динамически добавить блок `WHERE`, основываясь на входных данных. В таких случаях пригодится синтаксис функции PL/pgSQL' `EXECUTE`. Вот пример кода, который уязвим для SQL инъекции:"
+>>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:29
@@ -1514,11 +1530,15 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:44
+<<<<<<< HEAD
 msgid ""
 "Both the `p_column` and the `p_value` arguments are vulnerable. The way to "
 "avoid this problem is to use the `quote_ident()` function to quote an SQL "
 "identifier (`p_column` in this case) and `quote_lteral()` to quote a literal "
 "value:"
+=======
+msgid "Оба аргумента — `p_column` и `p_value` уязвимы. Чтобы избежать инъекции, нужно использовать функцию `quote_ident()` для SQL идентификатора (`p_column`) и `quote_lteral()` для значений:"
+>>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:46
@@ -1540,7 +1560,7 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:61
-msgid "It's quite a bit easier to read, too!"
+msgid "Этот еще и читается легче!"
 msgstr ""
 
 #: s/postgresql.md.tt2:63
