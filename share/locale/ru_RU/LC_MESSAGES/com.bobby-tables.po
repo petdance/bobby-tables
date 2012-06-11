@@ -382,9 +382,11 @@ msgstr "**Мама**: О, боже. Он что-то сломал?"
 
 #: s/index.md.tt2:14
 msgid ""
-"**School**: In a way. Did you really name your son `Robert'); DROP TABLE Students;--`?"
+"**School**: In a way. Did you really name your son `Robert'); DROP TABLE "
+"Students;--`?"
 msgstr ""
-"**Школа**: Можно сказать... Вы действительно назвали своего сына `Роберт'); DROP TABLE Students;--`?"
+"**Школа**: Можно сказать... Вы действительно назвали своего сына `Роберт'); "
+"DROP TABLE Students;--`?"
 
 #: s/index.md.tt2:16
 msgid "**Mom**: Oh. Yes. Little Bobby Tables we call him."
@@ -399,7 +401,9 @@ msgstr ""
 
 #: s/index.md.tt2:20
 msgid "**Mom**: And I hope you've learned to sanitize your database inputs."
-msgstr "**Мама**: А я надеюсь, что это научит вас экранировать символы во входных данных."
+msgstr ""
+"**Мама**: А я надеюсь, что это научит вас экранировать символы во входных "
+"данных."
 
 #: s/index.md.tt2:24
 msgid ""
@@ -412,10 +416,13 @@ msgid "See the sidebar to the left for your specific language."
 msgstr ""
 
 #: s/index.md.tt2:29
+#, fuzzy
 msgid ""
-"Other random resources\n"
-"======================"
+"Other resources\n"
+"==============="
 msgstr ""
+"Кто такой Робин-Брось-Таблицу?\n"
+"===================="
 
 #: s/index.md.tt2:32
 msgid ""
@@ -514,6 +521,7 @@ msgid ""
 "* [Lars Dɪᴇᴄᴋᴏᴡ](http://search.cpan.org/~daxim/)\n"
 "* [Jani Hur](http://www.jani-hur.net)\n"
 "* [Sven van Haastregt](http://www.liacs.nl/home/svhaastr/)\n"
+"* Andrey Chasovskikh\n"
 msgstr ""
 
 #: s/java.md.tt2:1

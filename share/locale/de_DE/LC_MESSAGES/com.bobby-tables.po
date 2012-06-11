@@ -527,12 +527,13 @@ msgid "See the sidebar to the left for your specific language."
 msgstr "Siehe Kasten links für die jeweilige Sprache."
 
 #: s/index.md.tt2:29
+#, fuzzy
 msgid ""
-"Other random resources\n"
-"======================"
+"Other resources\n"
+"==============="
 msgstr ""
-"Andere wahllose Ressourcen\n"
-"=========================="
+"Andere Ressourcen\n"
+"================="
 
 #: s/index.md.tt2:32
 msgid ""
@@ -637,6 +638,7 @@ msgid "Thanks to the following folks for their contributions:"
 msgstr "Dank gilt den folgenden Leuten für ihre Mitwirkung:"
 
 #: s/index.md.tt2:63
+#, fuzzy
 msgid ""
 "* [Kim Christensen](http://www.smukkekim.dk)\n"
 "* Kirk Kimmel\n"
@@ -661,6 +663,7 @@ msgid ""
 "* [Lars Dɪᴇᴄᴋᴏᴡ](http://search.cpan.org/~daxim/)\n"
 "* [Jani Hur](http://www.jani-hur.net)\n"
 "* [Sven van Haastregt](http://www.liacs.nl/home/svhaastr/)\n"
+"* Andrey Chasovskikh\n"
 msgstr ""
 "* [Kim Christensen](http://www.smukkekim.dk)\n"
 "* Kirk Kimmel\n"
