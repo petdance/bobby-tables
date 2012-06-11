@@ -33,7 +33,7 @@ msgstr ""
 
 #: s/about.md.tt2:3
 msgid "# Why did Bobby's school lose their records?"
-msgstr ""
+msgstr "# Почему в школе Роберта потеряли базу учеников?"
 
 #: s/about.md.tt2:5
 msgid ""
@@ -41,6 +41,9 @@ msgid ""
 "Students. When a new student arrives, the school inserts his/her name into "
 "this table. The code doing the insertion might look as follows:"
 msgstr ""
+"Очевидно, записи обо всех учениках в школе хранятся в таблице с названием "
+"Students. Когда приходит новый ученик, в таблицу вставляется новая запись с "
+"его именем. Код вставки может выглядеть так:"
 
 #: s/about.md.tt2:7
 msgid ""
@@ -128,7 +131,7 @@ msgstr ""
 
 #: s/asp.md.tt2:4
 msgid "Older ASP uses positional placeholders."
-msgstr ""
+msgstr "В ASP используются метки в качестве значений параметров."
 
 #: s/asp.md.tt2:6
 msgid ""
@@ -147,6 +150,8 @@ msgid ""
 "\n"
 "Newer ASP (ASP.Net?) can handle named placeholders."
 msgstr ""
+"\n"
+"В ASP.NET поддерживаются именованные параметры."
 
 #: s/asp.md.tt2:15
 msgid ""
@@ -167,10 +172,12 @@ msgid ""
 "To do\n"
 "-----"
 msgstr ""
+"Список дел\n"
+"-----"
 
 #: s/asp.md.tt2:25
 msgid "Add some narrative\n"
-msgstr ""
+msgstr "Добавить больше материала\n"
 
 #: s/coldfusion.md.tt2:1
 msgid ""
@@ -183,6 +190,8 @@ msgid ""
 "In ColdFusion there is a tag called `cfqueryparam` that should be used "
 "whenever writing inline queries."
 msgstr ""
+"В ColdFusion есть тег `cfqueryparam`, который всегда нужно использовать во "
+"встроенных запросах."
 
 #: s/coldfusion.md.tt2:6
 msgid ""
@@ -200,6 +209,9 @@ msgid ""
 "Stored procedures can be invoked with the `cfstoredproc` and `cfprocparam` "
 "tags."
 msgstr ""
+"\n"
+"Хранимые процедуры также могут вызываться с тегами `cfstoredproc` и "
+"`cfprocparam`."
 
 #: s/coldfusion.md.tt2:16
 msgid ""
@@ -207,6 +219,10 @@ msgid ""
 "that\n"
 "have a slightly different syntax, but still provide parameterized queries."
 msgstr ""
+"Последние версии ColdFusion предоставляют набор функций для выполнения "
+"запросов,\n"
+"которые имеют немного другой синтаксис, но по-прежнему позволяют "
+"параметризовать запрос."
 
 #: s/coldfusion.md.tt2:19
 msgid ""
@@ -255,14 +271,17 @@ msgid ""
 msgstr ""
 
 #: s/csharp.md.tt2:14
+#, fuzzy
 msgid ""
 "    // userName is some string valued user input variable\n"
 "    userNameParam.Value = userName;"
 msgstr ""
+"    // username — это строка, которую ввел пользователь\n"
+"    usernameparam.value = username;"
 
 #: s/csharp.md.tt2:17
 msgid "Or simpler:"
-msgstr ""
+msgstr "Или проще:"
 
 #: s/csharp.md.tt2:19
 msgid ""
@@ -281,7 +300,7 @@ msgstr ""
 
 #: s/delphi.md.tt2:4
 msgid "To use a prepared statement, do something like this:"
-msgstr ""
+msgstr "Пример использования подготовленных выражений:"
 
 #: s/delphi.md.tt2:6
 msgid ""
@@ -300,7 +319,7 @@ msgstr ""
 
 #: s/dotnet.md.tt2:4
 msgid "Reference:"
-msgstr ""
+msgstr "Ссылки:"
 
 #: s/dotnet.md.tt2:6
 msgid ""
@@ -310,7 +329,7 @@ msgstr ""
 
 #: s/dotnet.md.tt2:8
 msgid "Articles:"
-msgstr ""
+msgstr "Статьи:"
 
 #: s/dotnet.md.tt2:10
 msgid ""
@@ -332,12 +351,12 @@ msgid ""
 "Who is Bobby Tables?\n"
 "===================="
 msgstr ""
-"(Russian translation of \"Who is Bobby Tables?\")\n"
+"Кто такой Робин-Брось-Таблицу?\")\n"
 "===================="
 
 #: s/index.md.tt2:4
 msgid "[From the webcomic _xkcd_](http://xkcd.com/327/)"
-msgstr ""
+msgstr "[Из комикса _xkcd_](http://xkcd.ru/327/)"
 
 #: s/index.md.tt2:6
 msgid ""
@@ -354,26 +373,32 @@ msgid ""
 "**School**: Hi, this is your son's school. We're having some computer "
 "trouble."
 msgstr ""
+"**Школа**: Здравствуйте, это из школы, где учится ваш сын. У нас тут "
+"неприятности с компьютером."
 
 #: s/index.md.tt2:12
 msgid "**Mom**: Oh, dear -- Did he break something?"
-msgstr ""
+msgstr "**Мама**: О, боже. Он что-то сломал?"
 
 #: s/index.md.tt2:14
 msgid ""
 "**School**: In a way. Did you really name your son `Robert'); DROP TABLE "
 "Students;--`?"
 msgstr ""
+"**Школа**: Можно сказать... Вы действительно назвали своего сына Роберт'); "
+"DROP TABLE Students;--?"
 
 #: s/index.md.tt2:16
 msgid "**Mom**: Oh. Yes. Little Bobby Tables we call him."
-msgstr ""
+msgstr "**Мама**: А, да. Дома мы его зовем Робин-Брось-Таблицу."
 
 #: s/index.md.tt2:18
 msgid ""
 "**School**: Well, we've lost this year's student records. I hope you're "
 "happy."
 msgstr ""
+"**Мама**: А я надеюсь, что это научит вас экранировать символы во входных "
+"данных."
 
 #: s/index.md.tt2:20
 msgid "**Mom**: And I hope you've learned to sanitize your database inputs."
