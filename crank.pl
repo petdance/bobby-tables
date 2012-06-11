@@ -60,6 +60,7 @@ MAIN: {
             my ($context, $arg) = @_;
             return sub {
                 my ($key) = @_;
+                return '' if $key eq '';
                 my $value = __x(encode('UTF-8', $key), currlang => $arg);
                 return decode 'UTF-8', $value;
             };
