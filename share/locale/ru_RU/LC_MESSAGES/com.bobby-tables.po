@@ -127,7 +127,7 @@ msgid ""
 msgstr ""
 
 #: s/asp.md.tt2:4
-msgid "В ASP используются метки в качестве значений параметров."
+msgid "Older ASP uses positional placeholders."
 msgstr ""
 
 #: s/asp.md.tt2:6
@@ -145,7 +145,7 @@ msgstr ""
 #: s/asp.md.tt2:12
 msgid ""
 "\n"
-"В ASP.NET поддерживаются именованные параметры."
+"Newer ASP (ASP.Net?) can handle named placeholders."
 msgstr ""
 
 #: s/asp.md.tt2:15
@@ -161,15 +161,15 @@ msgid ""
 "    gblDelobjParams(objCmd);"
 msgstr ""
 
-#: s/asp.md.tt2:22 s/dotnet.md.tt2:13 s/perl.md.tt2:43 s/python.md.tt2:14
-#: s/ruby.md.tt2:15 s/scheme.md.tt2:15
+#: s/asp.md.tt2:22 s/dotnet.md.tt2:13 s/perl.md.tt2:43 s/ruby.md.tt2:15
+#: s/scheme.md.tt2:15
 msgid ""
-"Список дел\n"
+"To do\n"
 "-----"
 msgstr ""
 
 #: s/asp.md.tt2:25
-msgid "Добавить больше материала\n"
+msgid "Add some narrative\n"
 msgstr ""
 
 #: s/coldfusion.md.tt2:1
@@ -179,13 +179,9 @@ msgid ""
 msgstr ""
 
 #: s/coldfusion.md.tt2:4
-<<<<<<< HEAD
 msgid ""
 "In ColdFusion there is a tag called `cfqueryparam` that should be used "
 "whenever writing inline queries."
-=======
-msgid "В ColdFusion есть тег `cfqueryparam`, который всегда нужно использовать во встроенных запросах."
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/coldfusion.md.tt2:6
@@ -201,24 +197,15 @@ msgstr ""
 #: s/coldfusion.md.tt2:13
 msgid ""
 "\n"
-<<<<<<< HEAD
 "Stored procedures can be invoked with the `cfstoredproc` and `cfprocparam` "
 "tags."
-=======
-"Хранимые процедуры также могут вызываться с тегами `cfstoredproc` и `cfprocparam`."
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/coldfusion.md.tt2:16
 msgid ""
-<<<<<<< HEAD
 "Recent versions of ColdFusion provide a set of functions to run queries "
 "that\n"
 "have a slightly different syntax, but still provide parameterized queries."
-=======
-"Последние версии ColdFusion предоставляют набор функций для выполнения запросов,\n"
-"которые имеют немного другой синтаксис, но по-прежнему позволяют параметризовать запрос."
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/coldfusion.md.tt2:19
@@ -246,14 +233,10 @@ msgid ""
 msgstr ""
 
 #: s/csharp.md.tt2:4
-<<<<<<< HEAD
 msgid ""
 "From the [C# Online](http://en.csharp-online.net/) wiki page [ASP.NET "
 "Security Hacks--Avoiding SQL Injection](http://en.csharp-online.net/ASP."
 "NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection)"
-=======
-msgid "С сайта [C# Online](http://en.csharp-online.net/), из вики-странички [ASP.NET Security Hacks--Avoiding SQL Injection](http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection)"
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/csharp.md.tt2:6
@@ -266,24 +249,19 @@ msgstr ""
 
 #: s/csharp.md.tt2:11
 msgid ""
-<<<<<<< HEAD
 "    SqlParameter userNameParam = userInfoQuery.Parameters.Add(\"@UserName"
 "\",\n"
 "        SqlDbType.VarChar, 25 /* max length of field */ );"
-=======
-"    SqlParameter userNameParam = userInfoQuery.Parameters.Add(\"@UserName\",\n"
-"        SqlDbType.VarChar, 25 /* максимальная длина поля */ );"
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/csharp.md.tt2:14
 msgid ""
-"    // userName — это строка, которую ввел пользователь\n"
+"    // userName is some string valued user input variable\n"
 "    userNameParam.Value = userName;"
 msgstr ""
 
 #: s/csharp.md.tt2:17
-msgid "Или проще:"
+msgid "Or simpler:"
 msgstr ""
 
 #: s/csharp.md.tt2:19
@@ -302,7 +280,7 @@ msgid ""
 msgstr ""
 
 #: s/delphi.md.tt2:4
-msgid "Пример использования подготовленных выражений:"
+msgid "To use a prepared statement, do something like this:"
 msgstr ""
 
 #: s/delphi.md.tt2:6
@@ -321,63 +299,50 @@ msgid ""
 msgstr ""
 
 #: s/dotnet.md.tt2:4
-msgid "Ссылки:"
+msgid "Reference:"
 msgstr ""
 
 #: s/dotnet.md.tt2:6
-<<<<<<< HEAD
 msgid ""
 "-    [SqlCommand.Prepare](http://msdn.microsoft.com/en-us/library/system."
 "data.sqlclient.sqlcommand.prepare.aspx) in the .NET Framework Class Library"
-=======
-msgid "-    Метод [SqlCommand.Prepare](http://msdn.microsoft.com/ru-ru/library/system.data.sqlclient.sqlcommand.prepare.aspx) в библиотеке классов .NET Framework"
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/dotnet.md.tt2:8
-msgid "Статьи:"
+msgid "Articles:"
 msgstr ""
 
 #: s/dotnet.md.tt2:10
 msgid ""
-<<<<<<< HEAD
 "-   [SQL injection](http://msdn.microsoft.com/en-us/library/ms161953.aspx) "
 "on MSDN\n"
 "-   [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/"
 "archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET "
 "Debugging blog"
-=======
-"-   [«Атака путем внедрения кода SQL»](http://msdn.microsoft.com/ru-ru/library/ms161953(v=SQL.100).aspx) на портале MSDN\n"
-"-   [«SQL-инъекции и способы защиты от них»](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) в блоге ASP.NET Debugging"
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/dotnet.md.tt2:16
 msgid ""
-"-   Добавить больше материала\n"
-"-   Добавить примеры кода\n"
+"-   Add some narrative\n"
+"-   Show code examples\n"
 msgstr ""
 
 #: s/index.md.tt2:1
 msgid ""
-"Кто такой Робин-Брось-Таблицу?\n"
+"Who is Bobby Tables?\n"
 "===================="
 msgstr ""
-"Кто такой Робин-Брось-Таблицу?\n"
+"(Russian translation of \"Who is Bobby Tables?\")\n"
 "===================="
 
 #: s/index.md.tt2:4
-msgid "[Из комикса _xkcd_](http://xkcd.ru/327/)"
+msgid "[From the webcomic _xkcd_](http://xkcd.com/327/)"
 msgstr ""
 
 #: s/index.md.tt2:6
-<<<<<<< HEAD
 msgid ""
 "<a href=\"http://xkcd.com/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd Bobby "
 "Tables Cartoon\" height=\"205\" width=\"666\" /></a>"
-=======
-msgid "<a href=\"http://xkcd.ru/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd Мамины эксплойты\" height=\"205\" width=\"666\" /></a>"
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/index.md.tt2:8
@@ -385,202 +350,89 @@ msgid "<br clear=\"right\">"
 msgstr ""
 
 #: s/index.md.tt2:10
-<<<<<<< HEAD
 msgid ""
 "**School**: Hi, this is your son's school. We're having some computer "
 "trouble."
-=======
-msgid "**Школа**: Здравствуйте, это из школы, где учится ваш сын. У нас тут неприятности с компьютером."
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/index.md.tt2:12
-msgid "**Мама**: О, боже. Он что-то сломал?"
+msgid "**Mom**: Oh, dear -- Did he break something?"
 msgstr ""
 
 #: s/index.md.tt2:14
-<<<<<<< HEAD
 msgid ""
 "**School**: In a way. Did you really name your son `Robert'); DROP TABLE "
 "Students;--`?"
-=======
-msgid "**Школа**: Можно сказать... Вы действительно назвали своего сына Роберт'); DROP TABLE Students;--?"
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/index.md.tt2:16
-msgid "**Мама**: А, да. Дома мы его зовем Робин-Брось-Таблицу."
+msgid "**Mom**: Oh. Yes. Little Bobby Tables we call him."
 msgstr ""
 
 #: s/index.md.tt2:18
-<<<<<<< HEAD
 msgid ""
 "**School**: Well, we've lost this year's student records. I hope you're "
 "happy."
-=======
-msgid "**Школа**: Теперь у нас стерлась база учеников за этот год. Надеюсь, вы рады."
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
 msgstr ""
 
 #: s/index.md.tt2:20
-msgid "**Мама**: А я надеюсь, что это научит вас экранировать символы во входных данных."
+msgid "**Mom**: And I hope you've learned to sanitize your database inputs."
 msgstr ""
 
-<<<<<<< HEAD
 #: s/index.md.tt2:24
-=======
-#: s/index.md.tt2:22
 msgid ""
-"\n"
-"Почему в школе Роберта потеряли базу учеников?\n"
-"=========================================="
-msgstr ""
-
-#: s/index.md.tt2:26
-msgid "Очевидно, записи обо всех учениках в школе хранятся в таблице с названием Students. Когда приходит новый ученик, в таблицу вставляется новая запись с его именем. Код вставки может выглядеть так:"
-msgstr ""
-
-#: s/index.md.tt2:28
-msgid ""
-"    $sql = \"INSERT INTO Students (Name) VALUES ('\" . $studentName . \"');\";\n"
-"    execute_sql($sql);"
-msgstr ""
-
-#: s/index.md.tt2:31
-msgid "The first line creates a string containing an SQL INSERT statement. The content of the `$studentName` variable is glued into the SQL statement. The second line sends the resulting SQL statement to the database. The pitfall of this code is that outside data, in this case the content of `$studentName`, becomes part of the SQL statement."
-msgstr ""
-
-#: s/index.md.tt2:33
-msgid "First let's see what the SQL statement looks like if we insert a student named John:"
-msgstr ""
-
-#: s/index.md.tt2:35
-msgid "    INSERT INTO Students (Name) VALUES ('John');"
-msgstr ""
-
-#: s/index.md.tt2:37
-msgid "This does exactly what we want: it inserts John into the Students table."
-msgstr ""
-
-#: s/index.md.tt2:39
-msgid "Now we insert little Bobby Tables, by setting `$studentName` to `Robert'); DROP TABLE Students;--`. The SQL statement becomes:"
-msgstr ""
-
-#: s/index.md.tt2:41
-msgid "    INSERT INTO Students (Name) VALUES ('Robert'); DROP TABLE Students;--');"
-msgstr ""
-
-#: s/index.md.tt2:43
-msgid "Это команда вставляет запись о Роберте в таблицу Students. Однако, после команды INSERT идет команда DROP TABLE, которая удаляет всю таблицу студентов. Ой!"
-msgstr ""
-
-#: s/index.md.tt2:45
-msgid ""
-"\n"
-"Как избежать случая с Робертом-Брось-Таблицу\n"
-"========================="
-msgstr ""
-
-#: s/index.md.tt2:49
-msgid "Есть только один способ избежать таких атак"
-msgstr ""
-
-#: s/index.md.tt2:51
-msgid ""
-"* Не создавайте SQL выражений, которыесодержат пользовательский ввод.\n"
-"* Используйте параметризованные SQL вызовы."
-msgstr ""
-
-#: s/index.md.tt2:54
-msgid "Вот и все. Не пытайтесь экранировать неверные символы самостоятельно. Не пытайтесь делать это сами. Научитесь использовать параметризованные выражения. Каждый раз, всегда."
-msgstr ""
-
-#: s/index.md.tt2:56
-msgid "В комиксе есть одна ошибка. \"Экранировать входные данные\" самому — это неверный способ, он подвержен ошибкам."
-msgstr ""
-
-#: s/index.md.tt2:58
->>>>>>> dea5b38... Translated pages from ASP to Delphi, part of index page.
-msgid ""
-"Примеры\n"
+"Examples\n"
 "========"
 msgstr ""
 
-<<<<<<< HEAD
 #: s/index.md.tt2:27
 msgid "See the sidebar to the left for your specific language."
-=======
-#: s/index.md.tt2:61
-msgid "Смотрите разделы меню слева, чтобы увидеть примеры для конкретного языка."
->>>>>>> f3dc656... Completed translation of index page. Started Java page.
 msgstr ""
 
 #: s/index.md.tt2:29
 msgid ""
-"Другие ресурсы\n"
+"Other random resources\n"
 "======================"
 msgstr ""
 
 #: s/index.md.tt2:32
 msgid ""
-<<<<<<< HEAD
 "* [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/"
 "sql-injection-myths-and-fallacies)\n"
 "* [How to Write Injection-Proof SQL](http://www.schneier.com/blog/"
 "archives/2008/10/how_to_write_in.html)\n"
 "* [Defending Against SQL Injection Attacks](http://download.oracle.com/oll/"
 "tutorials/SQLInjection/index.htm)"
-=======
-"* [Мифы и заблуждения об SQL инъекциях](http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies)\n"
-"* [Как писать SQL, устойчивый к инъекциям](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)\n"
-"* [Защиты от SQL инъекций](http://download.oracle.com/oll/tutorials/SQLInjection/index.htm)"
->>>>>>> 347ae2b... JDBC and Hibernate parts have been translated.
 msgstr ""
 
 #: s/index.md.tt2:36
 msgid ""
-"Дополнения приветствуются\n"
+"Patches welcome\n"
 "==============="
 msgstr ""
 
-<<<<<<< HEAD
 #: s/index.md.tt2:39
 msgid ""
 "Don't see a language that you'd like to see represented? Please let me know "
 "if you have updates or additions through one of these methods, in decreasing "
 "order of preference."
-=======
-#: s/index.md.tt2:73
-<<<<<<< HEAD
-msgid "Не находите нужного вам языка?Пожалуйста, дайте знать, если у вас есть какие-либо изменения или дополнения, перечисленные ниже в порядке убывания важности:"
->>>>>>> f3dc656... Completed translation of index page. Started Java page.
-=======
-msgid "Не находите нужного вам языка? Пожалуйста, дайте знать, если у вас есть какие-либо изменения или дополнения, перечисленные ниже в порядке убывания предпочтительности:"
->>>>>>> 347ae2b... JDBC and Hibernate parts have been translated.
 msgstr ""
 
 #: s/index.md.tt2:41
 msgid ""
-<<<<<<< HEAD
 "* Fork the [bobby-tables repository at github](http://github.com/petdance/"
 "bobby-tables), make your changes, and send me a pull request.\n"
 "* Add an issue in the [issue tracker](http://github.com/petdance/bobby-"
 "tables/issues).\n"
 "* Email me, Andy Lester, at andy at petdance.com."
-=======
-"* Сделайте ветку [репозитория bobby-tables на github](http://github.com/petdance/bobby-tables), сделайте необходимые изменения, и пришлите запрос на изменение.\n"
-"* Добавьте заявку в [трекер](http://github.com/petdance/bobby-tables/issues).\n"
-"* Напишите мне, Энди Лестеру, по адресу andy at petdance.com."
->>>>>>> f3dc656... Completed translation of index page. Started Java page.
 msgstr ""
 
 #: s/index.md.tt2:45
 msgid ""
-"Переводы также приветствуются\n"
+"Translations also welcome\n"
 "========================="
 msgstr ""
 
-<<<<<<< HEAD
 #: s/index.md.tt2:48
 msgid ""
 "Help translate this site! There are less than 200 phrases. No programming "
@@ -591,41 +443,28 @@ msgstr ""
 msgid ""
 "See the instructions at the [bobby-tables repository at github](http://"
 "github.com/petdance/bobby-tables#readme)."
-=======
-#: s/index.md.tt2:82
-msgid "Помогите перевести этот сайт! Тут меньше двухсот фраз. И никакого программирования."
-msgstr ""
-
-#: s/index.md.tt2:84
-msgid "Смотрите инструкции в [репозитории bobby-tables на github](http://github.com/petdance/bobby-tables#readme)."
->>>>>>> f3dc656... Completed translation of index page. Started Java page.
 msgstr ""
 
 #: s/index.md.tt2:52
 msgid ""
-"Список дел\n"
+"To do\n"
 "====="
 msgstr ""
 
 #: s/index.md.tt2:55
 msgid ""
-"* Объяснить, почему создание кода, содержащего данные извне, это плохо.\n"
-"* Потенциальный прирост в скорости выполнения запросов при использовании подготовленных выражений."
+"* Explain why creating code from outside data is bad.\n"
+"* Potential speed win when reusing prepared statements."
 msgstr ""
 
 #: s/index.md.tt2:58
 msgid ""
-"Благодарности\n"
+"Thanks\n"
 "======"
 msgstr ""
 
-<<<<<<< HEAD
 #: s/index.md.tt2:61
 msgid "Thanks to the following folks for their contributions:"
-=======
-#: s/index.md.tt2:95
-msgid "Спасибо следующим людям за их вклад:"
->>>>>>> f3dc656... Completed translation of index page. Started Java page.
 msgstr ""
 
 #: s/index.md.tt2:63
@@ -669,7 +508,6 @@ msgstr ""
 
 #: s/java.md.tt2:7
 msgid ""
-<<<<<<< HEAD
 "The [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html)\n"
 "has a class called\n"
 "[`PreparedStatement`](http://download.oracle.com/javase/6/docs/api/java/sql/"
@@ -678,26 +516,17 @@ msgid ""
 "into a SQL query.  The location of each input value in the query\n"
 "string is marked with a question mark.  The various `set*()` methods\n"
 "are then used to safely perform the insertion."
-=======
-"В [JDBC API](http://download.oracle.com/javase/tutorial/jdbc/index.html)\n"
-"содержится класс,\n"
-"[`PreparedStatement`](http://download.oracle.com/javase/6/docs/api/java/sql/PreparedStatement.html)\n"
-"который позволяет разработчику безопасно вставлять данные из пользовательского ввода\n"
-"в SQL запрос. Позиция каждого входного значения в запросе\n"
-"помечена вопросительным знаком. Затем используются различные `set*()` методы\n"
-"для того чтобы безопасно произвести вставки."
->>>>>>> f3dc656... Completed translation of index page. Started Java page.
 msgstr ""
 
 #: s/java.md.tt2:15
 msgid ""
-"    String name = //пользовательский ввод\n"
-"    int age = //пользовательский ввод\n"
+"    String name = //user input\n"
+"    int age = //user input\n"
 "    Connection connection = DriverManager.getConnection(...);\n"
 "    PreparedStatement statement = connection.prepareStatement(\n"
 "            \"SELECT * FROM people WHERE lastName = ? AND age > ?\" );\n"
-"    statement.setString(1, name); //lastName это VARCHAR\n"
-"    statement.setInt(2, age); //age это INT\n"
+"    statement.setString(1, name); //lastName is a VARCHAR\n"
+"    statement.setInt(2, age); //age is an INT\n"
 "    ResultSet rs = statement.executeQuery();\n"
 "    while (rs.next()){\n"
 "        //...\n"
@@ -707,18 +536,19 @@ msgstr ""
 #: s/java.md.tt2:27
 msgid ""
 "\n"
-"После того как объект `PreparedStatement` был создан, он может быть использован\n"
-"много раз для разных запросов (например, для выполнения\n"
-"одного и того же запроса на обновления разных записей). Однако такие вызовы\n"
-"**неявляются потокобезопасными**, поскольку при установке параметров и выполнении запроса\n"
-"вызывается множество методов.  Поэтому для избежания проблем\n"
-"с многопоточностью следует использовать объект `PreparedStatement`\n"
-"как локальную переменную метода нежели как поле класса."
+"Once a `PreparedStatement` object has been created, it can be reused\n"
+"multiple times for multiple queries (for example, when using the\n"
+"same query to update multiple rows in a table).  However, they are\n"
+"**not thread-safe** because of the many method calls involved in\n"
+"setting the parameters and executing the query.  Therefore, you\n"
+"should only define `PreparedStatement` objects as method-level\n"
+"variables (as opposed to class-level variables) to avoid concurrency\n"
+"issues."
 msgstr ""
 
 #: s/java.md.tt2:37
 msgid ""
-"    List<Person>; people = //пользовательский ввод\n"
+"    List<Person>; people = //user input\n"
 "    Connection connection = DriverManager.getConnection(...);\n"
 "    connection.setAutoCommit(false);\n"
 "    try {\n"
@@ -738,14 +568,9 @@ msgstr ""
 
 #: s/java.md.tt2:54
 msgid ""
-<<<<<<< HEAD
 "More information on `PreparedStatement` can be found in the\n"
 "[Oracle JDBC tutorial](http://download.oracle.com/javase/tutorial/jdbc/"
 "basics/prepared.html)."
-=======
-"Больше информации о классе `PreparedStatement` можно найти в:\n"
-"[Руководство Oracle по JDBC](http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html)."
->>>>>>> 347ae2b... JDBC and Hibernate parts have been translated.
 msgstr ""
 
 #: s/java.md.tt2:57
@@ -756,15 +581,15 @@ msgstr ""
 
 #: s/java.md.tt2:60
 msgid ""
-"[Hibernate](http://www.hibernate.org/) использует именованные параметры\n"
-"для безопасной вставки данных в запрос.  Именованный параметр состоит из\n"
-"двоеточия и уникального имени параметра."
+"[Hibernate](http://www.hibernate.org/) uses named parameters to\n"
+"safely insert data into a query.  A named parameter consists of a\n"
+"colon, followed by a unique name for the parameter."
 msgstr ""
 
 #: s/java.md.tt2:64
 msgid ""
-"    String name = //пользовательски ввод\n"
-"    int age = //пользовательски ввод\n"
+"    String name = //user input\n"
+"    int age = //user input\n"
 "    Session session = //...\n"
 "    Query query = session.createQuery(\"from People where lastName = :name "
 "and age > :age\");\n"
@@ -775,23 +600,17 @@ msgstr ""
 
 #: s/java.md.tt2:72
 msgid ""
-"В Hibernate также можно использовать позиционные параметры, как и в `PreparedStatement`,\n"
-"однако использование именованных параметров более предпочтительно,\n"
-"поскольку они повышают читаемость."
+"Hibernate also supports positional parameters like `PreparedStatement`,\n"
+"but named parameters are generally preferred because they make the\n"
+"query a little easier to read."
 msgstr ""
 
 #: s/java.md.tt2:76
 msgid ""
-<<<<<<< HEAD
 "See the\n"
 "[Hibernate Manual](http://docs.jboss.org/hibernate/stable/core/reference/en/"
 "html/objectstate.html#objectstate-querying-executing-parameters)\n"
 "for more information on named parameters."
-=======
-"Смотрите\n"
-"[Руководство по Hibernate](http://docs.jboss.org/hibernate/stable/core/reference/en/html/objectstate.html#objectstate-querying-executing-parameters)\n"
-"для более подробной информации об именованных параметрах."
->>>>>>> 347ae2b... JDBC and Hibernate parts have been translated.
 msgstr ""
 
 #: s/java.md.tt2:80
@@ -802,29 +621,29 @@ msgstr ""
 
 #: s/java.md.tt2:83
 msgid ""
-"[MyBatis](http://www.mybatis.org/) — это фреймворк для работы с базой данных,\n"
-"который скрывает от разработчика большинство JDBC кода,\n"
-"позволяя сфокусироваться на самих запросах.  SQL запросы обычно\n"
-"хранятся в XML файлах."
+"[MyBatis](http://www.mybatis.org/) is a database framework that\n"
+"hides a lot of the JDBC code from the developer, allowing him or\n"
+"her to focus on writing SQL.  The SQL statements are typically\n"
+"stored in XML files."
 msgstr ""
 
 #: s/java.md.tt2:88
 msgid ""
-"Внутри MyBatis автоматически создает объекты `PreparedStatement`.\n"
-"Разработчику ничего не нужно для этого делать."
+"MyBatis automatically creates `PreparedStatement`s behind the scenes.\n"
+"Nothing extra needs to be done by the programmer."
 msgstr ""
 
 #: s/java.md.tt2:91
 msgid ""
-"Ниже расположен пример, который поясняет на практике основы\n"
-"выполнения запросов с MyBatis.  Входные данные передаются в объект\n"
-"`PeopleMapper`, а затем вставляются с помощью запроса\n"
-"\"selectPeopleByNameAndAge\"."
+"To give you some context, here's an example showing how a basic\n"
+"query is called with MyBatis.  The input data is passed into the\n"
+"`PeopleMapper` instance and then it gets inserted into the\n"
+"\"selectPeopleByNameAndAge\" query."
 msgstr ""
 
 #: s/java.md.tt2:96
 msgid ""
-"XML документ с привязками\n"
+"XML mapping document\n"
 "===================="
 msgstr ""
 
@@ -836,7 +655,7 @@ msgid ""
 "    \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\n"
 "    <mapper namespace=\"com.bobbytables.mybatis.PeopleMapper\">\n"
 "    <select id=\"selectPeopleByNameAndAge\" resultType=\"list\">\n"
-"        <!-- lastName и age автоматически эскапируются --->\n"
+"        <!-- lastName and age are automatically sanitized --->\n"
 "        SELECT * FROM people WHERE lastName = #{lastName} AND age > #{age}\n"
 "    </select>\n"
 "    </mapper>"
@@ -844,7 +663,7 @@ msgstr ""
 
 #: s/java.md.tt2:110
 msgid ""
-"Класс Mapper'а\n"
+"Mapper class\n"
 "============"
 msgstr ""
 
@@ -858,24 +677,20 @@ msgstr ""
 
 #: s/java.md.tt2:117
 msgid ""
-"Выполнение запроса\n"
+"Invoking the query\n"
 "=================="
 msgstr ""
 
 #: s/java.md.tt2:120
 msgid ""
-"    String name = //пользовательский ввод\n"
-"    int age = //пользовательский ввод\n"
+"    String name = //user input\n"
+"    int age = //user input\n"
 "    SqlSessionFactory sqlMapper = //...\n"
 "    SqlSession session = sqlMapper.openSession();\n"
 "    try {\n"
 "        PeopleMapper mapper = session.getMapper(PeopleMapper.class);\n"
-<<<<<<< HEAD
 "        List<Person> people = mapper.selectPeopleByNameAndAge(name, age); //"
 "data is automatically sanitized\n"
-=======
-"        List<Person> people = mapper.selectPeopleByNameAndAge(name, age); //данные автоматически эскапируются\n"
->>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 "        for (Person person : people) {\n"
 "            //...\n"
 "        }\n"
@@ -891,15 +706,11 @@ msgid ""
 msgstr ""
 
 #: s/perl.md.tt2:4
-<<<<<<< HEAD
 msgid ""
 "Perl's [DBI](http://search.cpan.org/dist/DBI), available on the [CPAN]"
 "(http://search.cpan.org), supports parameterized SQL calls.  Both the `do` "
 "method and `prepare` method support parameters (\"placeholders\", as they "
 "call them) for most database drivers. For example:"
-=======
-msgid "Perl [DBI](http://search.cpan.org/dist/DBI), доступный на [CPAN](http://search.cpan.org), поддерживает параметризованные SQL запросы.  Оба метода — `do` и `prepare` — поддерживают параметры (они называются \"метками\") для большинства баз данных. Например:"
->>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 msgstr ""
 
 #: s/perl.md.tt2:6
@@ -915,19 +726,20 @@ msgstr ""
 
 #: s/perl.md.tt2:14
 msgid ""
-"Однако параметризацию нельзя использовать для идентификаторов (имен таблиц,\n"
-"имен колонок), поэтому необходимо использовать метод DBI `quote_identifier()`:"
+"However, you can't use parameterization for identifiers (table\n"
+"names, column names) so you need to use DBI's `quote_identifier()`\n"
+"method for that:"
 msgstr ""
 
 #: s/perl.md.tt2:18
 msgid ""
-"    # Убедимся, что имя таблицы, которое мы хотим использовать, является безопасным:\n"
+"    # Make sure a table name we want to use is safe:\n"
 "    my $quoted_table_name = $dbh->quote_identifier($table_name);"
 msgstr ""
 
 #: s/perl.md.tt2:21
 msgid ""
-"    # Предполагается, что @cols содержит список имен колонок, из которых вы хотите выбрать данные:\n"
+"    # Assume @cols contains a list of column names you need to fetch:\n"
 "    my $cols = join ',', map { $dbh->quote_identifier($_) } @cols;"
 msgstr ""
 
@@ -937,64 +749,52 @@ msgid ""
 msgstr ""
 
 #: s/perl.md.tt2:26
-<<<<<<< HEAD
 msgid ""
 "You could also avoid writing SQL by hand by using [DBIx::Class](http://p3rl."
 "org/DBIx::Class), [SQL::Abstract](http://p3rl.org/SQL::Abstract) etc to "
 "generate your SQL for you programmatically."
-=======
-msgid "Вы можете также вручную писать запросы с использованием [DBIx::Class](http://p3rl.org/DBIx::Class), [SQL::Abstract](http://p3rl.org/SQL::Abstract) и т.д., которые сгенерируют нужный SQL код."
->>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 msgstr ""
 
 #: s/perl.md.tt2:28
 msgid ""
-"Режим Taint\n"
+"What is Taint mode?\n"
 "-------------------"
 msgstr ""
 
 #: s/perl.md.tt2:31
-<<<<<<< HEAD
 msgid ""
 "Taint mode is a special set of security checks that Perl performs on data "
 "input into your program from external sources. The input data is marked as  "
 "tainted (untrusted) and may not be used in commands that would allow you to "
 "shoot yourself in the foot. See [the perlsec manpage](http://perldoc.perl."
 "org/perlsec.html) for a detailed breakdown of what taint mode tracks."
-=======
-msgid "Режим Taint содержит набор специальных проверок безопасности, который Perl выполняет над входными данными вашей программы. Входные данные помечаются "грязными" (непроверенными) и не могут быть использованы в командах, с помощью которых вы можете выстрелить себе в ногу. За более детальной информацией обратитесь к [странице помощи perlsec](http://perldoc.perl.org/perlsec.html)."
->>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 msgstr ""
 
 #: s/perl.md.tt2:33
-msgid "Включение taint режима:"
+msgid "To invoke taint mode:"
 msgstr ""
 
 #: s/perl.md.tt2:35
 msgid ""
-"    # Из командной строки\n"
+"    # From the command line\n"
 "    perl -T program.pl"
 msgstr ""
 
 #: s/perl.md.tt2:38
 msgid ""
-"    # В начале скрипта\n"
+"    # At the top of your script\n"
 "    #!/usr/bin/perl -T"
 msgstr ""
 
 #: s/perl.md.tt2:41
-<<<<<<< HEAD
 msgid ""
 "When your script trips one of the taint checks your application will issue a "
 "fatal error message. For testing purposes `-t` will issue warnings instead "
 "of fatal errors. `-t` is not a substitute for `-T`."
-=======
-msgid "Когда в приложении не срабатывает какая-либо проверка, возникает ошибка. Для отладки используйте параметр `-t`: вместо ошибок будут выдаватьсчя предупреждения. `-t` не является заменой `-T`."
->>>>>>> 79a3f0b... MyBatis and Perl parts have been translated.
 msgstr ""
 
 #: s/perl.md.tt2:46
-msgid "Объяснить, как DBI поддерживаем taint режим, входящий и исходящий.\n"
+msgid "Explain how DBI supports taint mode, both inbound and outbound.\n"
 msgstr ""
 
 #: s/php.md.tt2:1
@@ -1005,10 +805,11 @@ msgstr ""
 
 #: s/php.md.tt2:4
 msgid ""
-"В PHP поддержка параметров менее организованна, чем в [Perl](./perl.html).\n"
-"Стандартное [расширение MySQL](http://php.net/manual/en/book.mysql.php)\n"
-"не поддерживает параметризацию, а, например,\n"
-"[PostgreSQL расширение](http://www.php.net/manual/en/book.pgsql.php) поддерживает:"
+"PHP is a little more disorganized than how\n"
+"[Perl handles parameters](./perl.html).\n"
+"The standard [MySQL extension](http://php.net/manual/en/book.mysql.php)\n"
+"doesn't support parameterization, although the\n"
+"[PostgreSQL extension](http://www.php.net/manual/en/book.pgsql.php) does:"
 msgstr ""
 
 #: s/php.md.tt2:10
@@ -1019,25 +820,26 @@ msgstr ""
 
 #: s/php.md.tt2:12
 msgid ""
-"Обратите внимание, что запрос должен быть обрамлен одинарными кавычками или же симпол '$' должен быть эскапирован, чтобы PHP не принял его за переменную."
+"Note that the query must be in single-quotes or have the `$` escaped\n"
+"to avoid PHP trying to parse it as a variable."
 msgstr ""
 
 #: s/php.md.tt2:15
 msgid ""
-"**Однако лучше всего** следует использовать дополнительный уровень абстракции.\n"
-"[ODBC](http://php.net/manual/en/book.uodbc.php) и\n"
-"[PDO](http://www.php.net/manual/en/book.pdo.php) расширения\n"
-"поддерживают параметризацию и запросы к разным базам данных:"
+"**However**, you should probably be using an abstraction layer.\n"
+"The [ODBC](http://php.net/manual/en/book.uodbc.php) and\n"
+"[PDO](http://www.php.net/manual/en/book.pdo.php) extensions both\n"
+"support parameterization and multiple databases:"
 msgstr ""
 
 #: s/php.md.tt2:20
 msgid ""
-"Использование mysqli\n"
+"Using mysqli\n"
 "------------"
 msgstr ""
 
 #: s/php.md.tt2:23
-msgid "Расширение MySQL Improved умеет обрабатывать связанные параметры."
+msgid "The MySQL Improved extension handles bound parameters."
 msgstr ""
 
 #: s/php.md.tt2:25
@@ -1049,18 +851,14 @@ msgstr ""
 
 #: s/php.md.tt2:29
 msgid ""
-"Использование ADODB\n"
+"Using ADODB\n"
 "-----------"
 msgstr ""
 
 #: s/php.md.tt2:32
-<<<<<<< HEAD
 msgid ""
 "ADODB provides a way to prepare, bind and execute all in the same method "
 "call."
-=======
-msgid "ADODB предоставляет возможность подготавливать, связывать и выполнять запрос с помощью одного метода."
->>>>>>> fb474a2... PHP part has been translated.
 msgstr ""
 
 #: s/php.md.tt2:34
@@ -1075,7 +873,7 @@ msgstr ""
 
 #: s/php.md.tt2:40
 msgid ""
-"Использование ODBC слоя\n"
+"Using the ODBC layer\n"
 "--------------------"
 msgstr ""
 
@@ -1086,7 +884,7 @@ msgid ""
 msgstr ""
 
 #: s/php.md.tt2:46
-msgid "Или:"
+msgid "Or:"
 msgstr ""
 
 #: s/php.md.tt2:48
@@ -1099,12 +897,12 @@ msgstr ""
 
 #: s/php.md.tt2:52
 msgid ""
-"Использование PDO слоя\n"
+"Using the PDO layer\n"
 "-------------------"
 msgstr ""
 
 #: s/php.md.tt2:55
-msgid "Вот длинный способ связывания параметров со значениями."
+msgid "Here's the long way to do bind parameters."
 msgstr ""
 
 #: s/php.md.tt2:57
@@ -1118,14 +916,14 @@ msgstr ""
 
 #: s/php.md.tt2:62
 msgid ""
-"    // вставка одной записи\n"
+"    // insert one row\n"
 "    $name = 'one';\n"
 "    $value = 1;\n"
 "    $stmt->execute();"
 msgstr ""
 
 #: s/php.md.tt2:67
-msgid "А вот более короткий способ."
+msgid "And a shorter way to pass things in."
 msgstr ""
 
 #: s/php.md.tt2:69
@@ -1143,7 +941,7 @@ msgid ""
 msgstr ""
 
 #: s/plsql.md.tt2:4
-msgid "В примерах используется таблица со следующей структурой:"
+msgid "Examples assume the following table structure:"
 msgstr ""
 
 #: s/plsql.md.tt2:6
@@ -1165,12 +963,12 @@ msgstr ""
 
 #: s/plsql.md.tt2:17
 msgid ""
-"Если возможно, всегда выбирайте статический SQL\n"
+"Always prefer static SQL when possible\n"
 "--------------------------------------"
 msgstr ""
 
 #: s/plsql.md.tt2:20
-msgid "Статический SQL позволяет избежать инъекций."
+msgid "Static SQL leaves no room for SQL injection."
 msgstr ""
 
 #: s/plsql.md.tt2:22
@@ -1217,12 +1015,12 @@ msgstr ""
 #: s/plsql.md.tt2:46
 msgid ""
 "\n"
-"Если все же нужно использовать динамический SQL, избегайте конкатенации строк\n"
+"If you need dynamic SQL avoid string concatenation when possible\n"
 "----------------------------------------------------------------"
 msgstr ""
 
 #: s/plsql.md.tt2:50
-msgid "Конкатенация строк позволяет инъектировать SQL:"
+msgid "String concatenation opens doors to possible SQL injection exploits:"
 msgstr ""
 
 #: s/plsql.md.tt2:52
@@ -1249,7 +1047,7 @@ msgid ""
 msgstr ""
 
 #: s/plsql.md.tt2:79
-msgid "Вместо этого используйте связанные переменные:"
+msgid "Instead use bind variables:"
 msgstr ""
 
 #: s/plsql.md.tt2:81
@@ -1270,12 +1068,11 @@ msgstr ""
 
 #: s/plsql.md.tt2:108
 msgid ""
-"Неявная инъекция при конвертировании типов данных\n"
+"Implicit Data Type Conversion Injection\n"
 "---------------------------------------"
 msgstr ""
 
 #: s/plsql.md.tt2:111
-<<<<<<< HEAD
 msgid ""
 "Also NLS session parameters (`NLS_DATE_FORMAT`, `NLS_TIMESTAMP_FORMAT`, "
 "`NLS_TIMESTAMP_TZ_FORMAT`, `NLS_NUMERIC_CHARACTER`) can be used to modify or "
@@ -1287,13 +1084,6 @@ msgid ""
 "In next example data type conversion takes place when `p_since` is "
 "implicitly converted to a string for concatenation. Note how the value of "
 "`NLS_DATE_FORMAT` affects to the query string in `users_since()` function!"
-=======
-msgid "Параметры сессии NLS (`NLS_DATE_FORMAT`, `NLS_TIMESTAMP_FORMAT`, `NLS_TIMESTAMP_TZ_FORMAT`, `NLS_NUMERIC_CHARACTER`) также могут быть использованы для того что бы изменять или инъектировать SQL выражения."
-msgstr ""
-
-#: s/plsql.md.tt2:113
-msgid "В следующем примере происходит конвертация типов данных, когда `p_since` неявно когвертируется в строку, а затем результат используется для конкатенации. Обратите внимание, что значение `NLS_DATE_FORMAT` влияет на тсроку запроса в функции `users_since()`!"
->>>>>>> c61a923... PL/SQL part has been translated.
 msgstr ""
 
 #: s/plsql.md.tt2:115 s/plsql.md.tt2:163
@@ -1381,13 +1171,9 @@ msgid ""
 msgstr ""
 
 #: s/plsql.md.tt2:161
-<<<<<<< HEAD
 msgid ""
 "The remedy is to set the format modifier explicitly: `to_char(p_since, 'YYYY-"
 "MM-DD')`."
-=======
-msgid "Спасение в том, чтобы задавать идентификатор формата явно: `to_char(p_since, 'YYYY-MM-DD')`."
->>>>>>> c61a923... PL/SQL part has been translated.
 msgstr ""
 
 #: s/plsql.md.tt2:168
@@ -1405,12 +1191,8 @@ msgid ""
 msgstr ""
 
 #: s/plsql.md.tt2:186
-<<<<<<< HEAD
 msgid ""
 "Now the value of NLS parameter `NLS_DATE_FORMAT` is ignored during the query."
-=======
-msgid "Теперь значение NLS параметра `NLS_DATE_FORMAT` будет проигнорировано."
->>>>>>> c61a923... PL/SQL part has been translated.
 msgstr ""
 
 #: s/plsql.md.tt2:188
@@ -1443,15 +1225,11 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:4
-<<<<<<< HEAD
 msgid ""
 "All of PostgreSQL's [procedural languages](http://www.postgresql.org/docs/"
 "current/static/xplang.html), which allow you to write functions and "
 "procedures inside the database, allow you to execute arbitrary SQL "
 "statements."
-=======
-msgid "Все [процедурные языки](http://www.postgresql.org/docs/current/static/xplang.html) PostgreSQL, которые позволяют писать функции и процедуры для баз данных, позволяют также выполнять произвольные SQL выражения."
->>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:6
@@ -1461,12 +1239,8 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:9
-<<<<<<< HEAD
 msgid ""
 "The safest way to execute SQL inside a PL/pgSQL statement is just to do so:"
-=======
-msgid "Самый безопасный способ выполнения SQL внутри PL/pgSQL выражений:"
->>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:11
@@ -1481,13 +1255,9 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:19
-<<<<<<< HEAD
 msgid ""
 "For such a simple case, you're actually better off writing a pure SQL "
 "function:"
-=======
-msgid "Для такого простого случая лучше всего написать чистую SQL функцию:"
->>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:21
@@ -1500,15 +1270,11 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:27
-<<<<<<< HEAD
 msgid ""
 "But sometimes you have to do more complicated things. Perhaps you "
 "dynamically add `WHERE` clause expressions based on input. In such cases, "
 "you'll end up using PL/pgSQL's `EXECUTE` syntax. Here's an example with an "
 "SQL injection vulnerability:"
-=======
-msgid "Однако иногда приходится делать вещи посложнее. Возможно, вам нужно будет динамически добавить блок `WHERE`, основываясь на входных данных. В таких случаях пригодится синтаксис функции PL/pgSQL' `EXECUTE`. Вот пример кода, который уязвим для SQL инъекции:"
->>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:29
@@ -1530,15 +1296,11 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:44
-<<<<<<< HEAD
 msgid ""
 "Both the `p_column` and the `p_value` arguments are vulnerable. The way to "
 "avoid this problem is to use the `quote_ident()` function to quote an SQL "
 "identifier (`p_column` in this case) and `quote_lteral()` to quote a literal "
 "value:"
-=======
-msgid "Оба аргумента — `p_column` и `p_value` уязвимы. Чтобы избежать инъекции, нужно использовать функцию `quote_ident()` для SQL идентификатора (`p_column`) и `quote_lteral()` для значений:"
->>>>>>> 3a57ce0... Translating rest of text.
 msgstr ""
 
 #: s/postgresql.md.tt2:46
@@ -1560,7 +1322,7 @@ msgid ""
 msgstr ""
 
 #: s/postgresql.md.tt2:61
-msgid "Этот еще и читается легче!"
+msgid "It's quite a bit easier to read, too!"
 msgstr ""
 
 #: s/postgresql.md.tt2:63
@@ -1594,39 +1356,70 @@ msgid ""
 msgstr ""
 
 #: s/python.md.tt2:4
-<<<<<<< HEAD
 msgid ""
 "Using the [Python DB API](http://wiki.python.org/moin/DatabaseProgramming/), "
 "don't do this:"
-=======
-msgid "Используя [Python DB API](http://wiki.python.org/moin/DatabaseProgramming/), не делайте так:"
->>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: s/python.md.tt2:6
 msgid ""
-"    # НЕ делайте так.\n"
+"    # Do NOT do it this way.\n"
 "    cmd = \"update people set name='%s' where id='%s'\" % (name, id)\n"
 "    curs.execute(cmd)"
 msgstr ""
 
 #: s/python.md.tt2:10
-msgid "Лучше сделать так:"
+msgid "Instead, do this:"
 msgstr ""
 
 #: s/python.md.tt2:12
-msgid "    curs.execute('update people set name=:1 where id=:2', [name, id])"
+msgid ""
+"    cmd = \"update people set name=%s where id=%s\"\n"
+"    curs.execute(cmd, (name, id))"
 msgstr ""
 
-<<<<<<< HEAD
-#: s/python.md.tt2:17 s/ruby.md.tt2:18 s/scheme.md.tt2:18
-msgid "-   Add some narrative.\n"
-=======
+#: s/python.md.tt2:15
+msgid "Note that the placeholder syntax depends on the database you are using."
+msgstr ""
+
 #: s/python.md.tt2:17
-#: s/ruby.md.tt2:18
-#: s/scheme.md.tt2:18
-msgid "-   Добавить больше материала.\n"
->>>>>>> 7d76472... Some more translation.
+msgid ""
+"    'qmark'         Question mark style, \n"
+"                    e.g. '...WHERE name=?'\n"
+"    'numeric'       Numeric, positional style, \n"
+"                    e.g. '...WHERE name=:1'\n"
+"    'named'         Named style, \n"
+"                    e.g. '...WHERE name=:name'\n"
+"    'format'        ANSI C printf format codes, \n"
+"                    e.g. '...WHERE name=%s'\n"
+"    'pyformat'      Python extended format codes, \n"
+"                    e.g. '...WHERE name=%(name)s'\n"
+"                    \n"
+"The values for the most common databases are:"
+msgstr ""
+
+#: s/python.md.tt2:30
+msgid ""
+"    >>> import MySQLdb; print MySQLdb.paramstyle\n"
+"    format\n"
+"    >>> import psycopg2; print psycopg2.paramstyle\n"
+"    pyformat\n"
+"    >>> import sqlite3; print sqlite3.paramstyle\n"
+"    qmark\n"
+"    \n"
+"So if you are using MySQL or PostgreSQL, use `%s` (even for numbers and\n"
+"other non-string values!) and if you are using SQLite use `?`"
+msgstr ""
+
+#: s/python.md.tt2:40
+msgid ""
+"\n"
+"To do\n"
+"-----"
+msgstr ""
+
+#: s/python.md.tt2:44 s/ruby.md.tt2:18 s/scheme.md.tt2:18
+msgid "-   Add some narrative.\n"
 msgstr ""
 
 #: s/ruby.md.tt2:1
@@ -1636,13 +1429,9 @@ msgid ""
 msgstr ""
 
 #: s/ruby.md.tt2:4
-<<<<<<< HEAD
 msgid ""
 "In Ruby on Rails using [ActiveRecord](http://guides.rubyonrails.org/"
 "active_record_querying.html):"
-=======
-msgid "В Ruby on Rails используется шаблон [ActiveRecord](http://guides.rubyonrails.org/active_record_querying.html):"
->>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: s/ruby.md.tt2:6
@@ -1660,12 +1449,8 @@ msgstr ""
 #: s/ruby.md.tt2:12
 msgid ""
 "\n"
-<<<<<<< HEAD
 "Using [Ruby/DBI](http://ruby-dbi.rubyforge.org/): analog to [Perl](./perl."
 "html)."
-=======
-"Использование [Ruby/DBI](http://ruby-dbi.rubyforge.org/): аналог [Perl](./perl.html)."
->>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: s/scheme.md.tt2:1
@@ -1681,13 +1466,9 @@ msgid ""
 msgstr ""
 
 #: s/scheme.md.tt2:7
-<<<<<<< HEAD
 msgid ""
 "[CHICKEN](http://www.call-with-current-continuation.org/) is a compiler for "
 "[Scheme](http://schemers.org/)"
-=======
-msgid "[CHICKEN](http://www.call-with-current-continuation.org/) — это компилятор для языка [Scheme](http://schemers.org/)"
->>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: s/scheme.md.tt2:9
@@ -1828,14 +1609,10 @@ msgid ""
 msgstr ""
 
 #: tt/footer.tt:5
-<<<<<<< HEAD
 msgid ""
 "This site's content is available under the <a href=\"https://creativecommons."
 "org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 "
 "License</a>"
-=======
-msgid "Содержимое этого сайта распространяется по лицензии <a href=\"https://creativecommons.org/licenses/by-sa/3.0/\">Creative Commons Attribution-ShareAlike 3.0 License</a>"
->>>>>>> 7d76472... Some more translation.
 msgstr ""
 
 #: tt/footer.tt:8
@@ -1843,14 +1620,14 @@ msgid "Fork me on GitHub"
 msgstr ""
 
 #: tt/header.tt:6
-msgid "Bobby Tables: Руководство по предотвращению SQL инъекций"
+msgid "Bobby Tables: A guide to preventing SQL injection"
 msgstr ""
 
 #. (currlang)
 #: tt/page.tt:6
-msgid "bobby-tables.com: Руководство по предотвращению SQL инъекций, {currlang}"
+msgid "bobby-tables.com: A guide to preventing SQL injection in {currlang}"
 msgstr ""
 
 #: tt/page.tt:8
-msgid "bobby-tables.com: Руководство по предотвращению SQL инъекций"
+msgid "bobby-tables.com: A guide to preventing SQL injection"
 msgstr ""

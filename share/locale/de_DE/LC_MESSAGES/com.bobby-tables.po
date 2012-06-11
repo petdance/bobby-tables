@@ -216,8 +216,8 @@ msgstr ""
 "    objCmd.Execute(adExecuteNoRecords);\n"
 "    gblDelobjParams(objCmd);"
 
-#: s/asp.md.tt2:22 s/dotnet.md.tt2:13 s/perl.md.tt2:43 s/python.md.tt2:14
-#: s/ruby.md.tt2:15 s/scheme.md.tt2:15
+#: s/asp.md.tt2:22 s/dotnet.md.tt2:13 s/perl.md.tt2:43 s/ruby.md.tt2:15
+#: s/scheme.md.tt2:15
 msgid ""
 "To do\n"
 "-----"
@@ -1985,10 +1985,59 @@ msgid "Instead, do this:"
 msgstr "Stattdessen korrekt:"
 
 #: s/python.md.tt2:12
-msgid "    curs.execute('update people set name=:1 where id=:2', [name, id])"
-msgstr "    curs.execute('update people set name=:1 where id=:2', [name, id])"
+#, fuzzy
+msgid ""
+"    cmd = \"update people set name=%s where id=%s\"\n"
+"    curs.execute(cmd, (name, id))"
+msgstr ""
+"    # Dieses Beispiel ist FALSCH.\n"
+"    cmd = \"update people set name='%s' where id='%s'\" % (name, id)\n"
+"    curs.execute(cmd)"
 
-#: s/python.md.tt2:17 s/ruby.md.tt2:18 s/scheme.md.tt2:18
+#: s/python.md.tt2:15
+msgid "Note that the placeholder syntax depends on the database you are using."
+msgstr ""
+
+#: s/python.md.tt2:17
+msgid ""
+"    'qmark'         Question mark style, \n"
+"                    e.g. '...WHERE name=?'\n"
+"    'numeric'       Numeric, positional style, \n"
+"                    e.g. '...WHERE name=:1'\n"
+"    'named'         Named style, \n"
+"                    e.g. '...WHERE name=:name'\n"
+"    'format'        ANSI C printf format codes, \n"
+"                    e.g. '...WHERE name=%s'\n"
+"    'pyformat'      Python extended format codes, \n"
+"                    e.g. '...WHERE name=%(name)s'\n"
+"                    \n"
+"The values for the most common databases are:"
+msgstr ""
+
+#: s/python.md.tt2:30
+msgid ""
+"    >>> import MySQLdb; print MySQLdb.paramstyle\n"
+"    format\n"
+"    >>> import psycopg2; print psycopg2.paramstyle\n"
+"    pyformat\n"
+"    >>> import sqlite3; print sqlite3.paramstyle\n"
+"    qmark\n"
+"    \n"
+"So if you are using MySQL or PostgreSQL, use `%s` (even for numbers and\n"
+"other non-string values!) and if you are using SQLite use `?`"
+msgstr ""
+
+#: s/python.md.tt2:40
+#, fuzzy
+msgid ""
+"\n"
+"To do\n"
+"-----"
+msgstr ""
+"In Vorbereitung\n"
+"---------------"
+
+#: s/python.md.tt2:44 s/ruby.md.tt2:18 s/scheme.md.tt2:18
 msgid "-   Add some narrative.\n"
 msgstr "-   Mehr Erläuterung.\n"
 
@@ -2278,3 +2327,8 @@ msgstr "bobby-tables.com: Ein Leitfaden gegen SQL-Einschleusung in {currlang}"
 #: tt/page.tt:8
 msgid "bobby-tables.com: A guide to preventing SQL injection"
 msgstr "bobby-tables.com: Ein Leitfaden gegen SQL-Einschleusung"
+
+#~ msgid ""
+#~ "    curs.execute('update people set name=:1 where id=:2', [name, id])"
+#~ msgstr ""
+#~ "    curs.execute('update people set name=:1 where id=:2', [name, id])"
