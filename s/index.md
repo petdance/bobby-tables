@@ -32,6 +32,7 @@ Other resources
 * [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies)
 * [How to Write Injection-Proof SQL](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)
 * [Defending Against SQL Injection Attacks](http://download.oracle.com/oll/tutorials/SQLInjection/index.htm)
+* [Detecting Postgres SQL Injection](http://blog.endpoint.com/2012/06/detecting-postgres-sql-injection.html)
 
 Patches welcome
 ===============
