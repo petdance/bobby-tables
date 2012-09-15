@@ -73,7 +73,7 @@ Better yet, employ the `USING` clause of the [`EXECUTE`](http://www.postgresql.o
     END;
     $func$;
 
-This forms avoids the run-time overhead of converting values to text and back in addition to protecting against SQLi.
+This form avoids the run-time overhead of converting values to text and back in addition to protecting against SQLi.
 
 
 PL/Perl
