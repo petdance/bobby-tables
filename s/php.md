@@ -79,11 +79,21 @@ WordPress
 If your site/blog/application is running on [WordPress](http://wordpress.org), you can use the `prepare` method of the `$wpdb` class, which supports both a sprintf()-like and vsprintf()-like syntax.
 
     global $wpdb;
-    $wpdb->query( $wpdb->prepare( "SELECT name FROM people WHERE id = %d OR email = %s", $person_id, $person_email ) );
+    $wpdb->query(
+        $wpdb->prepare( "SELECT name FROM people WHERE id = %d OR email = %s",
+            $person_id, $person_email
+        )
+    );
 
 For INSERTs, UPDATEs, and DELETEs, you can use the handy helper methods in the class, which allow you to specify the format of the submitted values.
 
     global $wpdb;
-    $wpdb->insert( 'people', array( 'person_id' => '123', 'person_email' => 'bobby@tables.com' ), array( '%d', '%s' ) );
+    $wpdb->insert( 'people',
+            array(
+                'person_id' => '123',
+                'person_email' => 'bobby@tables.com'
+            ),
+        array( '%d', '%s' )
+    );
 
 More details on the [WordPress Codex](http://codex.wordpress.org/Class_Reference/wpdb).
