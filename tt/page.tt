@@ -10,6 +10,7 @@
         </title>
         <link rel="stylesheet" type="text/css" href="[% rel_static %]css/bobby.css" />
         [% IF git %]<link rel="via" href="[% git %]" />[% END %]
+        <meta name="msvalidate.01" content="4EF6B7CF4E86418C29626DA5E8B28AF5" /><!-- Bing ownership -->
     </head>
     <body>
         <div id="wrap">
