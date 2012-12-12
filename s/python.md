@@ -14,17 +14,17 @@ Instead, do this:
 
 Note that the placeholder syntax depends on the database you are using.
 
-    'qmark'         Question mark style, 
+    'qmark'         Question mark style,
                     e.g. '...WHERE name=?'
-    'numeric'       Numeric, positional style, 
+    'numeric'       Numeric, positional style,
                     e.g. '...WHERE name=:1'
-    'named'         Named style, 
+    'named'         Named style,
                     e.g. '...WHERE name=:name'
-    'format'        ANSI C printf format codes, 
+    'format'        ANSI C printf format codes,
                     e.g. '...WHERE name=%s'
-    'pyformat'      Python extended format codes, 
+    'pyformat'      Python extended format codes,
                     e.g. '...WHERE name=%(name)s'
-                    
+
 The values for the most common databases are:
 
     >>> import MySQLdb; print MySQLdb.paramstyle
@@ -33,7 +33,7 @@ The values for the most common databases are:
     pyformat
     >>> import sqlite3; print sqlite3.paramstyle
     qmark
-    
+
 So if you are using MySQL or PostgreSQL, use `%s` (even for numbers and
 other non-string values!) and if you are using SQLite use `?`
 
