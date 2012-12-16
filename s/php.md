@@ -70,6 +70,8 @@ And a shorter way to pass things in.
     $stmt = $dbh->prepare('UPDATE people SET name = :new_name WHERE id = :id');
     $stmt->execute( array('new_name' => $name, 'id' => $id) );
 
+Here's a great [tutorial on migrating to PDO for MySQL developers](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers).
+
 Applications & Frameworks
 =========================
 
