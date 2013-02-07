@@ -75,6 +75,25 @@ Here's a great [tutorial on migrating to PDO for MySQL developers](http://wiki.h
 Applications & Frameworks
 =========================
 
+CakePHP
+-------
+
+When using the MVC framework [CakePHP](http://cakephp.org/), most of your queries will be constructed automatically by the Model classes. Still, it is sometimes necessary to perform manual queries. The [Model::query](http://api.cakephp.org/class/model#method-Modelquery) method can be used to do that. In order to use prepared statements, you just need to pass an additional array parameter after the SQL query string. There are two variants:
+
+    // Unnamed placeholders: Pass an array containing one element for each ?, 
+    // in the same order.
+    $this->MyModel->query(
+        'SELECT name FROM users WHERE id = ?', 
+        array($id)
+    );
+    
+    // Named placeholders: Pass an associative array
+    $this->MyModel->query(
+        'SELECT name FROM users WHERE id = :id AND status = :status', 
+        array('id' => $id, 'status' => $status)
+    );
+    
+
 WordPress
 ---------
 
