@@ -78,13 +78,12 @@ Applications & Frameworks
 CakePHP
 -------
 
-When using the MVC framework [CakePHP](http://cakephp.org/), most of your queries will be constructed automatically by the Model classes. Still, it is sometimes necessary to perform manual queries. The [Model::query](http://api.cakephp.org/class/model#method-Modelquery) method can be used to do that. In order to use prepared statements, you just need to pass an additional array parameter after the SQL query string. There are two variants:
+When using the MVC framework [CakePHP](http://cakephp.org/), most of your database communication will be abstracted away by the Model API. Still, it is sometimes necessary to perform manual queries, which can be done with [Model::query](http://api.cakephp.org/class/model#method-Modelquery). In order to use prepared statements with that method, you just need to pass an additional array parameter after the SQL query string. There are two variants:
 
-    // Unnamed placeholders: Pass an array containing one element for each ?, 
-    // in the same order.
+    // Unnamed placeholders: Pass an array containing one element for each ? 
     $this->MyModel->query(
-        'SELECT name FROM users WHERE id = ?', 
-        array($id)
+        'SELECT name FROM users WHERE id = ? AND status = ?', 
+        array($id, $status)
     );
     
     // Named placeholders: Pass an associative array
@@ -93,6 +92,7 @@ When using the MVC framework [CakePHP](http://cakephp.org/), most of your querie
         array('id' => $id, 'status' => $status)
     );
     
+This behavior is documented in the [CakePHP Cookbook](http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#prepared-statements). (It is described for the `fetchAll()`-method, but `query()` uses `fetchAll()` internally).
 
 WordPress
 ---------
