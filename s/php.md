@@ -1,11 +1,9 @@
-PHP
-===
+# PHP
 
 PHP is a little more disorganized than how
-[Perl handles parameters](./perl.html).
-The standard [MySQL extension](http://php.net/manual/en/book.mysql.php)
-doesn't support parameterization, although the
-[PostgreSQL extension](http://www.php.net/manual/en/book.pgsql.php) does:
+[Perl handles parameters](./perl.html).  The standard [MySQL
+extension][mysql] doesn't support parameterization, although the
+[PostgreSQL extension][pg] does:
 
     $result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', array($email) );
 
@@ -13,12 +11,15 @@ Note that the query must be in single-quotes or have the `$` escaped
 to avoid PHP trying to parse it as a variable.
 
 **However**, you should probably be using an abstraction layer.
-The [ODBC](http://php.net/manual/en/book.uodbc.php) and
-[PDO](http://www.php.net/manual/en/book.pdo.php) extensions both
-support parameterization and multiple databases:
+The [ODBC][odbc] and [PDO][pdo] extensions both support parameterization
+and multiple databases:
 
-Using mysqli
-------------
+[mysql]: http://php.net/manual/en/book.mysql.php
+[pg]: http://www.php.net/manual/en/book.pgsql.php
+[odbc]: http://php.net/manual/en/book.uodbc.php
+[pdo]: http://www.php.net/manual/en/book.pdo.php
+
+## Using mysqli
 
 The MySQL Improved extension handles bound parameters.
 
@@ -26,8 +27,7 @@ The MySQL Improved extension handles bound parameters.
     $stmt->bind_param('si',$name,$id);
     $stmt->execute();
 
-Using ADODB
------------
+## Using ADODB
 
 ADODB provides a way to prepare, bind and execute all in the same method call.
 
@@ -37,8 +37,7 @@ ADODB provides a way to prepare, bind and execute all in the same method call.
         array($_REQUEST['username'], sha1($_REQUEST['password'])
     );
 
-Using the ODBC layer
---------------------
+## Using the ODBC layer
 
     $stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );
     $success = odbc_execute( $stmt, array($email) );
@@ -49,8 +48,7 @@ Or:
     $sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');
     $sth->execute(array(':email' => $email));
 
-Using the PDO layer
--------------------
+## Using the PDO layer
 
 Here's the long way to do bind parameters.
 
@@ -72,32 +70,43 @@ And a shorter way to pass things in.
 
 Here's a great [tutorial on migrating to PDO for MySQL developers](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers).
 
-Applications & Frameworks
-=========================
+# Applications & Frameworks
 
-CakePHP
--------
+## CakePHP
 
-When using the MVC framework [CakePHP](http://cakephp.org/), most of your database communication will be abstracted away by the Model API. Still, it is sometimes necessary to perform manual queries, which can be done with [Model::query](http://api.cakephp.org/class/model#method-Modelquery). In order to use prepared statements with that method, you just need to pass an additional array parameter after the SQL query string. There are two variants:
+When using the MVC framework [CakePHP][cakephp], most of your
+database communication will be abstracted away by the Model API.
+Still, it is sometimes necessary to perform manual queries, which
+can be done with [Model::query][cake-model-query]. In order to use
+prepared statements with that method, you just need to pass an
+additional array parameter after the SQL query string.  There are
+two variants:
 
-    // Unnamed placeholders: Pass an array containing one element for each ? 
+    // Unnamed placeholders: Pass an array containing one element for each ?
     $this->MyModel->query(
-        'SELECT name FROM users WHERE id = ? AND status = ?', 
+        'SELECT name FROM users WHERE id = ? AND status = ?',
         array($id, $status)
     );
-    
+
     // Named placeholders: Pass an associative array
     $this->MyModel->query(
-        'SELECT name FROM users WHERE id = :id AND status = :status', 
+        'SELECT name FROM users WHERE id = :id AND status = :status',
         array('id' => $id, 'status' => $status)
     );
-    
-This behavior is documented in the [CakePHP Cookbook](http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#prepared-statements). (It is described for the `fetchAll()`-method, but `query()` uses `fetchAll()` internally).
 
-WordPress
----------
+This behavior is documented in the [CakePHP Cookbook][cake-cookbook].
+(It is described for the `fetchAll()`-method, but `query()` uses
+`fetchAll()` internally).
 
-If your site/blog/application is running on [WordPress](http://wordpress.org), you can use the `prepare` method of the `$wpdb` class, which supports both a sprintf()-like and vsprintf()-like syntax.
+[cakephp]: http://cakephp.org/
+[cake-model-query]: http://api.cakephp.org/class/model#method-Modelquery
+[cake-cookbook]: http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#prepared-statements
+
+## WordPress
+
+If your site/blog/application is running on [WordPress][WP], you
+can use the `prepare` method of the `$wpdb` class, which supports
+both a sprintf()-like and vsprintf()-like syntax.
 
     global $wpdb;
     $wpdb->query(
@@ -117,4 +126,7 @@ For INSERTs, UPDATEs, and DELETEs, you can use the handy helper methods in the c
         array( '%d', '%s' )
     );
 
-More details on the [WordPress Codex](http://codex.wordpress.org/Class_Reference/wpdb).
+More details on the [WordPress Codex][codex].
+
+[WP]: http://wordpress.org/
+[codex]: http://codex.wordpress.org/Class_Reference/wpdb
