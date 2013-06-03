@@ -85,3 +85,4 @@ Thanks to the following folks for their contributions:
 * [Sven van Haastregt](http://www.liacs.nl/home/svhaastr/)
 * Andrey Chasovskikh
 * Erwin Brandstetter
+* [Mariano Vallés](http://about.me/marianovalles)
