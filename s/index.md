@@ -1,5 +1,4 @@
-Who is Bobby Tables?
-====================
+# Who is Bobby Tables?
 
 [From the webcomic _xkcd_](http://xkcd.com/327/)
 
@@ -21,34 +20,38 @@ Who is Bobby Tables?
 
 
 
-Examples
-========
+# Examples
 
 See the sidebar to the left for your specific language.
 
-Other resources
-===============
+# Other resources
 
 * [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/sql-injection-myths-and-fallacies)
 * [How to Write Injection-Proof SQL](http://www.schneier.com/blog/archives/2008/10/how_to_write_in.html)
 * [Defending Against SQL Injection Attacks](http://download.oracle.com/oll/tutorials/SQLInjection/index.htm)
 * [Detecting Postgres SQL Injection](http://blog.endpoint.com/2012/06/detecting-postgres-sql-injection.html)
 
-Patches welcome
-===============
+# Patches welcome
 
-Don't see a language that you'd like to see represented? Please let me know if you have updates or additions through one of these methods, in decreasing order of preference.
+Don't see a programming language that you'd like to see represented?
+Please let me know if you have updates or additions through one of
+these methods, in decreasing order of preference.
 
-* Fork the [bobby-tables repository at github](http://github.com/petdance/bobby-tables), make your changes, and send me a pull request.
-* Add an issue in the [issue tracker](http://github.com/petdance/bobby-tables/issues).
+* Fork the [bobby-tables repository at github][repo], make your changes, and send me a pull request.
+* Add an issue in the [issue tracker][issues].
 * Email me, Andy Lester, at andy at petdance.com.
 
-Translations also welcome
-=========================
+[repo]: https://github.com/petdance/bobby-tables
+[issues]: https://github.com/petdance/bobby-tables/issues
 
-Help translate this site! There are less than 200 phrases. No programming necessary.
+# Help translating this site
 
-See the instructions at the [bobby-tables repository at github](http://github.com/petdance/bobby-tables#readme).
+I'm looking for people to host non-English versions of this site.
+Much of the translation work for German, Russian and Spanish has
+been done.  If you're interested, please sign up for the 
+[bobby-tables mailing list][ml] on Google Groups and let us know.
+
+[ml]: https://groups.google.com/d/forum/bobby-tables
 
 To do
 =====
@@ -61,6 +64,7 @@ Thanks
 
 Thanks to the following folks for their contributions:
 
+* Richard Neill
 * [Kim Christensen](http://www.smukkekim.dk)
 * Kirk Kimmel
 * Nathan Mahdavi

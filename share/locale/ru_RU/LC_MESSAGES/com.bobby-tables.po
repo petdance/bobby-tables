@@ -8,12 +8,12 @@ msgstr ""
 "PO-Revision-Date: 2012-05-01 07:25-0600\n"
 "Last-Translator: Andy Lester <andy@petdance.com>\n"
 "Language-Team: Russian\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
-"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: crank.pl:31
 msgid "Home"
@@ -438,18 +438,17 @@ msgstr ""
 "-   Добавить примеры кода\n"
 
 #: s/index.md.tt2:1
-msgid ""
-"Who is Bobby Tables?\n"
-"===================="
+#, fuzzy
+msgid "# Who is Bobby Tables?"
 msgstr ""
-"Кто такой Робин-Брось-Таблицу?\n"
-"=============================="
+"\n"
+"# Как избежать случая с Робертом-Брось-Таблицу"
 
-#: s/index.md.tt2:4
+#: s/index.md.tt2:3
 msgid "[From the webcomic _xkcd_](http://xkcd.com/327/)"
 msgstr "[Из комикса _xkcd_](http://xkcd.ru/327/)"
 
-#: s/index.md.tt2:6
+#: s/index.md.tt2:5
 msgid ""
 "<a href=\"http://xkcd.com/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd Bobby "
 "Tables Cartoon\" height=\"205\" width=\"666\" /></a>"
@@ -457,11 +456,11 @@ msgstr ""
 "<a href=\"http://xkcd.com/327/\"><img src=\"/img/xkcd.png\" alt=\"xkcd "
 "Мамины эксплойты\" height=\"205\" width=\"666\" /></a>"
 
-#: s/index.md.tt2:8
+#: s/index.md.tt2:7
 msgid "<br clear=\"right\">"
 msgstr "<br clear=\"right\">"
 
-#: s/index.md.tt2:10
+#: s/index.md.tt2:9
 msgid ""
 "**School**: Hi, this is your son's school. We're having some computer "
 "trouble."
@@ -469,11 +468,11 @@ msgstr ""
 "**Школа**: Здравствуйте, это из школы, где учится ваш сын. У нас тут "
 "неприятности с компьютером."
 
-#: s/index.md.tt2:12
+#: s/index.md.tt2:11
 msgid "**Mom**: Oh, dear -- Did he break something?"
 msgstr "**Мама**: О, боже. Он что-то сломал?"
 
-#: s/index.md.tt2:14
+#: s/index.md.tt2:13
 msgid ""
 "**School**: In a way. Did you really name your son `Robert'); DROP TABLE "
 "Students;--`?"
@@ -481,45 +480,40 @@ msgstr ""
 "**Школа**: Можно сказать... Вы действительно назвали своего сына `Роберт'); "
 "DROP TABLE Students;--`?"
 
-#: s/index.md.tt2:16
+#: s/index.md.tt2:15
 msgid "**Mom**: Oh. Yes. Little Bobby Tables we call him."
 msgstr "**Мама**: А, да. Дома мы его зовем Робин-Брось-Таблицу."
 
-#: s/index.md.tt2:18
+#: s/index.md.tt2:17
 msgid ""
 "**School**: Well, we've lost this year's student records. I hope you're "
 "happy."
 msgstr ""
 "**Школа**: Теперь у нас стерлась база учеников за этот год. Надеюсь, вы рады."
 
-#: s/index.md.tt2:20
+#: s/index.md.tt2:19
 msgid "**Mom**: And I hope you've learned to sanitize your database inputs."
 msgstr ""
 "**Мама**: А я надеюсь, что это научит вас экранировать символы во входных "
 "данных."
 
-#: s/index.md.tt2:22
-msgid ""
-"Examples\n"
-"========"
+#: s/index.md.tt2:21
+msgid "# Examples"
 msgstr ""
-"Примеры\n"
-"======="
 
-#: s/index.md.tt2:25
+#: s/index.md.tt2:23
 msgid "See the sidebar to the left for your specific language."
 msgstr ""
 "Смотрите разделы меню слева, чтобы увидеть примеры для конкретного языка."
 
-#: s/index.md.tt2:27
-msgid ""
-"Other resources\n"
-"==============="
+#: s/index.md.tt2:25
+#, fuzzy
+msgid "# Other resources"
 msgstr ""
 "Другие ресурсы\n"
 "=============="
 
-#: s/index.md.tt2:30
+#: s/index.md.tt2:27
 msgid ""
 "* [SQL Injection Myths and Fallacies](http://www.slideshare.net/billkarwin/"
 "sql-injection-myths-and-fallacies)\n"
@@ -531,30 +525,30 @@ msgid ""
 "detecting-postgres-sql-injection.html)"
 msgstr ""
 
-#: s/index.md.tt2:35
-msgid ""
-"Patches welcome\n"
-"==============="
+#: s/index.md.tt2:32
+#, fuzzy
+msgid "# Patches welcome"
 msgstr ""
 "Дополнения приветствуются\n"
 "========================="
 
-#: s/index.md.tt2:38
+#: s/index.md.tt2:34
+#, fuzzy
 msgid ""
-"Don't see a language that you'd like to see represented? Please let me know "
-"if you have updates or additions through one of these methods, in decreasing "
-"order of preference."
+"Don't see a programming language that you'd like to see represented?\n"
+"Please let me know if you have updates or additions through one of\n"
+"these methods, in decreasing order of preference."
 msgstr ""
 "Не находите нужного вам языка? Пожалуйста, дайте знать, если у вас есть "
 "какие-либо изменения или дополнения, перечисленные ниже в порядке убывания "
 "важности:"
 
-#: s/index.md.tt2:40
+#: s/index.md.tt2:38
+#, fuzzy
 msgid ""
-"* Fork the [bobby-tables repository at github](http://github.com/petdance/"
-"bobby-tables), make your changes, and send me a pull request.\n"
-"* Add an issue in the [issue tracker](http://github.com/petdance/bobby-"
-"tables/issues).\n"
+"* Fork the [bobby-tables repository at github][repo], make your changes, and "
+"send me a pull request.\n"
+"* Add an issue in the [issue tracker][issues].\n"
 "* Email me, Andy Lester, at andy at petdance.com."
 msgstr ""
 "* Сделайте ветку [репозитория bobby-tables на github](http://github.com/"
@@ -564,31 +558,29 @@ msgstr ""
 "issues).\n"
 "* Напишите мне, Энди Лестеру, по адресу andy at petdance.com."
 
-#: s/index.md.tt2:44
+#: s/index.md.tt2:42
 msgid ""
-"Translations also welcome\n"
-"========================="
+"[repo]: https://github.com/petdance/bobby-tables\n"
+"[issues]: https://github.com/petdance/bobby-tables/issues"
 msgstr ""
-"Переводы также приветствуются\n"
-"============================="
+
+#: s/index.md.tt2:45
+msgid "# Help translating this site"
+msgstr ""
 
 #: s/index.md.tt2:47
 msgid ""
-"Help translate this site! There are less than 200 phrases. No programming "
-"necessary."
+"I'm looking for people to host non-English versions of this site.\n"
+"Much of the translation work for German, Russian and Spanish has\n"
+"been done.  If you're interested, please sign up for the \n"
+"[bobby-tables mailing list][ml] on Google Groups and let us know."
 msgstr ""
-"Помогите перевести этот сайт! Тут меньше двухсот фраз. И никакого "
-"программирования."
 
-#: s/index.md.tt2:49
-msgid ""
-"See the instructions at the [bobby-tables repository at github](http://"
-"github.com/petdance/bobby-tables#readme)."
+#: s/index.md.tt2:52
+msgid "[ml]: https://groups.google.com/d/forum/bobby-tables"
 msgstr ""
-"Смотрите инструкции в [репозитории bobby-tables на github](http://github.com/"
-"petdance/bobby-tables#readme)."
 
-#: s/index.md.tt2:51
+#: s/index.md.tt2:54
 msgid ""
 "To do\n"
 "====="
@@ -596,7 +588,7 @@ msgstr ""
 "Список дел\n"
 "=========="
 
-#: s/index.md.tt2:54
+#: s/index.md.tt2:57
 msgid ""
 "* Explain why creating code from outside data is bad.\n"
 "* Potential speed win when reusing prepared statements."
@@ -605,7 +597,7 @@ msgstr ""
 "* Потенциальный прирост в скорости выполнения запросов при использовании "
 "подготовленных выражений."
 
-#: s/index.md.tt2:57
+#: s/index.md.tt2:60
 msgid ""
 "Thanks\n"
 "======"
@@ -613,13 +605,14 @@ msgstr ""
 "Благодарности\n"
 "============="
 
-#: s/index.md.tt2:60
+#: s/index.md.tt2:63
 msgid "Thanks to the following folks for their contributions:"
 msgstr "Спасибо следующим людям за их вклад:"
 
-#: s/index.md.tt2:62
+#: s/index.md.tt2:65
 #, fuzzy
 msgid ""
+"* Richard Neill\n"
 "* [Kim Christensen](http://www.smukkekim.dk)\n"
 "* Kirk Kimmel\n"
 "* Nathan Mahdavi\n"
@@ -1029,8 +1022,8 @@ msgid ""
 "method for that:"
 msgstr ""
 "Однако параметризацию нельзя использовать для идентификаторов (имен таблиц,\n"
-"имен колонок), поэтому необходимо использовать метод DBI `quote_identifier()"
-"`:"
+"имен колонок), поэтому необходимо использовать метод DBI "
+"`quote_identifier()`:"
 
 #: s/perl.md.tt2:18
 msgid ""
@@ -1151,13 +1144,14 @@ msgstr ""
 
 #: s/php.md.tt2:10
 msgid ""
-"Note that the query must be in single-quotes or have the `$` escaped\n"
-"to avoid PHP trying to parse it as a variable."
+"Note that the query must be in single quotes or have the `$` escaped\n"
+"to avoid PHP trying to parse it as a variable.  (Actually, in this\n"
+"case PHP will not see `$1` as a variable and will not interpolate\n"
+"it, but for the sake of good practice, single-quote any strings\n"
+"with dollar signs that you want to keep as dollar signs."
 msgstr ""
-"Обратите внимание, что запрос должен быть обрамлен одинарными кавычками или "
-"же симпол '$' должен быть эскапирован, чтобы PHP не принял его за переменную."
 
-#: s/php.md.tt2:13
+#: s/php.md.tt2:16
 #, fuzzy
 msgid ""
 "**However**, you should probably be using an abstraction layer.\n"
@@ -1170,7 +1164,7 @@ msgstr ""
 "[PDO](http://www.php.net/manual/en/book.pdo.php) расширения\n"
 "поддерживают параметризацию и запросы к разным базам данных:"
 
-#: s/php.md.tt2:17
+#: s/php.md.tt2:20
 msgid ""
 "[mysql]: http://php.net/manual/en/book.mysql.php\n"
 "[pg]: http://www.php.net/manual/en/book.pgsql.php\n"
@@ -1178,18 +1172,18 @@ msgid ""
 "[pdo]: http://www.php.net/manual/en/book.pdo.php"
 msgstr ""
 
-#: s/php.md.tt2:22
+#: s/php.md.tt2:25
 #, fuzzy
 msgid "## Using mysqli"
 msgstr ""
 "Использование mysqli\n"
 "--------------------"
 
-#: s/php.md.tt2:24
+#: s/php.md.tt2:27
 msgid "The MySQL Improved extension handles bound parameters."
 msgstr "Расширение MySQL Improved умеет обрабатывать связанные параметры."
 
-#: s/php.md.tt2:26
+#: s/php.md.tt2:29
 msgid ""
 "    $stmt = $db->prepare('update people set name = ? where id = ?');\n"
 "    $stmt->bind_param('si',$name,$id);\n"
@@ -1199,11 +1193,11 @@ msgstr ""
 "    $stmt->bind_param('si',$name,$id);\n"
 "    $stmt->execute();"
 
-#: s/php.md.tt2:30
+#: s/php.md.tt2:33
 msgid "## Using ADODB"
 msgstr ""
 
-#: s/php.md.tt2:32
+#: s/php.md.tt2:35
 msgid ""
 "ADODB provides a way to prepare, bind and execute all in the same method "
 "call."
@@ -1211,7 +1205,7 @@ msgstr ""
 "ADODB предоставляет возможность подготавливать, связывать и выполнять запрос "
 "с помощью одного метода."
 
-#: s/php.md.tt2:34
+#: s/php.md.tt2:37
 msgid ""
 "    $dbConnection = NewADOConnection($connectionString);\n"
 "    $sqlResult = $dbConnection->Execute(\n"
@@ -1227,14 +1221,14 @@ msgstr ""
 "        array($_REQUEST['username'], sha1($_REQUEST['password'])\n"
 "    );"
 
-#: s/php.md.tt2:40
+#: s/php.md.tt2:43
 #, fuzzy
 msgid "## Using the ODBC layer"
 msgstr ""
 "Использование ODBC слоя\n"
 "-----------------------"
 
-#: s/php.md.tt2:42
+#: s/php.md.tt2:45
 msgid ""
 "    $stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );\n"
 "    $success = odbc_execute( $stmt, array($email) );"
@@ -1242,34 +1236,34 @@ msgstr ""
 "    $stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );\n"
 "    $success = odbc_execute( $stmt, array($email) );"
 
-#: s/php.md.tt2:45
+#: s/php.md.tt2:48
 msgid "Or:"
 msgstr "Или:"
 
-#: s/php.md.tt2:47
+#: s/php.md.tt2:50
 msgid ""
-"    $res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array"
-"($email));\n"
+"    $res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', "
+"array($email));\n"
 "    $sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');\n"
 "    $sth->execute(array(':email' => $email));"
 msgstr ""
-"    $res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array"
-"($email));\n"
+"    $res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', "
+"array($email));\n"
 "    $sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');\n"
 "    $sth->execute(array(':email' => $email));"
 
-#: s/php.md.tt2:51
+#: s/php.md.tt2:54
 #, fuzzy
 msgid "## Using the PDO layer"
 msgstr ""
 "Использование PDO слоя\n"
 "----------------------"
 
-#: s/php.md.tt2:53
+#: s/php.md.tt2:56
 msgid "Here's the long way to do bind parameters."
 msgstr "Вот длинный способ связывания параметров со значениями."
 
-#: s/php.md.tt2:55
+#: s/php.md.tt2:58
 msgid ""
 "    $dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);\n"
 "    $stmt = $dbh->prepare('INSERT INTO REGISTRY (name, value) VALUES (:"
@@ -1283,7 +1277,7 @@ msgstr ""
 "    $stmt->bindParam(':name', $name);\n"
 "    $stmt->bindParam(':value', $value);"
 
-#: s/php.md.tt2:60
+#: s/php.md.tt2:63
 msgid ""
 "    // insert one row\n"
 "    $name = 'one';\n"
@@ -1295,11 +1289,11 @@ msgstr ""
 "    $value = 1;\n"
 "    $stmt->execute();"
 
-#: s/php.md.tt2:65
+#: s/php.md.tt2:68
 msgid "And a shorter way to pass things in."
 msgstr "А вот более короткий способ."
 
-#: s/php.md.tt2:67
+#: s/php.md.tt2:70
 #, fuzzy
 msgid ""
 "    $dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);\n"
@@ -1312,21 +1306,21 @@ msgstr ""
 "id');\n"
 "    $stmt->execute( array('new_name' => $name, 'id' => $id) );\n"
 
-#: s/php.md.tt2:71
+#: s/php.md.tt2:74
 msgid ""
 "Here's a great [tutorial on migrating to PDO for MySQL developers](http://"
 "wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers)."
 msgstr ""
 
-#: s/php.md.tt2:73
+#: s/php.md.tt2:76
 msgid "# Applications & Frameworks"
 msgstr ""
 
-#: s/php.md.tt2:75
+#: s/php.md.tt2:78
 msgid "## CakePHP"
 msgstr ""
 
-#: s/php.md.tt2:77
+#: s/php.md.tt2:80
 msgid ""
 "When using the MVC framework [CakePHP][cakephp], most of your\n"
 "database communication will be abstracted away by the Model API.\n"
@@ -1337,7 +1331,7 @@ msgid ""
 "two variants:"
 msgstr ""
 
-#: s/php.md.tt2:85
+#: s/php.md.tt2:88
 msgid ""
 "    // Unnamed placeholders: Pass an array containing one element for "
 "each ?\n"
@@ -1347,7 +1341,7 @@ msgid ""
 "    );"
 msgstr ""
 
-#: s/php.md.tt2:91
+#: s/php.md.tt2:94
 msgid ""
 "    // Named placeholders: Pass an associative array\n"
 "    $this->MyModel->query(\n"
@@ -1356,14 +1350,14 @@ msgid ""
 "    );"
 msgstr ""
 
-#: s/php.md.tt2:97
+#: s/php.md.tt2:100
 msgid ""
 "This behavior is documented in the [CakePHP Cookbook][cake-cookbook].\n"
 "(It is described for the `fetchAll()`-method, but `query()` uses\n"
 "`fetchAll()` internally)."
 msgstr ""
 
-#: s/php.md.tt2:101
+#: s/php.md.tt2:104
 msgid ""
 "[cakephp]: http://cakephp.org/\n"
 "[cake-model-query]: http://api.cakephp.org/class/model#method-Modelquery\n"
@@ -1371,35 +1365,35 @@ msgid ""
 "html#prepared-statements"
 msgstr ""
 
-#: s/php.md.tt2:105
+#: s/php.md.tt2:108
 msgid "## WordPress"
 msgstr ""
 
-#: s/php.md.tt2:107
+#: s/php.md.tt2:110
 msgid ""
 "If your site/blog/application is running on [WordPress][WP], you\n"
 "can use the `prepare` method of the `$wpdb` class, which supports\n"
 "both a sprintf()-like and vsprintf()-like syntax."
 msgstr ""
 
-#: s/php.md.tt2:111
+#: s/php.md.tt2:114
 msgid ""
 "    global $wpdb;\n"
 "    $wpdb->query(\n"
-"        $wpdb->prepare( \"SELECT name FROM people WHERE id = %d OR email = %s"
-"\",\n"
+"        $wpdb->prepare( 'SELECT name FROM people WHERE id = %d OR email = "
+"%s',\n"
 "            $person_id, $person_email\n"
 "        )\n"
 "    );"
 msgstr ""
 
-#: s/php.md.tt2:118
+#: s/php.md.tt2:121
 msgid ""
 "For INSERTs, UPDATEs, and DELETEs, you can use the handy helper methods in "
 "the class, which allow you to specify the format of the submitted values."
 msgstr ""
 
-#: s/php.md.tt2:120
+#: s/php.md.tt2:123
 msgid ""
 "    global $wpdb;\n"
 "    $wpdb->insert( 'people',\n"
@@ -1411,11 +1405,11 @@ msgid ""
 "    );"
 msgstr ""
 
-#: s/php.md.tt2:129
+#: s/php.md.tt2:132
 msgid "More details on the [WordPress Codex][codex]."
 msgstr ""
 
-#: s/php.md.tt2:131
+#: s/php.md.tt2:134
 msgid ""
 "[WP]: http://wordpress.org/\n"
 "[codex]: http://codex.wordpress.org/Class_Reference/wpdb\n"
@@ -2406,15 +2400,22 @@ msgstr ""
 msgid "bobby-tables.com: A guide to preventing SQL injection"
 msgstr "bobby-tables.com: Руководство по предотвращению SQL инъекций"
 
-#~ msgid "It's quite a bit easier to read, too!"
-#~ msgstr "Этот еще и читается легче!"
+#~ msgid ""
+#~ "Help translate this site! There are less than 200 phrases. No programming "
+#~ "necessary."
+#~ msgstr ""
+#~ "Помогите перевести этот сайт! Тут меньше двухсот фраз. И никакого "
+#~ "программирования."
 
 #~ msgid ""
-#~ "PHP\n"
-#~ "==="
+#~ "Examples\n"
+#~ "========"
 #~ msgstr ""
-#~ "PHP\n"
-#~ "==="
+#~ "Примеры\n"
+#~ "======="
+
+#~ msgid "It's quite a bit easier to read, too!"
+#~ msgstr "Этот еще и читается легче!"
 
 #~ msgid ""
 #~ "Using ADODB\n"
@@ -2422,3 +2423,39 @@ msgstr "bobby-tables.com: Руководство по предотвращени
 #~ msgstr ""
 #~ "Использование ADODB\n"
 #~ "-------------------"
+
+#~ msgid ""
+#~ "See the instructions at the [bobby-tables repository at github](http://"
+#~ "github.com/petdance/bobby-tables#readme)."
+#~ msgstr ""
+#~ "Смотрите инструкции в [репозитории bobby-tables на github](http://github."
+#~ "com/petdance/bobby-tables#readme)."
+
+#~ msgid ""
+#~ "PHP\n"
+#~ "==="
+#~ msgstr ""
+#~ "PHP\n"
+#~ "==="
+
+#~ msgid ""
+#~ "Note that the query must be in single-quotes or have the `$` escaped\n"
+#~ "to avoid PHP trying to parse it as a variable."
+#~ msgstr ""
+#~ "Обратите внимание, что запрос должен быть обрамлен одинарными кавычками "
+#~ "или же симпол '$' должен быть эскапирован, чтобы PHP не принял его за "
+#~ "переменную."
+
+#~ msgid ""
+#~ "Who is Bobby Tables?\n"
+#~ "===================="
+#~ msgstr ""
+#~ "Кто такой Робин-Брось-Таблицу?\n"
+#~ "=============================="
+
+#~ msgid ""
+#~ "Translations also welcome\n"
+#~ "========================="
+#~ msgstr ""
+#~ "Переводы также приветствуются\n"
+#~ "============================="

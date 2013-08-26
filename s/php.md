@@ -7,8 +7,11 @@ extension][mysql] doesn't support parameterization, although the
 
     $result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', array($email) );
 
-Note that the query must be in single-quotes or have the `$` escaped
-to avoid PHP trying to parse it as a variable.
+Note that the query must be in single quotes or have the `$` escaped
+to avoid PHP trying to parse it as a variable.  (Actually, in this
+case PHP will not see `$1` as a variable and will not interpolate
+it, but for the sake of good practice, single-quote any strings
+with dollar signs that you want to keep as dollar signs.
 
 **However**, you should probably be using an abstraction layer.
 The [ODBC][odbc] and [PDO][pdo] extensions both support parameterization
@@ -110,7 +113,7 @@ both a sprintf()-like and vsprintf()-like syntax.
 
     global $wpdb;
     $wpdb->query(
-        $wpdb->prepare( "SELECT name FROM people WHERE id = %d OR email = %s",
+        $wpdb->prepare( 'SELECT name FROM people WHERE id = %d OR email = %s',
             $person_id, $person_email
         )
     );
