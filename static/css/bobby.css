@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background: #dcdcdc url('../img/bobby_bg.png') repeat-x top;
+    color: #000;
     font-family: georgia, 'times new roman', serif;
 }
 
