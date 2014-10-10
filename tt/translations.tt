@@ -1,3 +1,5 @@
+<a href="http://bobby-tables.cz/[% section %]" xml:lang="cs-CZ" lang="cs-CZ" hreflang="cs-CZ">Čeština</a>
+/
 <a href="[% rel_static %]de_DE/[% section %]" xml:lang="de-DE" lang="de-DE" hreflang="de-DE">Deutsch</a>
 /
 <a href="[% rel_static %]ru_RU/[% section %]" xml:lang="ru-RU" lang="ru-RU" hreflang="ru-RU">Русский язык</a>
