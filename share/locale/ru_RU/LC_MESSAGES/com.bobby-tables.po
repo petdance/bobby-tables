@@ -2165,6 +2165,44 @@ msgstr ""
 msgid "-   Add some narrative.\n"
 msgstr "-   Добавить больше материала.\n"
 
+#: s/rlang.md.tt2:1
+msgid ""
+"R\n"
+"="
+msgstr ""
+
+#: s/rlang.md.tt2:4
+msgid ""
+"R has separate interfaces for different databases, with different "
+"capabilities\n"
+"for each. [RSQLite](https://cran.r-project.org/web/packages/RSQLite/) \n"
+"supports parameterized."
+msgstr ""
+
+#: s/rlang.md.tt2:8
+msgid ""
+"    con <- dbConnect(SQLite(), \":memory:\")\n"
+"    # Use dbSendPreparedQuery/dbGetPreparedQuery for \"prepared\" queries\n"
+"    dbGetPreparedQuery(con, \"SELECT * FROM arrests WHERE Murder < ?\",\n"
+"        data.frame(x = 3))\n"
+"    dbDisconnect(con)"
+msgstr ""
+
+#: s/rlang.md.tt2:14
+msgid ""
+"But other interfaces, such as [RMySQL](https://cran.r-project.org/web/"
+"packages/RMySQL/) \n"
+"do not allow parameterizations."
+msgstr ""
+
+#: s/rlang.md.tt2:17
+msgid ""
+"The database drivers for R are in process of being brought together under \n"
+"[DBI](https://cran.r-project.org/web/packages/DBI/), so it is possible this "
+"will change\n"
+"in the future."
+msgstr ""
+
 #: s/ruby.md.tt2:1
 msgid ""
 "Ruby\n"
