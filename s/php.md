@@ -47,7 +47,7 @@ ADODB provides a way to prepare, bind and execute all in the same method call.
 
 Or:
 
-    $res = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array($email));
+    $dbh = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array($email));
     $sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');
     $sth->execute(array(':email' => $email));
 
