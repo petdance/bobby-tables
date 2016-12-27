@@ -33,6 +33,7 @@ my $pages = [
     csharp       => 'C#',
     delphi       => 'Delphi',
     dotnet       => '.NET',
+    go           => 'Go',
     java         => 'Java',
     perl         => 'Perl',
     php          => 'PHP',
