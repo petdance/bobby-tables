@@ -40,7 +40,10 @@ But sometimes you have to do more complicated things. Perhaps you dynamically ad
     END
     $func$;
 
-Both the `p_column` and the `p_value` arguments are vulnerable. One way to avoid this problem is to use the `quote_ident()` function to quote SQL identifiers (`p_column` in this case) and `quote_lteral()` and quote literal values:
+Both the `p_column` and the `p_value` arguments are vulnerable. One
+way to avoid this problem is to use the `quote_ident()` function to
+quote SQL identifiers (`p_column` in this case) and `quote_literal()`
+and quote literal values:
 
     CREATE OR REPLACE FUNCTION get_users(p_column TEXT, p_value TEXT)
       RETURNS SETOF users LANGUAGE plpgsql AS

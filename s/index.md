@@ -94,3 +94,4 @@ Thanks to the following folks for their contributions:
 * [Pete Freitag](https://foundeo.com/)
 * [Patrick Spek](http://www.tyil.nl/)
 * [Jacob Walker](http://jacob-walker.com/)
+* [Glenn Jenkins](http://www.pedanticantic.click/)
