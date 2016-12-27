@@ -7,11 +7,9 @@ my @modules = qw(
     Encode
     File::Slurp
     Getopt::Long
-    POSIX
     Template
     Test::HTML::Lint
     Text::Markdown
-    URI
 );
 
 print "# Checking that we have all our necessary modules.\n";

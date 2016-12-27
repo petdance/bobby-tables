@@ -84,7 +84,7 @@ Thanks to the following folks for their contributions:
 * Mike Markley
 * [Michael Schwern](http://schwern.net/)
 * [Jeana Clark](http://jeanaclark.org/)
-* [Lars Dɪᴇᴄᴋᴏᴡ](http://search.cpan.org/~daxim/)
+* [Lars Dieckowᴇᴄᴋᴏᴡ](http://search.cpan.org/~daxim/)
 * [Jani Hur](http://www.jani-hur.net)
 * [Sven van Haastregt](http://www.liacs.nl/home/svhaastr/)
 * Andrey Chasovskikh

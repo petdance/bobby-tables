@@ -11,7 +11,6 @@ use Encode qw(decode encode);
 use Text::Markdown ();
 use Template ();
 use Template::Constants qw( :debug :chomp );
-use URI qw();
 
 my $sourcepath = 's';
 my $buildpath  = 'build';
