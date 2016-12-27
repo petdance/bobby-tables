@@ -54,6 +54,36 @@ issues.
 More information on `PreparedStatement` can be found in the
 [Oracle JDBC tutorial](http://download.oracle.com/javase/tutorial/jdbc/basics/prepared.html).
 
+JPA
+---
+
+JPA, the Java Persistence API, provides support for parameterized queries for native SQL:
+
+```java
+EntityManager em = getEntityManager();
+Query query = em.createNativeQuery("SELECT E.* from EMP E, ADDRESS A WHERE E.EMP_ID = A.EMP_ID AND A.CITY = ?", Employee.class);
+query.setParameter(1, "Ottawa");
+List<Employee> employees = query.getResultList();
+```
+-- <cite>[Java Persistence Wikibook](https://en.wikibooks.org/wiki/Java_Persistence/Querying#Native_SQL_Queries)</cite>
+
+Only a plain `?` is supported for positional parameters, with the first parameter being `1` (not `0`).
+
+In addition to native queries, JPA provides its own <abbr title="Java Persistence Query Language">JPQL</abbr>:
+
+```java
+public List findWithName(String name) {
+return em.createQuery(
+    "SELECT c FROM Customer c WHERE c.name LIKE :custName")
+    .setParameter("custName", name)
+    .setMaxResults(10)
+    .getResultList();
+}
+```
+-- <cite>[The Java EE Tutorial: 39.2 Creating Queries Using the Java Persistence Query Language](http://docs.oracle.com/javaee/7/tutorial/persistence-querylanguage002.htm#BNBRG)</cite>
+
+Named parameters (starting with a colon, like `:custName` above) as well as positional parameters (with a question mark followed by a number, like `?1`) are supported for JPQL.
+
 Hibernate
 ---------
 
