@@ -91,3 +91,6 @@ Thanks to the following folks for their contributions:
 * Erwin Brandstetter
 * [Mariano Valles](http://about.me/marianovalles)
 * Deane Barker
+* [Pete Freitag](https://foundeo.com/)
+* [Patrick Spek](http://www.tyil.nl/)
+* [Jacob Walker](http://jacob-walker.com/)
