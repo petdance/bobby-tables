@@ -90,3 +90,4 @@ Thanks to the following folks for their contributions:
 * Andrey Chasovskikh
 * Erwin Brandstetter
 * [Mariano Valles](http://about.me/marianovalles)
+* Deane Barker
