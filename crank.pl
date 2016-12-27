@@ -59,7 +59,7 @@ MAIN: {
     );
 
     my $tt = Template->new( \%tt_defaults );
-    my $tt_first_pass = Template->new();
+    my $tt_first_pass = Template->new( { ENCODING => 'utf8' } );
 
     my @pages = @{$pages};
     while ( @pages ) {
