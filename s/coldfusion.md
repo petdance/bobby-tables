@@ -31,3 +31,6 @@ have a slightly different syntax, but still provide parameterized queries.
       var rawQuery = myQuery.execute().getResult();
     </cfscript>
 
+ColdFusion 11 added the `queryExecute` function which also provides a way to paramertize queries:
+
+    queryExecute("SELECT FirstName, LastName, Phone FROM tblUser WHERE Status = :Status", {status=form.status});
