@@ -11,8 +11,6 @@ Repository layout
     * templates in Template::Toolkit format
 * static/
     * images and styles
-* share/locale
-    * translations in gettext format
 * t/
     * tests
 * build/ (Not stored)
@@ -28,8 +26,6 @@ Perl and additional CPAN modules.
 For building:
 
 * File::Slurp
-* libintl-perl (for Locale::Messages, Locale::TextDomain)
-* Locale::Maketext::Lexicon (for xgettext.pl)
 * Template
 * Text::Markdown
 

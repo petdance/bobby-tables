@@ -7,9 +7,6 @@ my @modules = qw(
     Encode
     File::Slurp
     Getopt::Long
-    Locale::Maketext::Lexicon
-    Locale::Messages
-    Locale::TextDomain
     POSIX
     Template
     Test::HTML::Lint

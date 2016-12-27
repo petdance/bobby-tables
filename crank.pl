@@ -8,11 +8,6 @@ eval 'use Carp::Always'; # Not everyone has it
 use Getopt::Long;
 use File::Slurp;
 use Encode qw(decode encode);
-use Locale::Messages qw(bind_textdomain_codeset);
-use Locale::TextDomain qw(com.bobby-tables share/locale);
-use POSIX qw(setlocale LC_ALL);
-setlocale(LC_ALL, q());
-bind_textdomain_codeset 'com.bobby-tables' => 'UTF-8';
 use Text::Markdown ();
 use Template ();
 use Template::Constants qw( :debug :chomp );
@@ -28,9 +23,8 @@ GetOptions(
 
 -d $buildpath && -w $buildpath or die;
 
-my $home         = decode 'UTF-8', __('Home');
-my $translations = decode 'UTF-8', __('Translations');
-my $about        = decode 'UTF-8', __('About');
+my $home  = 'Home';
+my $about = 'About';
 
 my $pages = [
     index        => $home,
@@ -48,25 +42,12 @@ my $pages = [
     python       => 'Python',
     ruby         => 'Ruby',
     scheme       => 'Scheme',
-    translations => $translations,
 ];
 
 MAIN: {
     my $m = Text::Markdown->new;
 
     my @sidelinks;
-
-    my %tt_first_pass_defaults = ( FILTERS => { 'loc' => [
-        sub {
-            my ($context, $arg) = @_;
-            return sub {
-                my ($key) = @_;
-                return '' if $key eq '';
-                my $value = __x(encode('UTF-8', $key), currlang => $arg);
-                return decode 'UTF-8', $value;
-            };
-        }, 1 # dynamic filter
-    ] } );
 
     my %tt_defaults = (
         INCLUDE_PATH => [ qw( tt ) ],
@@ -76,11 +57,10 @@ MAIN: {
         PRE_CHOMP    => 1,
         POST_CHOMP   => 1,
         ENCODING     => 'utf8',
-        %tt_first_pass_defaults,
     );
 
     my $tt = Template->new( \%tt_defaults );
-    my $tt_first_pass = Template->new( \%tt_first_pass_defaults );
+    my $tt_first_pass = Template->new();
 
     my @pages = @{$pages};
     while ( @pages ) {
@@ -102,27 +82,16 @@ MAIN: {
     while ( @pages ) {
         my ($section,$desc) = splice( @pages, 0, 2 );
 
-        my $source = read_file( "$sourcepath/$section.md.tt2", { binmode => ':encoding(UTF-8)' } );
+        my $source = read_file( "$sourcepath/$section.md" );
         my $first_pass;
-        $tt_first_pass->process( \$source, undef, \$first_pass, { binmode => ':encoding(UTF-8)' } )
+        $tt_first_pass->process( \$source, undef, \$first_pass )
             || die sprintf("file: %s\nerror: %s\n", "$sourcepath/$section.md.tt2", $tt->error);
 
         my $html = $m->markdown($first_pass);
         $html =~ s{<code>\n}{<code>}smxg;
         $vars->{body} = $html;
         $vars->{section} = ($section eq 'index') ? '.' : "$section.html";
-        $vars->{currlang} = ( $desc eq $home or $desc eq $about or $desc eq $translations ) ? '' : $desc;
-        {
-            local $ENV{LANG} = 'C';
-            open my $git, '-|', qw(git log --pretty=format:commit-hash=%h;ref-names=%d;committer-date-relative=%cr);
-            if ($git) {
-                chomp(my $log = <$git>);
-                my $u = URI->new;
-                $u->scheme('tag');
-                $u->opaque("bobby-tables.com,2012:$log");
-                $vars->{git} = $u->as_string;
-            }
-        }
+        $vars->{currlang} = ( ($desc eq $home) || ($desc eq $about) ) ? '' : $desc;
         $tt->process( 'page.tt', $vars, "$section.html", { binmode => ':encoding(UTF-8)' } )
             || die sprintf("file: %s\nerror: %s\n", "$section.html", $tt->error);
     }

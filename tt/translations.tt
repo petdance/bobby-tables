@@ -1,7 +1,0 @@
-<a href="[% rel_static %]de_DE/[% section %]" xml:lang="de-DE" lang="de-DE" hreflang="de-DE">Deutsch</a>
-/
-<a href="[% rel_static %]ru_RU/[% section %]" xml:lang="ru-RU" lang="ru-RU" hreflang="ru-RU">Русский язык</a>
-/
-<a href="[% rel_static %]es_AR/[% section %]" xml:lang="es-AR" lang="es-AR" hreflang="es-AR">Español</a>
-/
-<a href="[% rel_static %][% section %]" xml:lang="en" lang="en" hreflang="en">English</a>

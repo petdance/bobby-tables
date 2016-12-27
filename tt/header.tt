@@ -3,7 +3,7 @@
 </div>
 <div id="container">
     <div id="banner">
-        <h1><a href="./">[% |loc %]Bobby Tables: A guide to preventing SQL injection[% END %]</a></h1>
+        <h1><a href="./">Bobby Tables: A guide to preventing SQL injection</a></h1>
     </div>
     <!--
     <div id="subnav">
