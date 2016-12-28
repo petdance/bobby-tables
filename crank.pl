@@ -65,7 +65,7 @@ MAIN: {
     my @pages = @{$pages};
     while ( @pages ) {
         my ($section,$desc) = splice( @pages, 0, 2 );
-        my $path = ($section eq 'index') ? './' : "./$section.html";
+        my $path = ($section eq 'index') ? './' : "./$section";
         push( @sidelinks, {
             path => $path,
             text => $desc,
