@@ -27,9 +27,13 @@ Note that the placeholder syntax depends on the database you are using.
 
 The values for the most common databases are:
 
-    >>> import MySQLdb; print MySQLdb.paramstyle
+    >>> import MySQLdb; print MySQLdb.paramstyle  # MySQL
     format
-    >>> import psycopg2; print psycopg2.paramstyle
+    >>> import oursql; print oursql.paramstyle    # MySQL also
+    qmark 
+    >>> import psycopg2; print psycopg2.paramstyle  # PostgreSQL
+    pyformat
+    >>> import pymssql; pymssql.paramstyle        # MS SQL Server
     pyformat
     >>> import sqlite3; print sqlite3.paramstyle
     qmark
