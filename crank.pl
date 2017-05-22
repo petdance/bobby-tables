@@ -40,6 +40,7 @@ my $pages = [
     plsql        => 'PL/SQL',
     postgresql   => 'PostgreSQL',
     python       => 'Python',
+    rlang        => 'R',
     ruby         => 'Ruby',
     scheme       => 'Scheme',
 ];

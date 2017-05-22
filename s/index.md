@@ -95,3 +95,4 @@ Thanks to the following folks for their contributions:
 * [Patrick Spek](http://www.tyil.nl/)
 * [Jacob Walker](http://jacob-walker.com/)
 * [Glenn Jenkins](http://www.pedanticantic.click/)
+* [Dave Jacoby](https://github.com/jacoby)
