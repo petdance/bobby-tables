@@ -34,3 +34,36 @@ have a slightly different syntax, but still provide parameterized queries.
 ColdFusion 11 added the `queryExecute` function which also provides a way to paramertize queries:
 
     queryExecute("SELECT FirstName, LastName, Phone FROM tblUser WHERE Status = :Status", {status=form.status});
+
+Alternative script syntaxes include:
+
+    <cfscript>
+      query name="myQuery" {
+        echo("
+          SELECT FirstName, LastName, Phone
+          FROM   tblUser
+          WHERE  Status
+        ");
+        queryparam sqltype="varchar" value="#form.status#";
+      }
+    </cfscript>
+
+And as of Railo 4.2.1, queryExecute allows both named parameters and positional parameters:
+
+    <cfscript>
+      // Named
+      myQuery = queryExecute(
+        "SELECT FirstName, LastName, Phone
+        FROM   tblUser
+        WHERE  Status = :status",
+        {status = {value = form.status, sqltype="varchar"}}
+      );
+
+      // Positional
+      myQuery = queryExecute(
+        "SELECT FirstName, LastName, Phone
+        FROM   tblUser
+        WHERE  Status = ?",
+        [{value = form.status, sqltype="varchar"}]
+      );
+    </cfscript>

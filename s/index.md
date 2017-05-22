@@ -96,3 +96,4 @@ Thanks to the following folks for their contributions:
 * [Jacob Walker](http://jacob-walker.com/)
 * [Glenn Jenkins](http://www.pedanticantic.click/)
 * [Dave Jacoby](https://github.com/jacoby)
+* [Adrian Lynch](https://github.com/adrianblynch)
