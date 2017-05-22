@@ -18,11 +18,17 @@
 
 **Mom**: And I hope you've learned to sanitize your database inputs.
 
-
-
 # Examples
 
 See the sidebar to the left for your specific language.
+
+# Other languages
+
+This site's is available under a
+[Creative Commons license](https://creativecommons.org/licenses/by-sa/3.0/)
+and may be freely translated on other sites.  Other sites:
+
+* [Czech: bobby-tables.cz](http://bobby-tables.cz/)
 
 # Other resources
 
@@ -43,15 +49,6 @@ these methods, in decreasing order of preference.
 
 [repo]: https://github.com/petdance/bobby-tables
 [issues]: https://github.com/petdance/bobby-tables/issues
-
-# Help translating this site
-
-I'm looking for people to host non-English versions of this site.
-Much of the translation work for German, Russian and Spanish has
-been done.  If you're interested, please sign up for the 
-[bobby-tables mailing list][ml] on Google Groups and let us know.
-
-[ml]: https://groups.google.com/d/forum/bobby-tables
 
 To do
 =====
