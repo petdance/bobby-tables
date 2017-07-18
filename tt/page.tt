@@ -10,6 +10,7 @@
         <link rel="stylesheet" type="text/css" href="[% rel_static %]css/bobby.css" />
         <meta name="msvalidate.01" content="4EF6B7CF4E86418C29626DA5E8B28AF5" /><!-- Bing ownership -->
         <meta name="google-site-verification" content="-m0wCitNyeftzwJnFsHE2Z9PbGXrgh_ZiSmqiPKRKn0" />
+        [% PROCESS 'google-analytics.html' %]
     </head>
     <body>
         <div id="wrap">
@@ -23,6 +24,5 @@
                 [% PROCESS footer.tt %]
             </div>
         </div>
-        [% PROCESS 'google-analytics.html' %]
     </body>
 </html>
