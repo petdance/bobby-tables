@@ -24,6 +24,6 @@ test: crank
 	prove t/*.t
 
 # This is only useful for Andy
-rsync:
+install:
 	rsync -azu -e ssh --delete --verbose \
 	    $(BUILD)/ andy@alex.petdance.com:/srv/bobby
