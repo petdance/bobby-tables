@@ -1,22 +1,42 @@
 C\#
 ===
 
-From the [C# Online](http://en.csharp-online.net/) wiki page [ASP.NET Security Hacks--Avoiding SQL Injection](http://en.csharp-online.net/ASP.NET_Security_Hacks%E2%80%94Avoiding_SQL_Injection)
+ADO.NET SQL Server
 
+    using (SqlConnection connection = new SqlConnection(connectionString))
+    using (SqlCommand command = new SqlCommand("SELECT id, name, email FROM users WHERE id = @UserName", connection))
+    {
+        // Specify the data type and the data size, if applicable
+        // userName is some user provided string value
+        command.Parameters.Add("@UserName", SqlDbType.VarChar, 25).Value = userName;
 
-    SqlCommand userInfoQuery = new SqlCommand(
-        "SELECT id, name, email FROM users WHERE id = @UserName",
-        someSqlConnection);
+        connection.Open();
+        // now you can execute the command here
+    }
 
-    SqlParameter userNameParam = userInfoQuery.Parameters.Add("@UserName",
-        SqlDbType.VarChar, 25 /* max length of field */ );
+ADO.NET Oracle
 
-    // userName is some string valued user input variable
-    userNameParam.Value = userName;
+    using (OracleConnection connection = new OracleConnection(connectionString))
+    using (OracleCommand command = new OracleCommand("SELECT id, name, email, status, region FROM users WHERE status = :Status and region = :Region", connection))
+    {
+        // By default Oracle binds by position index instead of name.
+        // So we'll explicitly tell it to bind by name.
+        command.BindByName = true;
 
-Or simpler:
+        // Provide the data type and data size, if applicable
+        // userStatus and userRegion are some user provided input string variables
+        command.Parameters.Add(":Status", OracleDbType.Varchar2, 25).Value = userStatus;
+        command.Parameters.Add(":Region", OracleDbType.Int32).Value = userRegion;
 
+        connection.Open();
+        // now you can execute the command here
+    }
 
-    String username = "joe.bloggs";
-    SqlCommand sqlQuery = new SqlCommand("SELECT user_id, first_name,last_name FROM users WHERE username = ?username",  sqlConnection);
-    sqlQuery.Parameters.AddWithValue("?username", username);
+Dapper
+
+    using (SqlConnection = new SqlConnection(connectionString))
+    {
+        List<User> users = connection.Query<Users>("SELECT id, name, email, status, region FROM users WHERE status = :Status and region = :Region",
+            new { Status = userStatus, Region = userRegion })
+            .AsList();
+    }
