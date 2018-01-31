@@ -95,3 +95,4 @@ Thanks to the following folks for their contributions:
 * [Dave Jacoby](https://github.com/jacoby)
 * [Adrian Lynch](https://github.com/adrianblynch)
 * [Paul Curry](https://github.com/pcurry)
+* [Mason McGlothlin](http://masonmcg.com/)
