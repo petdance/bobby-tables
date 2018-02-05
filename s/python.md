@@ -12,6 +12,13 @@ Instead, do this:
     cmd = "update people set name=%s where id=%s"
     curs.execute(cmd, (name, id))
 
+For cases involving a single variable do this:
+
+    cmd = "SELECT * FROM PEOPLE WHERE name = %s"
+    curs.execute(cmd, (name,))
+    
+    
+
 Note that the placeholder syntax depends on the database you are using.
 
     'qmark'         Question mark style,
