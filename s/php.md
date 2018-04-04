@@ -2,7 +2,9 @@
 
 PHP is a little more disorganized than how
 [Perl handles parameters](./perl.html).  The standard [MySQL
-extension][mysql] doesn't support parameterization, although the
+extension][mysql] doesn't support parameterization, but that extension
+has been out of date for more than five years and you should definitely 
+use [one of the alternatives][which-mysql] instead. The 
 [PostgreSQL extension][pg] does:
 
     $result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', array($email) );
@@ -18,6 +20,7 @@ The [ODBC][odbc] and [PDO][pdo] extensions both support parameterization
 and multiple databases:
 
 [mysql]: http://php.net/manual/en/book.mysql.php
+[which-mysql]: http://php.net/manual/en/mysqlinfo.api.choosing.php
 [pg]: http://www.php.net/manual/en/book.pgsql.php
 [odbc]: http://php.net/manual/en/book.uodbc.php
 [pdo]: http://www.php.net/manual/en/book.pdo.php
