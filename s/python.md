@@ -16,8 +16,6 @@ For cases involving a single variable do this:
 
     cmd = "SELECT * FROM PEOPLE WHERE name = %s"
     curs.execute(cmd, (name,))
-    
-    
 
 Note that the placeholder syntax depends on the database you are using.
 
