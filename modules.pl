@@ -8,7 +8,7 @@ my @modules = qw(
     File::Slurp
     Getopt::Long
     Template
-    Test::HTML::Lint
+    Test::HTML::Tidy5
     Text::Markdown
 );
 
