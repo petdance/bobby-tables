@@ -46,6 +46,8 @@ The values for the most common databases are:
 So if you are using MySQL or PostgreSQL, use `%s` (even for numbers and
 other non-string values!) and if you are using SQLite use `?`
 
+If you are using ODBC to connect to the DB, regardless of which DB it is,  use `?`
+
 
 To do
 -----
