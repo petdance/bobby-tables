@@ -96,3 +96,4 @@ Thanks to the following folks for their contributions:
 * [Adrian Lynch](https://github.com/adrianblynch)
 * [Paul Curry](https://github.com/pcurry)
 * [Mason McGlothlin](http://masonmcg.com/)
+* [Ramprakash R](https://github.com/ramprax)
