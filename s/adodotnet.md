@@ -89,7 +89,7 @@ Console.WriteLine($"Number of students not named `Robert' OR 1=1; --`: {cmd.Exec
 
 Todo:
 
-Example using data adapter and dataset
+Example using data adapter and dataset  
 Examples in F#, IronPython  
 Examples using third-party data providers  
 Test code examples; use examples that are liable to SQL injection (does OLEDB SQL support `--` comments?)  
