@@ -47,10 +47,10 @@ and there are a number of third-party providers for other data sources, for exam
 
 The shared architecture across providers means that **there is a single common strategy for avoiding SQL injection for all data providers, in all .NET languages.**
 
-Using ADO.NET without SQL Injection
+Commands and their uses
 ===
 
-In ADO.NET, you specify [**commands**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to execute against the data source, via an open [**connection**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connecting-to-a-data-source). Commands consist of a string (read/written via the command's [`CommandText`](https://docs.microsoft.com/en-us/dotnet/api/system.data.idbcommand.commandtext?view=netframework-4.7.2#System_Data_IDbCommand_CommandText) property), along with other properties. This string can be an SQL statement (it may also contain, a table name, a view name, or some other string understood by the data source).
+In ADO.NET, you specify [**commands**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to execute against the data source, via an open [**connection**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connecting-to-a-data-source). Commands consist of a string (read/written via the command's [`CommandText`](https://docs.microsoft.com/en-us/dotnet/api/system.data.idbcommand.commandtext?view=netframework-4.7.2#System_Data_IDbCommand_CommandText) property), along with other properties. This string can be an SQL statement (it may also contain, a table name, a view name, or some other string understood by the data source); this SQL statement is the primary vector for SQL injection.
 
  A command can:
 
@@ -58,12 +58,17 @@ In ADO.NET, you specify [**commands**](https://docs.microsoft.com/en-us/dotnet/f
 * [return a single result](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/obtaining-a-single-value-from-a-database)
 * [return a **data reader**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/retrieving-data-using-a-datareader), which allows reading a result set row by row in a forward-only direction
 
-A [**data adapter**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter) serves as the bridge between the data source, and a [**data set**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-datasets) -- an in-memory representation of the data independent of any specific data source or data provider. The data adapter makes use of commands in two ways:
+There is a higher level of abstraction built into ADO.NET: using a [**data set**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-datasets) -- an in-memory representation of the data independent of any specific data source or data provider. [**Data adapters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter) are the bridge between the data source and a data set. The data adapter makes use of commands in two ways:
 
 1. Fill the data set with data, using `SelectCommand`,
 2. Synchronize data changes between the data set and the data source, using `InsertCommand`, `UpdateCommand`, and `DeleteCommand`.
 
-To avoid SQL injection in ADO.NET, do the following:
+These commands are also liable to be vulnerable to SQL injection.
+
+Avoiding SQL injection in commands
+==
+
+To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
 
 1. use placeholders for values in the SQL of the command, and
 2. add **parameters** to the command
@@ -77,8 +82,10 @@ Note that the syntax for SQL placeholders can vary between providers:
 | OLE DB, ODBC | `SELECT * FROM Students WHERE FirstName = ?`
 | Oracle | `SELECT * FROM Students WHERE FirstName = :FirstName`
 
-Example -- C#, SQL Server, Data reader
+Example -- Data reader
 ===
+* **Language**: C#
+* **Provider**: SQL Server
 ```csharp
 // conn refers to an open instance of SqlConnection
 
@@ -89,16 +96,17 @@ var cmd = new SqlCommand() {
 var prm = cmd.Parameters.Add("StudentName", SqlDbType.NVarChar);
 prm.Value = "Robert' OR 1=1; --";
 using (var rdr = cmd.ExecuteReader()) {
-    while (rdr.MoveNext()) {
-        Console.WriteLine($"Last name: {rdr["LastName"]}, first name: {rdr["FirstName"]});
+    while (rdr.Read()) {
+        Console.WriteLine($"Last name: {rdr["LastName"]}, first name: {rdr["FirstName"]}");
     }
 }
-
 ```
-**Note on `using`**: Objects which might hold onto resources (e.g. memory, or open database connections) need to be explicitly notified to release those resources. For objects that implement the `IDisposable` interface, the `using` block will call `Dispose` once the block exits.
+**Note on `using`**: Objects which might hold onto resources (e.g. memory, or open database connections) need to be explicitly notified to release those resources. Objects indicate this by implementing the `IDisposable` interface; and wrapping the use of those objects in a `using` block will call the `IDisposable.Dispose` method once the block exits.
 
-Example -- VB.NET, Excel file, return a single value
+Example -- Return a single value
 ===
+* **Language**: VB.NET
+* **Provider**: OLE DB
 ```vb
 ' conn refers to an open instance of OleDbConnection
 
@@ -109,13 +117,20 @@ Dim cmd = New OleDbCommand() With {
 Dim prm = cmd.Parameters.Add("StudentName", OleDbType.VarWChar)
 prm.Value = "Robert' OR 1=1; --"
 Console.WriteLine($"Number of students not named `Robert' OR 1=1; --`: {cmd.ExecuteScalar}")
+
 ```
 
 **Note on `Using`**: see note on `using` in the previous example.
 
+Example -- Commands that don't return a value
+==
+* **Language**: F#
+* **Provider**: SQLite
+
+
 Todo:
 
-Additional information on data adapter parameters
+Fixing SQL injection in data adapter commands  
 Example using data adapter and dataset  
 Examples in F#, IronPython  
 Examples using third-party data providers  
@@ -124,3 +139,5 @@ Inline references
 List of references (
     [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET Debugging blog
 )
+Open issue: verify F# information on page with F# expert
+Open issue: F# SQL injection outside of ADO.NET data provider commands
