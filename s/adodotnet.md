@@ -86,6 +86,7 @@ Example -- Data reader
 ===
 * **Language**: C#
 * **Provider**: SQL Server
+* **`using`s**: System.Data, System.Data.SqlClient
 ```csharp
 // conn refers to an open instance of SqlConnection
 
@@ -107,6 +108,7 @@ Example -- Return a single value
 ===
 * **Language**: VB.NET
 * **Provider**: OLE DB
+* **`Imports`**: System.Data.OIleDb
 ```vb
 ' conn refers to an open instance of OleDbConnection
 
@@ -117,16 +119,17 @@ Dim cmd = New OleDbCommand() With {
 Dim prm = cmd.Parameters.Add("StudentName", OleDbType.VarWChar)
 prm.Value = "Robert' OR 1=1; --"
 Console.WriteLine($"Number of students not named `Robert' OR 1=1; --`: {cmd.ExecuteScalar}")
-
 ```
-
-**Note on `Using`**: see note on `using` in the previous example.
 
 Example -- No return value
 ==
 * **Language**: F#
-* **Provider**: SQLite
+* **Provider**: SQLite (Nuget: `System.Data.SQLite.Core`)
+* **open**: System.Data, System.Data.SQLite
+
 ```fsharp
+// conn refers to an open instance of SQLiteConnection
+
 let cmd = new SQLiteCommand(Connection=conn, CommandText="DELETE FROM Students WHERE FirstName = :FirstName")
 let prm = cmd.Parameters.Add("FirstName", DbType.String)
 prm.Value <- "Robert' OR 1=1; =="
@@ -138,11 +141,10 @@ Todo:
 Fixing SQL injection in data adapter commands  
 Example using data adapter and dataset  
 Examples in IronPython  
-Examples using third-party data providers  
-Test code examples; use examples that are liable to SQL injection (does OLEDB SQL support `--` comments?)  
 Inline references  
-List of references (
-    [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET Debugging blog
-)
-Open issue: verify F# information on page with F# expert
+List of references (  
+    [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET Debugging blog  
+)  
+Open issue: verify F# information on page with F# expert  
+Open issue: verify IronPython information on page with IronPython expert  
 Open issue: F# SQL injection outside of ADO.NET data provider commands
