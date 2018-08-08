@@ -122,17 +122,22 @@ Console.WriteLine($"Number of students not named `Robert' OR 1=1; --`: {cmd.Exec
 
 **Note on `Using`**: see note on `using` in the previous example.
 
-Example -- Commands that don't return a value
+Example -- No return value
 ==
 * **Language**: F#
 * **Provider**: SQLite
-
+```fsharp
+let cmd = new SQLiteCommand(Connection=conn, CommandText="DELETE FROM Students WHERE FirstName = :FirstName")
+let prm = cmd.Parameters.Add("FirstName", DbType.String)
+prm.Value <- "Robert' OR 1=1; =="
+cmd.ExecuteNonQuery()
+```
 
 Todo:
 
 Fixing SQL injection in data adapter commands  
 Example using data adapter and dataset  
-Examples in F#, IronPython  
+Examples in IronPython  
 Examples using third-party data providers  
 Test code examples; use examples that are liable to SQL injection (does OLEDB SQL support `--` comments?)  
 Inline references  
