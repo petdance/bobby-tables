@@ -60,8 +60,8 @@ In ADO.NET, you specify [**commands**](https://docs.microsoft.com/en-us/dotnet/f
 
 There is a higher level of abstraction built into ADO.NET: using a [**data set**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-datasets) -- an in-memory representation of the data independent of any specific data source or data provider. [**Data adapters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter) are the bridge between the data source and a data set. The data adapter makes use of commands in two ways:
 
-1. Fill the data set with data, using `SelectCommand`,
-2. Synchronize data changes between the data set and the data source, using `InsertCommand`, `UpdateCommand`, and `DeleteCommand`.
+1. Fill the data set with data, using the commmand at the data adapter's `SelectCommand` property,
+2. Synchronize data changes between the data set and the data source, using the commands at the `InsertCommand`, `UpdateCommand`, and `DeleteCommand` properties of the data adapter.
 
 These commands are also liable to be vulnerable to SQL injection.
 
@@ -123,9 +123,35 @@ Console.WriteLine($"Number of students not named `Robert' OR 1=1; --`: {cmd.Exec
 
 Example -- No return value
 ==
+* **Language**: Powershell
+* **Provider**: SQL Server
+```powershell
+# $conn refers to an open instance of SqlConnection
+
+$cmd = New-Object System.Data.SqlClient.SqlCommand
+$cmd.Connection = $conn
+$cmd.CommandText = "DELETE FROM Students WHERE FirstName = @FirstName"
+$nvarchar = [System.Data.SqlDbType]::NVarChar
+$prm = $cmd.Parameters.Add("FirstName", $nvarchar)
+$prm.Value = "Robert' OR 1=1; --"
+$cmd.ExecuteNonQuery
+```
+
+Example -- Filll dataset
+==
 * **Language**: F#
-* **Provider**: SQLite (Nuget: `System.Data.SQLite.Core`)
-* **open**: System.Data, System.Data.SQLite
+* **Provider**: MySQL
+
+Note about F# type providers
+
+Example -- Sync data from dataset to datasource
+==
+* **Language**: IronPython
+* **Provider**: SQLite
+
+Note about the sqlite module
+
+
 
 ```fsharp
 // conn refers to an open instance of SQLiteConnection
@@ -139,9 +165,10 @@ cmd.ExecuteNonQuery()
 Todo:
 
 Fixing SQL injection in data adapter commands  
+Convert ExecuteNonQuery to Powershell + SQL Server  
+Example: F#, MySQL, fill datatable with command and parameter  
+Example: IronPython, SQLite, sync datatable  
 Example using data adapter and dataset  
-Examples in IronPython  
-Inline references  
 List of references (  
     [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET Debugging blog  
 )  
