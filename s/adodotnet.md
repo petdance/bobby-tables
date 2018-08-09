@@ -102,7 +102,7 @@ using (var rdr = cmd.ExecuteReader()) {
     }
 }
 ```
-**Note on `using`**: Objects which might hold onto resources (e.g. memory, or open database connections) need to be explicitly notified to release those resources. Objects indicate this by implementing the `IDisposable` interface; and wrapping the use of those objects in a `using` block will call the `IDisposable.Dispose` method once the block exits.
+**Note on `using`**: Objects which might hold onto resources (e.g. memory, or open database connections) need to be explicitly notified to release those resources. Objects indicate this by implementing the `IDisposable` interface. Wrapping the use of those objects in a `using` block will call the `IDisposable.Dispose` method once the block exits.
 
 Example -- Return a single value
 ===
@@ -158,12 +158,11 @@ let students = new DataSet()
 adapter.Fill(students, "Students")
 ```
 
-**Note on `use`**: This is one of [two F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword). See the note on C#'s `using` keyword in the first example for more details.
+**Note on `use`**: This is one of two [F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword). See the note on C#'s `using` keyword in the first example for more details.
 
 References
 ==
 * [Microsoft documentation on ADO.NET](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/)
-* [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET Debugging blog  
 ---
 
 
