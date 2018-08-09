@@ -1,8 +1,8 @@
-> To avoid SQL injection in ADO.NET, do the following:
+> To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
 >
-> 1. use placeholders for values in the SQL of a command
-> 2. add **parameters** to the command
-> 3. set the value of the parameters (generally, via the `Value` property)
+> 1. use placeholders for values in the SQL of the command,
+> 2. add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
+> 3. set the value of the parameter (generally, via the `Value` property)
 >
 > Example in C#, against SQL Server:
 >
@@ -70,8 +70,8 @@ Avoiding SQL injection in commands
 
 To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
 
-1. use placeholders for values in the SQL of the command, and
-2. add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command
+1. use placeholders for values in the SQL of the command,
+2. add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
 3. set the value of the parameter (generally, via the `Value` property)
 
 Note that the syntax for SQL placeholders can vary between providers:
