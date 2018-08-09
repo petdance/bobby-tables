@@ -43,9 +43,9 @@ There are a number of [data providers built-in to the .NET Framework](https://do
 * [SQL Server Compact Edition](https://msdn.microsoft.com/library/system.data.sqlserverce.aspx)
 * [Oracle](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-oracle) (deprecated; use [ODP](https://www.oracle.com/technetwork/topics/dotnet/index-085163.html))
 
-and there are a number of third-party providers for other data sources, for example: [SQLite](https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki), [MySQL](https://dev.mysql.com/downloads/connector/net/6.10.html), [Firebird](https://firebirdsql.org/en/net-provider/) and others.
+and there are a number of third-party providers for other data sources, for example: [SQLite](https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki), [MySQL](https://dev.mysql.com/downloads/connector/net), [Firebird](https://firebirdsql.org/en/net-provider/) and others.
 
-The shared architecture across providers means that **there is a single common strategy for avoiding SQL injection for all data providers, in all .NET languages.**
+The shared architecture across providers means that **there is a single common strategy for avoiding SQL injection for all ADO.NET data providers, in all .NET languages.**
 
 Commands and their uses
 ===
@@ -60,8 +60,8 @@ In ADO.NET, you specify [**commands**](https://docs.microsoft.com/en-us/dotnet/f
 
 There is a higher level of abstraction built into ADO.NET: using a [**data set**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-datasets) -- an in-memory representation of the data independent of any specific data source or data provider. [**Data adapters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter) are the bridge between the data source and a data set. The data adapter makes use of commands in two ways:
 
-1. Fill the data set with data, using the commmand at the data adapter's `SelectCommand` property,
-2. Synchronize data changes between the data set and the data source, using the commands at the `InsertCommand`, `UpdateCommand`, and `DeleteCommand` properties of the data adapter.
+1. Fill the data set with data, using the commmand at the data adapter's [`SelectCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.selectcommand) property,
+2. Synchronize data changes between the data set and the data source, using the commands at the [`InsertCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.insertcommand), [`UpdateCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.updatecommand), and [`DeleteCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.deletecommand) properties of the data adapter.
 
 These commands are also liable to be vulnerable to SQL injection.
 
@@ -142,25 +142,31 @@ Example -- Filll dataset
 * **Language**: F#
 * **Provider**: MySQL
 
-Note about F# type providers
+```fsharp
+// conn refers to an open instance of MySQLConnection
+
+// The SQL passed into the constructor of a DataAdapter becomes the CommandText
+// for the command at the SelectCommand property
+let sql = "SELECT * FROM Students WHERE FirstName = @FirstName"
+use adapter = new MySqlDataAdapter(sql, conn)
+let prm = adapter.SelectCommand.Parameters.Add("FirstName", MySqlDbType.VarChar)
+prm.Value <- "Robert' OR 1=1; --"
+let students = new DataSet()
+adapter.Fill(students, "Students")
+```
+
+**Note on `use`**: This is one of [two F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword). See the note on C#'s `using` keyword in the first example for more details.
 
 Example -- Sync data from dataset to datasource
 ==
 * **Language**: IronPython
 * **Provider**: SQLite
 
+
+
 Note about the sqlite module
 
 
-
-```fsharp
-// conn refers to an open instance of SQLiteConnection
-
-let cmd = new SQLiteCommand(Connection=conn, CommandText="DELETE FROM Students WHERE FirstName = :FirstName")
-let prm = cmd.Parameters.Add("FirstName", DbType.String)
-prm.Value <- "Robert' OR 1=1; =="
-cmd.ExecuteNonQuery()
-```
 
 Todo:
 
