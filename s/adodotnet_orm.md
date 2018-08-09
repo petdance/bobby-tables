@@ -18,3 +18,7 @@ SqlCommand and colons for OracleCommand) for the database being used.
             new { Status = userStatus, Region = userRegion })
             .AsList();
     }
+
+# LINQ to SQL
+
+Todo
