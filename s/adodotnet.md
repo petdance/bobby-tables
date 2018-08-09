@@ -71,7 +71,7 @@ Avoiding SQL injection in commands
 To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
 
 1. use placeholders for values in the SQL of the command, and
-2. add **parameters** to the command
+2. add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command
 3. set the value of the parameter (generally, via the `Value` property)
 
 Note that the syntax for SQL placeholders can vary between providers:
@@ -137,7 +137,7 @@ $prm.Value = "Robert' OR 1=1; --"
 $cmd.ExecuteNonQuery
 ```
 
-Example -- Filll dataset
+Example -- Filll a dataset
 ==
 * **Language**: F#
 * **Provider**: MySQL
@@ -145,9 +145,11 @@ Example -- Filll dataset
 ```fsharp
 // conn refers to an open instance of MySQLConnection
 
+// Note that the placeholder syntax for MySQL is @name
+let sql = "SELECT * FROM Students WHERE FirstName = @FirstName"
+
 // The SQL passed into the constructor of a DataAdapter becomes the CommandText
 // for the command at the SelectCommand property
-let sql = "SELECT * FROM Students WHERE FirstName = @FirstName"
 use adapter = new MySqlDataAdapter(sql, conn)
 let prm = adapter.SelectCommand.Parameters.Add("FirstName", MySqlDbType.VarChar)
 prm.Value <- "Robert' OR 1=1; --"
@@ -157,27 +159,17 @@ adapter.Fill(students, "Students")
 
 **Note on `use`**: This is one of [two F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword). See the note on C#'s `using` keyword in the first example for more details.
 
-Example -- Sync data from dataset to datasource
+References
 ==
-* **Language**: IronPython
-* **Provider**: SQLite
-
-
-
-Note about the sqlite module
+* [Microsoft documentation on ADO.NET](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/)
+* [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET Debugging blog  
+---
 
 
 
 Todo:
 
 Fixing SQL injection in data adapter commands  
-Convert ExecuteNonQuery to Powershell + SQL Server  
-Example: F#, MySQL, fill datatable with command and parameter  
-Example: IronPython, SQLite, sync datatable  
-Example using data adapter and dataset  
-List of references (  
-    [SQL Injection and how to avoid it](http://blogs.msdn.com/tom/archive/2008/05/29/sql-injection-and-how-to-avoid-it.aspx) on the ASP.NET Debugging blog  
-)  
+Example: IronPython, SQLite, sync datatable  (note about Python `sqlite` module, also available from IronPython)  
 Open issue: verify F# information on page with F# expert  
-Open issue: verify IronPython information on page with IronPython expert  
 Open issue: F# SQL injection outside of ADO.NET data provider commands
