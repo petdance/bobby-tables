@@ -1,5 +1,6 @@
-# Entity Framework
-==
+Entity Framework
+===
+Entity Framework is Microsoft's primary ORM (object-relational mapper) built on top of ADO.NET.
 
 In general, Entity Framework converts expression-based queries:
 ```csharp
@@ -20,8 +21,6 @@ However, there are a number of places where EF allows writing raw SQL statements
 * Database.SqlQuery
 * Database.ExecuteSqlCommand
 
-```vb
-'VB.NET example
-Using ctx = New SchoolContext
-    Dim qry As IQueryable(Of Student) = ctx.Students.
-End Using
+---
+Todo:  
+provide examples for each method
