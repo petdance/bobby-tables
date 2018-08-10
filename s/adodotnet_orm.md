@@ -1,7 +1,3 @@
-# Entity Framework
-
-Todo
-
 # Dapper
 
 Dapper is one of several micro-ORM's (Object Relational Mappers) available
