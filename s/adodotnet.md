@@ -84,25 +84,27 @@ Note that the syntax for SQL placeholders can vary between providers:
 
 Example -- Data reader
 ===
-* **Language**: C#
-* **Provider**: SQL Server
-* **`using`s**: System.Data, System.Data.SqlClient
-```csharp
-// conn refers to an open instance of SqlConnection
+* **Language**: IronPython
+* **Provider**: SQLite
+* **`import`s**: `from System.Data import DbType`; `from System.Data.SQLite import SQLiteCommand`
 
-var cmd = new SqlCommand() {
-    Connection = conn,
-    CommandText = "SELECT * FROM Students WHERE FirstName = @FirstName"
-};
-var prm = cmd.Parameters.Add("StudentName", SqlDbType.NVarChar);
-prm.Value = "Robert' OR 1=1; --";
-using (var rdr = cmd.ExecuteReader()) {
-    while (rdr.Read()) {
-        Console.WriteLine($"Last name: {rdr["LastName"]}, first name: {rdr["FirstName"]}");
-    }
-}
+```python
+# Note that Python has a built-in module for working with SQLite databases
+
+# conn refers to an open instance of SQLiteConnection
+
+cmd = SQLiteCommand()
+cmd.Connection = conn
+
+# SQLite supports multiple placeholder syntaxes, including @name syntax
+cmd.CommandText = "SELECT * FROM Students WHERE FirstName = @FirstName"
+prm = cmd.Parameters.Add("FirstName", DbType.String)
+prm.Value = "Robert' OR 1=1; --"
+with cmd.ExecuteReader() as reader:
+    while reader.Read():
+        print("Last name: %s, first name: %s" %(reader["LastName"], reader["FirstName"]))
 ```
-**Note on `using`**: Objects which might hold onto resources (e.g. memory, or open database connections) need to be explicitly notified to release those resources. Objects indicate this by implementing the `IDisposable` interface. Wrapping the use of those objects in a `using` block will call the `IDisposable.Dispose` method once the block exits.
+**Note on `with`**: Objects which might hold onto resources (e.g. memory, or open database connections) need to be explicitly notified to release those resources. Objects indicate this by implementing the `IDisposable` interface. In IronPython, wrapping the use of those objects in a `with` block will call the `IDisposable.Dispose` method once the block exits; the C# `using` keyword, the VB.NET `Using` keyword, and the F# `use` and `using` idioms all provide similar functionality.
 
 Example -- Return a single value
 ===
@@ -158,18 +160,8 @@ let students = new DataSet()
 adapter.Fill(students, "Students")
 ```
 
-**Note on `use`**: This is one of two [F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword). See the note on C#'s `using` keyword in the first example for more details.
+**Note on `use`**: This is one of two [F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword). See the note on IronPython's use of `with` in the first example for more details.
 
 References
 ==
 * [Microsoft documentation on ADO.NET](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/)
----
-
-
-
-Todo:
-
-Fixing SQL injection in data adapter commands  
-Example: IronPython, SQLite, sync datatable  (note about Python `sqlite` module, also available from IronPython)  
-Open issue: verify F# information on page with F# expert  
-Open issue: F# SQL injection outside of ADO.NET data provider commands
