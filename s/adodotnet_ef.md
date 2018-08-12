@@ -44,3 +44,7 @@ Dim prm = New SqlParameter("@firstname", SqlDbType.NVarChar)
 prm.Value = "Robert'; DROP TABLE Students; --"
 Dim qry = ctx.Students.SqlQuery(sql, prm) 
 ```
+
+References
+===
+* [Entity Framework Raw SQL Queries](https://msdn.microsoft.com/en-us/library/jj592907(v=vs.113).aspx)
