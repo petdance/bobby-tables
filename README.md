@@ -26,8 +26,8 @@ Perl and additional CPAN modules.
 For building:
 
 * File::Slurp
+* Markdent
 * Template
-* Text::Markdown
 
 For testing:
 

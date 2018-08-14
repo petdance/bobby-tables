@@ -69,7 +69,7 @@ List<Employee> employees = query.getResultList();
 
 Only a plain `?` is supported for positional parameters, with the first parameter being `1` (not `0`).
 
-In addition to native queries, JPA provides its own <abbr title="Java Persistence Query Language">JPQL</abbr>:
+In addition to native queries, JPA provides its own Java Persistence Query Language (JPQL):
 
 ```java
 public List findWithName(String name) {

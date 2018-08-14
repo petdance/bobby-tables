@@ -9,7 +9,7 @@ eval 'use Carp::Always'; # Not everyone has it
 use Getopt::Long;
 use File::Slurp;
 use Encode qw(decode encode);
-use Text::Markdown ();
+use Markdent::Simple::Fragment ();
 use Template ();
 use Template::Constants qw( :debug :chomp );
 
@@ -47,8 +47,6 @@ my $pages = [
 ];
 
 MAIN: {
-    my $m = Text::Markdown->new;
-
     my @sidelinks;
 
     my %tt_defaults = (
@@ -89,7 +87,11 @@ MAIN: {
         $tt_first_pass->process( \$source, undef, \$first_pass )
             || die sprintf("file: %s\nerror: %s\n", "$sourcepath/$section.md.tt2", $tt->error);
 
-        my $html = $m->markdown($first_pass);
+        my $parser = Markdent::Simple::Fragment->new;
+        my $html = $parser->markdown_to_html(
+            dialect  => 'GitHub',
+            markdown => $first_pass,
+        );
         $html =~ s{<code>\n}{<code>}smxg;
         $vars->{body} = $html;
         $vars->{section} = ($section eq 'index') ? '.' : "$section.html";

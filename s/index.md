@@ -2,7 +2,7 @@
 
 [From the webcomic _xkcd_](http://xkcd.com/327/)
 
-<a href="http://xkcd.com/327/"><img src="/img/xkcd.png" alt="xkcd Bobby Tables Cartoon" height="205" width="666" /></a>
+![xkcd Bobby Tables cartoon](/img/xkcd.png)
 
 <br clear="right">
 
@@ -96,3 +96,4 @@ Thanks to the following folks for their contributions:
 * [Adrian Lynch](https://github.com/adrianblynch)
 * [Paul Curry](https://github.com/pcurry)
 * [Mason McGlothlin](http://masonmcg.com/)
+* [Dave Rolsky](https://www.houseabsolute.com/)
