@@ -32,7 +32,7 @@ In ADO.NET, you specify
 against the data source, via an open
 [**connection**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connecting-to-a-data-source). Commands
 consist of a string (read/written via the command's
-[`CommandText`](https://docs.microsoft.com/en-us/dotnet/api/system.data.idbcommand.commandtext?view=netframework-4.7.2# System_Data_IDbCommand_CommandText) property),
+[`CommandText`](https://docs.microsoft.com/en-us/dotnet/api/system.data.idbcommand.commandtext?view=netframework-4.7.2#System_Data_IDbCommand_CommandText) property),
 along with other properties. This string can be an SQL statement (it may also contain, a table name, a view name, or
 some other string understood by the data source); this SQL statement is the primary vector for SQL injection.
 
