@@ -48,8 +48,14 @@ There is a higher level of abstraction built into ADO.NET: using a
 [**Data adapters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter)
 are the bridge between the data source and a data set. Internally, the data adapter makes use of commands in two ways:
 
-1. When [filling the data set with data](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter), the commmand at the data adapter's [`SelectCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.selectcommand) property is used,
-2. When [synchronizing data changes between the data set and the data source](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/updating-data-sources-with-dataadapters), the commands at the [`InsertCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.insertcommand), [`UpdateCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.updatecommand), and [`DeleteCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.deletecommand) properties of the data adapter are used.
+1. When [filling the data set with data](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter),
+the commmand at the data adapter's [`SelectCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.selectcommand) property is used,
+
+2. When [synchronizing data changes between the data set and the data source](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/updating-data-sources-with-dataadapters),
+the commands at the
+[`InsertCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.insertcommand),
+[`UpdateCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.updatecommand), and
+[`DeleteCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.deletecommand) properties of the data adapter are used.
 
 These commands are also liable to be vulnerable to SQL injection.
 
@@ -122,13 +128,19 @@ with cmd.ExecuteReader() as reader:
     while reader.Read():
         print("Last name: %s, first name: %s" %(reader["LastName"], reader["FirstName"]))
 ```
-**Note on `with`**: Objects which might hold onto resources (e.g. memory, or open database connections) need to be explicitly notified to release those resources. Objects indicate this by implementing the `IDisposable` interface. In IronPython, wrapping the use of those objects in a `with` block will call the `IDisposable.Dispose` method once the block exits; the C# `using` keyword, the VB.NET `Using` keyword, and the F# `use` and `using` idioms all provide similar functionality.
+
+**Note on `with`**: Objects which might hold onto resources (e.g. memory, or open database connections) need to be
+explicitly notified to release those resources. Objects indicate this by implementing the `IDisposable` interface. In
+IronPython, wrapping the use of those objects in a `with` block will call the `IDisposable.Dispose` method once the
+block exits; the C# `using` keyword, the VB.NET `Using` keyword, and the F# `use` and `using` idioms all provide
+similar functionality.
 
 ## Returning a single value
 
 * **Language**: VB.NET
 * **Provider**: OLE DB
 * **`Imports`**: System.Data.OleDb
+
 ```vb
 ' conn refers to an open instance of OleDbConnection
 
@@ -178,7 +190,8 @@ let students = new DataSet()
 adapter.Fill(students, "Students")
 ```
 
-**Note on `use`**: This is one of two [F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword). See the note on IronPython's use of `with` in the first example for more details.
+**Note on `use`**: This is one of two [F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword).
+See the note on IronPython's use of `with` in the first example for more details.
 
 References
 ==
