@@ -97,3 +97,5 @@ Thanks to the following folks for their contributions:
 * [Paul Curry](https://github.com/pcurry)
 * [Mason McGlothlin](http://masonmcg.com/)
 * [Dave Rolsky](https://www.houseabsolute.com/)
+* [Zev Spitz](https://github.com/zspitz)
+
