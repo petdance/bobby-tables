@@ -1,30 +1,40 @@
-> ADO.NET provides the most direct method of data access within the .NET Framework ([link](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview)).
->
-> To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
->
-> 1. use placeholders for values in the SQL of the command,
-> 2. add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
-> 3. set the value of the parameter (generally, via the `Value` property)
->
-> Example in C#, against SQL Server:
->
-> ```csharp
-> // conn refers to an open instance of SqlConnection
->
-> var cmd = new SqlCommand() {
->    Connection = conn,
->    CommandText = "SELECT * FROM Students WHERE FirstName = @FirstName"
-> };
-> var prm = cmd.Parameters.Add("StudentName", SqlDbType.NVarChar);
-> prm.Value = "Robert'; DROP TABLE Students; --";
-> ```
->
-> Because of the shared architecture of ADO.NET-standard implementations (aka [**data providers**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers)), the strategy is the same across all data providers and across all .NET supported languages. (See the [ADO.NET architecture](#adonet-architecture) section for more details.)
+ADO.NET provides the most direct method of data access within the .NET Framework ([link](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview)).
+
+To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
+
+1. use placeholders for values in the SQL of the command,
+2. add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
+3. set the value of the parameter (generally, via the `Value` property)
+
+Example in C#, against SQL Server:
+
+```csharp
+// conn refers to an open instance of SqlConnection
+
+var cmd = new SqlCommand() {
+   Connection = conn,
+   CommandText = "SELECT * FROM Students WHERE FirstName = @FirstName"
+};
+var prm = cmd.Parameters.Add("StudentName", SqlDbType.NVarChar);
+prm.Value = "Robert'; DROP TABLE Students; --";
+```
+
+Because of the shared architecture of ADO.NET-standard implementations (aka
+[**data providers**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers)),
+the strategy is the same across all data providers and across all .NET supported languages. (See the
+[ADO.NET architecture](#adonet-architecture) section for more details.)
 
 Commands and their uses
 ===
 
-In ADO.NET, you specify [**commands**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to execute against the data source, via an open [**connection**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connecting-to-a-data-source). Commands consist of a string (read/written via the command's [`CommandText`](https://docs.microsoft.com/en-us/dotnet/api/system.data.idbcommand.commandtext?view=netframework-4.7.2#System_Data_IDbCommand_CommandText) property), along with other properties. This string can be an SQL statement (it may also contain, a table name, a view name, or some other string understood by the data source); this SQL statement is the primary vector for SQL injection.
+In ADO.NET, you specify
+[**commands**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to execute
+against the data source, via an open
+[**connection**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/connecting-to-a-data-source). Commands
+consist of a string (read/written via the command's
+[`CommandText`](https://docs.microsoft.com/en-us/dotnet/api/system.data.idbcommand.commandtext?view=netframework-4.7.2# System_Data_IDbCommand_CommandText) property),
+along with other properties. This string can be an SQL statement (it may also contain, a table name, a view name, or
+some other string understood by the data source); this SQL statement is the primary vector for SQL injection.
 
  A command can:
 
@@ -32,7 +42,11 @@ In ADO.NET, you specify [**commands**](https://docs.microsoft.com/en-us/dotnet/f
 * [return a single result](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/obtaining-a-single-value-from-a-database)
 * [return a **data reader**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/retrieving-data-using-a-datareader), which allows reading a result set row by row in a forward-only direction
 
-There is a higher level of abstraction built into ADO.NET: using a [**data set**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-datasets) -- an in-memory representation of the data independent of any specific data source or data provider. [**Data adapters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter) are the bridge between the data source and a data set. Internally, the data adapter makes use of commands in two ways:
+There is a higher level of abstraction built into ADO.NET: using a
+[**data set**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-datasets)
+-- an in-memory representation of the data independent of any specific data source or data provider.
+[**Data adapters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter)
+are the bridge between the data source and a data set. Internally, the data adapter makes use of commands in two ways:
 
 1. When [filling the data set with data](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter), the commmand at the data adapter's [`SelectCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.selectcommand) property is used,
 2. When [synchronizing data changes between the data set and the data source](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/updating-data-sources-with-dataadapters), the commands at the [`InsertCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.insertcommand), [`UpdateCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.updatecommand), and [`DeleteCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter.deletecommand) properties of the data adapter are used.
@@ -64,7 +78,7 @@ ADO.NET architecture
 
 The basic functionality used by ADO.NET to connect to databases and other data sources is defined in a set of `abstract` (`MustInherit` in VB.NET) classes in the [`System.Data.Common`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common) namespace. Implementors of this functionality for specific data sources are called ADO.NET [**data providers**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers), and consist of classes that inherit from these base classes. For example, the ADO.NET data provider for connecting to SQL Server contains the following classes::
 
-| This class in the [`System.Data.SqlCient`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient) namespace | Inherits from this class in the [`System.Data.Common`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common) namespace |
+| This class in the [`System.Data.SqlClient`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient) namespace | Inherits from this class in the [`System.Data.Common`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common) namespace |
 | --- | --- |
 | [`SqlConnection`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection) | [`DbConnection`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbconnection) |
 | [`SqlCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand) | [`DbCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbcommand) |

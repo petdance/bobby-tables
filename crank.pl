@@ -33,7 +33,9 @@ my $pages = [
     coldfusion   => 'ColdFusion',
     csharp       => 'C#',
     delphi       => 'Delphi',
-    dotnet       => '.NET',
+    adodotnet    => '.NET',
+    adodotnet_ef  => '.NET EF',
+    adodotnet_orm    => '.NET ORM',
     go           => 'Go',
     java         => 'Java',
     perl         => 'Perl',
@@ -44,6 +46,7 @@ my $pages = [
     rlang        => 'R',
     ruby         => 'Ruby',
     scheme       => 'Scheme',
+    vbdotnet     => 'VB.NET',
 ];
 
 MAIN: {

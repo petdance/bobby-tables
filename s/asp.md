@@ -1,9 +1,9 @@
 ASP
 ===
 
-> For ASP<i></i>.NET, see the [ADO.NET page](adodotnet.md).
+> For ASP.NET, see the [ADO.NET page](adodotnet).
 
-ASP (AKA classic ASP) uses positional placeholders.
+ASP (aka classic ASP) uses positional placeholders.
 
     objCmd.CommandType = adCmdText;
     objCmd.CommandText = "UPDATE members SET photo = ? WHERE memberID = ?";

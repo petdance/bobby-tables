@@ -1,6 +1,6 @@
 # Dapper
 
-Dapper is one of several micro-ORM's (Object Relational Mappers) available
+Dapper is one of several micro-ORMs (Object Relational Mappers) available
 for .NET. It provides a set of extension methods for ADO.NET types that
 makes it easier to query data and convert the results into a strongly
 typed object. Parameter values are passed in via an anonymous object. It
