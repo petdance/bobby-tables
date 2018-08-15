@@ -1,6 +1,8 @@
 Entity Framework
 ===
+
 Entity Framework is Microsoft's primary ORM (object-relational mapper) built on top of ADO.NET. There are currently two versions in use:
+
 * Entity Framework 6, for .NET Framework
 * Entity Framework Core, for .NET Core
 
