@@ -2,9 +2,9 @@ ADO.NET provides the most direct method of data access within the .NET Framework
 
 To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
 
-1. use placeholders for values in the SQL of the command,
-2. add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
-3. set the value of the parameter (generally, via the `Value` property)
+1. Use placeholders for values in the SQL of the command,
+2. Add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
+3. Set the value of the parameter (generally, via the `Value` property)
 
 Example in C#, against SQL Server:
 
@@ -64,35 +64,47 @@ Avoiding SQL injection in commands
 
 To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
 
-1. use placeholders for values in the SQL of the command,
-2. add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
-3. set the value of the parameter (generally, via the `Value` property)
+1. Use placeholders for values in the SQL of the command,
+2. Add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
+3. Set the value of the parameter (generally, via the `Value` property)
 
 Note that the syntax for SQL placeholders can vary between providers:
 
-| Built-in provider | Placeholder syntax |
-| --- | --- |
-| SQL Server, Entity SQL | `SELECT * FROM Students WHERE FirstName = @FirstName`
-| OLE DB, ODBC | `SELECT * FROM Students WHERE FirstName = ?`
-| Oracle | `SELECT * FROM Students WHERE FirstName = :FirstName`
-
-
+* SQL Server, Entity SQL
+    * `SELECT * FROM Students WHERE FirstName = @FirstName`
+* OLE DB, ODBC
+    * `SELECT * FROM Students WHERE FirstName = ?`
+* Oracle
+    * `SELECT * FROM Students WHERE FirstName = :FirstName`
 
 
 ADO.NET architecture
 ===
 
-The basic functionality used by ADO.NET to connect to databases and other data sources is defined in a set of `abstract` (`MustInherit` in VB.NET) classes in the [`System.Data.Common`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common) namespace. Implementors of this functionality for specific data sources are called ADO.NET [**data providers**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers), and consist of classes that inherit from these base classes. For example, the ADO.NET data provider for connecting to SQL Server contains the following classes::
+The basic functionality used by ADO.NET to connect to databases and other data sources is defined in a set of
+`abstract` (`MustInherit` in VB.NET) classes in the
+[`System.Data.Common`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common) namespace. Implementors of this
+functionality for specific data sources are called ADO.NET
+[**data providers**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers),
+and consist of classes that inherit from these base classes.
 
-| This class in the [`System.Data.SqlClient`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient) namespace | Inherits from this class in the [`System.Data.Common`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common) namespace |
-| --- | --- |
-| [`SqlConnection`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlconnection) | [`DbConnection`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbconnection) |
-| [`SqlCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand) | [`DbCommand`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbcommand) |
-| [`SqlParameter`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlparameter) | [`DbParameter`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbparameter) |
-| [`SqlDataReader`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqldatareader) | [`DbDataReader`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdatareader)|
-| [`SqlDataAdapter`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqldataadapter) | [`DbDataAdapter`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter) |
 
-There are a number of [data providers built-in to the .NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers), for:
+For example, the ADO.NET data provider for connecting to SQL Server contains the following classes: in the  [`System.Data.SqlCient`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient) namespace:
+
+* [**SqlCommand**](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand)
+inherits from [**DbCommand**](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbcommand)
+* [**SqlParameter**](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlparameter)
+inherits from [**DbParameter**](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbparameter)
+* [**SqlDataReader**](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqldatareader)
+inherits from [**DbDataReader**](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdatareader)
+* [**SqlDataAdapter**](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqldataadapter)
+inherits from [**DbDataAdapter**](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter)
+
+For example, the ADO.NET data provider for connecting to
+SQL Server contains the following classes:
+
+There are a number of
+[data providers built-in to the .NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers), for:
 
 * [SQL Server](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-sql-server-sqlclient)
 * [OLE DB data sources](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-ole-db) -- Access, Excel, text files, and others
@@ -101,7 +113,11 @@ There are a number of [data providers built-in to the .NET Framework](https://do
 * [SQL Server Compact Edition](https://msdn.microsoft.com/library/system.data.sqlserverce.aspx)
 * [Oracle](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-oracle) (deprecated; use [ODP](https://www.oracle.com/technetwork/topics/dotnet/index-085163.html))
 
-and there are a number of third-party providers for other data sources, for example: [SQLite](https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki), [MySQL](https://dev.mysql.com/downloads/connector/net), [Firebird](https://firebirdsql.org/en/net-provider/) and others.
+and there are a number of third-party providers for other data sources, for example:
+[SQLite](https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki),
+[MySQL](https://dev.mysql.com/downloads/connector/net),
+[Firebird](https://firebirdsql.org/en/net-provider/)
+and others.
 
 Examples
 ===
@@ -157,6 +173,7 @@ Console.WriteLine($"Number of students not named `Robert' OR 1=1; --`: {cmd.Exec
 
 * **Language**: Powershell
 * **Provider**: SQL Server
+
 ```powershell
 # $conn refers to an open instance of SqlConnection
 
@@ -190,7 +207,8 @@ let students = new DataSet()
 adapter.Fill(students, "Students")
 ```
 
-**Note on `use`**: This is one of two [F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword).
+**Note on `use`**: This is one of two
+[F# idioms for working with `IDisposable`](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/resource-management-the-use-keyword).
 See the note on IronPython's use of `with` in the first example for more details.
 
 References
