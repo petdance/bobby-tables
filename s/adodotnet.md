@@ -1,10 +1,13 @@
+ADO.NET
+===
+
 ADO.NET provides the most direct method of data access within the .NET Framework ([link](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview)).
 
-To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
+To avoid SQL injection in ADO.NET, do not use user input to build the SQL for [**commands**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters). Instead, do the following:
 
-1. Use placeholders for values in the SQL of the command,
+1. Use [placeholders](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders) for values in the SQL of the command,
 2. Add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
-3. Set the value of the parameter (generally, via the `Value` property)
+3. Set the value of the parameter (generally, via the [`Value` property](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbparameter.value))
 
 Example in C#, against SQL Server:
 
@@ -100,9 +103,6 @@ inherits from [**DbDataReader**](https://docs.microsoft.com/en-us/dotnet/api/sys
 * [**SqlDataAdapter**](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqldataadapter)
 inherits from [**DbDataAdapter**](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter)
 
-For example, the ADO.NET data provider for connecting to
-SQL Server contains the following classes:
-
 There are a number of
 [data providers built-in to the .NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers), for:
 
@@ -118,6 +118,26 @@ and there are a number of third-party providers for other data sources, for exam
 [MySQL](https://dev.mysql.com/downloads/connector/net),
 [Firebird](https://firebirdsql.org/en/net-provider/)
 and others.
+
+Placeholder syntax, and binding parameter values to placeholders
+===
+
+Parameter values can be _bound_ to (associated with) placeholders in one of two ways:
+
+* **by name** -- the name of the parameter is the same as the name used in the placeholder
+* **by position** -- based on the order in which parameters are added to the command's parameter collection. In other words, the first parameter's value is bound to the first placeholder, the second value to the second placeholder, etc. In this case, the `Name` property of the parameter is ignored.
+
+The syntax used for SQL placeholders, and the parameter binding method,  varies between providers:
+
+* SQL Server, Entity SQL
+    * Named only: `SELECT * FROM Students WHERE FirstName = @FirstName`
+* OLE DB, ODBC
+    * Positional only: `SELECT * FROM Students WHERE FirstName = ?`
+* Oracle (ODP)
+    * Placeholder syntax: `SELECT * FROM Students WHERE FirstName = :FirstName`
+    * Set the [`OracleCommand.BindByName`](https://docs.oracle.com/database/121/ODPNT/OracleCommandClass.htm#DAFCJDDG) to `true` in order to bind by the name; otherwise parameters will be bound by position.
+* TODO complete for other providers
+
 
 Examples
 ===
