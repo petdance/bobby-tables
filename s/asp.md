@@ -1,7 +1,7 @@
 ASP
 ===
 
-> For ASP.NET, see the [ADO.NET page](adodotnet).
+For ASP.NET, see the [ADO.NET page](adodotnet).
 
 ASP (aka classic ASP) uses positional placeholders.
 
