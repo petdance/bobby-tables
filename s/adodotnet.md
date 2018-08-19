@@ -75,7 +75,7 @@ functionality for specific data sources are called ADO.NET
 [**data providers**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers),
 and consist of classes that inherit from these base classes.
 
-For example, the ADO.NET data provider for connecting to SQL Server contains the following classes: in the  [`System.Data.SqlCient`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient) namespace:
+For example, the ADO.NET data provider for connecting to SQL Server contains the following classes (among others): in the  [`System.Data.SqlCient`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient) namespace:
 
 * [**SqlCommand**](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand)
 inherits from [**DbCommand**](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbcommand)
@@ -108,14 +108,14 @@ Placeholder syntax, and binding parameter values to placeholders
 
 Parameter values can be _bound_ to (associated with) placeholders in one of two ways:
 
-* **by name** -- the name of the parameter is the same as the name used in the placeholder
+* **by name** -- the name of the parameter (at the [`ParameterName`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbparameter.parametername) propertty) is the same as the name used in the placeholder
 * **by position** -- based on the order in which parameters are added to the command's parameter collection. In other words, the first parameter's value is bound to the first placeholder, the second value to the second placeholder, etc. In this case, the `Name` property of the parameter is ignored.
 
 The syntax used for SQL placeholders, and the parameter binding method,  varies between providers:
 
-* SQL Server, Entity SQL
+* [SQL Server](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders), Entity SQL, [MySQL](https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-parameters.html)
     * Named only: `SELECT * FROM Students WHERE FirstName = @FirstName`
-* OLE DB, ODBC
+* [OLE DB](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders), [ODBC](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders)
     * Positional only: `SELECT * FROM Students WHERE FirstName = ?`
 * Oracle (ODP)
     * Placeholder syntax: `SELECT * FROM Students WHERE FirstName = :FirstName`
@@ -128,10 +128,12 @@ The syntax used for SQL placeholders, and the parameter binding method,  varies 
         * `SELECT * FROM Students WHERE FirstName = :FirstName`
         * `SELECT * FROM Students WHERE FirstName = @FirstName`
         * `SELECT * FROM Students WHERE FirstName = $FirstName`
-* MySQL
-* Firebird
-* PostgreSQL
-
+* [PostgreSQL (npgsl)](http://www.npgsql.org/doc/basic-usage.html#parameters) ([other link](https://github.com/npgsql/npgsql/issues/825))
+    * Positional:
+        * `SELECT * FROM Students WHERE FirstName = $0 OR FirstName = $1`
+    * Named:
+        * `SELECT * FROM Students WHERE FirstName = :FirstName`
+        * `SELECT * FROM Students WHERE FirstName = @FirstName`
 
 Examples
 ===
