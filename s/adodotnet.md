@@ -1,10 +1,13 @@
+ADO.NET
+===
+
 ADO.NET provides the most direct method of data access within the .NET Framework ([link](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-overview)).
 
-To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
+To avoid SQL injection in ADO.NET, do not use user input to build the SQL for [**commands**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters). Instead, do the following:
 
-1. Use placeholders for values in the SQL of the command,
+1. Use [**placeholders**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders) for values in the SQL of the command,
 2. Add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
-3. Set the value of the parameter (generally, via the `Value` property)
+3. Set the value of the parameter (generally, via the [`Value` property](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbparameter.value))
 
 Example in C#, against SQL Server:
 
@@ -19,10 +22,13 @@ var prm = cmd.Parameters.Add("StudentName", SqlDbType.NVarChar);
 prm.Value = "Robert'; DROP TABLE Students; --";
 ```
 
-Because of the shared architecture of ADO.NET-standard implementations (aka
+Because of the [shared architecture](#adonet-architecture) of ADO.NET-standard implementations (aka
 [**data providers**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers)),
-the strategy is the same across all data providers and across all .NET supported languages. (See the
-[ADO.NET architecture](#adonet-architecture) section for more details.)
+the strategy is the same across all data providers and across all .NET supported languages.
+
+Placeholder syntax, and the method used to bind parameter values to the placeholders, can vary between providers. See [below](#placeholder-syntax-and-binding-parameter-values-to-placeholders) for more details.
+
+For avoiding SQL injection in [Entity Frameowk](adodotnet_ef) or [other ADO.NET ORMs](adodotnet_orm), see the appropriate pages.
 
 Commands and their uses
 ===
@@ -59,25 +65,6 @@ the commands at the
 
 These commands are also liable to be vulnerable to SQL injection.
 
-Avoiding SQL injection in commands
-==
-
-To avoid SQL injection in ADO.NET, do not use user input to build the SQL for commands. Instead, do the following:
-
-1. Use placeholders for values in the SQL of the command,
-2. Add [**parameters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/commands-and-parameters) to the command, and
-3. Set the value of the parameter (generally, via the `Value` property)
-
-Note that the syntax for SQL placeholders can vary between providers:
-
-* SQL Server, Entity SQL
-    * `SELECT * FROM Students WHERE FirstName = @FirstName`
-* OLE DB, ODBC
-    * `SELECT * FROM Students WHERE FirstName = ?`
-* Oracle
-    * `SELECT * FROM Students WHERE FirstName = :FirstName`
-
-
 ADO.NET architecture
 ===
 
@@ -88,8 +75,7 @@ functionality for specific data sources are called ADO.NET
 [**data providers**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers),
 and consist of classes that inherit from these base classes.
 
-
-For example, the ADO.NET data provider for connecting to SQL Server contains the following classes: in the  [`System.Data.SqlCient`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient) namespace:
+For example, the ADO.NET data provider for connecting to SQL Server contains the following classes (among others): in the  [`System.Data.SqlCient`](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient) namespace:
 
 * [**SqlCommand**](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqlcommand)
 inherits from [**DbCommand**](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbcommand)
@@ -99,9 +85,6 @@ inherits from [**DbParameter**](https://docs.microsoft.com/en-us/dotnet/api/syst
 inherits from [**DbDataReader**](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdatareader)
 * [**SqlDataAdapter**](https://docs.microsoft.com/en-us/dotnet/api/system.data.sqlclient.sqldataadapter)
 inherits from [**DbDataAdapter**](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbdataadapter)
-
-For example, the ADO.NET data provider for connecting to
-SQL Server contains the following classes:
 
 There are a number of
 [data providers built-in to the .NET Framework](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers), for:
@@ -116,8 +99,41 @@ There are a number of
 and there are a number of third-party providers for other data sources, for example:
 [SQLite](https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki),
 [MySQL](https://dev.mysql.com/downloads/connector/net),
-[Firebird](https://firebirdsql.org/en/net-provider/)
+[Firebird](https://firebirdsql.org/en/net-provider/),
+[PostgreSQL](https://www.npgsql.org/)
 and others.
+
+Placeholder syntax, and binding parameter values to placeholders
+===
+
+Parameter values can be _bound_ to (associated with) placeholders in one of two ways:
+
+* **by name** -- the name of the parameter (at the [`ParameterName`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbparameter.parametername) propertty) is the same as the name used in the placeholder
+* **by position** -- based on the order in which parameters are added to the command's parameter collection. In other words, the first parameter's value is bound to the first placeholder, the second value to the second placeholder, etc. In this case, the `Name` property of the parameter is ignored.
+
+The syntax used for SQL placeholders, and the parameter binding method,  varies between providers:
+
+* [SQL Server](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders), Entity SQL, [MySQL](https://dev.mysql.com/doc/connector-net/en/connector-net-tutorials-parameters.html)
+    * Named only: `SELECT * FROM Students WHERE FirstName = @FirstName`
+* [OLE DB](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders), [ODBC](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders)
+    * Positional only: `SELECT * FROM Students WHERE FirstName = ?`
+* Oracle (ODP)
+    * Placeholder syntax: `SELECT * FROM Students WHERE FirstName = :FirstName`
+    * Set the [`OracleCommand.BindByName`](https://docs.oracle.com/database/121/ODPNT/OracleCommandClass.htm#DAFCJDDG) to `true` in order to bind by name; otherwise parameters will be bound by position.
+* [SQLite](https://www.sqlite.org/lang_expr.html#varparam)
+    * Positional:
+        * `SELECT * FROM Students WHERE FirstName = ?0 OR FirstName = ?1`
+        * `SELECT * FROM Students WHERE FirstName = ?`
+    * Named:
+        * `SELECT * FROM Students WHERE FirstName = :FirstName`
+        * `SELECT * FROM Students WHERE FirstName = @FirstName`
+        * `SELECT * FROM Students WHERE FirstName = $FirstName`
+* [PostgreSQL (npgsl)](http://www.npgsql.org/doc/basic-usage.html#parameters) ([other link](https://github.com/npgsql/npgsql/issues/825))
+    * Positional:
+        * `SELECT * FROM Students WHERE FirstName = $0 OR FirstName = $1`
+    * Named:
+        * `SELECT * FROM Students WHERE FirstName = :FirstName`
+        * `SELECT * FROM Students WHERE FirstName = @FirstName`
 
 Examples
 ===
@@ -213,4 +229,4 @@ See the note on IronPython's use of `with` in the first example for more details
 
 References
 ==
-* [Microsoft documentation on ADO.NET](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/)
+[Microsoft documentation on ADO.NET](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/)

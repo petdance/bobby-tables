@@ -27,6 +27,7 @@ However, there are a number of places where EF allows writing raw SQL statements
 are liable to be vulnerable to SQL injection:
 
 EF6:
+
 * [DBSet.SqlQuery](https://msdn.microsoft.com/en-us/library/system.data.entity.dbset.sqlquery(v=vs.113).aspx) / [DBSet\<TEntity>.SqlQuery](https://msdn.microsoft.com/en-us/library/mt136652(v=vs.113).aspx)
 * [Database.SqlQuery / Database.SqlQuery\<TEntity>](https://msdn.microsoft.com/en-us/library/system.data.entity.database.sqlquery(v=vs.113).aspx)
 * [Database.ExecuteSqlCommand](https://msdn.microsoft.com/en-us/library/system.data.entity.database.executesqlcommand(v=vs.113).aspx)
@@ -36,6 +37,7 @@ EF Core:
 * [FromSql](https://docs.microsoft.com/en-us/dotnet/api/microsoft.entityframeworkcore.relationalqueryableextensions.fromsql)
 
 In order to use parameters with any of these methods:
+
 1. modify the SQL to use placeholders with auto-generated names: `@p0`, `p1`, `p2` etc.
 2. pass the parameter values after the SQL
 
@@ -86,5 +88,6 @@ var qry = ctx.Students.FromSql("SELECT * FROM Students WHERE {firstname}");
 
 References
 ===
+
 * [Entity Framework Raw SQL Queries](https://msdn.microsoft.com/en-us/library/jj592907(v=vs.113).aspx)
 * [Raw SQL](https://docs.microsoft.com/en-us/ef/core/querying/raw-sql) for EF Core
