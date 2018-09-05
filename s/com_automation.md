@@ -72,7 +72,7 @@ cmd.CommandText = sql
 Dim rs
 Set rs = cmd.Execute(, Array("Robert' OR 1=1; --"))
 ```
-In addition, if the command's `Name` property has been set, the command can be executed directly from the connection object using the name. Values which are passed into the command call will be used as parameter values:
+In addition, if the command's `Name` property has been set, the command can be executed directly from the connection object using the name; this is called a [**named command**](https://docs.microsoft.com/en-us/sql/ado/guide/data/named-commands). Values which are [passed into the command call](https://docs.microsoft.com/en-us/sql/ado/guide/data/passing-parameters-to-a-named-command) will be used as parameter values:
 ```js
 // JScript example -- passing parameter values to a named command
 
@@ -87,6 +87,8 @@ cmd.Name = 'GetStudents';
 cmd.CommandText = sql;
 cmd.ActiveConnection = conn;
 
+// The recordset object needs to be initialized here, because Javascript doesn't
+// support passing parameters by reference
 var rs = new ActiveXObject('ADODB.Recordset');
 conn.GetStudents('Robert\' OR 1=1; --', rs);
 ```
