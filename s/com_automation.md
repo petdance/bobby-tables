@@ -64,7 +64,7 @@ In order to explicitly define the types and/or names of the parameters, use the 
 ' dbs refers to an instance of DAO.Database
 
 Const sql = _
-    "PARAMETERS MatchingFirstName TEXT " & _
+    "PARAMETERS MatchingFirstName TEXT; " & _
     "SELECT * " & _
     "FROM Students " & _
     "WHERE FirstName = MatchingFirstName"
