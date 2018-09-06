@@ -48,7 +48,7 @@ qdf.Parameters(0) = "Robert' OR 1=1; --"
 Dim rs As DAO.Recordset
 Set rs = qdf.OpenRecordset
 ```
-DAO also supports the use of named parameters. Any unreocgnized identifier in the SQL statement will be treated as a named parameter:
+DAO also supports the use of named parameters. Any unrecognized identifier in the SQL statement will be treated as a named parameter:
 ```vb
 ' Example in VBA -- action query; doesn't return results
 ' dbs refers to an instance of DAO.Database
