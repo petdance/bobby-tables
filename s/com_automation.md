@@ -23,13 +23,13 @@ DAO / ACE
 
 DAO allows direct execution of raw SQL in a number of places:
 
-* the **Execute** method, on the **Database** and **Connection** objects
-* the **OpenRecordset** method, on the **Database** and **Connection** objects
-* **QueryDef** objects
-    * the **CreateQueryDef** method, on the **Database** and **Connection** objects
-    * the **QueryDef.SQL** property
+* the **Execute** method, on the [**Database**](https://msdn.microsoft.com/en-us/library/office/ff197654.aspx) and [**Connection**](https://msdn.microsoft.com/en-us/library/office/ff835040.aspx) objects
+* the **OpenRecordset** method, on the [**Database**](https://msdn.microsoft.com/en-us/library/office/ff820966.aspx) and [**Connection**](https://msdn.microsoft.com/en-us/library/office/ff194324.aspx) objects
+* [**QueryDef**](https://msdn.microsoft.com/en-us/library/office/ff845129.aspx) objects
+    * the **CreateQueryDef** method, on the [**Database**](https://msdn.microsoft.com/en-us/library/office/ff195966.aspx) and [**Connection**](https://msdn.microsoft.com/en-us/library/office/ff191860.aspx) objects
+    * the [**QueryDef.SQL**](https://msdn.microsoft.com/en-us/library/office/ff845522.aspx) property
 
-but only **QueryDefs** can make use of parameters, and thus make SQL safe from SQL injection.
+but only a **QueryDef** can make use of parameters, and thus make SQL safe from SQL injection.
 
 DAO parses the SQL statement passed into the **CreateQueryDef** method or set as the value of the **SQL** property; and automatically determines the number, names, and types of the parameters.
 
@@ -58,7 +58,7 @@ Set qdf = dbs.CreateQueryDef("", "DELETE * FROM Students WHERE FirstName = Match
 qdf.Parameters("MatchingFirstName") = "Robert' OR 1=1; --"
 qdf.Execute
 ```
-In order to explicitly define the types and/or names of the parameters, use the `PARAMETERS` clause:
+In order to explicitly define the types and/or names of the parameters, use the [`PARAMETERS` clause](https://msdn.microsoft.com/en-us/library/office/ff845220.aspx?f=255&MSPPError=-2147217396) in the SQL:
 ```vb
 ' Example in VBA
 ' dbs refers to an instance of DAO.Database
