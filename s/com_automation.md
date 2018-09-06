@@ -7,7 +7,7 @@ COM / Automation
 * **.NET languages**
 * [**Microsoft scripting hosts**](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/fdee6589(v%3dvs.94)), which can support [multiple scripting languages](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/xawadt95(v%3dvs.94)), including VBScript and JScript (available by default)
     * Internet Explorer (and Microsoft HTML Applications (MSHTA))
-    * ASP Classic
+    * "classic" ASP
     * Windows Script Host
 * **Borland Delphi**
 * **Python** with the PyWin32 extensions, using the `win32com` package
@@ -15,7 +15,7 @@ COM / Automation
         
 There are currently two data access technologies for COM environments in common use:
 
-* [Data Access Objects (DAO), later renamed to Access Database Engine (ACE)](#dao--ace])
+* [Data Access Objects (DAO)](#dao--ace]), later renamed to Access Database Engine (ACE)
 * [ActiveX Data Objects (ADO)](#activex-data-objects-ado)
 
 DAO / ACE
@@ -31,7 +31,7 @@ DAO allows direct execution of raw SQL in a number of places:
 
 but only a **QueryDef** can make use of parameters, and thus make SQL safe from SQL injection.
 
-DAO parses the SQL statement passed into the **CreateQueryDef** method or set as the value of the **SQL** property; and automatically determines the number, names, and types of the parameters.
+DAO parses the SQL statement passed into the **CreateQueryDef** method or set as the value of the **SQL** property, and automatically determines the number, names, and types of the parameters.
 
 The value of the parameter can then be set.
 ```vb
@@ -41,9 +41,9 @@ The value of the parameter can then be set.
 Dim qdf As QueryDef
 Set qdf = dbs.CreateQueryDef("", "SELECT * FROM Students WHERE FirstName = ?")
 qdf.Parameters(0) = "Robert' OR 1=1; --"
-' The same as:
+' This is the same as:
 '   qdf.Parameters,Item(0).Value = "Robert' OR 1=1; --"
-' but the first line makes use of default properties
+' but it makes use of default properties -- ParameterCollection.Item, and Parameter.Value
 
 Dim rs As DAO.Recordset
 Set rs = qdf.OpenRecordset
