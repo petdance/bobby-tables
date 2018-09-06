@@ -4,24 +4,78 @@ COM / Automation
 [COM](https://en.wikipedia.org/wiki/Component_Object_Model) defines a standard way for software components to interact with each other, independent of the programming language in which they are written or consumed. Environments and languages which can be used to consume COM objects include:
 
 * **VBA** / **VB6**
-* **.NET Framework**
+* **.NET languages**
 * [**Microsoft scripting hosts**](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/fdee6589(v%3dvs.94)), which can support [multiple scripting languages](https://docs.microsoft.com/en-us/previous-versions/windows/internet-explorer/ie-developer/scripting-articles/xawadt95(v%3dvs.94)), including VBScript and JScript (available by default)
     * Internet Explorer (and Microsoft HTML Applications (MSHTA))
     * ASP Classic
     * Windows Script Host
 * **Borland Delphi**
-* **Python** with the PyWin32 extensions, via the `win32com` package
+* **Python** with the PyWin32 extensions, using the `win32com` package
 * **Unmanaged C++**
         
 There are currently two data access technologies for COM environments in common use:
 
-* Data Access Objects (DAO), later renamed to Access Database Engine (ACE)
-* ActiveX Data Objects (ADO)
+* [Data Access Objects (DAO), later renamed to Access Database Engine (ACE)](#dao--ace])
+* [ActiveX Data Objects (ADO)](#activex-data-objects-ado)
 
 DAO / ACE
 ===
 
-TODO
+DAO allows direct execution of raw SQL in a number of places:
+
+* the **Execute** method, on the **Database** and **Connection** objects
+* the **OpenRecordset** method, on the **Database** and **Connection** objects
+* **QueryDef** objects
+    * the **CreateQueryDef** method, on the **Database** and **Connection** objects
+    * the **QueryDef.SQL** property
+
+but only **QueryDefs** can make use of parameters, and thus make SQL safe from SQL injection.
+
+DAO parses the SQL statement passed into the **CreateQueryDef** method or set as the value of the **SQL** property; and automatically determines the number, names, and types of the parameters.
+
+The value of the parameter can then be set.
+```vb
+' Example in VBA
+' dbs refers to an instance of DAO.Database
+
+Dim qdf As QueryDef
+Set qdf = dbs.CreateQueryDef("", "SELECT * FROM Students WHERE FirstName = ?")
+qdf.Parameters(0) = "Robert' OR 1=1; --"
+' The same as:
+'   qdf.Parameters,Item(0).Value = "Robert' OR 1=1; --"
+' but the first line makes use of default properties
+
+Dim rs As DAO.Recordset
+Set rs = qdf.OpenRecordset
+```
+DAO also supports the use of named parameters. Any unreocgnized identifier in the SQL statement will be treated as a named parameter:
+```vb
+' Example in VBA -- action query; doesn't return results
+' dbs refers to an instance of DAO.Database
+
+Dim qdf As QueryDef
+Set qdf = dbs.CreateQueryDef("", "DELETE * FROM Students WHERE FirstName = MatchingFirstName")
+qdf.Parameters("MatchingFirstName") = "Robert' OR 1=1; --"
+qdf.Execute
+```
+In order to explicitly define the types and/or names of the parameters, use the `PARAMETERS` clause:
+```vb
+' Example in VBA
+' dbs refers to an instance of DAO.Database
+
+Const sql = _
+    "PARAMETERS MatchingFirstName TEXT " & _
+    "SELECT * " & _
+    "FROM Students " & _
+    "WHERE FirstName = MatchingFirstName"
+
+Dim qdf As QueryDef
+Set qdf = dbs.CreateQueryDef("", sql)
+qdf.Parameters("MatchingFirstName") = "Robert' OR 1=1; --"
+
+Dim rs As DAO.Recordset
+Set rs = qdf.OpenRecordset
+```
 
 ActiveX Data Objects (ADO)
 ===
@@ -32,7 +86,7 @@ ADO provides three ways in which raw SQL can be passed to the data source:
 * [**Recordset**.**Open** method](https://docs.microsoft.com/en-us/sql/ado/reference/ado-api/open-method-ado-recordset)
 * [commands](https://docs.microsoft.com/en-us/sql/ado/guide/data/preparing-and-executing-commands)
 
-but only with commands can SQL injection be prevented, by using SQL placeholders and [**parameters**](https://docs.microsoft.com/en-us/sql/ado/guide/data/command-object-parameters):
+but only with commands can SQL injection be prevented, by using placeholders for values within the SQL, and [**parameters**](https://docs.microsoft.com/en-us/sql/ado/guide/data/command-object-parameters):
 
 ```vb
 ' VBA example -- using commands with explicit parameter objects
