@@ -34,6 +34,7 @@ my $pages = [
     adodotnet_ef => 'Entity Framework',
     asp          => 'ASP',
     coldfusion   => 'ColdFusion',
+    com_automation => 'COM / Automation',
     csharp       => 'C#',
     delphi       => 'Delphi',
     go           => 'Go',
