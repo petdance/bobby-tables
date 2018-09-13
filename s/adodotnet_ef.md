@@ -1,10 +1,10 @@
 Entity Framework
 ===
 
-Entity Framework is Microsoft's primary ORM (object-relational mapper) built on top of ADO.NET. There are currently two versions in use:
+[Entity Framework](https://docs.microsoft.com/en-us/ef/) is Microsoft's primary ORM (object-relational mapper) built on top of ADO.NET. There are currently two versions in use:
 
-* Entity Framework 6, for .NET Framework
-* Entity Framework Core, for .NET Core
+* [Entity Framework 6](https://docs.microsoft.com/en-us/ef/#pivot=ef6x), for .NET Framework
+* [Entity Framework Core](https://docs.microsoft.com/en-us/ef/#pivot=efcore), for .NET Core
 
 In general, Entity Framework converts expression-based queries:
 
@@ -38,7 +38,7 @@ EF Core:
 
 In order to use parameters with any of these methods:
 
-1. modify the SQL to use placeholders with auto-generated names: `@p0`, `p1`, `p2` etc.
+1. modify the SQL to use named placeholders with auto-generated names: `p0`, `p1`, `p2`.<sup>1</sup>
 2. pass the parameter values after the SQL
 
 ```vb
@@ -49,7 +49,7 @@ Dim sql = "SELECT * FROM Students WHERE FirstName = @p0"
 Dim qry = ctx.Students.SqlQuery(sql, firstname) 
 ```
 
-Alternatively, if you want to use named parameters in your SQL:
+Alternatively, if you want to use named parameters<sup>1</sup> in your SQL:
 
 ```sql
 SELECT * FROM Students WHERE FirstName = @firstname
@@ -66,25 +66,29 @@ prm.Value = "Robert'; DROP TABLE Students; --"
 Dim qry = ctx.Students.SqlQuery(sql, prm) 
 ```
 
-The above applies to both EF6 and EF Core. EF Core also allows passing the SQL as a format string together with the
+The above applies to both EF6 and EF Core. EF Core also allows passing the SQL as a [format string](https://docs.microsoft.com/en-us/dotnet/standard/base-types/composite-formatting#composite-format-string) together with the
 parameter values; format placeholders will be converted to parameters with the corresponding values:
 
-```
+```csharp
 // ctx refers to an instance of a context class
 
 var firstname = "Robert'; DROP TABLE Students; --";
-var qry = ctx.Students.FromSql("SELECT * FROM Students WHERE {0}", firstname);
+var qry = ctx.Students.FromSql("SELECT * FROM Students WHERE FirstName = {0}", firstname);
 ```
 
-As of EF Core 2.0, EF Core also supports using interpolated strings; the interpolated strings will be converted to
+As of EF Core 2.0, EF Core also supports using [interpolated strings](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated); the interpolated strings will be converted to
 parameters:
 
-```
+```csharp
 // ctx refers to an instance of a context class
 
 var firstname = "Robert'; DROP TABLE Students; --";
-var qry = ctx.Students.FromSql("SELECT * FROM Students WHERE {firstname}");
+var qry = ctx.Students.FromSql($"SELECT * FROM Students WHERE FirstName = {firstname}");
 ```
+
+Footnotes
+===
+1. Note that the syntax for named parameters can [vary between providers](adodotnet#placeholder-syntax-and-binding-parameter-values-to-placeholders).
 
 References
 ===
