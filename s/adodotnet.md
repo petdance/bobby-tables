@@ -26,9 +26,9 @@ Because of the [shared architecture](#adonet-architecture) of ADO.NET-standard i
 [**data providers**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers)),
 the strategy is the same across all data providers and across all .NET supported languages.
 
-Placeholder syntax, and the method used to bind parameter values to the placeholders, can vary between providers. See [below](#placeholder-syntax-and-binding-parameter-values-to-placeholders) for more details.
+Placeholder syntax, and the method used to bind parameter values to the placeholders, [can vary between providers](#placeholder-syntax-and-binding-parameter-values-to-placeholders).
 
-For avoiding SQL injection in [Entity Frameowk](adodotnet_ef) or [other ADO.NET ORMs](adodotnet_orm), see the appropriate pages.
+For avoiding SQL injection in [Entity Framework](adodotnet_ef) or [other ADO.NET ORMs](adodotnet_orm), see the appropriate pages.
 
 Commands and their uses
 ===
@@ -48,7 +48,7 @@ some other string understood by the data source); this SQL statement is the prim
 * [return a single result](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/obtaining-a-single-value-from-a-database)
 * [return a **data reader**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/retrieving-data-using-a-datareader), which allows reading a result set row by row in a forward-only direction
 
-There is a higher level of abstraction built into ADO.NET: using a
+There is a higher level of abstraction built into ADO.NET: the
 [**data set**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/ado-net-datasets)
 -- an in-memory representation of the data independent of any specific data source or data provider.
 [**Data adapters**](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter)
@@ -94,7 +94,7 @@ There are a number of
 * [ODBC data sources](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-odbc)
 * [Entity Framework Models](https://msdn.microsoft.com/library/49202ab9-ac98-4b4b-a05c-140e422bf527)
 * [SQL Server Compact Edition](https://msdn.microsoft.com/library/system.data.sqlserverce.aspx)
-* [Oracle](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-oracle) (deprecated; use [ODP](https://www.oracle.com/technetwork/topics/dotnet/index-085163.html))
+* [Oracle](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/data-providers#net-framework-data-provider-for-oracle) (deprecated; use the Oracle-provided [ODP](https://www.oracle.com/technetwork/topics/dotnet/index-085163.html))
 
 and there are a number of third-party providers for other data sources, for example:
 [SQLite](https://system.data.sqlite.org/index.html/doc/trunk/www/index.wiki),
@@ -109,7 +109,9 @@ Placeholder syntax, and binding parameter values to placeholders
 Parameter values can be _bound_ to (associated with) placeholders in one of two ways:
 
 * **by name** -- the name of the parameter (at the [`ParameterName`](https://docs.microsoft.com/en-us/dotnet/api/system.data.common.dbparameter.parametername) propertty) is the same as the name used in the placeholder
-* **by position** -- based on the order in which parameters are added to the command's parameter collection. In other words, the first parameter's value is bound to the first placeholder, the second value to the second placeholder, etc. In this case, the `Name` property of the parameter is ignored.
+* **by position** -- based on the order in which parameters are added to the command's parameter collection. In this case, the `Name` property of the parameter is ignored.
+    * The [OLE DB](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders) and [ODBC](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types#working-with-parameter-placeholders) providers map to the placeholders based on the order of the placeholder usage in the SQL -- the first parameter's value is bound to the first placeholder, the second value to the second placeholder, etc.
+    * Other providers make use of placeholders that refer to the number of the parameter -- `?0`, `?1`, `?2`, or `$0`, `$1`, `$2`.
 
 The syntax used for SQL placeholders, and the parameter binding method,  varies between providers:
 
