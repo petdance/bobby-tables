@@ -6,7 +6,7 @@ Entity Framework
 * [Entity Framework 6](https://docs.microsoft.com/en-us/ef/#pivot=ef6x), for .NET Framework
 * [Entity Framework Core](https://docs.microsoft.com/en-us/ef/#pivot=efcore), for .NET Core
 
-In general, Entity Framework converts expression-based queries:
+In general, Entity Framework converts expression-based queries that use local variables:
 
 ```csharp
 // C# example
@@ -38,7 +38,7 @@ EF Core:
 
 In order to use parameters with any of these methods:
 
-1. modify the SQL to use named placeholders with auto-generated names: `p0`, `p1`, `p2`.<sup>1</sup>
+1. modify the SQL to use named placeholders<sup>1</sup> with auto-generated names: `p0`, `p1`, `p2`.
 2. pass the parameter values after the SQL
 
 ```vb
@@ -91,7 +91,7 @@ var qry = ctx.Students.FromSql($"SELECT * FROM Students WHERE FirstName = {first
 Footnotes
 ===
 1. Note that the syntax for named parameters can
-[vary between providers](adodotnet#placeholder-syntax-and-binding-parameter-values-to-placeholders).
+[vary between providers](adodotnet#placeholder-syntax).
 
 References
 ===

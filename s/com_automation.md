@@ -12,7 +12,7 @@ languages which can be used to consume COM objects include:
     * "classic" ASP
     * Windows Script Host
 * **Borland Delphi**
-* **Python** with the PyWin32 extensions, using the `win32com` package
+* **Python** with the [PyWin32 extensions](https://github.com/mhammond/pywin32), using the `win32com` package
 * **Unmanaged C++**
 
 There are currently two data access technologies for COM environments in common use:
@@ -38,15 +38,16 @@ DAO parses the SQL statement passed into the **CreateQueryDef** method or set as
 The value of the parameter can then be set.
 
 ```vb
-' Example in VBA
+' VBA example -- SELECT with placeholder
 ' dbs refers to an instance of DAO.Database
 
 Dim qdf As QueryDef
 Set qdf = dbs.CreateQueryDef("", "SELECT * FROM Students WHERE FirstName = ?")
+
+' Using default properties
 qdf.Parameters(0) = "Robert' OR 1=1; --"
-' This is the same as:
-'   qdf.Parameters,Item(0).Value = "Robert' OR 1=1; --"
-' but it makes use of default properties -- ParameterCollection.Item, and Parameter.Value
+' The equivalent without default properties would be:
+' qdf.Parameters.Item(0).Value = "Robert' OR 1=1; --"
 
 Dim rs As DAO.Recordset
 Set rs = qdf.OpenRecordset
@@ -55,7 +56,7 @@ Set rs = qdf.OpenRecordset
 DAO also supports the use of named parameters. Any unrecognized identifier in the SQL statement will be treated as a named parameter:
 
 ```vb
-' Example in VBA -- action query; doesn't return results
+' VBA example -- action query; doesn't return results
 ' dbs refers to an instance of DAO.Database
 
 Dim qdf As QueryDef
@@ -67,8 +68,9 @@ qdf.Execute
 In order to explicitly define the types and/or names of the parameters, use the
 [`PARAMETERS` clause](https://msdn.microsoft.com/en-us/library/office/ff845220.aspx?f=255&MSPPError=-2147217396)
 in the SQL:
+
 ```vb
-' Example in VBA
+' VBA Example -- explicit parameters
 ' dbs refers to an instance of DAO.Database
 
 Const sql = _
@@ -161,8 +163,9 @@ cmd.Name = 'GetStudents';
 cmd.CommandText = sql;
 cmd.ActiveConnection = conn;
 
-// The recordset object needs to be initialized here, because Javascript doesn't
-// support passing parameters by reference
+// We need to instantiate the Recordset object in Javascript, because Javascript
+// has no compile-time types, and ADO has no way of knowing that we're trying to
+// pass in a Recordset
 var rs = new ActiveXObject('ADODB.Recordset');
 conn.GetStudents('Robert\' OR 1=1; --', rs);
 ```

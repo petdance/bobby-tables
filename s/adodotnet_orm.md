@@ -6,7 +6,7 @@ makes it easier to query data and convert the results into a strongly
 typed object. These extension methods work with any ADO.NET data provider.
 
 As in ADO.NET, placeholders are specified within the SQL, using the
-[provider and data source syntax for placeholders](adodotnet#placeholder-syntax-and-binding-parameter-values-to-placeholders).
+[provider and data source syntax for placeholders](adodotnet#placeholder-syntax).
 The SQL is then passed to the `Query<T>` extension method, along with an anonymous type with the names and values of
 the parameters:
 
