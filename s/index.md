@@ -99,3 +99,4 @@ Thanks to the following folks for their contributions:
 * [Ramprakash R](https://github.com/ramprax)
 * [Dave Rolsky](https://www.houseabsolute.com/)
 * [Zev Spitz](https://github.com/zspitz)
+* Erik von Asmuth
