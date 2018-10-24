@@ -103,7 +103,7 @@ and there are a number of third-party providers for other data sources, for exam
 [PostgreSQL](https://www.npgsql.org/)
 and others.
 
-Placeholder syntax, and binding parameter values to placeholders
+Placeholder syntax, and binding parameter values to placeholders<a name="placeholder-syntax"></a>
 ===
 
 Parameter values can be _bound_ to (associated with) placeholders in one of two ways:
