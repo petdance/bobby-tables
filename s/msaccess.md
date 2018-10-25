@@ -30,10 +30,17 @@ If the user inputs `' OR '1` into the `InputBox`, all the records from `Students
 
 Injection in contexts which support expressions
 ---
-Even without VBA, there are a number of contexts where Access allows expressions, such as function calls and string concatenations. If a function expects SQL in one or more of its arguments (like the built-in domain aggregate functions -- `DCount`, `DMin`, `DLookup`), concatenating user input into a value for the function argument is vulnerable to SQL injection. For example, , using the [**If**](https://docs.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/if-then-else-macro-block) macro action and the [`DCount`](https://docs.microsoft.com/en-us/office/vba/api/access.application.dcount) domain aggregate function:
+Even without VBA, there are a number of contexts where Access allows expressions, such as function calls and string
+concatenations. If a function expects SQL in one or more of its arguments (like the built-in domain aggregate functions
+-- `DCount`, `DMin`, `DLookup`), concatenating user input into a value for the function argument is vulnerable to SQL
+injection. For example, using the
+[**If**](https://docs.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/if-then-else-macro- block)
+macro action and the
+[`DCount`](https://docs.microsoft.com/en-us/office/vba/api/access.application.dcount)
+domain aggregate function:
 
-![Microsoft Access macro with SQL injection vulnerability](msaccess_macros.png)
-    
+![Microsoft Access macro with SQL injection vulnerability](/img/msaccess_macros.png)
+
 If the user inputs `' OR '1` then the expression will always evaluate to `True` (as long as there are records in the `Users` table).
 
 Note that any function which expects some form of structured text (e.g. JSON, XML, command line execution) may be similarly vulnerable when being passed a string concatenated from user input:
