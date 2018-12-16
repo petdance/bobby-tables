@@ -26,11 +26,11 @@ GetOptions(
 my $home  = 'Home';
 my $about = 'About';
 
-# Note that adodotnet_orm.md does not appear in the sidebar.
 my $pages = [
     index          => $home,
     about          => $about,
     adodotnet      => 'ADO.NET',
+    adodotnet_orm  => 'ADO.NET ORM',
     asp            => 'ASP',
     coldfusion     => 'ColdFusion',
     com_automation => 'COM',
