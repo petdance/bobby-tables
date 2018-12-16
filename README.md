@@ -33,6 +33,13 @@ For testing:
 
 * Test::HTML::Tidy5
 
+Alternatively a Dockerfile is provided which can run the necessary make tasks
+in a container.
+
+    docker build -t bobby-tables .                      # Builds the container
+    docker run --rm -v $PWD:/app bobby-tables           # Builds the site to the build/ directory
+    docker run --rm -v $PWD:/app bobby-tables make test # Runs the tests
+
 Contributing page content
 -------------------------
 
