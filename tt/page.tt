@@ -8,7 +8,7 @@
             [% END %]
         </title>
         <link rel="stylesheet" type="text/css" href="[% rel_static %]css/bobby.css" />
-        <meta name="msvalidate.01" content="4EF6B7CF4E86418C29626DA5E8B28AF5" /><!-- Bing ownership -->
+        <meta name="msvalidate.01" content="546111A68635D672890CCD91D4B834DA" /><!-- Bing ownership -->
         <meta name="google-site-verification" content="-m0wCitNyeftzwJnFsHE2Z9PbGXrgh_ZiSmqiPKRKn0" />
         [% PROCESS 'google-analytics.html' %]
     </head>
