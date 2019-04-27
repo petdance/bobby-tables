@@ -23,7 +23,6 @@ crank: prereq clean
 test: crank
 	prove t/*.t
 
-# This is only useful for Andy
-install:
+rsync:
 	rsync -azu -e ssh --delete --verbose \
 	    $(BUILD)/ andy@alex.petdance.com:/srv/bobby
