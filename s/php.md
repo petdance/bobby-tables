@@ -123,7 +123,7 @@ in [mappers][fatfree-mappers].
     $f3->DB->exec("INSERT INTO users (name, email) VALUES (?, ?)", [ $name, $email ]);
 
     // used with the mapper
-    $user = new \DB\SQL\Mapper($f3, 'users');
+    $user = new \DB\SQL\Mapper($f3->DB, 'users');
     $user->load([ "id = ?", $id ]);
     $user->name = 'Bobby Tables';
     $user->email = 'bobby@bobby-tables.com';
