@@ -125,6 +125,9 @@ in [mappers][fatfree-mappers].
     // used with the mapper
     $user = new \DB\SQL\Mapper($f3, 'users');
     $user->load([ "id = ?", $id ]);
+    $user->name = 'Bobby Tables';
+    $user->email = 'bobby@bobby-tables.com';
+    $user->save();
 
 [fatfree]: https://fatfreeframework.com
 [fatfree-sql]: https://fatfreeframework.com/3.7/databases
