@@ -108,6 +108,28 @@ This behavior is documented in the [CakePHP Cookbook][cake-cookbook].
 [cake-model-query]: http://api.cakephp.org/class/model#method-Modelquery
 [cake-cookbook]: http://book.cakephp.org/2.0/en/models/retrieving-your-data.html#prepared-statements
 
+## Fat-Free
+
+In [Fat-Free][fatfree] you are able to easily use free form SQL queries from the [DB\SQL][fatfree-sql] class as well as the built
+in [mappers][fatfree-mappers].
+
+    // Raw SQL fetchAll
+    $results = $f3->DB->exec(
+        "SELECT name FROM users WHERE id = ? AND is_active = ?",
+        [ $id, $is_active ]
+    );
+    
+    // Raw SQL insert/update
+    $f3->DB->exec("INSERT INTO users (name, email) VALUES (?, ?)", [ $name, $email ]);
+
+    // used with the mapper
+    $user = new \DB\SQL\Mapper($f3, 'users');
+    $user->load([ "id = ?", $id ]);
+
+[fatfree]: https://fatfreeframework.com
+[fatfree-sql]: https://fatfreeframework.com/3.7/databases
+[fatfree-mappers]: https://fatfreeframework.com/3.7/databases#TheSmartSQLORM
+
 ## WordPress
 
 If your site/blog/application is running on [WordPress][WP], you
