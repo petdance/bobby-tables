@@ -113,20 +113,31 @@ This behavior is documented in the [CakePHP Cookbook][cake-cookbook].
 In [Fat-Free][fatfree] you are able to easily use free form SQL queries from the [DB\SQL][fatfree-sql] class as well as the built
 in [mappers][fatfree-mappers].
 
+    $db = new DB\SQL(
+        'mysql:host=localhost;port=3306;dbname=mysqldb',
+        'admin',
+        'wh4t3v3r'
+    );
+
     // Raw SQL fetchAll
-    $results = $f3->DB->exec(
+    $results = $db->exec(
         "SELECT name FROM users WHERE id = ? AND is_active = ?",
         [ $id, $is_active ]
     );
     
     // Raw SQL insert/update with named parameters
-    $f3->DB->exec("INSERT INTO users (name, email) VALUES (:name, :email)", [ ':name' => $name, ':email' => $email ]);
+    $db->exec("INSERT INTO users (name, email) VALUES (:name, :email)", [ ':name' => $name, ':email' => $email ]);
 
-    // used with the mapper
-    $user = new \DB\SQL\Mapper($f3->DB, 'users');
-    $user->load([ "id = ?", $id ]);
+    // insert used with the mapper
+    $user = new \DB\SQL\Mapper($db, 'users');
     $user->name = 'Bobby Tables';
     $user->email = 'bobby@bobby-tables.com';
+    $user->save();
+    
+    // update
+    $user = new \DB\SQL\Mapper($db, 'users');
+    $user->load([ "id = ?", $id ]);
+    $user->name = 'Momma Db';
     $user->save();
 
 [fatfree]: https://fatfreeframework.com
