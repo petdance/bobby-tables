@@ -119,8 +119,8 @@ in [mappers][fatfree-mappers].
         [ $id, $is_active ]
     );
     
-    // Raw SQL insert/update
-    $f3->DB->exec("INSERT INTO users (name, email) VALUES (?, ?)", [ $name, $email ]);
+    // Raw SQL insert/update with named parameters
+    $f3->DB->exec("INSERT INTO users (name, email) VALUES (:name, :email)", [ ':name' => $name, ':email' => $email ]);
 
     // used with the mapper
     $user = new \DB\SQL\Mapper($f3->DB, 'users');
