@@ -61,6 +61,7 @@ Thanks
 
 Thanks to the following folks for their contributions:
 
+* Alex Haible
 * Richard Neill
 * [Kim Christensen](http://www.smukkekim.dk)
 * Kirk Kimmel
