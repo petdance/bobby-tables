@@ -7,7 +7,7 @@ has been out of date for more than five years and you should definitely
 use [one of the alternatives][which-mysql] instead. The 
 [PostgreSQL extension][pg] does:
 
-    $result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', array($email) );
+    $result = pg_query_params( $dbh, 'SELECT * FROM users WHERE email = $1', [$email] );
 
 Note that the query must be in single quotes or have the `$` escaped
 to avoid PHP trying to parse it as a variable.  (Actually, in this
@@ -40,19 +40,19 @@ ADODB provides a way to prepare, bind and execute all in the same method call.
     $dbConnection = NewADOConnection($connectionString);
     $sqlResult = $dbConnection->Execute(
         'SELECT user_id,first_name,last_name FROM users WHERE username=? AND password=?',
-        array($_REQUEST['username'], sha1($_REQUEST['password'])
+        [$_REQUEST['username'], sha1($_REQUEST['password'])]
     );
 
 ## Using the ODBC layer
 
     $stmt = odbc_prepare( $conn, 'SELECT * FROM users WHERE email = ?' );
-    $success = odbc_execute( $stmt, array($email) );
+    $success = odbc_execute( $stmt, [$email] );
 
 Or:
 
-    $dbh = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', array($email));
+    $dbh = odbc_exec($conn, 'SELECT * FROM users WHERE email = ?', [$email]);
     $sth = $dbh->prepare('SELECT * FROM users WHERE email = :email');
-    $sth->execute(array(':email' => $email));
+    $sth->execute([':email' => $email]);
 
 ## Using the PDO layer
 
@@ -72,7 +72,7 @@ And a shorter way to pass things in.
 
     $dbh = new PDO('mysql:dbname=testdb;host=127.0.0.1', $user, $password);
     $stmt = $dbh->prepare('UPDATE people SET name = :new_name WHERE id = :id');
-    $stmt->execute( array('new_name' => $name, 'id' => $id) );
+    $stmt->execute( ['new_name' => $name, 'id' => $id] );
 
 Here's a great [tutorial on migrating to PDO for MySQL developers](http://wiki.hashphp.org/PDO_Tutorial_for_MySQL_Developers).
 
@@ -91,13 +91,13 @@ two variants:
     // Unnamed placeholders: Pass an array containing one element for each ?
     $this->MyModel->query(
         'SELECT name FROM users WHERE id = ? AND status = ?',
-        array($id, $status)
+        [$id, $status]
     );
 
     // Named placeholders: Pass an associative array
     $this->MyModel->query(
         'SELECT name FROM users WHERE id = :id AND status = :status',
-        array('id' => $id, 'status' => $status)
+        ['id' => $id, 'status' => $status]
     );
 
 This behavior is documented in the [CakePHP Cookbook][cake-cookbook].
@@ -125,11 +125,11 @@ For INSERTs, UPDATEs, and DELETEs, you can use the handy helper methods in the c
 
     global $wpdb;
     $wpdb->insert( 'people',
-            array(
+            [
                 'person_id' => '123',
                 'person_email' => 'bobby@tables.com'
-            ),
-        array( '%d', '%s' )
+            ],
+        [ '%d', '%s' ]
     );
 
 More details on the [WordPress Codex][codex].
