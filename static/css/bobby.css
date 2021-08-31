@@ -101,14 +101,14 @@ div#container2 > a > img { /* github banderole */
 /* left column */
 #left {
     float: left;
-    width: 190px;
+    width: 220px;
     padding-left:0px;
 }
 
 /* main content area */
 #content {
     padding-top: 1em;
-    margin: 0 2em 0 220px;
+    margin: 0 2em 0 240px;
 }
 
 #content img {
@@ -157,7 +157,7 @@ pre code {
 #nav li {
     list-style:none;
     height:45px;
-    background: url('../img/nav_bgbottom.png') no-repeat -40px 44px;
+    background: url('../img/nav_bgbottom.png') no-repeat -0px 44px;
 }
 
 #nav ul li a {
