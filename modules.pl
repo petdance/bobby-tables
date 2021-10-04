@@ -6,7 +6,7 @@ use warnings;
 
 my @modules = qw(
     Encode
-    File::Slurp
+    File::Slurper
     Getopt::Long
     Markdent
     Template

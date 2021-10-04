@@ -25,7 +25,7 @@ Perl and additional CPAN modules.
 
 For building:
 
-* File::Slurp
+* File::Slurper
 * Markdent
 * Template
 
