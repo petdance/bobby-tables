@@ -7,7 +7,7 @@ use warnings;
 eval 'use Carp::Always'; # Not everyone has it
 
 use Getopt::Long;
-use File::Slurp;
+use File::Slurper qw(read_text);
 use Encode qw(decode encode);
 use Markdent::Simple::Fragment ();
 use Template ();
@@ -87,7 +87,7 @@ MAIN: {
     while ( @pages ) {
         my ($section,$desc) = splice( @pages, 0, 2 );
 
-        my $source = read_file( "$sourcepath/$section.md" );
+        my $source = read_text( "$sourcepath/$section.md" );
         my $first_pass;
         $tt_first_pass->process( \$source, undef, \$first_pass )
             || die sprintf("file: %s\nerror: %s\n", "$sourcepath/$section.md.tt2", $tt->error);

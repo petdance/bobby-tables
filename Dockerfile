@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
   && rm -fr /var/lib/apt/lists/*
 
 # Install necessary perl modules
-RUN cpanm File::Slurp
+RUN cpanm File::Slurper
 RUN cpanm Markdent
 RUN cpanm Template
 RUN cpanm Test::HTML::Tidy5
