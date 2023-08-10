@@ -196,3 +196,7 @@ Now the value of NLS parameter `NLS_DATE_FORMAT` is ignored during the query.
     janihur
     albundy
     donduck
+
+See Also
+--------
+[Oracle documentation on SQL Injection](https://docs.oracle.com/en/database/oracle/oracle-database/19/lnpls/dynamic-sql.html#GUID-1E31057E-057F-4A53-B1DD-8BC2C337AA2C)
